@@ -1,0 +1,135 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-color-dark: #1e40af;
+    --text-dark: #1f1f1f;
+    --text-light: #4b5563;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --font-heading: "Roboto Condensed", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    padding: 1rem 5rem;
+    background-color: #020a14;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.link {
+    color: var(--white);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Dropdown Menu */
+.contenido-women {
+    display: grid; /* Inicialmente en grid para organizar las opciones */
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    padding: 20px;
+    z-index: 1000;
+    background-color: #020a14;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Mostrar dropdown cuando se pasa el mouse sobre la sección WOMEN */
+.link:hover .contenido-women,
+.contenido-women:hover {
+    opacity: 1; /* Hacer visible */
+    visibility: visible; /* Asegura que se muestre */
+}
+
+/* Styling para las secciones internas del dropdown */
+.contenido-women div {
+    color: #ddd;
+    padding: 5px;
+    margin: 0;
+}
+
+.contenido-women h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #bbb;
+}
+
+.contenido-women ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contenido-women li {
+    font-size: 13px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+.contenido-women li:hover {
+    color: var(--primary-color);
+}
+
+.link.logo {
+    font-weight: 600;
+}
+
+.social__icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social__icons span {
+    color: var(--white);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.link:hover,
+.social__icons span:hover {
+    color: var(--primary-color);
+}
+
+.ri-shopping-cart-line {
+    margin-left: 30px;
+}

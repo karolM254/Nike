@@ -1,0 +1,69 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-color-dark: #1e40af;
+    --text-dark: #1f1f1f;
+    --text-light: #4b5563;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --font-heading: "Roboto Condensed", sans-serif;
+}
+
+.titulo-nosotros {
+    text-align: center;
+    margin: 30px auto 20px;
+    max-width: var(--max-width);
+}
+
+.titulo-nosotros h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: var(--primary-color-dark);
+}
+
+.contenido {
+    display: flex;
+    max-width: var(--max-width);
+    margin: 10px auto 20px;
+}
+
+.contenido .imagenes {
+    width: 35%;
+    height: 500px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.contenido .imagenes img:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.contenido .imagenes img:last-child {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    float: right;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.contenido .misionVision {
+    width: 65%;
+    margin: auto 0;
+}
+
+.contenido .misionVision p {
+    font-size: 18px;
+    color: var(--text-light);
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+}
