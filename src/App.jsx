@@ -10,6 +10,8 @@ import { Fabricantes } from "./pages/Fabricantes/Fabricantes";
 import SectionBrands from "./pages/Marcas_section1/SectionBrands";
 import { Blogs } from "./pages/Blogs/Blogs";
 import { PoliticaPrivacidad } from "./pages/PoliticaPrivacidad/PoliticaPrivacidad";
+import NinosProductos from "./pages/NinosProductos/NinosProductos";
+import NinosProducto from "./pages/NinosProducto/NinosProducto";
 
 function App() {
   return (
@@ -33,6 +35,10 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           {/*/ Ruta de las politicas de privacidad */}
           <Route path="/politicas" element={<PoliticaPrivacidad /> } />
+          {/* Ruta para la lista de productos */}
+          <Route path="/producto_nino" element={<NinosProductos />} />
+          {/* Ruta para el detalle de un producto */}
+          <Route path="/producto/:id" element={<NinosProducto />} />
         </Routes>
         <Footer />
       </div>
