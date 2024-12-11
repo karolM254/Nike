@@ -12,6 +12,8 @@ import { Blogs } from "./pages/Blogs/Blogs";
 import { PoliticaPrivacidad } from "./pages/PoliticaPrivacidad/PoliticaPrivacidad";
 import NinosProductos from "./pages/NinosProductos/NinosProductos";
 import NinosProducto from "./pages/NinosProducto/NinosProducto";
+import HombresProductos from "./pages/ProductosHombres/ProductosHombres";
+import ProductoDetalleMen from "./pages/VerProductosHombres/VerProductosHombres";
 
 function App() {
   return (
@@ -39,6 +41,9 @@ function App() {
           <Route path="/producto_nino" element={<NinosProductos />} />
           {/* Ruta para el detalle de un producto */}
           <Route path="/producto/:id" element={<NinosProducto />} />
+           {/* Rutas para la seccion de hombres */}
+          <Route path="/" element={<HombresProductos />} />
+          <Route path="/producto/:idMen" element={<ProductoDetalleMen />} />
         </Routes>
         <Footer />
       </div>
