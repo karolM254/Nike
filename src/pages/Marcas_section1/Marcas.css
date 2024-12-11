@@ -1,0 +1,179 @@
+/*estilos secction1*/
+.section-BRANDS{
+    width: 100%;
+}
+.container-principal-BRANDS{
+    margin: 10px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+.container-principal-BRANDS .contenido-BRANDS {
+    margin: 120px 0;
+}
+.container-principal-BRANDS .contenido-BRANDS h1{
+    color: #1e40af;
+}
+.container-principal-BRANDS .contenido-BRANDS p{
+    margin: 20px 0;
+}
+.container-principal-BRANDS .imagen-BRANDS img{
+    margin: 50px 30px;
+    width: 80%;
+}
+.section-BRANDS .linea-BRANDS{
+    position: absolute;
+    border: 2px solid black;
+    width: 800px;
+    margin: 0 270px;
+}
+
+/*estilos secction2*/
+.section-marcas-BRANDS{
+    width: 100%;
+    margin: 130px 0;
+}
+.container-principal-marcas-BRANDS{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 60px 10%;
+}
+.titulo-marcas{
+    color: #1e40af;
+    font-size: 40px;
+    text-align: center;
+}
+.container-principal-marcas-BRANDS .nike-BRANDS img{
+    width: 70%;
+    margin: 0 40px;
+}
+.container-principal-marcas-BRANDS .converse-BRANDS img{
+    width: 70%;
+    margin: 40px 40px;
+}
+.container-principal-marcas-BRANDS .Jordan-BRANDS img{
+    width: 70%;
+    margin: 0 40px;
+}
+.container-principal-marcas-BRANDS .nike-BRANDS h2{
+    text-align: center;
+}
+.container-principal-marcas-BRANDS .converse-BRANDS h2{
+    text-align: center;
+}
+.container-principal-marcas-BRANDS .Jordan-BRANDS h2{
+    text-align: center;
+}
+.container-principal-marcas-BRANDS .Jordan-BRANDS h2{
+    text-align: center;
+}
+.section-marcas-BRANDS .linea-BRANDS{
+    position: absolute;
+    border: 2px solid black;
+    width: 800px;
+    margin: 0 270px;
+}
+
+/*estilos secction3*/
+.section-BRANDS2{
+    width: 100%;
+    margin: 0;
+}
+.container-principal-BRANDS2 .contenido-BRANDS2 .imagen-section-BRANDS img{
+   width: 30%;
+}
+.container-principal-BRANDS2{
+    margin: 30px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+.container-principal-BRANDS2 .contenido-BRANDS2 {
+    margin: 10px 0;
+}
+.container-principal-BRANDS2 .contenido-BRANDS2 h1{
+    color: #1e40af;
+}
+.container-principal-BRANDS2 .contenido-BRANDS2 p{
+    margin: 20px 0;
+}
+.container-principal-BRANDS2 .imagen-BRANDS2 img{
+    margin: 50px 200px;
+    width: 50%
+}
+.section-BRANDS2 .linea-BRANDS{
+    position: absolute;
+    border: 2px solid black;
+    width: 800px;
+    margin: 0 270px;
+}
+
+
+/*estilos secction4*/
+
+.section-BRANDS3{
+    width: 100%;
+    margin: 0;
+}
+.container-principal-BRANDS3 .imagen-section-BRANDS3 img{
+   width: 30%;
+}
+.container-principal-BRANDS3{
+    margin: 30px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+.container-principal-BRANDS3 .imagen-BRANDS3 {
+    margin: 10px 0;
+}
+.container-principal-BRANDS3 .contenido-BRANDS3{
+    margin: 100px 20px;
+}
+.container-principal-BRANDS3 .contenido-BRANDS3 h1{
+    color: #1e40af;
+}
+.container-principal-BRANDS3 .contenido-BRANDS3 p{
+    margin: 20px 0;
+}
+.container-principal-BRANDS3 .imagen-BRANDS3 img{
+    margin: 90px 120px;
+    width: 50%
+}
+.section-BRANDS3 .linea-BRANDS{
+    position: absolute;
+    border: 2px solid black;
+    width: 800px;
+    margin: 0 270px;
+}
+
+
+/*estilos secction5*/
+.section-BRANDS4{
+    width: 100%;
+    margin: 0;
+}
+.container-principal-BRANDS4 .contenido-BRANDS4 .imagen-section-BRANDS4 img{
+   width: 30%;
+}
+.container-principal-BRANDS4{
+    margin: 30px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+.container-principal-BRANDS4 .contenido-BRANDS4 {
+    margin: 100px 0;
+}
+.container-principal-BRANDS4 .contenido-BRANDS4 h1{
+    color: #1e40af;
+}
+.container-principal-BRANDS4 .contenido-BRANDS4 p{
+    margin: 20px 0;
+}
+.container-principal-BRANDS4 .imagen-BRANDS4 img{
+    margin: 90px 200px;
+    width: 50%
+}
+.section-BRANDS4 .linea-BRANDS{
+    position: absolute;
+    border: 2px solid black;
+    width: 800px;
+    margin: 0 270px;
+}

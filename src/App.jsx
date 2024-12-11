@@ -7,6 +7,9 @@ import MujeresProducto from "./pages/MujeresProducto/MujeresProducto";
 import { Galeria } from "./pages/Galeria/Galeria";
 import { SobreNosotros } from "./pages/SobreNosotros/SobreNosotros";
 import { Fabricantes } from "./pages/Fabricantes/Fabricantes";
+import SectionBrands from "./pages/Marcas_section1/SectionBrands";
+import { Blogs } from "./pages/Blogs/Blogs";
+import { PoliticaPrivacidad } from "./pages/PoliticaPrivacidad/PoliticaPrivacidad";
 
 function App() {
   return (
@@ -24,6 +27,12 @@ function App() {
           <Route path="/sobrenosotros" element={<SobreNosotros />} />
           {/* Ruta de fabricantes */}
           <Route path="/fabricantes" element={<Fabricantes />} />
+          {/* Ruta langind page marcas */}
+          <Route path="/landing" element={<main><SectionBrands /></main>}/>
+          {/* Ruta de los blogs /*/}
+          <Route path="/blogs" element={<Blogs />} />
+          {/*/ Ruta de las politicas de privacidad */}
+          <Route path="/politicas" element={<PoliticaPrivacidad /> } />
         </Routes>
         <Footer />
       </div>
