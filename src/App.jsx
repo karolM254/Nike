@@ -17,9 +17,9 @@ function App() {
       <div>
         <Header />
         <Routes>
-          {/* Ruta para la lista de productos de mujeres */}
-          <Route path="/mujeres" element={<MujeresProductos />} />
-          {/* Ruta para el detalle de un producto de mujer */}
+          {/* Ruta para la lista de productos */}
+          <Route path="/" element={<MujeresProductos />} />
+          {/* Ruta para el detalle de un producto */}
           <Route path="/producto/:id" element={<MujeresProducto />} />
           {/* Ruta galeria de NIKE*/}
           <Route path="/galeria" element={<Galeria />} />
