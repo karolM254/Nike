@@ -9,7 +9,6 @@
   --font-heading: "Roboto Condensed", sans-serif;
 }
 
-
 /* -------------- Producto/descripción -------------- */
 .ver-producto-mujer {
   display: grid;
@@ -114,12 +113,6 @@
   margin: 10px 0 0 5px;
 }
     
-.grid-contenido-mujeres h4{
-  color: var(--primary-color-dark);
-  font-size: 1.rem;
-  margin: 10px 0 0 5px;
-}
-    
 .grid-contenido-mujeres p {
   justify-content: space-between;
 }
@@ -188,6 +181,34 @@
 }
 
 /*---------------------- Slider -------------------------*/
+.events-upcoming {
+  margin: 40px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.event-card {
+  overflow: hidden;
+  text-align: left;
+  padding: 50px;
+}
+
+.event-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.event-card h4 {
+  color: var(--primary-color-dark);
+  font-size: 1.rem;
+  margin: 10px 0 0 5px;
+}
+
+.slick-dots li button:before {
+  color: var(--primary-color-dark) !important; 
+}
 
 
-  
+
+
