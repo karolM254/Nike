@@ -1,0 +1,100 @@
+/* HombresProductos.css */
+
+html{
+    overflow-x: hidden;
+}
+
+.buscarMen{
+    display: flex;
+    justify-content: flex-end;
+    margin: 40px 0 20px;
+    padding-right: 50px;
+}
+
+.buscadorMen{
+    border: 1px solid var(--primary-color-dark);
+    padding: 10px;
+    border-radius: 60px;
+    font-size: 19px;
+}
+
+#buscadorMen input{
+    border: none;
+    font-size: 19px;
+    width: 200px;
+}
+
+#buscarProductosMen{
+    outline: none;
+    border: none;
+}
+
+
+.conatinerPrdocutosMen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas exactas */
+    gap: 16px; /* Espaciado entre tarjetas */
+    position: relative;
+    
+    right: -3rem;
+
+}
+ 
+.imgProductoMen {
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: left; /* Alineación del contenido hacia la izquierda */
+    padding: 15px; /* Espaciado interno en la tarjeta */
+}
+  
+.imgProductoMen img {
+    width: 80%; /* Imagen al 100% del ancho del contenedor */
+    height: 70%; /* Mantener proporción */
+    border-radius: 6px; /* Bordes ligeramente redondeados */
+    margin-bottom: 10px; /* Separación inferior de la imagen */
+    transition: transform 0.3s ease; 
+}
+
+.imgProductoMen img:hover{
+ transform: scale(1.1); /* Ampliar la imagen al pasar el mouse */
+}
+
+.TittleProcut {
+    font-size: 14px; /* Tamaño del texto del título */
+    font-weight: bold; /* Negrita para resaltar el título */
+    color: var(--primary-color-dark); /* Color Azul para el texto */
+    margin-bottom: 8px; /* Separación inferior */
+    font-family: "Roboto Condensed", sans-serif;
+}
+  
+.descriptionProductoMen {
+    font-size: 12px; /* Texto pequeño para la descripción */
+    color: #6c757d; /* Gris como en la imagen */
+    margin-bottom: 8px; /* Separación inferior */
+}
+  
+.priceProductMen {
+    font-size: 12px; /* Tamaño destacado para el precio */
+    font-weight: bold; /* Resaltar el precio */
+    color: #0044cc; /* Azul fuerte */
+    position: relative;
+    right: -16rem;
+    top: -21px;
+}
+
+.mas-productos-hombres {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+  
+.boton-ver-mas-productos-hombres {
+    border: none;
+    padding: 10px;
+    border-radius: 60px;
+    font-size: 19px;
+    color: var(--white);
+    background-color: var(--primary-color-dark);
+    width: 10%;
+    cursor: pointer;
+}
+  

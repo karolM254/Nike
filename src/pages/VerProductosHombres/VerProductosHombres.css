@@ -1,0 +1,269 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-color-dark: #1e40af;
+    --text-dark: #1f1f1f;
+    --text-light: #4b5563;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --font-heading: "Roboto Condensed", sans-serif;
+}
+
+.producto-detalle {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+  
+.ImagenPrincipal {
+    width: 60%;
+    position: relative;
+    left: -23rem;
+    top: -2rem;
+    border-radius: 11px;
+}
+  
+.producto-detalle h1 {
+    font-size: 30px;
+    color: var(--primary-color-dark);
+    font-weight: bolder;
+    margin-bottom: 10px;
+    position: relative;
+    left: -1rem;
+    bottom: -2rem;
+}
+  
+.descripcionMen {
+    font-size: 20px;
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+    left: -1rem;
+    top: -20rem;
+}
+
+.materialHombre {
+    font-size: 18px;
+    color: #646262;
+    position: relative;
+    left: -1rem;
+    top: -330px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.PriceMen {
+    font-size: 17px;
+    color: var(--primary-color);
+    font-weight: bolder;
+    position: relative;
+    left: -1rem;
+    top: -320px;
+    font-family: "Roboto Condensed", sans-serif;
+}
+  
+.producto-detalle select {
+    width: 35%;
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 14px;
+    background-color: #ececec;
+    border: none;
+    border-radius: 50px;
+    position: relative;
+    left: -1rem;
+    top: -310px;
+}
+
+.moreInformationMen {
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    left: -1rem;
+    top: -18rem;
+}
+  
+.btn-aggCarrito {
+    width: 50%;
+    background-color: var(--primary-color-dark);
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+    position: relative;
+    right: -25rem;
+    top: -20rem;
+}
+  
+.btn-aggCarrito:hover {
+    background-color: #004494;
+}
+
+.logo-carro-2 {
+    color: #fff; 
+    position: relative;
+    right: -392px;
+    top: -279px;
+    z-index: 1;
+}
+
+hr {
+    width: 90rem;
+    border: 1px solid var(--primary-color-dark);
+    position: relative;
+    top: -17rem; 
+    left: -28rem;
+}
+  
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+  
+.modal {
+    height: 350px; /* Aumenta la altura */
+    background: white;
+    padding: 30px; /* Más espacio interno */
+    border-radius: 8px;
+    width: 50%;
+    max-width: 600px; /* Aumenta el ancho máximo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+/* Asegurar que la X es visible */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333; /* Color ajustado para asegurar visibilidad */
+}
+
+.modal-close:hover {
+    color: var(--primary-color-dark); /* Cambio de color al pasar el mouse para una mejor experiencia */
+}
+
+.modal h2{
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.modal p {
+    margin: 10px 0; /* Espaciado entre los elementos de texto */
+    font-size: 16px; /* Tamaño de texto ajustado */
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    color: #000;
+    margin-top: 40px;
+    text-align: justify;
+}
+
+.events-container {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    max-width: 1250px;
+    height: 30px;
+    text-align: center;
+    position: relative;
+    top: -20rem;
+    left:-22rem;
+}
+
+.events-upcoming {
+    margin-top: 30px;
+}
+
+.event-card {
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+}
+
+.event-card img {
+    width: 100%;
+    height: 37vh;
+    border-radius: 10px;
+}
+
+.event-card h3 {
+    color: var(--primary-color-dark);
+    font-weight: bold;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.event-card p {
+    font-size: 12px;
+    margin: 0;
+    position: relative;
+    top: -9px;
+}
+
+/* Ajustes específicos del carrusel */
+.slick-dots li button:before {
+    display: none;
+    color: var(--extra-light) !important; /* Asegúrate de sobrescribir */
+}
+
+.slick-prev,
+.slick-next {
+    color: #0044cc !important;
+    z-index: 1; /* Opcional para asegurarte de que las flechas sean visibles */
+    font-size: 55px !important; 
+    opacity: 0.7 !important;
+    transition: opacity 0.3s !important;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  opacity: 1 !important;
+}
+
+.event-card .priceMen-slider{
+    font-weight: bolder;
+    position: relative;
+    color: var(--primary-color-dark) !important;
+    top: -24px;
+    right: -19rem;
+}
+
+.event-card .priceMen-slider-2{
+    font-weight: bolder;
+    position: relative;
+    color:var(--primary-color-dark) !important;
+    top: -24px;
+    right: -19rem;
+}
+
+
