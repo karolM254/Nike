@@ -25,7 +25,7 @@ function App() {
         <Header />
         <Routes>
           {/* Ruta para la lista de productos */}
-          <Route path="/productos_mujeres" element={<MujeresProductos />} />
+          <Route path="/productosmujeres" element={<MujeresProductos />} />
           {/* Ruta para el detalle de un producto */}
           <Route path="/producto/:id" element={<MujeresProducto />} />
           {/* Ruta galeria de NIKE*/}
