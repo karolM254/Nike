@@ -29,6 +29,7 @@
 .info-producto-mujer h3 {
   color: var(--primary-color-dark);
   font-size: 2rem;
+ margin-top: 80px;
 }
   
 .info-producto-mujer h4 {
@@ -82,17 +83,25 @@
   justify-content: flex-end;
   height: 50px;
   cursor: pointer;
+  position: relative;
+  top: -33px;
 }
   
 .ver-mas-mujeres {
   margin-bottom: 100px;
+  position: relative;
+  top: 15px;
 }
   
 .division-productos-mujeres {
-  margin: 0 70px;
+  margin: 0 auto; /* Margen igual en ambos lados */
   background-color: var(--primary-color-dark);
   height: 2px;
   border: none;
+  position: relative;
+  top: -60px;
+  width: calc(90% - 30px); /* Hace que sea más largo al reducir el margen total */
+  left: 2px;
 }
   
 /* ------------------ Productos -------------------- */

@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Lista de productos 
-const productos = [
+const productosNino = [
   {
     id: 1,
     img: "/assets/zapato1.jpg",
@@ -131,7 +131,7 @@ const NinosProducto = () => {
   const { id } = useParams();
 
   // Buscar el producto con el id correspondiente
-  const producto = productos.find((producto) => producto.id.toString() === id);
+  const producto = productosNino .find((producto) => producto.id.toString() === id);
 
   if (!producto) {
     return <p>Producto no encontrado.</p>;
@@ -145,7 +145,7 @@ const NinosProducto = () => {
     setIsModalOpen(false);
   };
 
-  const [productoSeleccionado, setProductoSeleccionado] = useState(productos[0]);
+  const [productoSeleccionado, setProductoSeleccionado] = useState(productosNino[0]);
 
   return (
     <div>
@@ -205,7 +205,7 @@ const NinosProducto = () => {
         {/* Slider */}
         <div className="events-upcoming">
           <Slider {...settings}>
-            {productos.map((producto) => (
+            {productosNino.map((producto) => (
               <div key={producto.id}>
                 <img src={producto.img} alt={producto.title} />
                 <h4>{producto.title}</h4>

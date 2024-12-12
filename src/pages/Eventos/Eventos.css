@@ -11,7 +11,7 @@
     --font-heading: "Roboto Condensed", sans-serif;
 }
 
-.events-container {
+.container-event{
     font-family: var(--font-heading);
     margin: 0 auto;
     padding: 20px;
@@ -19,23 +19,23 @@
     text-align: center;
 }
 
-h1 {
+.title-event{
     color: var(--primary-color-dark);
     font-size: 2rem;
     margin-top: 10px;
     margin-bottom: 22px;
 }
 
-.events-banner .banner-image {
+.event-image .img-event{
     width: 100%;
     height: 75vh;
 }
 
-.events-upcoming {
+.events-carrucel{
     margin-top: 30px;
 }
 
-.events-upcoming h2 {
+.events-carrucel-subtitle{
     color: #646262;
     font-size: 2rem;
     margin-bottom: 20px;
@@ -43,7 +43,7 @@ h1 {
     text-align: left;
 }
 
-.event-card {
+.event-card-carrucel{
     border-radius: 10px;
     overflow: hidden;
     text-align: left;
@@ -51,19 +51,19 @@ h1 {
     margin: 10px;
 }
 
-.event-card img {
+.event-card-carrucel-img{
     width: 100%;
     height: 37vh;
     border-radius: 10px;
 }
 
-.event-card h3 {
+.event-card-carrucel-subtitle{
     color: var(--primary-color-dark);
     font-size: 1.2rem;
     margin: 10px 0;
 }
 
-.event-card p {
+.event-card-carrucel-pf{
     color: #9d9d9d;
     font-size: 1rem;
     margin: 0;

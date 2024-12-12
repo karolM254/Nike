@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./NinosProductos.css"; 
 
@@ -17,7 +16,7 @@ const NinosProductos = () => (
       <div className="grid-contenido-Ninos">
         {/* Fila 1 */}
         <div className="col col-1">
-          <Link to={`/producto/1`}>
+          <Link to={`/producto_nino/1`}>
             <img
               src="/assets/zapato1.jpg"
               alt="NIKE CORTEZ EASYON"
@@ -30,7 +29,7 @@ const NinosProductos = () => (
           </div>
         </div>
         <div className="col col-1">
-          <Link to={`/producto/2`}>
+          <Link to={`/producto_nino/2`}>
             <img
               src="/assets/zapato2.jpg"
               alt="NIKE COURT BOROUGH"
@@ -43,7 +42,7 @@ const NinosProductos = () => (
           </div>
         </div>
         <div className="col col-1">
-          <Link to={`/producto/3`}>
+          <Link to={`/producto_nino/3`}>
             <img
               src="/assets/zapato3.jpg"
               alt="AIR JORDAN 3 RETRO"
@@ -58,7 +57,7 @@ const NinosProductos = () => (
 
         {/* Fila 2 */}
         <div className="col col-2">
-          <Link to={`/producto/4`}>
+          <Link to={`/producto_nino/4`}>
             <img
               src="/assets/zapato4.jpg"
               alt="NIKE FORCE 1 LOW SE EASYON"
@@ -71,7 +70,7 @@ const NinosProductos = () => (
           </div>
         </div>
         <div className="col col-2">
-          <Link to={`/producto/5`}>
+          <Link to={`/producto_nino/5`}>
             <img
               src="/assets/zapato5.jpg"
               alt="AIR JORDAN 1 LOW BG"
@@ -84,7 +83,7 @@ const NinosProductos = () => (
           </div>
         </div>
         <div className="col col-2">
-          <Link to={`/producto/6`}>
+          <Link to={`/producto_nino/6`}>
             <img
               src="/assets/zapato6.jpg"
               alt="AIR JORDAN 1 LOW SE"
