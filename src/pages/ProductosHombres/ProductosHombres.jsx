@@ -8,13 +8,6 @@ import './ProductosHombres.css';
 function HombresProductos() {
   return (
     <>  
-        {/* <div className="buscador-mujeres-productos">
-            <div className="buscador-mujeres">
-            <i className="ri-search-line"></i>
-            <input type="text" placeholder="Buscar" className="buscar-producto" />
-            </div>
-        </div> */}
-        
         <div className="buscarMen">
             <div className="buscadorMen">
                 <i className="ri-search-line"></i>
@@ -24,15 +17,15 @@ function HombresProductos() {
 
         <div className="conatinerPrdocutosMen">
         <div className="imgProductoMen">
-            <Link to="/producto/1MEN">
-                <img src="/assets/fototennis.jpg" alt="" />
+            <Link to={`/productosHombre/1`}>
+                <img src="/assets/fototennis.jpg" alt="Nike Full Force Low"/>
             </Link>
             <p className='TittleProcut'>Air Jordan 11 Retro &#34;Legend Blue&#34;</p>
             <p className="descriptionProductoMen">Calzado Para hombre</p>
             <p className="priceProductMen">$ 1.294.950</p>
         </div>
         <div className="imgProductoMen">
-            <Link to="/producto/2MEN">
+            <Link to="/productosHombre/2">
                 <img src="/assets/678275-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>W Nike Zoom Bella 6 PRm</p>
@@ -40,7 +33,7 @@ function HombresProductos() {
             <p className="priceProductMen">$ 845.950</p>
         </div>
         <div className="imgProductoMen">
-            <Link to="/producto/3MEN">
+            <Link to="/productosHombre/3">
                 <img src="/assets/677182-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>Nike Full Force Low</p>
@@ -49,7 +42,7 @@ function HombresProductos() {
           
         </div>
         <div className="imgProductoMen">
-            <Link to="/producto/4MEN">
+            <Link to="/productosHombre/4">
                 <img src="/assets/702841-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>Nike Cortez</p>
@@ -57,7 +50,7 @@ function HombresProductos() {
             <p className="priceProductMen">$ 380.950</p>
         </div>
         <div className="imgProductoMen">
-        <Link to="/producto/5MEN">
+        <Link to="/productosHombre/5">
                 <img src="/assets/713556-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>Nike C1TY</p>
@@ -65,7 +58,7 @@ function HombresProductos() {
             <p className="priceProductMen">$ 695.950</p>
         </div>
         <div className="imgProductoMen">
-            <Link to="/producto/6MEN">
+            <Link to="/productosHombre/6">
                 <img src="/assets/678515-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>Nike Killshot 2 Leather</p>

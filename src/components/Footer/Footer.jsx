@@ -16,9 +16,9 @@ function Footer() {
         <div className="footer__col">
           <h4>INFORMATION</h4>
           <p>About Us</p>
-          <p>Customer Service</p>
-          <p>Manufacturers</p>
-          <p>Privacy Policy</p>
+          <a href=""><p>Customer Service</p></a>
+          <a href=""><p>Manufacturers</p></a>
+          <a href=""><p>Privacy Policy</p></a>
           <p>Blog</p>
         </div>
         <div className="footer__col">
