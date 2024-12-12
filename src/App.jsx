@@ -16,6 +16,7 @@ import HombresProductos from "./pages/ProductosHombres/ProductosHombres";
 import Customize from "./pages/Customize/Customize";
 import Idioma from "./pages/Idioma/Idioma";
 import VerProductosHombres from "./pages/VerProductosHombres/VerProductosHombres";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Header />
         <Routes>
           {/* Ruta para la lista de productos */}
-          <Route path="/" element={<MujeresProductos />} />
+          <Route path="/productosmujeres" element={<MujeresProductos />} />
           {/* Ruta para el detalle de un producto */}
           <Route path="/producto/:id" element={<MujeresProducto />} />
           {/* Ruta galeria de NIKE*/}
@@ -34,7 +35,7 @@ function App() {
           {/* Ruta de fabricantes */}
           <Route path="/fabricantes" element={<Fabricantes />} />
           {/* Ruta langind page marcas */}
-          <Route path="/landing" element={<main><SectionBrands /></main>}/>
+          <Route path="/marcas" element={<main><SectionBrands /></main>}/>
           {/* Ruta de los blogs /*/}
           <Route path="/blogs" element={<Blogs />} />
           {/*/ Ruta de las politicas de privacidad */}
@@ -44,12 +45,14 @@ function App() {
           {/* Ruta para el detalle de un producto */}
           <Route path="/producto/:id" element={<NinosProducto />} />
            {/* Rutas para la seccion de hombres */}
-          <Route path="/" element={<HombresProductos />} />
+          <Route path="/hombre" element={<HombresProductos />} />
           <Route path="/producto/:id" element={<VerProductosHombres />} />
            {/* Rutas para la seccion de personalizado*/}
           <Route path="/personalizado" element={<Customize />} />
            {/* Rutas para la seccion de idioma */}
           <Route path="/idioma" element={<Idioma />} />
+          {/* Ruta para la landing page */}
+          <Route path="/" element={<LandingPage/>}></Route>
         </Routes>
         <Footer />
       </div>
