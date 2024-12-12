@@ -5,45 +5,46 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Blogs.css";
 
-// Componente Modal
-// eslint-disable-next-line react/prop-types
-const EventModal = ({ event, isOpen, onClose }) => {
-  if (!isOpen) return null;
+export const Blogs = () => {
+  // Componente Modal
+  // eslint-disable-next-line react/prop-types
+  const EventModal = ({ event, isOpen, onClose }) => {
+    if (!isOpen) return null;
 
-  return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <button className="close-button" onClick={onClose}>
-          &times;
-        </button>
-        <div className="modal-header">
-          <img src={event.image} alt={event.title} className="modal-image" />
-          <div className="modal-details">
-            <h3 className="modal-title">{event.title}</h3>
-            <p className="modal-date">
-              <span role="img" aria-label="calendar">
-                📅
-              </span>{" "}
-              {event.date}
-            </p>
-            <p className="modal-location">
-              <span role="img" aria-label="location">
-                📍
-              </span>{" "}
-              Estadio Mega Olímpico Nike
-            </p>
+    return (
+      <div className="modal-overlay">
+        <div className="modal-content">
+          <button className="close-button" onClick={onClose}>
+            &times;
+          </button>
+          <div className="modal-header">
+            <img src={event.image} alt={event.title} className="modal-image" />
+            <div className="modal-details">
+              <h3 className="modal-title">{event.title}</h3>
+              <p className="modal-date">
+                <span role="img" aria-label="calendar">
+                  📅
+                </span>{" "}
+                {event.date}
+              </p>
+              <p className="modal-location">
+                <span role="img" aria-label="location">
+                  📍
+                </span>{" "}
+                Estadio Mega Olímpico Nike
+              </p>
+            </div>
+          </div>
+          <div className="modal-body">
+            <h4>Descripción</h4>
+            <p>{event.description}</p>
           </div>
         </div>
-        <div className="modal-body">
-          <h4>Descripción</h4>
-          <p>{event.description}</p>
-        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-export const Blogs = () => {
+
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

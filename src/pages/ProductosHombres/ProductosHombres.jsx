@@ -3,12 +3,7 @@ import React, { useState } from 'react';
 /* eslint-enable no-unused-vars */
 import { Link } from 'react-router-dom';
 import './ProductosHombres.css';
-import fotoTennis from "/assets/img/fototennis.jpg";
-import fotoTennis2 from "/assets/img/678275-500-500.jpg";
-import fotoTennis3 from "/assets/img/677182-500-500.jpg";
-import fotoTennis4 from "/assets/img/702841-500-500.jpg";
-import fotoTennis5 from "/assets/img/713556-500-500.jpg";
-import fotoTennis6 from "/assets/img/678515-500-500.jpg";
+
 
 function HombresProductos() {
   return (
@@ -30,7 +25,7 @@ function HombresProductos() {
         <div className="conatinerPrdocutosMen">
         <div className="imgProductoMen">
             <Link to="/producto/1MEN">
-                <img src={fotoTennis} alt="" />
+                <img src="/assets/fototennis.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>Air Jordan 11 Retro &#34;Legend Blue&#34;</p>
             <p className="descriptionProductoMen">Calzado Para hombre</p>
@@ -38,7 +33,7 @@ function HombresProductos() {
         </div>
         <div className="imgProductoMen">
             <Link to="/producto/2MEN">
-                <img src={fotoTennis2} alt="" />
+                <img src="/assets/678275-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>W Nike Zoom Bella 6 PRm</p>
             <p className="descriptionProductoMen">Calzado Para hombre</p>
@@ -46,7 +41,7 @@ function HombresProductos() {
         </div>
         <div className="imgProductoMen">
             <Link to="/producto/3MEN">
-                <img src={fotoTennis3} alt="" />
+                <img src="/assets/677182-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>Nike Full Force Low</p>
             <p className="descriptionProductoMen">Calzado Para hombre</p>
@@ -55,7 +50,7 @@ function HombresProductos() {
         </div>
         <div className="imgProductoMen">
             <Link to="/producto/4MEN">
-                <img src={fotoTennis4} alt="" />
+                <img src="/assets/702841-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>Nike Cortez</p>
             <p className="descriptionProductoMen">Calzado Para hombre</p>
@@ -63,7 +58,7 @@ function HombresProductos() {
         </div>
         <div className="imgProductoMen">
         <Link to="/producto/5MEN">
-                <img src={fotoTennis5} alt="" />
+                <img src="/assets/713556-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>Nike C1TY</p>
             <p className="descriptionProductoMen">Calzado Para hombre</p>
@@ -71,7 +66,7 @@ function HombresProductos() {
         </div>
         <div className="imgProductoMen">
             <Link to="/producto/6MEN">
-                <img src={fotoTennis6} alt="" />
+                <img src="/assets/678515-500-500.jpg" alt="" />
             </Link>
             <p className='TittleProcut'>Nike Killshot 2 Leather</p>
             <p className="descriptionProductoMen">Calzado Para hombre</p>

@@ -13,7 +13,9 @@ import { PoliticaPrivacidad } from "./pages/PoliticaPrivacidad/PoliticaPrivacida
 import NinosProductos from "./pages/NinosProductos/NinosProductos";
 import NinosProducto from "./pages/NinosProducto/NinosProducto";
 import HombresProductos from "./pages/ProductosHombres/ProductosHombres";
-import ProductoDetalleMen from "./pages/VerProductosHombres/VerProductosHombres";
+import Customize from "./pages/Customize/Customize";
+import Idioma from "./pages/Idioma/Idioma";
+import VerProductosHombres from "./pages/VerProductosHombres/VerProductosHombres";
 
 function App() {
   return (
@@ -38,12 +40,16 @@ function App() {
           {/*/ Ruta de las politicas de privacidad */}
           <Route path="/politicas" element={<PoliticaPrivacidad /> } />
           {/* Ruta para la lista de productos */}
-          <Route path="/producto_nino" element={<NinosProductos />} />
+          <Route path="/productoNino" element={<NinosProductos />} />
           {/* Ruta para el detalle de un producto */}
           <Route path="/producto/:id" element={<NinosProducto />} />
            {/* Rutas para la seccion de hombres */}
           <Route path="/" element={<HombresProductos />} />
-          <Route path="/producto/:idMen" element={<ProductoDetalleMen />} />
+          <Route path="/producto/:id" element={<VerProductosHombres />} />
+           {/* Rutas para la seccion de personalizado*/}
+          <Route path="/personalizado" element={<Customize />} />
+           {/* Rutas para la seccion de idioma */}
+          <Route path="/idioma" element={<Idioma />} />
         </Routes>
         <Footer />
       </div>

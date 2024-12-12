@@ -7,13 +7,8 @@ import Slider from "react-slick"; // Asegúrate de tener react-slick instalado
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './VerProductosHombres.css';
-import fotoTennis from "/assets/img/fototennis.jpg";
-import fotoTennis2 from "/assets/img/678275-500-500.jpg";
-import fotoTennis3 from "/assets/img/677182-500-500.jpg";
-import fotoTennis4 from "/assets/img/702841-500-500.jpg";
-import fotoTennis5 from "/assets/img/713556-500-500.jpg";
-import fotoTennis6 from "/assets/img/678515-500-500.jpg";
 
+function VerProductosHombres() {
 
 const CustomPrevArrow = (props) => {
     const { className, style, onClick } = props;
@@ -79,19 +74,19 @@ const SliderMen = () => {
             <section className='events-upcoming'>
                 <Slider {...settings}>
                     <div className="event-card">
-                        <img src={  fotoTennis4 } alt="NIKE CORTEZ" />
+                        <img src="/assets/702841-500-500.jpg" alt="NIKE CORTEZ" />
                         <h3>NIKE CORTEZ</h3>
                         <p className='.titttle-producto-carousel-men' >Calzado para hombre</p>
                         <p className='priceMen-slider-2'>$ 380.950</p>
                     </div>
                     <div className="event-card">
-                        <img src={  fotoTennis5 } alt="NIKE C1TY" />
+                        <img src= "/assets/713556-500-500.jpg" alt="NIKE C1TY" />
                         <h3>Nike C1TY</h3>
                         <p>Calzado para hombre</p>
                         <p className='priceMen-slider'>$ 695.950</p>
                     </div>
                     <div className="event-card">
-                        <img src={ fotoTennis6 } alt="NIKE KILLSHOT 2 LEATHER" />
+                        <img src="/assets/678515-500-500.jpg" alt="NIKE KILLSHOT 2 LEATHER" />
                         <h3>Nike Killshot 2 Leather</h3>
                         <p>Calzado para hombre</p>
                         <p className='priceMen-slider'>$ 922.950</p>
@@ -102,7 +97,7 @@ const SliderMen = () => {
     );
 };
 
-function ProductoDetalleMen() {
+
     const { idMen } = useParams(); // Obtiene el id del producto desde la URL
     const [mostrarModal, setMostrarModal] = useState(false);
 
@@ -114,7 +109,7 @@ function ProductoDetalleMen() {
             descripcion2: 'La suela de goma ofrece una tracción excepcional, ideal para cambios rápidos de dirección. Su lengüeta y cuello acolchados garantizan un ajuste cómodo y seguro durante los juegos más intensos, mientras que las agujetas redondas aseguran un ajuste firme y uniforme. Perfectos para jugadores que buscan combinar rendimiento y estilo en cada jugada',
             material: 'Material Principal: Cuero',
             precio: '$ 1.294.950',
-            imagen: fotoTennis,
+            imagen: "/assets/fototennis.jpg",
         },
         {
           idMen: '2MEN',
@@ -123,7 +118,7 @@ function ProductoDetalleMen() {
           descripcion2: 'Los Nike Zoom Bella 6 PRM son tenis diseñados para ofrecer un equilibrio perfecto entre estilo, comodidad y funcionalidad, ideales para entrenamientos dinámicos y uso diario. Con un diseño moderno y sofisticado, estos tenis combinan tecnología avanzada con un look versátil para que te mantengas activo sin sacrificar tu estilo personal.',
           material: 'Material Principal: Cuero',
           precio: '$ 845.950',
-          imagen: fotoTennis2,
+          imagen: "/assets/678275-500-500.jpg",
         },
         {
           idMen: '3MEN',
@@ -132,7 +127,7 @@ function ProductoDetalleMen() {
           descripcion2: 'El Nike Full Force Low es un tenis que fusiona estilo urbano y funcionalidad para el uso diario. Con un diseño versátil y moderno, este modelo es ideal para quienes buscan una combinación de comodidad, durabilidad y un look casual para el día a día. Su suela proporciona una excelente amortiguación y tracción en diferentes superficies, mientras que sus materiales resistentes aseguran una larga vida útil. El ajuste con cordones y su diseño clásico lo convierten en una opción imprescindible para complementar cualquier outfitt',
           material: 'Material Principal: Cuero',
           precio: '$ 560.950',
-          imagen: fotoTennis3,
+          imagen: "/assets/677182-500-500.jpg",
         },
         {
           idMen: '4MEN',
@@ -141,7 +136,7 @@ function ProductoDetalleMen() {
           descripcion2: 'El Nike Cortez es un clásico de la moda deportiva que combina estilo y funcionalidad. Con un diseño minimalista y elegante, este modelo es ideal para quienes buscan un look casual y versátil para el día a día. Su suela proporciona una excelente tracción y amortiguación, mientras que sus materiales resistentes aseguran una larga vida útil. El ajuste con cordones y su diseño clásico lo convierten en una opción imprescindible para complementar cualquier outfit.',
           material: 'Material Principal: Cuero',
           precio: '$ 380.950',
-          imagen: fotoTennis4,
+          imagen: "/assets/702841-500-500.jpg",
         },
         {
           idMen: '5MEN',
@@ -150,7 +145,7 @@ function ProductoDetalleMen() {
           descripcion2: 'El Nike C1TY es un modelo que refleja el espíritu urbano con un diseño contemporáneo y versátil. Inspirado en la moda callejera, este tenis ofrece una combinación ideal de estilo y rendimiento, con materiales transpirables que permiten comodidad durante todo el día. Su estructura ligera y su suela flexible facilitan el movimiento, mientras que la estética minimalista lo hace ideal tanto para actividades casuales como para ocasiones más formales. Perfecto para quienes buscan destacar con un look moderno y funcional.',
           material: 'Material Principal: Cuero',
           precio: '$ 695.950',
-          imagen: fotoTennis5,
+          imagen: "/assets/713556-500-500.jpg",
         },
         {
           idMen: '6MEN',
@@ -159,7 +154,7 @@ function ProductoDetalleMen() {
           descripcion2: 'El Nike Killshot 2 Leather es un tenis que combina estilo y funcionalidad con un diseño clásico y sofisticado. Inspirado en la moda deportiva de los años 70, este modelo ofrece una combinación ideal de comodidad, durabilidad y un look elegante. Su suela proporciona una excelente tracción y amortiguación, mientras que sus materiales de cuero aseguran una larga vida útil. El ajuste con cordones y su diseño clásico lo convierten en una opción imprescindible para complementar cualquier outfit.',
           material: 'Material Principal: Cuero',
           precio: '$ 922.950',
-          imagen: fotoTennis6,
+          imagen: "/assets/678515-500-500.jpg",
         }
       ];
     const producto = productos.find((prod) => prod.idMen === idMen);
@@ -227,4 +222,4 @@ function ProductoDetalleMen() {
     );
 }
 
-export default ProductoDetalleMen;
+export default VerProductosHombres;
