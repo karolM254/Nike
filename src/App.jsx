@@ -8,7 +8,6 @@ import { Galeria } from "./pages/Galeria/Galeria";
 import { SobreNosotros } from "./pages/SobreNosotros/SobreNosotros";
 import { Fabricantes } from "./pages/Fabricantes/Fabricantes";
 import SectionBrands from "./pages/Marcas_section1/SectionBrands";
-import { Blogs } from "./pages/Blogs/Blogs";
 import { PoliticaPrivacidad } from "./pages/PoliticaPrivacidad/PoliticaPrivacidad";
 import NinosProductos from "./pages/NinosProductos/NinosProductos";
 import NinosProducto from "./pages/NinosProducto/NinosProducto";
@@ -25,6 +24,7 @@ import InfoProductoTennis from "./pages/InfoProducto/InfoProductoTennis";
 import InfoProductoAtletismo from "./pages/InfoProducto/InfoProductoAtletismo";
 import Tennis from "./pages/Tennis/Tennis";
 import Atletismo from "./pages/Atletismo/Atletismo";
+import { Eventos } from "./pages/Eventos/Eventos";
 
 
 function App() {
@@ -45,14 +45,12 @@ function App() {
           <Route path="/fabricantes" element={<Fabricantes />} />
           {/* Ruta langind page marcas */}
           <Route path="/marcas" element={<main><SectionBrands /></main>}/>
-          {/* Ruta de los blogs /*/}
-          <Route path="/blogs" element={<Blogs />} />
           {/*/ Ruta de las politicas de privacidad */}
           <Route path="/politicas" element={<PoliticaPrivacidad /> } />
           {/* Ruta para la lista de productos */}
           <Route path="/productoNino" element={<NinosProductos />} />
           {/* Ruta para el detalle de un producto */}
-          <Route path="/producto/:id" element={<NinosProducto />} />
+          <Route path="/producto_nino/:id" element={<NinosProducto />} />
            {/* Rutas para la seccion de hombres */}
           <Route path="/hombre" element={<HombresProductos />} />
           <Route path="/producto/:id" element={<VerProductosHombres />} />
@@ -79,6 +77,8 @@ function App() {
           <Route path="/tennis" element={<Tennis />} />
           {/*ruta para ver el contenido de los productos de atletismo*/}
           <Route path="/atletismo" element={<Atletismo />} />
+          {/* Rutas para los eventos */}
+          <Route path="/eventos" element={<Eventos />} />
         </Routes>
         <Footer />
       </div>
