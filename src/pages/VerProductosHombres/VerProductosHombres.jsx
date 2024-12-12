@@ -101,9 +101,9 @@ const SliderMen = () => {
     const { idMen } = useParams(); // Obtiene el id del producto desde la URL
     const [mostrarModal, setMostrarModal] = useState(false);
 
-    const productos = [
+    const productosHombre = [
         {
-            idMen: '1MEN',
+            idMen: '1',
             nombre: 'Air Jordan 11 Retro "Legend Blue"',
             descripcion: 'Calzado Para hombre',
             descripcion2: 'La suela de goma ofrece una tracción excepcional, ideal para cambios rápidos de dirección. Su lengüeta y cuello acolchados garantizan un ajuste cómodo y seguro durante los juegos más intensos, mientras que las agujetas redondas aseguran un ajuste firme y uniforme. Perfectos para jugadores que buscan combinar rendimiento y estilo en cada jugada',
@@ -112,7 +112,7 @@ const SliderMen = () => {
             imagen: "/assets/fototennis.jpg",
         },
         {
-          idMen: '2MEN',
+          idMen: '2',
           nombre: 'W Nike Zoom Bella 6 PRm',
           descripcion: 'Calzado Para hombre',
           descripcion2: 'Los Nike Zoom Bella 6 PRM son tenis diseñados para ofrecer un equilibrio perfecto entre estilo, comodidad y funcionalidad, ideales para entrenamientos dinámicos y uso diario. Con un diseño moderno y sofisticado, estos tenis combinan tecnología avanzada con un look versátil para que te mantengas activo sin sacrificar tu estilo personal.',
@@ -121,7 +121,7 @@ const SliderMen = () => {
           imagen: "/assets/678275-500-500.jpg",
         },
         {
-          idMen: '3MEN',
+          idMen: '3',
           nombre: 'Nike Full Force Low',
           descripcion: 'Calzado Para hombre',
           descripcion2: 'El Nike Full Force Low es un tenis que fusiona estilo urbano y funcionalidad para el uso diario. Con un diseño versátil y moderno, este modelo es ideal para quienes buscan una combinación de comodidad, durabilidad y un look casual para el día a día. Su suela proporciona una excelente amortiguación y tracción en diferentes superficies, mientras que sus materiales resistentes aseguran una larga vida útil. El ajuste con cordones y su diseño clásico lo convierten en una opción imprescindible para complementar cualquier outfitt',
@@ -130,7 +130,7 @@ const SliderMen = () => {
           imagen: "/assets/677182-500-500.jpg",
         },
         {
-          idMen: '4MEN',
+          idMen: '4',
           nombre: 'Nike Cortez',
           descripcion: 'Calzado Para hombre',
           descripcion2: 'El Nike Cortez es un clásico de la moda deportiva que combina estilo y funcionalidad. Con un diseño minimalista y elegante, este modelo es ideal para quienes buscan un look casual y versátil para el día a día. Su suela proporciona una excelente tracción y amortiguación, mientras que sus materiales resistentes aseguran una larga vida útil. El ajuste con cordones y su diseño clásico lo convierten en una opción imprescindible para complementar cualquier outfit.',
@@ -139,7 +139,7 @@ const SliderMen = () => {
           imagen: "/assets/702841-500-500.jpg",
         },
         {
-          idMen: '5MEN',
+          idMen: '5',
           nombre: 'Nike C1TY',
           descripcion: 'Calzado Para hombre',
           descripcion2: 'El Nike C1TY es un modelo que refleja el espíritu urbano con un diseño contemporáneo y versátil. Inspirado en la moda callejera, este tenis ofrece una combinación ideal de estilo y rendimiento, con materiales transpirables que permiten comodidad durante todo el día. Su estructura ligera y su suela flexible facilitan el movimiento, mientras que la estética minimalista lo hace ideal tanto para actividades casuales como para ocasiones más formales. Perfecto para quienes buscan destacar con un look moderno y funcional.',
@@ -148,7 +148,7 @@ const SliderMen = () => {
           imagen: "/assets/713556-500-500.jpg",
         },
         {
-          idMen: '6MEN',
+          idMen: '6',
           nombre: 'Nike Killshot 2 Leather',
           descripcion: 'Calzado Para hombre',
           descripcion2: 'El Nike Killshot 2 Leather es un tenis que combina estilo y funcionalidad con un diseño clásico y sofisticado. Inspirado en la moda deportiva de los años 70, este modelo ofrece una combinación ideal de comodidad, durabilidad y un look elegante. Su suela proporciona una excelente tracción y amortiguación, mientras que sus materiales de cuero aseguran una larga vida útil. El ajuste con cordones y su diseño clásico lo convierten en una opción imprescindible para complementar cualquier outfit.',
@@ -157,7 +157,7 @@ const SliderMen = () => {
           imagen: "/assets/678515-500-500.jpg",
         }
       ];
-    const producto = productos.find((prod) => prod.idMen === idMen);
+    const producto = productosHombre.find((producto) => producto.idMen === idMen);
 
     return (
         <div>
