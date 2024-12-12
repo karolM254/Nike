@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import Slider from "react-slick";
 import "./MujeresProducto.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 // Lista de productos 
 const productos = [
@@ -63,151 +60,99 @@ const productos = [
   },
 ];
 
-// Componentes para las flechas personalizadas
-const CustomPrevArrow = (props) => {
-  const { style, onClick } = props;
-  return (
-    <div
-      style={{ ...style, display: "block", position: "absolute", left: "8px", top: "45%", cursor: "pointer", zIndex: 2 }}
-      onClick={onClick}
-    >
-      <i className="ri-arrow-left-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
-    </div>
-  );
-};
-
-const CustomNextArrow = (props) => {
-  const { style, onClick } = props;
-  return (
-    <div
-      style={{ ...style, display: "block", position: "absolute", right: "8px", top: "45%", cursor: "pointer", zIndex: 2 }}
-      onClick={onClick}
-    >
-      <i className="ri-arrow-right-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
-    </div>
-  );
-};
-
 const MujeresProducto = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
-    responsive: [
-      {
-        breakpoint: 768, // Para pantallas pequeñas
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-};
+  // Estado para controlar la visibilidad del modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-// Estado para controlar la visibilidad del modal
-const [isModalOpen, setIsModalOpen] = useState(false);
+  // Obtener el id del producto desde la URL
+  const { id } = useParams();
 
-// Obtener el id del producto desde la URL
-const { id } = useParams();
+  // Buscar el producto con el id correspondiente
+  const producto = productos.find((producto) => producto.id.toString() === id);
 
-// Buscar el producto con el id correspondiente
-const producto = productos.find((producto) => producto.id.toString() === id);
+  if (!producto) {
+    return <p>Producto no encontrado.</p>;
+  }
 
-if (!producto) {
-  return <p>Producto no encontrado.</p>;
-}
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-const openModal = () => {
-  setIsModalOpen(true);
-};
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
-const closeModal = () => {
-  setIsModalOpen(false);
-};
-
-const [productoSeleccionado, setProductoSeleccionado] = useState(productos[0]);
-
-return (
-  <div>
-    <main className="contenido-mujeres">
-      {/* Producto destacado */}
-      <div className="ver-producto-mujer">
-        <img src={productoSeleccionado.img} alt={productoSeleccionado.title} />
-        <div className="info-producto-mujer">
-          <h3>{productoSeleccionado.title}</h3>
-          <h4>{productoSeleccionado.description}</h4>
-          <h4 className="material-producto-mujer">
-            Material principal: {productoSeleccionado.material}
-          </h4>
-          <p>{productoSeleccionado.price}</p>
-          <div className="color-talla">
-            <select name="color" id="color">
-              <option value="opcionColor">Color</option>
-              <option value="rosa">Rosa</option>
-              <option value="negro">Negro</option>
-              <option value="azul">Azul</option>
-              <option value="morado">Morado</option>
-            </select>
-            <select name="talla" id="talla">
-              <option value="opcionTalla">Talla</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-              <option value="38">38</option>
-            </select>
-          </div>
-          <h4 className="ver-mas-mujeres" onClick={openModal}>
-            Ver información del producto
-          </h4>
-          <div className="boton-mujeres">
-            <button className="carrito-mujeres">
-              <i className="ri-shopping-cart-line"></i> Agregar al carrito
-            </button>
+  return (
+    <div>
+      <main className="contenido-mujeres">
+        {/* Producto destacado */}
+        <div className="ver-producto-mujer">
+          <img src={producto.img} alt={producto.title} />
+          <div className="info-producto-mujer">
+            <h3>{producto.title}</h3>
+            <h4>{producto.description}</h4>
+            <h4 className="material-producto-mujer">
+              Material principal: {producto.material}
+            </h4>
+            <p>{producto.price}</p>
+            <div className="color-talla">
+              <select name="color" id="color">
+                <option value="opcionColor">Color</option>
+                <option value="rosa">Rosa</option>
+                <option value="negro">Negro</option>
+                <option value="azul">Azul</option>
+                <option value="morado">Morado</option>
+              </select>
+              <select name="talla" id="talla">
+                <option value="opcionTalla">Talla</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+              </select>
+            </div>
+            <h4 className="ver-mas-mujeres" onClick={openModal}>
+              Ver información del producto
+            </h4>
+            <div className="boton-mujeres">
+              <button className="carrito-mujeres">
+                <i className="ri-shopping-cart-line"></i> Agregar al carrito
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <button className="close-modal" onClick={closeModal}>
-              &times; {/* Representación de la "x" */}
-            </button>
-            <h3>Descripción:</h3>
-            <p>{productoSeleccionado.moreDescription}</p>
+        {/* Modal */}
+        {isModalOpen && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <button className="close-modal" onClick={closeModal}>
+                &times; {/* Representación de la "x" */}
+              </button>
+              <h3>Descripción:</h3>
+              <p>{producto.moreDescription}</p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <hr className="division-productos-mujeres" />
+        <hr className="division-productos-mujeres" />
 
-      <section className='events-upcoming'>
-      <Slider {...settings}>
-            {productos.map((producto) => (
-              <div
-                key={producto.id}
-                className="event-card"
-                onClick={() => setProductoSeleccionado(producto)}
-                style={{ cursor: "pointer" }}
-              >
-                <img src={producto.img} alt={producto.title} />
-                <h4>{producto.title}</h4>
-                <div className="precio-mujeres">
-                  <h5>{producto.description}</h5>
-                  <p>{producto.price}</p>
-                </div>
+        {/* Grid de productos relacionados */}
+        <div className="grid-contenido-mujeres">
+          {productos.map((producto) => (
+            <div className="col" key={producto.id}>
+              <img src={producto.img} alt={producto.title} />
+              <h4>{producto.title}</h4>
+              <div className="precio-mujeres">
+                <h5>{producto.description}</h5>
+                <p>{producto.price}</p>
               </div>
-            ))}
-          </Slider>
-      </section>
-    </main>
-  </div>
-);
+            </div>
+          ))}
+        </div>
+      </main>
+    </div>
+  );
 };
 
 export default MujeresProducto;
