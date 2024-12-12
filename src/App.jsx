@@ -17,6 +17,15 @@ import Customize from "./pages/Customize/Customize";
 import Idioma from "./pages/Idioma/Idioma";
 import VerProductosHombres from "./pages/VerProductosHombres/VerProductosHombres";
 import LandingPage from "./pages/LandingPage/LandingPage";
+import Basquet from "./pages/Basquet/Basquet";
+import ProductGrid from "./pages/ProductGrid/ProductGrid";
+import InfoProducto from "./pages/InfoProducto/InfoProducto";
+import InfoProductoBasquet from "./pages/InfoProducto/InfoProductoBasquet";
+import InfoProductoTennis from "./pages/InfoProducto/InfoProductoTennis";
+import InfoProductoAtletismo from "./pages/InfoProducto/InfoProductoAtletismo";
+import Tennis from "./pages/Tennis/Tennis";
+import Atletismo from "./pages/Atletismo/Atletismo";
+
 
 function App() {
   return (
@@ -53,6 +62,23 @@ function App() {
           <Route path="/idioma" element={<Idioma />} />
           {/* Ruta para la landing page */}
           <Route path="/" element={<LandingPage/>}></Route>
+          {/* el menu de inicio al dar en sport*/}
+          <Route path="/futbol" element={<ProductGrid />} />
+          <Route path="/basquet" element={<Basquet />} />
+          {/* Ruta para ver la información del producto futbol */}
+          <Route path="/futbol/infoproducto/:id" element={<InfoProducto />} /> 
+          {/* Ruta para ver la información del producto basquet */}
+          <Route path="/basquet/infoproducto/:id" element={<InfoProductoBasquet />} />
+          {/* Ruta para ver la información del producto tennis*/}
+          <Route path="/tennis/infoproducto/:id" element={<InfoProductoTennis />} /> 
+          {/* Ruta para ver la información del producto atletismo*/}
+          <Route path="/atletismo/infoproducto/:id" element={<InfoProductoAtletismo />} /> {/* Aplica lo mismo para Atletismo */}
+          {/*ruta para ver el contenido de los productos de futbol*/}
+          <Route path="/futbol" element={<ProductGrid />} />
+          {/*ruta para ver el contenido de los productos de tenni*/}
+          <Route path="/tennis" element={<Tennis />} />
+          {/*ruta para ver el contenido de los productos de atletismo*/}
+          <Route path="/atletismo" element={<Atletismo />} />
         </Routes>
         <Footer />
       </div>
