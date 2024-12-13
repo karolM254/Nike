@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './Header.css';
+import { Link, useLocation } from 'react-router-dom';
 
 // Componente reutilizable para el submenú
 function DropdownMenu({ categories }) {
@@ -22,6 +23,7 @@ function DropdownMenu({ categories }) {
 
 function Header() {
   const [visibleDropdown, setVisibleDropdown] = useState(null);
+  const location = useLocation(); // Obtener la ruta actual
 
   const handleMouseEnter = (menu) => {
     setVisibleDropdown(menu); // Mostrar el menú correspondiente
@@ -30,6 +32,9 @@ function Header() {
   const handleMouseLeave = () => {
     setVisibleDropdown(null); // Ocultar todos los menús
   };
+
+  // Función para determinar si un enlace está activo
+  const isActive = (path) => location.pathname === path;
 
   const categories = {
     women: [
@@ -66,47 +71,69 @@ function Header() {
     <header>
       <nav>
         <ul className="nav__links">
-          <li className="link logo">NIKE</li>
-          <li
-            className="link"
-            onMouseEnter={() => handleMouseEnter('women')}
-            onMouseLeave={handleMouseLeave}
-          >
-            MEN
-            {visibleDropdown === 'women' && <DropdownMenu categories={categories.women} />}
-          </li>
-          <li
-            className="link"
-            onMouseEnter={() => handleMouseEnter('kids')}
-            onMouseLeave={handleMouseLeave}
-          >
-            WOMEN
-            {visibleDropdown === 'kids' && <DropdownMenu categories={categories.kids} />}
-          </li>
-          <li
-            className="link"
-            onMouseEnter={() => handleMouseEnter('men')}
-            onMouseLeave={handleMouseLeave}
-          >
-            KIDS
-            {visibleDropdown === 'men' && <DropdownMenu categories={categories.men} />}
-          </li>
-          <li
-            className="link"
-            onMouseEnter={() => handleMouseEnter('sports')}
-            onMouseLeave={handleMouseLeave}
-          >
-            SPORTS
-            {visibleDropdown === 'sports' && <DropdownMenu categories={categories.sports} />}
-          </li>
-          <li className="link">BRANDS</li>
-          <li className="link">CUSTOMIZE</li>
+          <Link to="/">
+            <li className={`link logo ${isActive('/') ? 'active' : ''}`}>NIKE</li>
+          </Link>
+          <Link to="/hombre">
+            <li
+              className={`link ${isActive('/hombre') ? 'active' : ''}`}
+              onMouseEnter={() => handleMouseEnter('men')}
+              onMouseLeave={handleMouseLeave}
+            >
+              MEN
+              {visibleDropdown === 'men' && <DropdownMenu categories={categories.men} />}
+            </li>
+          </Link>
+          <Link to="/productosmujeres">
+            <li
+              className={`link ${isActive('/productosmujeres') ? 'active' : ''}`}
+              onMouseEnter={() => handleMouseEnter('women')}
+              onMouseLeave={handleMouseLeave}
+            >
+              WOMEN
+              {visibleDropdown === 'women' && <DropdownMenu categories={categories.women} />}
+            </li>
+          </Link>
+          <Link to="/productoNino">
+            <li
+              className={`link ${isActive('/productoNino') ? 'active' : ''}`}
+              onMouseEnter={() => handleMouseEnter('kids')}
+              onMouseLeave={handleMouseLeave}
+            >
+              KIDS
+              {visibleDropdown === 'kids' && <DropdownMenu categories={categories.kids} />}
+            </li>
+          </Link>
+          <Link to="/futbol">
+            <li
+              className={`link ${isActive('/futbol') ? 'active' : ''}`}
+              onMouseEnter={() => handleMouseEnter('sports')}
+              onMouseLeave={handleMouseLeave}
+            >
+              SPORTS
+              {visibleDropdown === 'sports' && <DropdownMenu categories={categories.sports} />}
+            </li>
+          </Link>
+          <Link to="/marcas">
+            <li className={`link ${isActive('/marcas') ? 'active' : ''}`}>BRANDS</li>
+          </Link>
+          <Link to="/personalizado">
+            <li className={`link ${isActive('/personalizado') ? 'active' : ''}`}>CUSTOMIZE</li>
+          </Link>
         </ul>
         <div className="social__icons">
-          <span><i className="ri-facebook-fill"></i></span>
-          <span><i className="ri-twitter-fill"></i></span>
-          <span><i className="ri-google-fill"></i></span>
-          <span><i className="ri-instagram-line"></i></span>
+          <Link to="https://www.facebook.com/nike/">
+            <span><i className="ri-facebook-fill"></i></span>
+          </Link>
+          <Link to="https://x.com/Nike">
+            <span><i className="ri-twitter-fill"></i></span>
+          </Link>
+          <Link to="https://www.nike.com.co/">
+            <span><i className="ri-google-fill"></i></span>
+          </Link>
+          <Link to="https://www.instagram.com/nike/">
+            <span><i className="ri-instagram-line"></i></span>
+          </Link>
           <span><i className="ri-shopping-cart-line"></i></span>
           <span><i className="ri-global-line"></i></span>
         </div>
