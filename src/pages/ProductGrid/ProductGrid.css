@@ -1,134 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&family=Poppins:wght@100..900&display=swap');
 
-.content {
-    margin-left: 390px;
-    padding: 20px;
-    font-family: 'Open Sans', sans-serif;
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
-
-.search {
-    position: relative;
-    top: 10px;
-    left: 1100px;
-    width: 39%; /* Ajuste del ancho */
-}
-
-.search input {
-    width: 100%;
-    padding: 10px 50px; /* Ajustar espacio alrededor del texto */
-    border-radius: 35px;
-    border: #1e40af solid 2px;
-    font-size: 18px;
-}
-
-.search ::placeholder {
-    color: #8f8f8f;
-}
-
-.lupa img {
-    position: relative;
-    top: -28px;
-    left: 1115px;
-    width: 24px; /* Ajuste del ancho */
-    height: 24px;
-}
-
-.content h1 {
-    color: #1e40af;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 50px;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.product {
-    text-align: center;
-    background: #f4f4f4;
-    height: 350px;
-    margin-bottom: 110px;
-
-}
-
-.product-image {
-    padding: 10px; /* Solo afecta a la imagen */
-    display: block; /* Asegura que la imagen se mantenga como bloque */
-    overflow: hidden; /* Evita que el texto sobrepase la imagen */
-    transition: transform 0.3s ease-in-out; /* Animación para el hover */
-}
-
-.product img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-.product h2,
-.product .info,
-.product .price {
-    position: relative;
-    z-index: 1; /* Asegura que el texto se quede encima de la imagen */
-}
-
-.product:hover {
-    cursor: pointer;
-    transform: scale(1.05); /* Cambié a 1.05 para un efecto más suave */
-    transition: transform 0.3s ease-in-out;
-}
-
-.price {
-    color: #2563eb;
+span{
     font-weight: bold;
-    margin-top: -23px;
-    font-size: 20px;
-    margin-left: 84%;
-    transform: translateX(-50%);
-    text-decoration: none; /* Asegurarse de quitar el subrayado */
 }
 
-.product h2 {
-    font-size: 22px;
-    color: #2563eb;
-    margin-top: -10px;
-    margin-right: 230px;
-}
-
-.info {
-    font-size: 20px;
-    color: #737373;
-    margin-top: 10px;
-    margin-right: 250px;
-}
-
-/* Elimina subrayados */
-a {
-    text-decoration: none;
-}
-
-.product .price::before,
-.product .price::after {
-    text-decoration: none;
+.layout {
+    display: flex;
+    align-items: flex-start;
 }
 
 .sidebar {
-    width: 250px;
-    padding: 20px 10px 0 50px;
-    background-color: #e9e9e9;
-    position: absolute;
-    top: 105px;
-    left: 0;
-    height: calc(100vh - 50px);
+    padding: 4rem;
+    height: auto; /* Ajustar al contenido */
+    position: relative; /* Para flujo natural */
+    margin-top: 2rem;
+    width: 300px;
+    box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Ajuste para pantallas más pequeñas (por debajo de 1200px) */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 250px;  /* Reduce el tamaño en pantallas más pequeñas */
+        margin-left: 1rem;
+    }
+}
+
+/* Para pantallas más pequeñas, como tablets */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Hace que la sidebar ocupe todo el ancho disponible en pantallas de tablet */
+        position: relative; /* Cambia la posición a relative para que fluya con el contenido */
+        margin-top: 1rem; /* Ajusta el margen superior */
+        height: auto; /* Permite que la altura se ajuste al contenido */
+    }
+}
+
+/* Para móviles, ajusta la sidebar para que quede en la parte superior o en el centro */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%; /* Toma todo el ancho de la pantalla */
+        height: auto; /* Elimina la altura fija para adaptarse al contenido */
+        margin-left: 0; /* Elimina el margen izquierdo */
+    }
+}
+
+
 .sidebar h3 {
-    margin-bottom: 30px;
+    margin-bottom: 1rem;
     color: #1e40af;
-    font-size: 28px;
+    font-size: 2.1rem;
 }
 
 .sidebar ul {
@@ -137,48 +70,183 @@ a {
 }
 
 .sidebar ul li {
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
-li > a {
+.sidebar ul li a, .sidebar ul li span {
     text-decoration: none;
-    color: #000000;
-    font-size: 17px;
+    color: #000;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
-li > a:hover {
+.sidebar ul li a:hover {
     font-weight: bold;
     color: #1e40af;
-    cursor: pointer;
-    transition: font-size 0.3s ease;
-    font-size: 18px;
 }
-
-.sidebar ul li:hover {
-    font-weight: bold;
-    color: #1e40af;
-    cursor: pointer;
-    transition: font-size 0.3s ease;
-    font-size: 18px;
-}
-
 .linea {
-    position: absolute;
-    width: 1.7%;
-    background-color: #8e8e8e;
-    height: 92%;
-    left: 280px;
-    top: 20px;
-    border-radius: 15px;
-}
-span{
-    font-size: 18px;
-    font-weight: bold;
-    color: #1e40af;
+    width: 1%;
+    height: 80vh; /* Ocupa toda la altura de la ventana */
+    background-color: #1e40af;
+    margin-left: 14rem;
+    margin-top: -14rem;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Evita el scroll horizontal */
+
+@media (max-width: 780px) {
+    .linea {
+        height: auto;
+        margin: 0; /* Sin márgenes adicionales */
+    }
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.search input {
+    width: 300px;
+    padding: 0.5rem 1rem 1rem 3rem;
+    border-radius: 2rem;
+    border: #1e40af solid 2px;
+    font-size: 1rem;
+}
+
+.search ::placeholder {
+    color: #8f8f8f;
+
+}
+
+.lupa img {
+    position: absolute;
+    top: 50%;
+    right: 260px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
+    gap: 1rem; /* Ajustar espacio entre productos */
+}
+
+@media (max-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+}
+
+
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    text-align: left; /* Texto alineado a la izquierda */
+    margin-left: 50px; /* Elimina márgenes adicionales */
+}
+.product img {
+    width: 110%;
+    height: 300px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Asegura que la imagen se recorte proporcionalmente */
+    border-radius: 0.5rem;
+
+}
+@media (max-width: 1200px) {
+    .product {
+        max-width: 400px; /* Reduce el tamaño en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        max-width: 300px; /* Aún más pequeño en tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        max-width: 100%; /* Ocupa todo el ancho en móviles */
+        width: 90%; /* Espaciado interno */
+    }
+}
+.product h2 {
+    font-size: 1.4rem;
+    color: #2563eb;
+    margin: 0.5rem 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.product .info-price-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye la info y el precio */
+    width: 100%; /* Asegura que ocupen todo el ancho del contenedor */
+    align-items: center; /* Centra verticalmente */
+}
+
+.product .info {
+    font-size: 1.2rem;
+    color: #737373;
+    margin-right: auto; /* Empuja el precio hacia la derecha */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product .price {
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: -1.5rem;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .search input {
+        width: 90%;
+    }
+
+    .product h2 {
+        font-size: 1rem;
+    }
+
+    .product .info,
+    .product .price {
+        font-size: 0.9rem;
+    }
 }
