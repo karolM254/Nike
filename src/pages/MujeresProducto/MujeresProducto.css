@@ -62,6 +62,12 @@
 .ver-mas-mujeres {
   text-decoration: underline;
 }
+
+.boton-mujeres{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
   
 .carrito-mujeres {
   background-color: var(--primary-color-dark);
@@ -70,6 +76,17 @@
   font-size: 1rem;
   border-radius: 60px;
   border: none;
+  cursor: pointer;
+}
+
+.ver-carrito {
+  position: relative;
+  top: 60px;
+  right: 120px;
+  border: none;
+  font-size: 1rem;
+  text-decoration: underline;
+  color: var(--text-dark);
 }
   
 .ver-producto-mujer .ri-shopping-cart-line {
