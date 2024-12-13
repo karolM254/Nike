@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-color-dark: #1e40af;
+    --text-dark: #1f1f1f;
+    --text-light: #4b5563;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --font-heading: "Roboto Condensed", sans-serif;
+  }
+.compras-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 93vh;
+  }
+  
+  form {
+    background-color: #ccc;
+    width: 120%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 50%;
+    font-weight: bold;
+
+  }
+
+  form h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color-dark);
+  }
+  
+  l
+ .form-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #e6e9f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; 
+  }
+  
+  .form-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: auto;
+    width: 100%; 
+  }
+
+  .row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .row > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  
+    .btn {
+    background-color: var(--primary-color-dark);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 30%;
+    margin-left: 35%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+  
+  .summary-container {
+    width: 22%;
+    background:none;
+    padding: 20px;
+    border-radius: 10px;
+    
+  }
+  
+  .summary-container h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color-dark);
+    text-align: center;
+  }
+  
+  .summary-items {
+    margin-bottom: 20px;
+    
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .item-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .mini-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  
+  .total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }

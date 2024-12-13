@@ -26,6 +26,8 @@ import Tennis from "./pages/Tennis/Tennis";
 import Atletismo from "./pages/Atletismo/Atletismo";
 import { Eventos } from "./pages/Eventos/Eventos";
 import WooCommerceAPI from "./components/WoocomerceApi";
+import Compras1 from "./pages/Compras1/Compras1";
+import Compras2 from "./pages/Compras2/Compras2";
 
 
 function App() {
@@ -80,6 +82,10 @@ function App() {
           <Route path="/atletismo" element={<Atletismo />} />
           {/* Rutas para los eventos */}
           <Route path="/eventos" element={<Eventos />} />
+          {/*Ruta para Compra1*/}
+          <Route path="/Compras1" element={<Compras1 />} />
+          {/*Ruta para Compra2*/}
+          <Route path="/Compras2" element={<Compras2 />} />
         </Routes>
         <Footer />
       </div>
