@@ -27,7 +27,6 @@ import Atletismo from "./pages/Atletismo/Atletismo";
 import { Eventos } from "./pages/Eventos/Eventos";
 import WooCommerceAPI from "./components/WoocomerceApi";
 import Compras1 from "./pages/Compras1/Compras1";
-import Compras2 from "./pages/Compras2/Compras2";
 import Carrito from "./pages/Carrito/Carrito";
 import { CartProvider } from "./components/Carrito/CartContext";
 
@@ -88,8 +87,6 @@ function App() {
             <Route path="/eventos" element={<Eventos />} />
             {/*Ruta para Compra1*/}
             <Route path="/Compras1" element={<Compras1 />} />
-            {/*Ruta para Compra2*/}
-            <Route path="/Compras2" element={<Compras2 />} />
             {/* Ruta para la sección del carrito */}
             <Route path="/carrito" element={<Carrito />} />
             {/* Ruta para la reseñas */}
