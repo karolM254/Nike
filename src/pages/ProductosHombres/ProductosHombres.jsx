@@ -67,9 +67,6 @@ function HombresProductos() {
         </div>
     </div>
     <div className="mas-productos-hombres">
-        <button className="boton-ver-mas-productos-hombres">
-          Ver más
-        </button>
       </div>
     </>
     )};

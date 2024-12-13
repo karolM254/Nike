@@ -1,3 +1,14 @@
+:root {
+  --primary-color: #2563eb;
+  --primary-color-dark: #1e40af;
+  --text-dark: #1f1f1f;
+  --text-light: #4b5563;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --font-heading: "Roboto Condensed", sans-serif;
+}
+
 footer {
   background-color: var(--text-dark);
 }
@@ -71,5 +82,9 @@ footer {
   align-items: center;
   gap: 1rem;
   font-size: 1.2rem;
+}
+
+.payment__cards i{
+  color: var(--white);
 }
   

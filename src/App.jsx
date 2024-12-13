@@ -89,7 +89,6 @@ function App() {
         </Routes>
         <Footer />
       </div>
-      <WooCommerceAPI />
     </Router>
   );
 }

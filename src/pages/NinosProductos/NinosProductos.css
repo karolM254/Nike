@@ -29,6 +29,7 @@
   border: none;
   font-size: 19px;
   width: 200px;
+  background-color: transparent;
 }
 
 .buscar-producto {
@@ -79,19 +80,3 @@
   color: var(--primary-color);
 }
 
-/* ------------------ Botón ver más ------------------- */
-.mas-productos-Ninos {
-  display: flex;
-  justify-content: center;
-  margin: 40px;
-}
-
-.boton-ver-mas-productos {
-  border: none;
-  padding: 10px;
-  border-radius: 60px;
-  font-size: 19px;
-  color: var(--white);
-  background-color: var(--primary-color-dark);
-  width:10%
-}

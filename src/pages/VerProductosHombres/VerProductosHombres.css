@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
+
 :root {
     --primary-color: #2563eb;
     --primary-color-dark: #1e40af;
@@ -9,21 +11,6 @@
     --font-heading: "Roboto Condensed", sans-serif;
 }
 
-.boton-regresar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    margin-top: 15px;
-    margin-left: 15px;
-  }
 .producto-detalle {
     display: flex;
     flex-direction: column;
@@ -110,15 +97,13 @@
     color: white;
     padding: 14px;
     font-size: 16px;
-    font-weight: bold;
     text-align: center;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     margin-top: 10px;
-    text-transform: uppercase;
     position: relative;
-    right: -25rem;
+    right: -29rem;
     top: -20rem;
 }
   
@@ -129,17 +114,17 @@
 .logo-carro-2 {
     color: #fff; 
     position: relative;
-    right: -392px;
-    top: -279px;
+    right: -470px;
+    top: -278px;
     z-index: 1;
 }
 
 hr {
-    width: 90rem;
+    width: 82rem;
     border: 1px solid var(--primary-color-dark);
     position: relative;
     top: -17rem; 
-    left: -28rem;
+    left: -380px;
 }
   
 
@@ -188,7 +173,10 @@ hr {
 .modal h2{
     text-align: left;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: bold;
+    position: relative;
+    top: -96px;
+    right: -30px;
 }
 
 .modal p {
@@ -198,13 +186,16 @@ hr {
     color: #000;
     margin-top: 40px;
     text-align: justify;
+    position: relative;
+    left: -50px;
 }
+
 
 .events-container {
     font-family: Arial, sans-serif;
     margin: 0 auto;
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 30px;
     max-width: 1250px;
     height: 30px;
     text-align: center;
@@ -214,7 +205,10 @@ hr {
 }
 
 .events-upcoming {
-    margin-top: 30px;
+    position: relative;
+    overflow: visible;
+    margin-top: 14px;
+    
 }
 
 .event-card {
@@ -226,8 +220,8 @@ hr {
 }
 
 .event-card img {
-    width: 100%;
-    height: 37vh;
+    width: 90%;
+    height: 45vh;
     border-radius: 10px;
 }
 
@@ -245,7 +239,7 @@ hr {
     top: -9px;
 }
 
-/* Ajustes específicos del carrusel */
+
 .slick-dots li button:before {
     display: none;
     color: var(--extra-light) !important; /* Asegúrate de sobrescribir */
@@ -260,17 +254,18 @@ hr {
     transition: opacity 0.3s !important;
 }
 
-.slick-prev:hover,
-.slick-next:hover {
-  opacity: 1 !important;
+.slick-prev::before,
+.slick-next::before {
+  content: none;
 }
+
 
 .event-card .priceMen-slider{
     font-weight: bolder;
     position: relative;
     color: var(--primary-color-dark) !important;
     top: -24px;
-    right: -19rem;
+    right: -220px;
 }
 
 .event-card .priceMen-slider-2{
@@ -278,7 +273,26 @@ hr {
     position: relative;
     color:var(--primary-color-dark) !important;
     top: -24px;
-    right: -19rem;
+    right: -220px;
 }
 
-
+.boton-regresar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  .boton-regresar:hover {
+    background-color: #1e40af; /* Color más oscuro en hover /
+    transform: scale(1.05); / Efecto de agrandamiento */
+    transition: transform 0.3s ease;
+  }

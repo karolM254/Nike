@@ -96,11 +96,6 @@ const NinosProductos = () => (
           </div>
         </div>
       </div>
-      <div className="mas-productos-Ninos">
-        <button className="boton-ver-mas-productos">
-          Ver más
-        </button>
-      </div>
     </main>
   </div>
 );

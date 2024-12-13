@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
+
 :root {
     --primary-color: #2563eb;
     --primary-color-dark: #1e40af;
@@ -32,12 +34,13 @@ header {
 }
 
 .header__content h1 {
-  font-size: 10rem;
-  line-height: 8rem;
+  font-size: 11rem;
+  line-height: 9rem;
 }
 
 .header__content p {
   letter-spacing: 2px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .main__container {
@@ -97,11 +100,13 @@ header {
 .service__card p {
   font-size: 0.9rem;
   color: var(--text-light);
+  font-family: "Montserrat", sans-serif;
 }
 
 .service__card a {
   font-size: 0.9rem;
   font-weight: 500;
+  font-family: "Montserrat", sans-serif;
 }
 
 .banner {
@@ -123,6 +128,7 @@ header {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 2px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .banner__content .title {
@@ -137,6 +143,7 @@ header {
   margin: auto;
   margin-bottom: 1rem;
   max-width: 400px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .banner__content .price {
@@ -144,14 +151,29 @@ header {
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+  position: relative;
+  left: -10rem;
 }
 
 .banner__content .price span {
   font-size: 2rem;
   font-weight: 800;
   color: var(--primary-color);
-  margin-right: 2rem;
+  margin-right: 1rem; 
+  position: static; 
+  font-family: "Montserrat", sans-serif;
 }
+
+.banner__content .price del {
+  font-size: 1.2rem;
+  color: var(--text-dark); /* Color gris para tachado */
+  text-decoration: line-through;
+  margin-left: 0.5rem; /* Ajusta espacio después del precio nuevo */
+  font-family: "Montserrat", sans-serif;
+}
+
 
 .countdown {
   display: flex;
@@ -187,6 +209,7 @@ header {
   background-color: var(--primary-color);
   cursor: pointer;
   transition: 0.3s;
+  font-family: "Montserrat", sans-serif;
 }
 
 .banner__content button:hover {
@@ -229,6 +252,7 @@ header {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--primary-color);
+  font-family: "Montserrat", sans-serif;
 }
 
 .collection__image p del {

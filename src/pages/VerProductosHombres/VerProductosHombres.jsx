@@ -1,101 +1,105 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // Importamos useNavigate
-import PropTypes from 'prop-types';
+/* eslint-enable no-unused-vars */
+import PropTypes from 'prop-types'; // Importar PropTypes para validar props
+import { useNavigate, useParams } from 'react-router-dom';
 import Slider from "react-slick"; // Asegúrate de tener react-slick instalado
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './VerProductosHombres.css';
 
 function VerProductosHombres() {
-    const navigate = useNavigate(); // Creamos la función navigate
+  const navigate = useNavigate(); // Creamos la función navigate
 
-    const CustomPrevArrow = (props) => {
-        const { className, style, onClick } = props;
-        return (
-          <div
-            className={className}
-            style={{ ...style, display: "block", position: "absolute", left: "-60px", top: "45%", cursor: "pointer", zIndex: 2 }}
-            onClick={onClick}
-          >
-            <i className="ri-arrow-left-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
-          </div>
-        );
+
+// Componentes para las flechas personalizadas
+const CustomPrevArrow = (props) => {
+  const { style, onClick } = props;
+  return (
+    <div
+      style={{ ...style, display: "block", position: "absolute", left: "-30px", top: "45%", cursor: "pointer", zIndex: 2 }}
+      onClick={onClick}
+    >
+      <i className="ri-arrow-left-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
+    </div>
+  );
+};
+
+CustomPrevArrow.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
+  onClick: PropTypes.func,
+};
+
+const CustomNextArrow = (props) => {
+  const { style, onClick } = props;
+  return (
+    <div
+      style={{ ...style, display: "block", position: "absolute", right: "-20px", top: "45%", cursor: "pointer", zIndex: 2 }}
+      onClick={onClick}
+    >
+      <i className="ri-arrow-right-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
+    </div>
+  );
+};
+
+CustomNextArrow.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    onClick: PropTypes.func,
+};
+
+const SliderMen = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: <CustomPrevArrow />,
+        nextArrow: <CustomNextArrow />,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
     };
 
-    CustomPrevArrow.propTypes = {
-        className: PropTypes.string,
-        style: PropTypes.object,
-        onClick: PropTypes.func,
-    };
+    return (
+        <div className='events-container'>
 
-    const CustomNextArrow = (props) => {
-        const { className, style, onClick } = props;
-        return (
-          <div
-            className={className}
-            style={{ ...style, display: "block", position: "absolute", right: "-17px", top: "45%", cursor: "pointer", zIndex: 2 }}
-            onClick={onClick}
-          >
-            <i className="ri-arrow-right-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
-          </div>
-        );
-    };
+            <section className='events-upcoming'>
+                <Slider {...settings}>
+                    <div className="event-card">
+                        <img src="/assets/702841-500-500.jpg" alt="NIKE CORTEZ" />
+                        <h3>NIKE CORTEZ</h3>
+                        <p className='.titttle-producto-carousel-men' >Calzado para hombre</p>
+                        <p className='priceMen-slider-2'>$ 380.950</p>
+                    </div>
+                    <div className="event-card">
+                        <img src= "/assets/713556-500-500.jpg" alt="NIKE C1TY" />
+                        <h3>Nike C1TY</h3>
+                        <p>Calzado para hombre</p>
+                        <p className='priceMen-slider'>$ 695.950</p>
+                    </div>
+                    <div className="event-card">
+                        <img src="/assets/678515-500-500.jpg" alt="NIKE KILLSHOT 2 LEATHER" />
+                        <h3>Nike Killshot 2 Leather</h3>
+                        <p>Calzado para hombre</p>
+                        <p className='priceMen-slider'>$ 922.950</p>
+                    </div>
+                </Slider>
+            </section>
+        </div>
+    );
+};
 
-    CustomNextArrow.propTypes = {
-        className: PropTypes.string,
-        style: PropTypes.object,
-        onClick: PropTypes.func,
-    };
 
-    const SliderMen = () => {
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            prevArrow: <CustomPrevArrow />,
-            nextArrow: <CustomNextArrow />,
-            responsive: [
-              {
-                breakpoint: 768,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                },
-              },
-            ],
-        };
-
-        return (
-            <div className='events-container'>
-                <section className='events-upcoming'>
-                    <Slider {...settings}>
-                        <div className="event-card">
-                            <img src="/assets/702841-500-500.jpg" alt="NIKE CORTEZ" />
-                            <h3>NIKE CORTEZ</h3>
-                            <p className='.titttle-producto-carousel-men' >Calzado para hombre</p>
-                            <p className='priceMen-slider-2'>$ 380.950</p>
-                        </div>
-                        <div className="event-card">
-                            <img src= "/assets/713556-500-500.jpg" alt="NIKE C1TY" />
-                            <h3>Nike C1TY</h3>
-                            <p>Calzado para hombre</p>
-                            <p className='priceMen-slider'>$ 695.950</p>
-                        </div>
-                        <div className="event-card">
-                            <img src="/assets/678515-500-500.jpg" alt="NIKE KILLSHOT 2 LEATHER" />
-                            <h3>Nike Killshot 2 Leather</h3>
-                            <p>Calzado para hombre</p>
-                            <p className='priceMen-slider'>$ 922.950</p>
-                        </div>
-                    </Slider>
-                </section>
-            </div>
-        );
-    };
-
-    const { idMen } = useParams();
+    const { idMen } = useParams(); // Obtiene el id del producto desde la URL
     const [mostrarModal, setMostrarModal] = useState(false);
 
     const productosHombre = [
@@ -103,7 +107,7 @@ function VerProductosHombres() {
             idMen: '1',
             nombre: 'Air Jordan 11 Retro "Legend Blue"',
             descripcion: 'Calzado Para hombre',
-            descripcion2: 'La suela de goma ofrece una tracción excepcional...',
+            descripcion2: 'La suela de goma ofrece una tracción excepcional, ideal para cambios rápidos de dirección. Su lengüeta y cuello acolchados garantizan un ajuste cómodo y seguro durante los juegos más intensos, mientras que las agujetas redondas aseguran un ajuste firme y uniforme. Perfectos para jugadores que buscan combinar rendimiento y estilo en cada jugada',
             material: 'Material Principal: Cuero',
             precio: '$ 1.294.950',
             imagen: "/assets/fototennis.jpg",
@@ -112,22 +116,56 @@ function VerProductosHombres() {
           idMen: '2',
           nombre: 'W Nike Zoom Bella 6 PRm',
           descripcion: 'Calzado Para hombre',
-          descripcion2: 'Los Nike Zoom Bella 6 PRM son tenis diseñados...',
+          descripcion2: 'Los Nike Zoom Bella 6 PRM son tenis diseñados para ofrecer un equilibrio perfecto entre estilo, comodidad y funcionalidad, ideales para entrenamientos dinámicos y uso diario. Con un diseño moderno y sofisticado, estos tenis combinan tecnología avanzada con un look versátil para que te mantengas activo sin sacrificar tu estilo personal.',
           material: 'Material Principal: Cuero',
           precio: '$ 845.950',
           imagen: "/assets/678275-500-500.jpg",
         },
-        // Otros productos...
-    ];
-
+        {
+          idMen: '3',
+          nombre: 'Nike Full Force Low',
+          descripcion: 'Calzado Para hombre',
+          descripcion2: 'El Nike Full Force Low es un tenis que fusiona estilo urbano y funcionalidad para el uso diario. Con un diseño versátil y moderno, este modelo es ideal para quienes buscan una combinación de comodidad, durabilidad y un look casual para el día a día. Su suela proporciona una excelente amortiguación y tracción en diferentes superficies, mientras que sus materiales resistentes aseguran una larga vida útil.',
+          material: 'Material Principal: Cuero',
+          precio: '$ 560.950',
+          imagen: "/assets/677182-500-500.jpg",
+        },
+        {
+          idMen: '4',
+          nombre: 'Nike Cortez',
+          descripcion: 'Calzado Para hombre',
+          descripcion2: 'El Nike Cortez es un clásico de la moda deportiva que combina estilo y funcionalidad. Con un diseño minimalista y elegante, este modelo es ideal para quienes buscan un look casual y versátil para el día a día. Su suela proporciona una excelente tracción y amortiguación, mientras que sus materiales resistentes aseguran una larga vida útil. El ajuste con cordones y su diseño clásico lo convierten en una opción imprescindible para complementar cualquier outfit.',
+          material: 'Material Principal: Cuero',
+          precio: '$ 380.950',
+          imagen: "/assets/702841-500-500.jpg",
+        },
+        {
+          idMen: '5',
+          nombre: 'Nike C1TY',
+          descripcion: 'Calzado Para hombre',
+          descripcion2: 'El Nike C1TY es un modelo que refleja el espíritu urbano con un diseño contemporáneo y versátil. Inspirado en la moda callejera, este tenis ofrece una combinación ideal de estilo y rendimiento, con materiales transpirables que permiten comodidad durante todo el día. Su estructura ligera y su suela flexible facilitan el movimiento, mientras que la estética minimalista lo hace ideal tanto para actividades casuales como para ocasiones más formales.',
+          material: 'Material Principal: Cuero',
+          precio: '$ 695.950',
+          imagen: "/assets/713556-500-500.jpg",
+        },
+        {
+          idMen: '6',
+          nombre: 'Nike Killshot 2 Leather',
+          descripcion: 'Calzado Para hombre',
+          descripcion2: 'El Nike Killshot 2 Leather es un tenis que combina estilo y funcionalidad con un diseño clásico y sofisticado. Inspirado en la moda deportiva de los años 70, este modelo ofrece una combinación ideal de comodidad, durabilidad y un look elegante. Su suela proporciona una excelente tracción y amortiguación, mientras que sus materiales de cuero aseguran una larga vida útil.',
+          material: 'Material Principal: Cuero',
+          precio: '$ 922.950',
+          imagen: "/assets/678515-500-500.jpg",
+        }
+      ];
     const producto = productosHombre.find((producto) => producto.idMen === idMen);
 
     return (
-        <div>
+      <>
         <button className="boton-regresar" onClick={() => navigate(-1)}>
         <i className="ri-arrow-left-line"></i> Volver
         </button>
-
+        <div>
             {producto ? (
                 <div className="producto-detalle">
                     <h1>{producto.nombre}</h1>
@@ -186,7 +224,10 @@ function VerProductosHombres() {
                 <p className="producto-no-encontrado">Producto no encontrado</p>
             )}
         </div>
+       </>
     );
 }
+      
+      
 
 export default VerProductosHombres;

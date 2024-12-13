@@ -176,6 +176,9 @@
 
 .modal h3 {
   margin-bottom: 30px;
+  position: relative;
+  top: -85px;
+  right: -40px;
 }
 
 .close-modal {
@@ -210,8 +213,8 @@
 }
 
 .event-card img {
-  width: 100%;
-  height: auto;
+  width: 90% !important;
+  height: 45vh !important;
   border-radius: 10px;
 }
 
