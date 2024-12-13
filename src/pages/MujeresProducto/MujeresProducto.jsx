@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import {  useNavigate, useParams } from "react-router-dom";
+import {  Link, useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import "./MujeresProducto.css";
 import "slick-carousel/slick/slick.css";
+import { useCart } from "../../components/Carrito/CartContext";
 import "slick-carousel/slick/slick-theme.css";
 
 // Lista de productos 
@@ -12,7 +13,7 @@ const productos = [
     img: "/assets/679005-500-500.webp",
     title: "AIR JORDAN 1 HIGH METHOD OF MAKE",
     description: "Calzado para mujer",
-    price: "$1.004.950",
+    price: "$1,004,950",
     material: "Cuero y gamuza",
     moreDescription: "Este modelo, inspirado en la elegancia y la funcionalidad, va más allá para que destaques con confianza. Los detalles en gamuza y el diseño envolvente se combinan para ofrecer un look moderno y versátil. Jugamos con acabados suaves y proporciones atrevidas, resaltando cada detalle para lograr un diseño único que fusiona moda y funcionalidad, ideal para mujeres que buscan comodidad sin renunciar al estilo.",
   },
@@ -21,7 +22,7 @@ const productos = [
     img: "/assets/677567-500-500.webp",
     title: "NIKE VICTORI ONE",
     description: "Chancla para mujer",
-    price: "$199.950",
+    price: "$199,950",
     material: "Plástico y goma",
     moreDescription: "Este modelo, inspirado en la elegancia y la funcionalidad, va más allá para que destaques con confianza. Los detalles en gamuza y el diseño envolvente se combinan para ofrecer un look moderno y versátil. Jugamos con acabados suaves y proporciones atrevidas, resaltando cada detalle para lograr un diseño único que fusiona moda y funcionalidad, ideal para mujeres que buscan comodidad sin renunciar al estilo.",
   },
@@ -30,7 +31,7 @@ const productos = [
     img: "/assets/678301-500-500.webp",
     title: "NIKE AIR MAX SC",
     description: "Calzado para mujer",
-    price: "$564.950",
+    price: "$564,950",
     material: "Tela y goma",
     moreDescription: "Este modelo, inspirado en la elegancia y la funcionalidad, va más allá para que destaques con confianza. Los detalles en gamuza y el diseño envolvente se combinan para ofrecer un look moderno y versátil. Jugamos con acabados suaves y proporciones atrevidas, resaltando cada detalle para lograr un diseño único que fusiona moda y funcionalidad, ideal para mujeres que buscan comodidad sin renunciar al estilo.",
   },
@@ -39,7 +40,7 @@ const productos = [
     img: "/assets/678274-500-500.webp",
     title: "W NIKE ZOOM BELLA 6 PRM",
     description: "Calzado para mujer",
-    price: "$524.950",
+    price: "$524,950",
     material: "Sintético y goma",
     moreDescription: "Este modelo, inspirado en la elegancia y la funcionalidad, va más allá para que destaques con confianza. Los detalles en gamuza y el diseño envolvente se combinan para ofrecer un look moderno y versátil. Jugamos con acabados suaves y proporciones atrevidas, resaltando cada detalle para lograr un diseño único que fusiona moda y funcionalidad, ideal para mujeres que buscan comodidad sin renunciar al estilo.",
   },
@@ -48,7 +49,7 @@ const productos = [
     img: "/assets/678936-500-500.webp",
     title: "AIR JORDAN 1 LOW SE",
     description: "Calzado para mujer",
-    price: "$834.950",
+    price: "$834,950",
     material: "Cuero y tela",
     moreDescription: "Este modelo, inspirado en la elegancia y la funcionalidad, va más allá para que destaques con confianza. Los detalles en gamuza y el diseño envolvente se combinan para ofrecer un look moderno y versátil. Jugamos con acabados suaves y proporciones atrevidas, resaltando cada detalle para lograr un diseño único que fusiona moda y funcionalidad, ideal para mujeres que buscan comodidad sin renunciar al estilo.",
   },
@@ -57,7 +58,7 @@ const productos = [
     img: "/assets/677786-500-500.webp",
     title: "NIKE COURT VISION ALTA",
     description: "Calzado para mujer",
-    price: "$254.950",
+    price: "$254,950",
     material: "Cuero y sintético",
     moreDescription: "Este modelo, inspirado en la elegancia y la funcionalidad, va más allá para que destaques con confianza. Los detalles en gamuza y el diseño envolvente se combinan para ofrecer un look moderno y versátil. Jugamos con acabados suaves y proporciones atrevidas, resaltando cada detalle para lograr un diseño único que fusiona moda y funcionalidad, ideal para mujeres que buscan comodidad sin renunciar al estilo.",
   },
@@ -89,6 +90,22 @@ const CustomNextArrow = (props) => {
 };
 
 const MujeresProducto = () => {
+  const { carrito, setCarrito } = useCart();
+  // Estado para el arreglo de productos en el carrito
+
+  const addToCart = () => {
+    setCarrito((prevCarrito) => {
+      const productoEnCarrito = prevCarrito.find(item => item.id === producto.id);
+      if (!productoEnCarrito) {
+        console.log("Producto agregado:", producto);
+        return [...prevCarrito, producto];
+      } else {
+        console.log("El producto ya está dentro del carrito");
+        return prevCarrito;
+      }
+    });
+  };
+
   const navigate = useNavigate(); // Hook para navegar
   const settings = {
     dots: true,
@@ -168,10 +185,15 @@ return (
           <h4 className="ver-mas-mujeres" onClick={openModal}>
             Ver información del producto
           </h4>
-          <div className="boton-mujeres">
+          <div className="boton-mujeres" onClick={addToCart}>
             <button className="carrito-mujeres">
               <i className="ri-shopping-cart-line"></i> Agregar al carrito
             </button>
+            <div>
+                <button className="ver-carrito">
+                  <Link to="/carrito">Ver carrito</Link>
+                </button>
+            </div>
           </div>
         </div>
       </div>

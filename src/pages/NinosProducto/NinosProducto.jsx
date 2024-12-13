@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./NinosProducto.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useCart } from "../../components/Carrito/CartContext";
 
 // Lista de productos 
 const productosNino = [
@@ -105,6 +106,22 @@ const CustomNextArrow = (props) => {
 };
 
 const NinosProducto = () => {
+  const { carrito, setCarrito } = useCart();
+    // Estado para el arreglo de productos en el carrito
+  
+    const addToCart = () => {
+      setCarrito((prevCarrito) => {
+        const productoEnCarrito = prevCarrito.find(item => item.id === producto.id);
+        if (!productoEnCarrito) {
+          console.log("Producto agregado:", producto);
+          return [...prevCarrito, producto];
+        } else {
+          console.log("El producto ya está dentro del carrito");
+          return prevCarrito;
+        }
+      });
+    };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -179,10 +196,15 @@ const NinosProducto = () => {
             <h4 className="ver-mas-Ninos" onClick={openModal}>
               Ver información del producto
             </h4>
-            <div className="boton-Ninos">
+            <div className="boton-Ninos" onClick={addToCart}>
               <button className="carrito-Ninos">
                 <i className="ri-shopping-cart-line"></i> Agregar al carrito
               </button>
+              <div>
+                <button className="ver-carrito">
+                  <Link to="/carrito">Ver carrito</Link>
+                </button>
+            </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-color-dark: #1e40af;
+    --text-dark: #1f1f1f;
+    --text-light: #4b5563;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --font-heading: "Roboto Condensed", sans-serif;
+}
+  
+
+/* ------------ Contenedor principal ------------------ */
+.carrito-compras {
+    display: flex;
+    margin: 40px 20px;
+}
+  
+  /* ------------- Sección de entrega ---------------- */
+.entrega-carrito {
+    padding: 20px;
+    width: 20%;
+    border-right: 2px solid  #ddd;
+}
+  
+.entregar-titulo {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 60px 350px 60px;
+}
+  
+.contenedor-total-entrega,
+.contenedor-subtotal-entrega {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+}
+  
+.realizar-compra {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color-dark);
+    color: var(--extra-light);
+    border: none;
+    border-radius: 60px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+  
+.realizar-compra:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+  
+/* --------------- Estilos del grid del carrito ---------------- */
+.grid-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    margin: 20px;
+}
+  
+.header-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 0;
+    text-align: center;
+    color: var(--primary-color);
+}
+  
+.fila-producto {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    border-radius: 8px;
+    padding: 5px;
+}
+  
+.producto-detalle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+  
+.producto-img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+  
+.precio-producto {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+  
+.cantidad-controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+  
+.disminuir-cantidad,
+.aumentar-cantidad {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+  
+.disminuir-cantidad {
+    background-color: #dc3545;
+}
+  
+.cantidad-producto {
+    font-size: 16px;
+    font-weight: bold;
+}
+  
+.subtotal-eliminar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.subtotal-producto {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 20px;
+}
+  
+.eliminar-producto {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+  

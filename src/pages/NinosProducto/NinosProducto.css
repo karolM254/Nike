@@ -75,6 +75,17 @@
   border-radius: 60px;
   border: none;
 }
+
+.ver-carrito {
+  position: relative;
+  top: 60px;
+  right: 120px;
+  border: none;
+  font-size: 1rem;
+  text-decoration: underline;
+  color: var(--text-dark);
+}
+  
   
 .ver-producto-Ninos .ri-shopping-cart-line {
   margin: 10px;
