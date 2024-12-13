@@ -218,9 +218,11 @@
 }
 
 .event-card {
+  margin: 40px 0;
+  width: 100%;
   overflow: hidden;
-  text-align: left;
-  padding: 50px;
+  position: relative;
+  top: -2rem;
 }
 
 .event-card img {

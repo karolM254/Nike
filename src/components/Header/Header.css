@@ -62,7 +62,7 @@ nav {
     left: 0;
     padding: 20px;
     z-index: 1000;
-    background-color: #020a14;
+    background-color: #021407;
     width: 100%;
     grid-template-columns: repeat(5, 1fr); 
     gap: 10px;
@@ -132,4 +132,9 @@ nav {
 
 .ri-shopping-cart-line {
     margin-left: 30px;
+}
+
+/*Para cuando de click se coloca azul*/
+.link.active {
+    color: var(--primary-color-dark); /* Cambiar color a azul cuando esté activo */
 }
