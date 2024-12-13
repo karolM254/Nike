@@ -10,7 +10,7 @@ const Customize = () => {
   const productos = [
     {
       id: 1,
-      img: "/assets/679006-500-500.webp" ,  
+      img: "/assets/679005-500-500.webp" ,  
       title: "AIR JORDAN 1 HIGH METHOD OF MAKE",
       description: "Calzado para mujer.",
       price: "$1.004.950",
@@ -19,7 +19,7 @@ const Customize = () => {
     },
     {
       id: 2,
-      img: "/assets/678939-500-500.webp", 
+      img: "/assets/678936-500-500.webp", 
       title: "AIR JORDAN 1 LOW SE",
       description: "Calzado para mujer",
       price: "$834.950",
@@ -108,7 +108,7 @@ const Customize = () => {
           </h3>
           {productos.map((producto) => (
             <div key={producto.id} className="producto-item">
-            <img src={producto.img} alt={producto.title} />
+            <img src={producto.img} />
               <h4>{producto.title}</h4>
               <p>{producto.description}</p>
               <a href="#" onClick={() => openModal(producto)}>
