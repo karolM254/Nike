@@ -15,7 +15,7 @@ html{
 
 .buscadorMen{
     border: 1px solid var(--primary-color-dark);
-    padding: 10px;
+    padding: 5px 5px;
     border-radius: 60px;
     font-size: 19px;
     width: 250px;
@@ -23,7 +23,7 @@ html{
 
 #buscadorMen input{
     border: none;
-    font-size: 19px;
+    
 }
 
 #buscarProductosMen{
@@ -32,6 +32,8 @@ html{
     background-color: transparent;
     position: relative;
     width: 100px;
+    font-size: 19px;
+    margin-bottom: 0;
 }
 
 

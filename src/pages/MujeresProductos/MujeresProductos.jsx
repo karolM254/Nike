@@ -9,7 +9,7 @@ const MujeresProductos = () => (
       <div className="buscador-mujeres-productos">
         <div className="buscador-mujeres">
           <i className="ri-search-line"></i>
-          <input type="text" placeholder="Buscar" className="buscar-producto" />
+          <input type="text" placeholder="Buscar" className="buscar-producto-mujer" />
         </div>
       </div>
 
