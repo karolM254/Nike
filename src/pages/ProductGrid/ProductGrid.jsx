@@ -61,8 +61,6 @@ const ProductGrid = () => {
           </div>
         ))}
       </div>
-      
-
       <div className="sidebar">
         <h3>DEPORTES</h3>
         <ul>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./MujeresProducto.css";
 
 // Lista de productos 
@@ -61,14 +61,11 @@ const productos = [
 ];
 
 const MujeresProducto = () => {
-  // Estado para controlar la visibilidad del modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para el modal
+  const { id } = useParams(); // Obtener el id desde la URL
+  const navigate = useNavigate(); // Hook para navegar
 
-  // Obtener el id del producto desde la URL
-  const { id } = useParams();
-
-  // Buscar el producto con el id correspondiente
-  const producto = productos.find((producto) => producto.id.toString() === id);
+  const producto = productos.find((producto) => producto.id.toString() === id); // Buscar producto
 
   if (!producto) {
     return <p>Producto no encontrado.</p>;
@@ -85,6 +82,11 @@ const MujeresProducto = () => {
   return (
     <div>
       <main className="contenido-mujeres">
+        {/* Botón para regresar */}
+        <button className="boton-regresar" onClick={() => navigate(-1)}>
+        <i className="ri-arrow-left-line"></i> Volver
+        </button>
+
         {/* Producto destacado */}
         <div className="ver-producto-mujer">
           <img src={producto.img} alt={producto.title} />
@@ -127,7 +129,7 @@ const MujeresProducto = () => {
           <div className="modal-overlay">
             <div className="modal">
               <button className="close-modal" onClick={closeModal}>
-                &times; {/* Representación de la "x" */}
+                &times;
               </button>
               <h3>Descripción:</h3>
               <p>{producto.moreDescription}</p>
@@ -139,16 +141,18 @@ const MujeresProducto = () => {
 
         {/* Grid de productos relacionados */}
         <div className="grid-contenido-mujeres">
-          {productos.map((producto) => (
-            <div className="col" key={producto.id}>
-              <img src={producto.img} alt={producto.title} />
-              <h4>{producto.title}</h4>
-              <div className="precio-mujeres">
-                <h5>{producto.description}</h5>
-                <p>{producto.price}</p>
+          {productos
+            .filter((item) => item.id !== parseInt(id)) // Excluir el producto actual
+            .map((producto) => (
+              <div className="col" key={producto.id}>
+                <img src={producto.img} alt={producto.title} />
+                <h4>{producto.title}</h4>
+                <div className="precio-mujeres">
+                  <h5>{producto.description}</h5>
+                  <p>{producto.price}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </main>
     </div>
@@ -156,3 +160,4 @@ const MujeresProducto = () => {
 };
 
 export default MujeresProducto;
+

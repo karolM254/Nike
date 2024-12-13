@@ -95,4 +95,25 @@
   background-color: var(--primary-color-dark);
   width: 10%;
 }
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-button i {
+  font-size: 20px;
+}
+
+.back-button:hover {
+  background-color: #1e40af;
+}
 

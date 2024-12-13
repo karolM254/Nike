@@ -92,7 +92,7 @@
   }
   .divider {
     margin: 20px 0;
-    margin-left: 45px;
+    margin-left: 490px;
     position: absolute;
     top: 57%;
     width: 95%;
@@ -117,6 +117,7 @@
   .related-products__item img {
     width: 450px;
     border-radius: 8px;
+ 
   }
   
   .related-products__item h3 {
@@ -124,6 +125,7 @@
     color: #2563eb;
     margin-bottom: 10px;
     margin-right: 240px;
+
   }
   
   .related-products__item p {
@@ -131,8 +133,9 @@
     color: #2563eb;
     font-weight: 600;
     bottom: 4;
-    position: absolute;
     margin-left: 350px;
+    margin-bottom: 40px;
+    
   }
   
   .related-products__item h4{
@@ -195,5 +198,26 @@
     text-align: justify;
     font-weight: 500;
 
+  }
+  .back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .back-button i {
+    font-size: 20px;
+  }
+  
+  .back-button:hover {
+    background-color: #1e40af;
   }
   
