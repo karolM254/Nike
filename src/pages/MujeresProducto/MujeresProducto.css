@@ -9,30 +9,6 @@
   --font-heading: "Roboto Condensed", sans-serif;
 }
 
-.boton-regresar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  margin-top: 15px;
-  margin-left: 15px;
-}
-
-.boton-regresar:hover {
-  background-color: #1e40af; /* Color más oscuro en hover */
-  transform: scale(1.05); /* Efecto de agrandamiento */
-  transition: transform 0.3s ease;
-}
-
-
-
 /* -------------- Producto/descripción -------------- */
 .ver-producto-mujer {
   display: grid;
@@ -52,7 +28,6 @@
 .info-producto-mujer h3 {
   color: var(--primary-color-dark);
   font-size: 2rem;
- margin-top: 80px;
 }
   
 .info-producto-mujer h4 {
@@ -106,14 +81,10 @@
   justify-content: flex-end;
   height: 50px;
   cursor: pointer;
-  position: relative;
-  top: -33px;
 }
   
 .ver-mas-mujeres {
   margin-bottom: 100px;
-  position: relative;
-  top: 15px;
 }
   
 .division-productos-mujeres {
@@ -122,9 +93,10 @@
   height: 2px;
   border: none;
   position: relative;
-  top: -60px;
+  top: -35px;
   width: calc(90% - 30px); /* Hace que sea más largo al reducir el margen total */
   left: 2px;
+
 }
   
 /* ------------------ Productos -------------------- */
@@ -138,12 +110,6 @@
 .grid-contenido-mujeres img {
   cursor: pointer;
   border-radius: 11px;
-}
-    
-.grid-contenido-mujeres h4{
-  color: var(--primary-color-dark);
-  font-size: 1.rem;
-  margin: 10px 0 0 5px;
 }
     
 .grid-contenido-mujeres h4{
@@ -220,6 +186,54 @@
 }
 
 /*---------------------- Slider -------------------------*/
+.events-upcoming {
+  margin: 40px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  top: -3rem;
+}
 
+.event-card {
+  overflow: hidden;
+  text-align: left;
+  padding: 50px !important;
+}
 
-  
+.event-card img {
+  width: 90% !important;
+  height: 45vh !important;
+  border-radius: 10px;
+}
+
+.event-card h4 {
+  color: var(--primary-color-dark);
+  font-size: 1.rem;
+  margin: 10px 0 0 5px;
+}
+
+.slick-dots li button:before {
+  color: var(--primary-color-dark) !important; 
+}
+
+/* ------------------ estilos boton devolver -------------------- */
+.boton-regresar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.boton-regresar:hover {
+  background-color: #1e40af; /* Color más oscuro en hover /
+  transform: scale(1.05); / Efecto de agrandamiento */
+  transition: transform 0.3s ease;
+}

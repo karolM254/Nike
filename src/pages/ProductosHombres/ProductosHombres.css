@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
+
 /* HombresProductos.css */
 
 html{
@@ -16,17 +18,20 @@ html{
     padding: 10px;
     border-radius: 60px;
     font-size: 19px;
+    width: 250px;
 }
 
 #buscadorMen input{
     border: none;
     font-size: 19px;
-    width: 200px;
 }
 
 #buscarProductosMen{
     outline: none;
     border: none;
+    background-color: transparent;
+    position: relative;
+    width: 100px;
 }
 
 
@@ -35,9 +40,7 @@ html{
     grid-template-columns: repeat(3, 1fr); /* Tres columnas exactas */
     gap: 16px; /* Espaciado entre tarjetas */
     position: relative;
-    
     right: -3rem;
-
 }
  
 .imgProductoMen {
@@ -81,20 +84,4 @@ html{
     top: -21px;
 }
 
-.mas-productos-hombres {
-    display: flex;
-    justify-content: center;
-    margin: 40px;
-}
-  
-.boton-ver-mas-productos-hombres {
-    border: none;
-    padding: 10px;
-    border-radius: 60px;
-    font-size: 19px;
-    color: var(--white);
-    background-color: var(--primary-color-dark);
-    width: 10%;
-    cursor: pointer;
-}
   
