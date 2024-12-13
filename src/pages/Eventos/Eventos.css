@@ -21,7 +21,7 @@
 
 .title-event{
     color: var(--primary-color-dark);
-    font-size: 2rem;
+    font-size: 2.3em;
     margin-top: 10px;
     margin-bottom: 22px;
 }
@@ -49,6 +49,8 @@
     text-align: left;
     padding: 10px;
     margin: 10px;
+    position: relative;
+    right: 5px;
 }
 
 .event-card-carrucel-img{
@@ -88,8 +90,12 @@
   opacity: 1 !important;
 }
 
+.slick-prev::before,
+.slick-next::before {
+  content: none;
+}
 /* Estilos del modal */
-.modal-overlay {
+.modal-overlay-events {
     position: fixed;
     top: 0;
     left: 0;
@@ -102,18 +108,18 @@
     z-index: 1000;
 }
   
-.modal-content {
+.modal-content-events {
     background: white;
     border-radius: 10px;
     width: 90%;
     max-width: 600px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
+    font-family: var(--font-heading);
     position: relative;
 }
   
-.close-button {
+.close-button-events {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -121,16 +127,16 @@
     border: none;
     font-size: 1.7rem;
     cursor: pointer;
-    color: var(--primary-color-dark);
+    color: #000;
 }
   
-.modal-header {
+.modal-header-events {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
   
-.modal-image {
+.modal-image-events {
     width: 270px;
     height: 160px;
     object-fit: cover;
@@ -138,11 +144,11 @@
     margin-right: 15px;
 }
   
-.modal-details {
+.modal-details-events {
     flex: 1;
 }
   
-.modal-title {
+.modal-title-events {
     font-size: 1.5rem;
     color: var(--primary-color-dark);
     margin: 0;
@@ -150,8 +156,8 @@
     top: -17px;
 }
   
-.modal-date,
-.modal-location {
+.modal-date-events,
+.modal-location-events {
     color: #646262;
     font-size: 1rem;
     margin: 12px 0;
@@ -159,19 +165,20 @@
     top: -15px;
 }
   
-.modal-body {
+.modal-body-events {
     margin-top: 20px;
 }
   
-  .modal-body h4 {
+.modal-body-events .modal-body-events-title {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #000;
-  }
+}
   
-  .modal-body p {
+.modal-body-events .modal-body-events-subtitle {
     font-size: 1rem;
     color: #000;
     line-height: 1.5;
-  }
+}
   
+

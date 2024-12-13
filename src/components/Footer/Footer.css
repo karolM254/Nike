@@ -72,4 +72,7 @@ footer {
   gap: 1rem;
   font-size: 1.2rem;
 }
-  
+
+.payment__cards i{
+  color: var(--white);
+}

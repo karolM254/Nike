@@ -14,7 +14,7 @@ function Footer() {
           <Link to="/productosmujeres">
             <p>Women</p>
           </Link>
-          <Link to="">
+          <Link to="/marcas">
             <p>Top Brands</p>
           </Link>
           <Link to="">
@@ -65,10 +65,18 @@ function Footer() {
           Copyright © 2024 Web Design Mastery. All rights reserved.
         </div>
         <div className="payment__cards">
-          <span><i className="ri-visa-fill"></i></span>
-          <span><i className="ri-bank-card-2-fill"></i></span>
-          <span><i className="ri-mastercard-line"></i></span>
-          <span><i className="ri-bank-card-2-line"></i></span>
+          <Link to="https://www.visa.com.co/pague-con-visa/tecnologias-presentadas/evoluciona-nuevas-formas-pago.html">
+            <i className="ri-visa-fill"></i>
+          </Link>
+          <Link to="">
+            <i className="ri-bank-card-2-fill"></i>
+          </Link>
+          <Link tp="https://www.mastercard.com.co/es-co/consumidores/formas-de-pago.html">
+            <i className="ri-mastercard-line"></i>
+          </Link>
+          <Link to="">
+            <i className="ri-bank-card-2-line"></i>
+          </Link>
         </div>
       </div>
     </footer>

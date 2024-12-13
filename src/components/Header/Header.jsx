@@ -12,7 +12,11 @@ function DropdownMenu({ categories }) {
           <h4 className={`tittle-${category.key}`}>{category.title}</h4>
           <ul className={`list-${category.key}`}>
             {category.items.map((item, idx) => (
-              <li key={idx} className={`${category.key}`}>{item}</li>
+              <React.Fragment key={idx}>
+                <li className={`${category.key}`}>{item}</li>
+                {/* Insertar un <hr> después de las tallas US */}
+                {item.includes('US') && categories[index].items[idx + 1]?.includes('EU') && <hr className='contenido-women-hr'/>}
+              </React.Fragment>
             ))}
           </ul>
         </div>

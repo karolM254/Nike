@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
+
 :root {
     --primary-color: #2563eb;
     --primary-color-dark: #1e40af;
@@ -29,7 +31,7 @@ img {
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-heading);
 }
 
 nav {
@@ -62,9 +64,9 @@ nav {
     left: 0;
     padding: 20px;
     z-index: 1000;
-    background-color: #021407;
+    background-color: #020a14;
     width: 100%;
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(11, 1fr);  /*5, 1fr*/
     gap: 10px;
     opacity: 0;
     visibility: hidden;
@@ -83,6 +85,9 @@ nav {
     color: #ddd;
     padding: 5px;
     margin: 0;
+    /*Styling para mover los submenus*/
+    position: relative;
+    left: 50px;
 }
 
 .contenido-women h4 {
@@ -106,6 +111,15 @@ nav {
 
 .contenido-women li:hover {
     color: var(--primary-color);
+}
+
+/*Divisón entre US y EU*/
+.contenido-women-hr {
+    border: 0;
+    border-top: 6px solid #fff;
+    margin: 5px 0; /* Espaciado vertical */
+    width: 80%; 
+    align-self: center;
 }
 
 .link.logo {
