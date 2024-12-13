@@ -14,22 +14,22 @@ export const Eventos = () => {
     if (!isOpen) return null;
   
     return (
-      <div className="modal-overlay">
-        <div className="modal-content">
-          <button className="close-button" onClick={onClose}>
+      <div className="modal-overlay-events">
+        <div className="modal-content-events">
+          <button className="close-button-events" onClick={onClose}>
             &times;
           </button>
-          <div className="modal-header">
-            <img src={event.image} alt={event.title} className="modal-image" />
-            <div className="modal-details">
-              <h3 className="modal-title">{event.title}</h3>
-              <p className="modal-date">
+          <div className="modal-header-events">
+            <img src={event.image} alt={event.title} className="modal-image-events" />
+            <div className="modal-details-events">
+              <h3 className="modal-title-events">{event.title}</h3>
+              <p className="modal-date-events">
                 <span role="img" aria-label="calendar">
                   📅
                 </span>{" "}
                 {event.date}
               </p>
-              <p className="modal-location">
+              <p className="modal-location-events">
                 <span role="img" aria-label="location">
                   📍
                 </span>{" "}
@@ -37,9 +37,9 @@ export const Eventos = () => {
               </p>
             </div>
           </div>
-          <div className="modal-body">
-            <h4>Descripción</h4>
-            <p>{event.description}</p>
+          <div className="modal-body-events">
+            <h4 className="modal-body-events-title">Descripción</h4>
+            <p className="modal-body-events-subtitle">{event.description}</p>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@ export const Eventos = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", left: "-50px", zIndex: 2 }}
+        style={{ ...style, display: "block", left: "-30px", zIndex: 2 }}
         onClick={onClick}
       >
         &#8249;
@@ -68,7 +68,7 @@ export const Eventos = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", right: "-30px", zIndex: 2 }}
+        style={{ ...style, display: "block", right: "-35px", zIndex: 2 }}
         onClick={onClick}
       >
         &#8250;

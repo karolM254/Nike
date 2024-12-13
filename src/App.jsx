@@ -30,8 +30,7 @@ import Compras1 from "./pages/Compras1/Compras1";
 import Compras2 from "./pages/Compras2/Compras2";
 import Carrito from "./pages/Carrito/Carrito";
 import { CartProvider } from "./components/Carrito/CartContext";
-import Reseñas from "./pages/reseñas/Reseñas";
-import Reseñas1 from "./pages/reseñas_2/Reseñas1";
+
 
 
 function App() { 
@@ -94,9 +93,9 @@ function App() {
             {/* Ruta para la sección del carrito */}
             <Route path="/carrito" element={<Carrito />} />
             {/* Ruta para la reseñas */}
-            <Route path="/resenas" element={<Reseñas />}/>
+            {/* <Route path="/resenas" element={<Reseñas />}/> */}
             {/* Ruta para mostrar la reseña */}
-            <Route path="/mostrar_resena" element={<Reseñas1 />}/>
+            {/* <Route path="/mostrar_resena" element={<Reseñas1 />}/> */}
 
           </Routes>
           <Footer />

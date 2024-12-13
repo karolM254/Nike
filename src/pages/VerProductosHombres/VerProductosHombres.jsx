@@ -168,7 +168,7 @@ const SliderMen = () => {
         <div>
             {producto ? (
                 <div className="producto-detalle">
-                    <h1>{producto.nombre}</h1>
+                    <h1 className='tittle-productos-men'>{producto.nombre}</h1>
                     <img src={producto.imagen} alt={producto.nombre} className="ImagenPrincipal" />
                     <p className="descripcionMen" onClick={() => setMostrarModal(true)}>
                         {producto.descripcion}

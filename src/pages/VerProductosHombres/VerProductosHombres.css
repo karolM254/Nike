@@ -14,28 +14,32 @@
 .producto-detalle {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 0 auto;
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
+    max-width: 600px;
 }
   
 .ImagenPrincipal {
     width: 60%;
     position: relative;
-    left: -23rem;
-    top: -2rem;
+    left: -29rem;
+    top: -5rem;
     border-radius: 11px;
 }
+
+
   
-.producto-detalle h1 {
+.tittle-productos-men {
     font-size: 30px;
     color: var(--primary-color-dark);
     font-weight: bolder;
+    text-align: left; /* Centra el texto horizontalmente */
     margin-bottom: 10px;
-    position: relative;
-    left: -1rem;
-    bottom: -2rem;
+    width: 100%; /* Ajusta el ancho del contenedor */
+    max-width: 600px; /* Limita el ancho máximo */
+    
 }
   
 .descripcionMen {
@@ -45,16 +49,16 @@
     margin-bottom: 20px;
     font-weight: bold;
     position: relative;
-    left: -1rem;
-    top: -20rem;
+    left: -195px;
+    top: -24rem;
 }
 
 .materialHombre {
     font-size: 18px;
     color: #646262;
     position: relative;
-    left: -1rem;
-    top: -330px;
+    left: -170px;
+    top: -410px;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -63,22 +67,22 @@
     color: var(--primary-color);
     font-weight: bolder;
     position: relative;
-    left: -1rem;
-    top: -320px;
+    left: -238px;
+    top: -415px;
     font-family: "Roboto Condensed", sans-serif;
 }
   
 .producto-detalle select {
     width: 35%;
-    margin: 10px 0;
+    margin: 1px 0;
     padding: 8px;
     font-size: 14px;
     background-color: #ececec;
     border: none;
     border-radius: 50px;
     position: relative;
-    left: -1rem;
-    top: -310px;
+    left: -185px;
+    top: -415px;
 }
 
 .moreInformationMen {
@@ -87,12 +91,12 @@
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    left: -1rem;
-    top: -18rem;
+    left: -170px;
+    top: -25rem;
 }
   
 .btn-aggCarrito {
-    width: 50%;
+    width: 40%;
     background-color: var(--primary-color-dark);
     color: white;
     padding: 14px;
@@ -104,27 +108,27 @@
     margin-top: 10px;
     position: relative;
     right: -29rem;
-    top: -20rem;
+    top: -29rem;
 }
   
 .btn-aggCarrito:hover {
     background-color: #004494;
 }
 
-.logo-carro-2 {
+.logo-carro-2 i {
     color: #fff; 
     position: relative;
-    right: -470px;
-    top: -278px;
+    right: -370px;
+    top: -404px;
     z-index: 1;
 }
 
 hr {
-    width: 82rem;
+    width: 80rem;
     border: 1px solid var(--primary-color-dark);
     position: relative;
-    top: -17rem; 
-    left: -380px;
+    top: -28rem; 
+    left: -10px;
 }
   
 
@@ -194,13 +198,12 @@ hr {
 .events-container {
     font-family: Arial, sans-serif;
     margin: 0 auto;
-    margin-bottom: 20px;
     padding: 30px;
-    max-width: 1250px;
-    height: 30px;
+    max-width: 1300px;
+    height: 10px;
     text-align: center;
     position: relative;
-    top: -20rem;
+    top: -26rem;
     left:-22rem;
 }
 
