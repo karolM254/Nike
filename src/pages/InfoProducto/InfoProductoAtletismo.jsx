@@ -25,6 +25,11 @@ const InfoProductoAtletismo = () => {
 
   return (
     <div className="product-page">
+      {/* Botón para retroceder */}
+      <button className="back-button" onClick={() => window.history.back()}>
+        <i className="ri-arrow-left-line"></i> Volver
+      </button>
+
       {/* Detalle del producto */}
       <div className="product-detail">
         <div className="product-detail__image">

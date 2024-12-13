@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from 'react-router-dom'; // Importamos useNavigate
 import "./NinosProducto.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Lista de productos 
+
 const productosNino = [
+
   {
     id: 1,
     img: "/assets/zapato1.jpg",
@@ -105,6 +107,7 @@ const CustomNextArrow = (props) => {
 };
 
 const NinosProducto = () => {
+  const navigate = useNavigate(); // Aquí usamos el hook useNavigate
   const settings = {
     dots: true,
     infinite: true,
@@ -150,6 +153,9 @@ const NinosProducto = () => {
   return (
     <div>
       <main className="contenido-Ninos">
+      <button className="boton-regresar" onClick={() => navigate(-1)}>
+        <i className="ri-arrow-left-line"></i> Volver
+      </button>
         {/* Producto destacado */}
         <div className="ver-producto-Ninos">
           <img src={producto.img} alt={producto.title} />

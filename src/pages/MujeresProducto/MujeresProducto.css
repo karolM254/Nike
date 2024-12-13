@@ -9,6 +9,29 @@
   --font-heading: "Roboto Condensed", sans-serif;
 }
 
+.boton-regresar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.boton-regresar:hover {
+  background-color: #1e40af; /* Color más oscuro en hover */
+  transform: scale(1.05); /* Efecto de agrandamiento */
+  transition: transform 0.3s ease;
+}
+
+
 
 /* -------------- Producto/descripción -------------- */
 .ver-producto-mujer {

@@ -164,12 +164,17 @@ li > a:hover {
 
 .linea {
     position: absolute;
-    width: 2.9%;
+    width: 1.7%;
     background-color: #8e8e8e;
-    height: 70%;
+    height: 92%;
     left: 280px;
     top: 20px;
     border-radius: 15px;
+}
+span{
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e40af;
 }
 
 html, body {
