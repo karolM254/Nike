@@ -3,7 +3,7 @@ import "../ProductGrid/ProductGrid.css";
 import { Link } from "react-router-dom";
 
 const ProductGrid = () => {
-  const searchInput = useRef(null); // Usamos una referencia para el input de búsqueda
+  const searchInput = useRef(null);
 
   // Lista de productos
   const products = [
@@ -14,13 +14,11 @@ const ProductGrid = () => {
     { id: 5, name: "AIR SUPER STAR VOL", category: "Guayos Profesionales", price: "$499.000", image: "/assets/guayo5.jpg" },
     { id: 6, name: "CLASSIC NIKE BLACK", category: "Guayos Profesionales", price: "$750.000", image: "/assets/guayo6.jpg" }
   ];
-  
-  // Estado para productos filtrados
+
   const [filteredProducts, setFilteredProducts] = useState(products);
 
-  // Función para manejar la búsqueda
   const handleSearch = () => {
-    const query = searchInput.current.value.toLowerCase(); // Convertir la búsqueda a minúsculas
+    const query = searchInput.current.value.toLowerCase();
     const filtered = products.filter((product) =>
       product.name.toLowerCase().includes(query) ||
       product.category.toLowerCase().includes(query)
@@ -29,39 +27,8 @@ const ProductGrid = () => {
   };
 
   return (
-    <div className="content">
-      <div className="search">
-        <input
-          ref={searchInput} // Referencia para capturar el valor
-          type="search"
-          placeholder="Buscar"
-          style={{ width: "56%", fontSize: "calc(15px + 10px)" }}
-          onChange={handleSearch} // Llamar a la función al cambiar el valor
-        />
-      </div>
-      <div className="lupa">
-        <img
-          src="/assets/simbolo-de-la-interfaz-de-busqueda.png"
-          alt="lupa"
-          onClick={handleSearch} // Llamar a la función al hacer clic
-        />
-      </div>
-
-      <div className="product-grid">
-        {filteredProducts.map((product) => (
-          <div className="product" key={product.id}>
-            <Link to={`/futbol/infoproducto/${product.id}`}>
-              <div className="product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <h2>{product.name}</h2>
-              <p className="info">{product.category}</p>
-              <p className="price">{product.price}</p>
-            </Link>
-          </div>
-        ))}
-      </div>
-      <div className="sidebar">
+    <div className="layout">
+      <aside className="sidebar">
         <h3>DEPORTES</h3>
         <ul>
           <li><span>FÚTBOL</span></li>
@@ -70,9 +37,41 @@ const ProductGrid = () => {
           <li><Link to="/atletismo">ATLETISMO</Link></li>
         </ul>
         <div className="linea"></div>
-      </div>
+      </aside>
+      <main className="main-content">
+        <div className="search">
+          <input
+            ref={searchInput}
+            type="search"
+            placeholder="Buscar"
+            onChange={handleSearch}
+          />
+          <div className="lupa">
+            <img
+              src="/assets/simbolo-de-la-interfaz-de-busqueda.png"
+              alt="lupa"
+              onClick={handleSearch}
+            />
+          </div>
+        </div>
+        <div className="product-grid">
+          {filteredProducts.map((product) => (
+            <div className="product" key={product.id}>
+              <Link to={`/futbol/infoproducto/${product.id}`}>
+                <div className="product-image">
+                  <img src={product.image} alt={product.name} />
+                </div>
+                <h2>{product.name}</h2>
+                <p className="info">{product.category}</p>
+                <p className="price">{product.price}</p>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </main>
     </div>
   );
 };
 
 export default ProductGrid;
+
