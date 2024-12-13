@@ -25,6 +25,7 @@ import InfoProductoAtletismo from "./pages/InfoProducto/InfoProductoAtletismo";
 import Tennis from "./pages/Tennis/Tennis";
 import Atletismo from "./pages/Atletismo/Atletismo";
 import { Eventos } from "./pages/Eventos/Eventos";
+import WooCommerceAPI from "./components/WoocomerceApi";
 
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
+      <WooCommerceAPI />
     </Router>
   );
 }

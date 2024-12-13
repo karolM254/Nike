@@ -1,1 +1,9 @@
-Hola mundo y nike
+Trabajo de investigación de conexión entre React y WooCommerce realizado por: 
+- Luis Carlos Hernandez Henao.
+- Kevin Leandro Muñoz Duque.
+- Juan Sebastián Duque López.
+- Juan Esteban Soto Cardona.
+- Edwin Andres Rangel Gomez.
+- Johan Sebastián Mina López.
+- Juan David Villamil Rojas.
+- Isaac Echeverry García.
