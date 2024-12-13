@@ -153,8 +153,6 @@ header {
   margin-bottom: 1rem;
   display: flex;
   align-items: center; /* Alinea verticalmente los elementos */
-  position: relative;
-  left: -10rem;
 }
 
 .banner__content .price span {

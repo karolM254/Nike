@@ -2,13 +2,33 @@
 import React, { useState } from 'react';
 /* eslint-enable no-unused-vars */
 import PropTypes from 'prop-types'; // Importar PropTypes para validar props
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Slider from "react-slick"; // Asegúrate de tener react-slick instalado
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './VerProductosHombres.css';
+import { useCart } from "../../components/Carrito/CartContext";
 
 function VerProductosHombres() {
+
+  const { carrito, setCarrito } = useCart();
+  // Estado para el arreglo de productos en el carrito
+
+  const addToCart = () => {
+    console.log("Producto ID:", producto.idMen); // Verifica que el id se esté tomando correctamente
+    setCarrito((prevCarrito) => {
+      const productoEnCarrito = prevCarrito.find(item => item.idMen === producto.idMen);
+      if (!productoEnCarrito) {
+        console.log("Producto agregado:", producto);
+        return [...prevCarrito, producto];
+      } else {
+        console.log("El producto ya está dentro del carrito");
+        return prevCarrito;
+      }
+    });
+  };
+  
+
   const navigate = useNavigate(); // Creamos la función navigate
 
 
@@ -106,7 +126,7 @@ const SliderMen = () => {
         {
             idMen: '1',
             nombre: 'Air Jordan 11 Retro "Legend Blue"',
-            descripcion: 'Calzado Para hombre',
+            descriMepcion: 'Calzado Para hombre',
             descripcion2: 'La suela de goma ofrece una tracción excepcional, ideal para cambios rápidos de dirección. Su lengüeta y cuello acolchados garantizan un ajuste cómodo y seguro durante los juegos más intensos, mientras que las agujetas redondas aseguran un ajuste firme y uniforme. Perfectos para jugadores que buscan combinar rendimiento y estilo en cada jugada',
             material: 'Material Principal: Cuero',
             precio: '$ 1.294.950',
@@ -210,11 +230,18 @@ const SliderMen = () => {
                             </div>
                         </div>
                     )}
+                    <div>
 
-                    <span className="logo-carro-2">
-                        <i className="ri-shopping-cart-line"></i>
-                    </span>
-                    <button className="btn-aggCarrito">Agregar al carrito</button>
+                    <div className="btn-hombre" onClick={addToCart}>
+                      <button className="btn-aggCarrito"> <i className="ri-shopping-cart-line"></i>Agregar al carrito</button>
+                      
+                      <div>
+                        <button className="ver-carrito-men">
+                          <Link to="/carrito">Ver carrito</Link>
+                        </button>
+                      </div>
+                    </div>
+                    </div>
                     <hr />
 
                     {/* Integración del componente SliderMen */}
@@ -231,3 +258,4 @@ const SliderMen = () => {
       
 
 export default VerProductosHombres;
+
