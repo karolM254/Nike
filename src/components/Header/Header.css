@@ -116,9 +116,9 @@ nav {
 /*Divisón entre US y EU*/
 .contenido-women-hr {
     border: 0;
-    border-top: 6px solid #fff;
+    border-top: 2px solid #fff;
     margin: 5px 0; /* Espaciado vertical */
-    width: 80%; 
+    width: 70%; 
     align-self: center;
 }
 

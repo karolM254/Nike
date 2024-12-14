@@ -90,7 +90,7 @@ const SectionBrands = () => {
           </div>
           <div className="contenido-BRANDS3">
             <div className="imagen-section-BRANDS3">
-              <img src="assets/converse.png" alt="Logo de Converse" />
+              <img src="assets/Converse-Logo-PNG-HD-Image-removebg-preview.png" alt="Logo de Converse" />
             </div>
             <h1>CIEN AÑOS EN EL JUEGO</h1>
             <p>
@@ -107,7 +107,7 @@ const SectionBrands = () => {
         <div className="container-principal-BRANDS4">
           <div className="contenido-BRANDS4">
             <div className="imagen-section-BRANDS4">
-              <img src="assets/jordan.png" alt="Logo de Jordan" />
+              <img src="assets/jordan2-removebg-preview.png" alt="Logo de Jordan" />
             </div>
             <h1>TRIBUTO A LA GRANDEZA</h1>
             <p>

@@ -63,9 +63,9 @@ function Header() {
       { key: 'new-men', title: 'NEW', items: ['Latest Arrivals', 'Special Offers', 'Limited Editions'] },
     ],
     sports: [
-      { key: 'type-sports', title: 'TYPE', items: ['Running', 'Basketball', 'Football', 'Tennis', 'Training'] },
-      { key: 'brands-sports', title: 'BRANDS', items: ['Nike', 'Adidas', 'Puma', 'Under Armour', 'Reebok'] },
-      { key: 'material-sports', title: 'MATERIAL', items: ['Breathable mesh', 'Rubber', 'Synthetic'] },
+      { key: 'size-kids', title: 'FOOT SIZE', items: ['US Size 3', 'US Size 4', 'US Size 5', 'Size 30 EU', 'Size 31 EU', 'Size 32 EU'] },
+      { key: 'color-sports', title: 'COLOR', items: ['Blue', 'Yellow', 'Pink', 'White', 'Black'] },
+      { key: 'material-sports', title: 'MATERIAL', items: ['Leather', 'Synthetic', 'Breathable'] },
       { key: 'price-sports', title: 'PRICE', items: ['$50-100', '$100-150', '$150-200', 'More than $200'] },
       { key: 'new-sports', title: 'NEW', items: ['Performance Gear', 'Sale Items', 'Seasonal Specials'] },
     ],

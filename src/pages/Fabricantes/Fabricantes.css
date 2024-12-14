@@ -29,7 +29,7 @@
 .tarjeta-fabricantes {
     display: flex;
     margin-bottom: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid #6a6a6a;
 }
 
 .tarjeta-imagen {
@@ -48,11 +48,15 @@
     width: 70%;
 }
 
-.tarjeta-contenido h2 {
+.tarjeta-contenido .tarjeta-contenido-h2 {
     margin: 10px 5px;
 }
 
-.tarjeta-contenido p {
+.tarjeta-contenido .tarjeta-contenido-parrafo {
     text-align: justify;
     margin: 0 5px;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 600px;
 }

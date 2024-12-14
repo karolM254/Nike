@@ -5,7 +5,7 @@ export const SobreNosotros = () => {
         <>
             <div className='titulo-nosotros'>
                 <h1>Sobre Nosotros</h1>
-                <hr />
+                <hr className='nosotros-hr'/>
             </div>
             <div className='contenido'>
                 <div className='imagenes'>
