@@ -5,12 +5,13 @@ import "./Customize.css";
 const Customize = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null); // Estado para la imagen seleccionada
+  const [borderColor] = useState("#1e40af"); // Estado fijo para el color del borde
 
-  
   const productos = [
     {
       id: 1,
-      img: "/assets/679005-500-500.webp" ,  
+      img: "/assets/679005-500-500.webp",
       title: "AIR JORDAN 1 HIGH METHOD OF MAKE",
       description: "Calzado para mujer.",
       price: "$1.004.950",
@@ -19,7 +20,7 @@ const Customize = () => {
     },
     {
       id: 2,
-      img: "/assets/678936-500-500.webp", 
+      img: "/assets/678936-500-500.webp",
       title: "AIR JORDAN 1 LOW SE",
       description: "Calzado para mujer",
       price: "$834.950",
@@ -38,11 +39,20 @@ const Customize = () => {
     setSelectedProduct(null);
   };
 
+  const handleImageClick = (imageId) => {
+    setSelectedImage(imageId);
+  };
+
   return (
-    <div className="personaliza-container">
+    <div className="personaliza">
+      <button className="back-button" onClick={() => window.history.back()}>
+        <i className="ri-arrow-left-line"></i> Volver
+      </button>
+      <div className="titulo">
+        <h1>PERSONALIZA AHORA TU CALZADO</h1>
+      </div>
       <div className="personaliza-form">
         <div className="formulario-contenedor">
-          <h1 className="titulo">PERSONALIZA AHORA TU CALZADO</h1>
           <div className="formulario">
             <div className="container">
               <div className="form-group-contenedor">
@@ -89,30 +99,34 @@ const Customize = () => {
               </div>
             </div>
 
-            <p className="precio">{selectedProduct ? selectedProduct.price : "$1.004.950"}</p>
+            <p className="precio">{selectedProduct ? selectedProduct.price : "$ 1.004.950"}</p>
             <a href="#" className="form-link" onClick={() => openModal(productos[0])}>
               Ver información del producto
             </a>
             <button className="btn-carrito">
-              <i className="ri-shopping-cart-line"></i>
-              Agregar al Carrito
+              <img className="carrito" src="public/assets/carrito-de-compras.png" alt="Carrito" /> Agregar al carrito
             </button>
           </div>
         </div>
 
         <div className="productos-relacionados">
           <h3>
-            Selecciona los mejores<br />
-            calzados para<br />
-            personalizar
+            SELECCIONA LOS MEJORES<br></br>
+            CALZADOS PARA <br></br>
+            PERSONALIZAR
           </h3>
           {productos.map((producto) => (
             <div key={producto.id} className="producto-item">
-            <img src={producto.img} />
+              <img
+                src={producto.img}
+                alt={producto.title}
+                onClick={() => handleImageClick(producto.id)}
+                style={{ border: selectedImage === producto.id ? `5px solid ${borderColor}` : 'none' }}
+              />
               <h4>{producto.title}</h4>
               <p>{producto.description}</p>
               <a href="#" onClick={() => openModal(producto)}>
-               {/* Añade esta línea para mostrar la imagen */}
+              
               </a>
             </div>
           ))}
@@ -120,17 +134,14 @@ const Customize = () => {
       </div>
 
       {showModal && selectedProduct && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="aleja">
+          <div className="trejos">
             <span className="close" onClick={closeModal}>
               &times;
             </span>
-            <h2>{selectedProduct.title}</h2>
-            {selectedProduct.title}  {/* Añade esta línea para mostrar la imagen en el modal */}
-            <p>{selectedProduct.description}</p>
-            <p><strong>Descripción adicional:</strong></p>
+            <p><strong>Descripción:</strong></p>
+            <br />
             <p>{selectedProduct.extraDescription}</p>
-            <p><strong>Precio:</strong> ${selectedProduct.price}</p>
           </div>
         </div>
       )}

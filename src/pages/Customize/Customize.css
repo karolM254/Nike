@@ -16,27 +16,35 @@ body {
   background-color: var(--light-gray);
 }
 
-.personaliza-container {
+.personalizar{
   background: white;
   margin: 0 auto;
   padding: 20px;
+
+  
 }
 
-.titulo {
-  text-align: left;
-  font-size: 52px;
-  color: var(--secondary-color);
+h1 {
+  text-align:center;
+  margin-left: 9%;
+  font-size: 45px;
+  color: #1e40af;
   margin-bottom: 20px;
+  display: flex;
 }
+
 
 .personaliza-form {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  
+  
 }
 
 .formulario-contenedor {
-  width: 70%;
+  width: 50%;
+  
 }
 
 .formulario {
@@ -47,6 +55,8 @@ body {
   padding: 40px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: large;
+  margin: 20px;
+  
 }
 
 .container {
@@ -57,10 +67,13 @@ body {
 .form-group-contenedor {
   display: flex;
   flex-direction: column;
+
 }
+
 
 .form-group-contenedor:nth-child(1) {
   width: 50%;
+
 }
 
 .form-group-contenedor:nth-child(2) {
@@ -72,19 +85,25 @@ body {
   padding: 20px;
 }
 
+
+
 .form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: var(--dark-gray);
+  font-family: "Montserrat", sans-serif;
 }
 
 .form-group select {
   width: 100%;
   padding: 10px;
   border: 1px solid var(--light-gray);
+  color: #9d9d9d;
+  font-weight: bold;
   border-radius: 4px;
   font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .precio {
@@ -93,7 +112,7 @@ body {
   color: var(--secondary-color);
   font-weight: bold;
   margin: 15px 0;
-  padding: 10px;
+  padding: 5px;
 }
 
 .form-link {
@@ -101,9 +120,11 @@ body {
   width: fit-content;
   height: fit-content;
   color: var(--dark-gray);
-  text-decoration: underline;
+  text-decoration-line: underline;
   margin: 0 auto 20px auto;
-  padding: 10px;
+  padding: 5px;
+  font-weight:bold ;
+  font-family: "Montserrat", sans-serif;
 }
 
 .form-link:hover {
@@ -123,14 +144,18 @@ body {
   cursor: pointer;
   text-align: center;
   margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+
 }
 
-.btn-carrito i{
-  width: 20px; 
+.btn-carrito img{
+  width: 17px; 
   display: inline;
   margin: 0 10px;
+  height: 14px;
 
 }
+
 .btn-carrito:hover {
   background: var(--primary-color);
 }
@@ -140,16 +165,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 
-.productos-relacionados h3 {
+.productos-relacionados  {
   color: var(--dark-gray);
   margin-bottom: 20px;
   text-align: center;
-  font-size: xx-large;
-  font-family: var(--font-family);
+  font-size: x-large;
+  position: relative;
+  top: -70px;
 }
-
+h3{
+  position: relative;
+  
+}
 .producto-item {
   display: flex;
   flex-direction: column;
@@ -162,6 +192,7 @@ body {
   margin-right: 10px;
   border-radius: 8px;
   max-width: 150px;
+
  
   
 }
@@ -171,17 +202,19 @@ body {
   margin: 0;
   color: var(--primary-color);
   text-align: center;
+ 
 }
 
 .producto-item p {
   font-size: 0.9rem;
   color: var(--dark-gray);
   margin: 0;
+  font-family: "Montserrat", sans-serif;
+
 }
 
-/*Estilos del modal*/
 /* Modal Styles */
-.modal {
+.aleja {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,24 +225,75 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
+  font-family: "Open Sans", sans-serif;
+  
+  
 }
-
-.modal-content {
+.trejos{
   background-color: white;
-  padding: 20px;
+  padding: 42px; /* Reducido el padding */
   border-radius: 8px;
-  width: 400px;
-  text-align: center;
+  width: 550px; /* Reducido el ancho */
+  text-align: left;
+  font-size: 17px; /* Reducido el tamaño de la fuente */
+  font-family: "Open Sans", sans-serif;
+ 
 }
-
+.carrito{
+  width: 20px;
+  justify-content: space-between;
+}
 .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
+  position: relative;
+  justify-content:flex-end;
+  display: flex;
+  font-size: 25px; /* Reducido el tamaño de la 'X' */
   cursor: pointer;
+  
 }
 
+/* Ajustes para los textos */
 
+.formulario {
+  font-size: 1rem; /* Ajustado el tamaño del texto en el formulario */
+  padding: 20px; /* Reducido el padding */
+  height: auto; /* Ajustado para que el formulario se ajuste mejor */
+}
 
+.precio {
+  font-size: 35px; /* Reducido el tamaño del precio */
+}
 
+.form-link, .btn-carrito {
+  font-size: 17px; /* Reducido el tamaño de la fuente del enlace y el botón */
+}
+
+.producto-item h4 {
+  font-size: 1.1rem; /* Reducido el tamaño del título de los productos */
+}
+
+.producto-item p {
+  font-size: 0.9rem; /* Reducido el tamaño de la descripción */
+}
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin: 10px;
+}
+
+.back-button i {
+  font-size: 20px;
+}
+
+.back-button:hover {
+  background-color:#1e40af;
+}
