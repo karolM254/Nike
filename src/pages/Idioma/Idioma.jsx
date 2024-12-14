@@ -8,8 +8,7 @@ function Idioma() {
       
       <div className="hero">
           <div className="hero-text">
-            <h1>NIKE<br>
-            </br> SHOES</h1>
+            <h1>NIKE<br></br> SHOES</h1>
             <p>SIGN UP AND GET 50% OFF</p>
           </div>
 
