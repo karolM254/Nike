@@ -212,7 +212,7 @@ const NinosProducto = () => {
         {/* Modal */}
         {isModalOpen && (
           <div className="modal-overlay">
-            <div className="modal">
+            <div className="modal-ninos">
               <button className="close-modal" onClick={closeModal}>
                 &times;
               </button>

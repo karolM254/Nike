@@ -201,7 +201,7 @@ return (
       {/* Modal */}
       {isModalOpen && (
         <div className="modal-overlay">
-          <div className="modal">
+          <div className="modal-mujer">
             <button className="close-modal" onClick={closeModal}>
               &times; {/* Representación de la "x" */}
             </button>
