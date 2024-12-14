@@ -7,12 +7,12 @@ const SectionBrands = () => {
       <section className="section-BRANDS">
         <div className="container-principal-BRANDS">
           <div className="contenido-BRANDS">
-            <h1>
+            <h1 className="titulo-contenido-BRANDS">
               PASIÓN. POTENCIAL. <br />
               Y NUESTRA <br />
               BÚSQUEDA
             </h1>
-            <p>
+            <p className="parrafo-contenido-BRANDS">
               NIKE no es solo un producto. NIKE es una filosofía. Es una actitud
               de vida: hacer más, llegar más lejos. Es sobre expandir los límites
               y cruzar las fronteras. Es crear el futuro. Esta filosofía se
@@ -35,21 +35,28 @@ const SectionBrands = () => {
         <h1 className="titulo-marcas">NUESTRAS MARCAS</h1>
         <div className="container-principal-marcas-BRANDS">
           <div className="nike-BRANDS">
-            <h2>SIEMPRE ADELANTE, SIEMPRE NIKE</h2>
+            <h2 className="titulo-nike-BRANDS">SIEMPRE<br/>
+               ADELANTE<br/>
+               SIEMPRE<br/>
+               NIKE.</h2>
             <img
               src="assets/nike2-removebg-preview.png"
               alt="Logo de Nike"
             />
           </div>
           <div className="converse-BRANDS">
-            <h2>SIGUE AMANDO, SIGUE LUCHANDO</h2>
+            <h2>SIGUE<br/> 
+                AMANDO<br/>
+                SIGUE<br/>
+                LUCHANDO.</h2>
             <img
               src="assets/Converse-Logo-PNG-HD-Image-removebg-preview.png"
               alt="Logo de Converse"
             />
           </div>
           <div className="Jordan-BRANDS">
-            <h2>NUESTRO TURNO</h2>
+            <h2>NUESTRO<br/>
+                TURNO.</h2>
             <img
               src="assets/jordan2-removebg-preview.png"
               alt="Logo de Jordan"
