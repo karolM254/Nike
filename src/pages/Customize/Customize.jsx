@@ -45,11 +45,8 @@ const Customize = () => {
 
   return (
     <div className="personaliza">
-      <button className="back-button" onClick={() => window.history.back()}>
-        <i className="ri-arrow-left-line"></i> Volver
-      </button>
       <div className="titulo">
-        <h1>PERSONALIZA AHORA TU CALZADO</h1>
+        <h1 className="titulo-person">PERSONALIZA AHORA TU CALZADO</h1>
       </div>
       <div className="personaliza-form">
         <div className="formulario-contenedor">
@@ -109,7 +106,7 @@ const Customize = () => {
           </div>
         </div>
 
-        <div className="productos-relacionados">
+        <div className="productos-Zapato">
           <h3>
             SELECCIONA LOS MEJORES<br></br>
             CALZADOS PARA <br></br>
