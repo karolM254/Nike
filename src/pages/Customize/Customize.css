@@ -20,11 +20,9 @@ body {
   background: white;
   margin: 0 auto;
   padding: 20px;
-
-  
 }
 
-h1 {
+.titulo h1 {
   text-align:center;
   margin-left: 6%;
   font-size: 50px;
