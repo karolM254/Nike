@@ -174,7 +174,7 @@
   z-index: 1000;
 }
 
-.modal {
+.modal-ninos {
   background-color: white;
   padding: 2rem;
   border-radius: 8px;
@@ -185,11 +185,8 @@
   z-index: 1001; 
 }
 
-.modal h3 {
-  margin-bottom: 30px;
-  position: relative;
-  top: -85px;
-  right: -40px;
+.modal-ninos h3 {
+  margin-bottom: 20px;
 }
 
 .close-modal {

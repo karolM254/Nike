@@ -121,6 +121,7 @@
 .ri-shopping-cart-line{
     margin-right: 20px;
 }
+
 hr {
     width: 80rem;
     border: 1px solid var(--primary-color-dark);
@@ -129,7 +130,6 @@ hr {
     left: -10px;
 }
   
-
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -144,53 +144,39 @@ hr {
     z-index: 1000;
 }
   
-.modal {
-    height: 350px; /* Aumenta la altura */
-    background: white;
-    padding: 30px; /* Más espacio interno */
+.modal-hombre {
+    background-color: white;
+    padding: 2rem;
     border-radius: 8px;
-    width: 50%;
-    max-width: 600px; /* Aumenta el ancho máximo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
     position: relative;
-    text-align: center;
+    z-index: 1001; 
+}
+
+.descripcion-modal-hombre {
+    margin-bottom: 30px;
 }
 
 /* Asegurar que la X es visible */
-.modal-close {
+.modal-close  {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: transparent;
+    font-size: 1.5rem;
+    background: none;
     border: none;
+    color: var(--text-dark);
     cursor: pointer;
-    font-size: 24px;
-    color: #333; /* Color ajustado para asegurar visibilidad */
+    transition: color 0.3s;
+    outline: none;
 }
 
 .modal-close:hover {
     color: var(--primary-color-dark); /* Cambio de color al pasar el mouse para una mejor experiencia */
 }
 
-.modal h2{
-    text-align: left;
-    font-size: 16px;
-    font-weight: bold;
-    position: relative;
-    top: -96px;
-    right: -30px;
-}
-
-.modal p {
-    margin: 10px 0; /* Espaciado entre los elementos de texto */
-    font-size: 16px; /* Tamaño de texto ajustado */
-    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
-    color: #000;
-    margin-top: 40px;
-    text-align: justify;
-    position: relative;
-    left: -50px;
-}
 
 
 .events-container {

@@ -221,11 +221,11 @@ const SliderMen = () => {
 
                     {mostrarModal && (
                         <div className="modal-overlay">
-                            <div className="modal">
+                            <div className="modal-hombre">
                                 <button className="modal-close" onClick={() => setMostrarModal(false)}>
                                     <span className="close-icon">✖</span>
                                 </button>
-                                <h2>Descripción:</h2>
+                                <h2 className='descripcion-modal-hombre'>Descripción:</h2>
                                 <p>{producto.descripcion2}</p>
                             </div>
                         </div>
