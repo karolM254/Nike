@@ -26,7 +26,7 @@ function Footer() {
         </div>
         <div className="footer__col">
           <h4>INFORMATION</h4>
-          <Link to="">
+          <Link to="/sobrenosotros">
             <p>About Us</p>
           </Link>
           <Link to="/personalizado">

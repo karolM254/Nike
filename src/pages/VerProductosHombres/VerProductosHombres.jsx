@@ -242,7 +242,7 @@ const SliderMen = () => {
                       </div>
                     </div>
                     </div>
-                    <hr />
+                    <hr className='verhombre-hr'/>
 
                     {/* Integración del componente SliderMen */}
                     <SliderMen />

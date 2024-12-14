@@ -21,6 +21,10 @@
     color: var(--primary-color-dark);
 }
 
+.titulo-nosotros  .nosotros-hr{
+    border: 2px solid #d9d9d9;
+}
+
 .contenido {
     display: flex;
     max-width: var(--max-width);
