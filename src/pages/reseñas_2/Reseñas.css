@@ -1,0 +1,130 @@
+.absolute-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.title-container {
+  margin-left: 30px;
+  display: flex;
+}
+
+.line {
+  margin-left: 1rem;
+  margin-top: 1.3rem;
+  height: 5px;
+  width: 90rem;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  text-align: left;
+  color: #007bff;
+}
+
+.contenedor-padre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.contenedor-hijo {
+  width: 20%;
+  height: 600px;
+  background-color: #d8d6d9;
+  border-radius: 16px;
+  padding: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  align-self: left;
+}
+
+.title-avatar {
+  font-size: 2rem;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.estrellas {
+  font-size: 100%;
+  color: #ffc107;
+  margin: 10px 0;
+  text-align: left;
+}
+.resena-text {
+  font-size: 1.8vw;
+  color: #000000;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.stars-filter {
+  display: flex;
+  justify-content: center; /* Centra los cuadros horizontalmente */
+  align-items: center;
+  gap: 30px; /* Espacio entre los cuadros */
+  margin-top: auto; /* Espacio encima del filtro */
+}
+
+.cuadro-estrella {
+  width: 150px;
+  height: 50px;
+  background-color: #007bff; /* Color azul */
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px; /* Bordes redondeados */
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Efecto de hover */
+  margin-bottom: 2rem;
+}
+
+.cuadro-estrella:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+.boton-navegacion {
+  width: 50px;
+  height: 50px;
+  background-color: #007bff; /* Color azul */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Hace el botón circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute; /* Posiciona los botones en los lados */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Ajuste para centrar el botón */
+  z-index: 1; /* Asegura que estén por encima de los demás elementos */
+}
+
+.boton-navegacion:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.boton-navegacion-izquierda {
+  left: 40px; /* Posición en el lado izquierdo */
+}
+
+.boton-navegacion-derecha {
+  right: 40px; /* Posición en el lado derecho */
+}
+.text-container{
+  width: 100%;
+  height: 0%;
+}
