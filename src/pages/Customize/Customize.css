@@ -24,13 +24,16 @@ body {
   
 }
 
-.titulo h1 {
+h1 {
   text-align:center;
-  margin-left: 9%;
-  font-size: 45px;
+  margin-left: 6%;
+  font-size: 50px;
   color: #1e40af;
   margin-bottom: 20px;
   display: flex;
+  top: 20px;
+ position: relative
+
 }
 
 
@@ -160,7 +163,7 @@ body {
   background: var(--primary-color);
 }
 
-.productos-relacionados {
+.productos-Zapato {
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -168,13 +171,13 @@ body {
 
 }
 
-.productos-relacionados  {
+.productos-Zapato  {
   color: var(--dark-gray);
   margin-bottom: 20px;
   text-align: center;
   font-size: x-large;
   position: relative;
-  top: -70px;
+  top: -50px;
 }
 h3{
   position: relative;
@@ -275,25 +278,4 @@ h3{
 .producto-item p {
   font-size: 0.9rem; /* Reducido el tamaño de la descripción */
 }
-.back-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  margin: 10px;
-}
 
-.back-button i {
-  font-size: 20px;
-}
-
-.back-button:hover {
-  background-color:#1e40af;
-}
