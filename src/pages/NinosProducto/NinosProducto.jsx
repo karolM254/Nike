@@ -211,9 +211,9 @@ const NinosProducto = () => {
 
         {/* Modal */}
         {isModalOpen && (
-          <div className="modal-overlay">
-            <div className="modal-ninos">
-              <button className="close-modal" onClick={closeModal}>
+          <div className="modal-overlayy">
+            <div className="modall">
+              <button className="close-modall" onClick={closeModal}>
                 &times;
               </button>
               <h3>Descripción:</h3>
@@ -225,20 +225,24 @@ const NinosProducto = () => {
         <hr className="division-productos-Ninos" />
 
         {/* Slider */}
-        <div className="events-upcoming">
+        <section class="events-upcomingg">
           <Slider {...settings}>
             {productosNino.map((producto) => (
-              <div key={producto.id}>
+              <div key={producto.id}
+              className="event-cardd"
+              onClick={() => setProductoSeleccionado(producto)}
+              style={{ cursor: "pointer" }}
+              >
                 <img src={producto.img} alt={producto.title} />
                 <h4>{producto.title}</h4>
-                <div className="precio-Ninos">
+                <div className="precio-Ninoss">
                   <h5>{producto.description}</h5>
                   <p>{producto.price}</p>
                 </div>
               </div>
             ))}
           </Slider>
-        </div>
+        </section>
       </main>
     </div>
   );
