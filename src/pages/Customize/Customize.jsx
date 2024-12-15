@@ -13,7 +13,7 @@ const Customize = () => {
       id: 1,
       img: "/assets/679005-500-500.webp",
       title: "AIR JORDAN 1 HIGH METHOD OF MAKE",
-      description: "Calzado para mujer",
+      description: "Calzado para mujer.",
       price: "$1.004.950",
       extraDescription:
         "Este modelo, inspirado en la elegancia y la funcionalidad, va más allá para que destaques con confianza. Los detalles en gamuza y el diseño envolvente se combinan para ofrecer un look moderno y versátil. Jugamos con acabados suaves y proporciones atrevidas, resaltando cada detalle para lograr un diseño único que fusiona moda y funcionalidad, ideal para mujeres que buscan comodidad sin renunciar al estilo.",
@@ -107,7 +107,7 @@ const Customize = () => {
         </div>
 
         <div className="productos-Zapato">
-          <h3>
+          <h3 className="productos-Zapato-title">
             SELECCIONA LOS MEJORES<br></br>
             CALZADOS PARA <br></br>
             PERSONALIZAR

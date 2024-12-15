@@ -32,91 +32,91 @@ function VerProductosHombres() {
   const navigate = useNavigate(); // Creamos la función navigate
 
 
-// Componentes para las flechas personalizadas
-const CustomPrevArrow = (props) => {
-  const { style, onClick } = props;
-  return (
-    <div
-      style={{ ...style, display: "block", position: "absolute", left: "-30px", top: "45%", cursor: "pointer", zIndex: 2 }}
-      onClick={onClick}
-    >
-      <i className="ri-arrow-left-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
-    </div>
-  );
-};
+  // Componentes para las flechas personalizadas
+  const CustomPrevArrow = (props) => {
+    const { style, onClick } = props;
+    return (
+      <div
+        style={{ ...style, display: "block", position: "absolute", left: "-30px", top: "45%", cursor: "pointer", zIndex: 2 }}
+        onClick={onClick}
+      >
+        <i className="ri-arrow-left-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
+      </div>
+    );
+  };
 
-CustomPrevArrow.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  onClick: PropTypes.func,
-};
-
-const CustomNextArrow = (props) => {
-  const { style, onClick } = props;
-  return (
-    <div
-      style={{ ...style, display: "block", position: "absolute", right: "-20px", top: "45%", cursor: "pointer", zIndex: 2 }}
-      onClick={onClick}
-    >
-      <i className="ri-arrow-right-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
-    </div>
-  );
-};
-
-CustomNextArrow.propTypes = {
+  CustomPrevArrow.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
     onClick: PropTypes.func,
-};
+  };
 
-const SliderMen = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: <CustomPrevArrow />,
-        nextArrow: <CustomNextArrow />,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-    };
-
+  const CustomNextArrow = (props) => {
+    const { style, onClick } = props;
     return (
-        <div className='events-container'>
-
-            <section className='events-upcoming'>
-                <Slider {...settings}>
-                    <div className="event-card">
-                        <img src="/assets/702841-500-500.jpg" alt="NIKE CORTEZ" />
-                        <h3>NIKE CORTEZ</h3>
-                        <p className='.titttle-producto-carousel-men' >Calzado para hombre</p>
-                        <p className='priceMen-slider-2'>$ 380.950</p>
-                    </div>
-                    <div className="event-card">
-                        <img src= "/assets/713556-500-500.jpg" alt="NIKE C1TY" />
-                        <h3>Nike C1TY</h3>
-                        <p>Calzado para hombre</p>
-                        <p className='priceMen-slider'>$ 695.950</p>
-                    </div>
-                    <div className="event-card">
-                        <img src="/assets/678515-500-500.jpg" alt="NIKE KILLSHOT 2 LEATHER" />
-                        <h3>Nike Killshot 2 Leather</h3>
-                        <p>Calzado para hombre</p>
-                        <p className='priceMen-slider'>$ 922.950</p>
-                    </div>
-                </Slider>
-            </section>
-        </div>
+      <div
+        style={{ ...style, display: "block", position: "absolute", right: "-20px", top: "45%", cursor: "pointer", zIndex: 2 }}
+        onClick={onClick}
+      >
+        <i className="ri-arrow-right-circle-fill" style={{ color: "#1e40af", fontSize: "30px" }}></i>
+      </div>
     );
-};
+  };
+
+  CustomNextArrow.propTypes = {
+      className: PropTypes.string,
+      style: PropTypes.object,
+      onClick: PropTypes.func,
+  };
+
+  const SliderMen = () => {
+      const settings = {
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          prevArrow: <CustomPrevArrow />,
+          nextArrow: <CustomNextArrow />,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+      };
+
+      return (
+          <div className='events-container'>
+
+              <section className='events-upcoming'>
+                  <Slider {...settings}>
+                      <div className="event-card">
+                          <img src="/assets/702841-500-500.jpg" alt="NIKE CORTEZ" />
+                          <h3>NIKE CORTEZ</h3>
+                          <p className='.titttle-producto-carousel-men' >Calzado para hombre</p>
+                          <p className='priceMen-slider-2'>$ 380.950</p>
+                      </div>
+                      <div className="event-card">
+                          <img src= "/assets/713556-500-500.jpg" alt="NIKE C1TY" />
+                          <h3>Nike C1TY</h3>
+                          <p>Calzado para hombre</p>
+                          <p className='priceMen-slider'>$ 695.950</p>
+                      </div>
+                      <div className="event-card">
+                          <img src="/assets/678515-500-500.jpg" alt="NIKE KILLSHOT 2 LEATHER" />
+                          <h3>Nike Killshot 2 Leather</h3>
+                          <p>Calzado para hombre</p>
+                          <p className='priceMen-slider'>$ 922.950</p>
+                      </div>
+                  </Slider>
+              </section>
+          </div>
+      );
+  };
 
 
     const { idMen } = useParams(); // Obtiene el id del producto desde la URL

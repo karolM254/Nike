@@ -12,7 +12,7 @@ export const Fabricantes = () => {
             <div className="contenido-fabricantes">
                 <div className="tarjeta-fabricantes">
                     <div className='tarjeta-imagen'>
-                        <img src="../../public/assets/gallery-6.jpg" alt="" />
+                        <img src="../../public/assets/colaboracion-global.jpg" alt="" />
                     </div>
                     <div className='tarjeta-contenido'>
                         <h2 className='tarjeta-contenido-h2'>Compromiso con la Innovación</h2>
@@ -21,7 +21,7 @@ export const Fabricantes = () => {
                 </div>
                 <div className="tarjeta-fabricantes">
                     <div className='tarjeta-imagen'>
-                        <img src="../../public/assets/gallery-6.jpg" alt="" />
+                        <img src="../../public/assets/img-niños.jpg" alt="" />
                     </div>
                     <div className='tarjeta-contenido'>
                         <h2 className='tarjeta-contenido-h2'>Colaboración Global</h2>
