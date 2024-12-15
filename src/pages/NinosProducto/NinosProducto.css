@@ -15,21 +15,31 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 50px 100px;
+  margin-top: 10px;
 }
 
 .ver-producto-Ninos img {
   border-radius: 11px;
   height: auto;
+  width: 75%;
+  margin-top: -30px;
 }
   
 .info-producto-Ninos {
   padding: 10px 20px;
+  margin-left: -115px;
+  margin-top: -20px;
 }
   
 .info-producto-Ninos h3 {
   color: var(--primary-color-dark);
-  font-size: 2rem;
-  margin-top: 30px;
+  font-size: 30px;
+  color: var(--primary-color-dark);
+  font-weight: bolder;
+  text-align: left;
+  margin-bottom: 10px;
+  width: 100%; 
+  max-width: 600px; 
 }
   
 .info-producto-Ninos h4 {
@@ -38,6 +48,8 @@
   
 .material-producto-Ninos {
   font-weight: 300;
+  color: #646262;
+  margin-bottom: 7px;
 }
   
 .info-producto-Ninos p {
@@ -50,23 +62,27 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-bottom: 20px; 
 }
   
-.color-talla select {
-  padding: 5px 8px;
-  width: 15%;
-  border-radius: 60px;
-  background-color: var(--extra-light);
-  font-size: 0.9rem;
+.select-ninoss {
+  width: 24%;
+  margin: 1px 0;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 50px;
+  background-color: #ececec;
   cursor: pointer;
+  border: none;
+  position: relative;
+  top: 15px;
+  margin-bottom: 20px; 
 }
-  
 .ver-mas-Ninos {
   text-decoration: underline;
-  position: relative;
-  top: 13px;
+  margin-top: 29px;
+  font-size: 18px;
 }
-  
 .carrito-Ninos {
   background-color: var(--primary-color-dark);
   color: var(--white);
@@ -105,13 +121,13 @@
 }
   
 .division-productos-Ninos {
-  margin: 0 auto; 
+  margin: 0 auto; /* Margen igual en ambos lados */
   background-color: var(--primary-color-dark);
   height: 2px;
   border: none;
   position: relative;
-  top: -40px;
-  width: calc(90% - 30px); 
+  top: -14px;
+  width: calc(90% - 30px); /* Hace que sea más largo al reducir el margen total */
   left: 2px;
 }
   
@@ -172,6 +188,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  
 }
 
 .modall {
@@ -183,6 +200,7 @@
   max-width: 500px;
   position: relative;
   z-index: 1001; 
+  
 }
 
 .modall h3 {
@@ -203,10 +221,22 @@
   outline: none;
 }
 
-.ver-mas-Ninos {
+.ver-mas-ninos {
   cursor: pointer;
   transition: color 0.3s;
 }
+
+.carrito-ninos {
+  background-color: var(--primary-color-dark);
+  color: var(--white);
+  padding: 8px 20px;
+  font-size: 1rem;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  margin-left: 500px;
+}
+
 
 /*---------------------- Slider -------------------------*/
 .events-upcomingg {
@@ -215,6 +245,7 @@
   overflow: hidden;
   position: relative;
   top: -3rem;
+  cursor: pointer;
 }
 
 
