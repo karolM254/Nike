@@ -28,6 +28,7 @@
 }
 
 .galeria {
+    display: grid;
     max-width: var(--max-width);
     margin: 0 auto 20px;
 }
@@ -45,4 +46,115 @@
 .galeria .rows3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*Responsive para diferentes tamaños de pantallas*/
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .galeria {
+        padding-left: 20px; /* Añadir margen izquierdo */
+        padding-right: 20px; /* Añadir margen derecho */
+    }
+
+    .galeria .rows1, 
+    .galeria .rows2, 
+    .galeria .rows3 {
+        grid-template-columns: 1fr; /* Una imagen por fila */
+    }
+
+    .galeria img {
+        width: 100%;
+        height: auto; /* Mantiene proporción */
+    }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .galeria {
+        padding-left: 20px; /* Añadir margen izquierdo */
+        padding-right: 20px; /* Añadir margen derecho */
+    }
+    
+    .galeria .rows1 {
+        grid-template-columns: 1fr 1fr; /* Dos imágenes por fila */
+    }
+
+    .galeria .rows2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .galeria .rows3 {
+        grid-template-columns: 1fr 1fr 1fr; /* Tres imágenes por fila */
+    }
+
+    .galeria img {
+        width: 100%;
+        height: auto;
+    }
+}
+  
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .galeria {
+        padding-left: 20px; /* Añadir margen izquierdo */
+        padding-right: 20px; /* Añadir margen derecho */
+    }
+
+    .galeria .rows1, 
+    .galeria .rows2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos imágenes por fila */
+    }
+
+    .galeria .rows3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* Tres imágenes por fila */
+    }
+
+    .galeria img {
+        width: 100%;
+        height: auto; /* Mantiene la proporción */
+        margin: 0; /* Asegura que no haya márgenes extra */
+    }
+}
+  
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+    .galeria .rows1 {
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* Cuatro imágenes por fila */
+    }
+
+    .galeria .rows2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .galeria .rows3 {
+        grid-template-columns: 1fr 1fr 1fr; /* Tres imágenes por fila */
+    }
+
+    .galeria img {
+        width: 100%;
+        height: auto;
+    }
+}
+  
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+    .galeria .rows1 {
+        grid-template-columns: repeat(5, 1fr); /* Cinco imágenes por fila */
+    }
+
+    .galeria .rows2 {
+        grid-template-columns: repeat(3, 1fr); /* Tres imágenes por fila */
+    }
+
+    .galeria .rows3 {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro imágenes por fila */
+    }
+
+    .galeria img {
+        width: 100%;
+        height: auto;
+    }
 }

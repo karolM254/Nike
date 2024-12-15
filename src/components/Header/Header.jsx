@@ -54,11 +54,19 @@ function Header() {
 
   // Hook que agrega y elimina un event listener para detectar clics fuera del header.
   useEffect(() => {
+    // Escucha los clics fuera del header.
     document.addEventListener('mousedown', handleClickOutside);
+  
+    // Oculta el submenú al cambiar de ruta.
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+  
+  useEffect(() => {
+    // Oculta cualquier submenú cuando la ruta cambia.
+    setVisibleDropdown(null);
+  }, [location.pathname]);
 
   // Función para verificar si una ruta específica está activa (coincide con la URL actual).
   const isActive = (path) => location.pathname === path;
@@ -173,7 +181,7 @@ function Header() {
             <span><i className="ri-instagram-line"></i></span>
           </Link>
           {/* Carrito de compras */}
-          <Link to="/carrito" className={`icon-link ${isActive('/carrito') ? 'active' : ''}`}>
+          <Link to="/carrito" className={`link ${isActive('/carrito') ? 'active' : ''}`}>
             <i className="ri-shopping-cart-line"></i>
           </Link>
           <span><i className="ri-global-line"></i></span>

@@ -65,13 +65,13 @@ function Footer() {
           <Link to="https://www.visa.com.co/pague-con-visa/tecnologias-presentadas/evoluciona-nuevas-formas-pago.html">
             <i className="ri-visa-fill"></i>
           </Link>
-          <Link to="https://www.visa.com.co/">
+          <Link to="https://www.davivienda.com/wps/portal/personas/nuevo">
             <i className="ri-bank-card-2-fill"></i>
           </Link>
           <Link to="https://www.mastercard.com.co/es-co.html">
             <i className="ri-mastercard-line"></i>
           </Link>
-          <Link to="">
+          <Link to="https://www.bancolombia.com/personas">
             <i className="ri-bank-card-2-line"></i>
           </Link>
         </div>

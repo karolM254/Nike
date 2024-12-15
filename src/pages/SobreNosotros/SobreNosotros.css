@@ -75,3 +75,152 @@
     text-align: justify;
     margin-bottom: 20px;
 }
+
+/*Responsive para diferentes tamaños de pantallas*/
+
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .contenido {
+        flex-direction: column; 
+        text-align: center;
+        padding: 0 15px; 
+    }
+
+    .contenido .imagenes {
+        width: 100%; 
+        height: 440px;
+        position: relative; 
+        margin-bottom: 20px; 
+    }
+
+    .contenido .imagenes img:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%; 
+        height: 300px; 
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .contenido .imagenes img:last-child {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 60%; 
+        height: 300px; 
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .contenido .misionVision {
+        width: 100%;
+        margin-top: 20px; 
+    }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .contenido {
+        flex-direction: column; 
+        text-align: center;
+        padding: 0 15px; 
+    }
+
+    .contenido .imagenes {
+        width: 100%; 
+        height: 420px; 
+        position: relative; 
+        margin-bottom: 20px; 
+    }
+
+    .contenido .imagenes img:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 55%; 
+        height: 280px; 
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .contenido .imagenes img:last-child {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 55%; 
+        height: 280px; 
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .contenido .misionVision {
+        width: 100%; 
+        margin-top: 20px;
+    }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contenido {
+        flex-direction: row; 
+        padding: 0 15px; 
+    }
+
+    .contenido .imagenes {
+        width: 40%;
+        height: 400px;
+    }
+
+    .contenido .imagenes img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .contenido .misionVision {
+        width: 60%;
+    }
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+    .contenido {
+        flex-direction: row; /* Las imágenes y el texto están al lado */
+    }
+
+    .contenido .imagenes {
+        width: 35%;
+        height: 500px;
+    }
+
+    .contenido .imagenes img {
+        width: 60%;
+        height: 300px;
+    }
+
+    .contenido .misionVision {
+        width: 65%;
+    }
+}
+
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+    .contenido {
+        flex-direction: row; /* Las imágenes y el texto están al lado */
+    }
+
+    .contenido .imagenes {
+        width: 35%;
+        height: 500px;
+    }
+
+    .contenido .imagenes img {
+        width: 60%;
+        height: 300px;
+    }
+
+    .contenido .misionVision {
+        width: 65%;
+    }
+}
