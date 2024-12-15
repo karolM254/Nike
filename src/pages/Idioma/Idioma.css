@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 
+:root {
+    --primary-color: #2563eb;
+    --primary-color-dark: #1e40af;
+    --text-dark: #1f1f1f;
+    --text-light: #4b5563;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --font-heading: "Roboto Condensed", sans-serif;
+}
+
 .hero{
     background-image: url(/public/assets/header.jpg);
     background-position: center center;
@@ -16,12 +27,10 @@
     color: white !important;
     text-align: center;
     font-size:em;
-    font-family: Arial, sans-serif;
-
-    
+    font-family: var(--font-heading);
 }
 .hero-text p{
-    font-family: "montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: left;
     margin-left: 19em;
     font-size: large;

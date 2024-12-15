@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useCart } from "../../components/Carrito/CartContext";
 import "./Carrito.css";
+import { useNavigate } from "react-router-dom";
 
 function Carrito() {
+  const navigate = useNavigate(); // Hook para navegar
   const { carrito, setCarrito } = useCart();
 
   const [cantidades, setCantidades] = useState(
@@ -55,6 +57,12 @@ function Carrito() {
 
   return (
     <div className="carrito-compras">
+      {/* Botón para regresar */}
+      <div className="boton-regresar-carrito">
+        <button className="boton-regresar" onClick={() => navigate(-1)}>
+          <i className="ri-arrow-left-line"></i> Volver
+        </button>
+      </div>
       <div className="entrega-carrito">
         <h3 className="entregar-titulo">Entrega</h3>
         <div className="contenedor-total-entrega">

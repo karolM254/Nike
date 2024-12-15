@@ -11,6 +11,22 @@
     --font-heading: "Roboto Condensed", sans-serif;
 }
 
+.section_container header__container {
+  font-family: var(--font-heading);
+}
+
+.section_container header__container p {
+  font-family: 'Montserrat' sans-serif;
+}
+
+.main__container {
+  font-family: var(--font-heading);
+}
+
+.main__container p {
+  font-family: 'Montserrat', sans-serif;
+}
+
 header {
     background-image: url("assets/header.jpg");
     background-position: center center;

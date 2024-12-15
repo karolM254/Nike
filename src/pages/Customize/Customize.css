@@ -16,6 +16,14 @@ body {
   background-color: var(--light-gray);
 }
 
+.personaliza h1, .personaliza h2 {
+  font-weight: var(--font-heading);
+}
+
+.personaliza p {
+  font-family: 'Monsterrat', sans-serif;
+}
+
 .personalizar{
   background: white;
   margin: 0 auto;
