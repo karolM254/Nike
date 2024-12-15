@@ -38,37 +38,37 @@ function Compras1() {
         <form>
           <h2>Datos Personales</h2>
 
-          <label htmlFor="email">Correo electrónico</label>
-          <input type="email" />
+          <label className='label-carrito' htmlFor="email">Correo electrónico</label>
+          <input  className='input-carrito' type="email" />
 
           <div className="row">
             <div>
-              <label htmlFor="Nombre">Nombre</label>
-              <input type="text" id="Nombre" />
+              <label className='label-carrito' htmlFor="Nombre">Nombre</label>
+              <input className='input-carrito' type="text" id="Nombre" />
             </div>
             <div>
-              <label htmlFor="Apellidos">Apellidos</label>
-              <input type="text" id="Apellidos" />
-            </div>
-          </div>
-          <div className="row">
-            <div>
-              <label htmlFor="CodigoPostal">Código Postal</label>
-              <input type="text" id="CodigoPostal" />
-            </div>
-            <div>
-              <label htmlFor="Documento">Número de Documento</label>
-              <input type="text" id="Documento" />
+              <label className='label-carrito' htmlFor="Apellidos">Apellidos</label>
+              <input className='input-carrito'  type="text" id="Apellidos" />
             </div>
           </div>
           <div className="row">
             <div>
-              <label htmlFor="Telefono">Teléfono / Móvil</label>
-              <input type="text" id="Telefono" />
+              <label className='label-carrito' htmlFor="CodigoPostal">Código Postal</label>
+              <input className='input-carrito' type="text" id="CodigoPostal" />
             </div>
             <div>
-              <label htmlFor="Direccion">Dirección</label>
-              <input type="text" id="Direccion" />
+              <label className='label-carrito' htmlFor="Documento">Número de Documento</label>
+              <input className='input-carrito' type="text" id="Documento" />
+            </div>
+          </div>
+          <div className="row">
+            <div>
+              <label className='label-carrito' htmlFor="Telefono">Teléfono / Móvil</label>
+              <input className='input-carrito' type="text" id="Telefono" />
+            </div>
+            <div>
+              <label className='label-carrito' htmlFor="Direccion">Dirección</label>
+              <input className='input-carrito' type="text" id="Direccion" />
             </div>
           </div>
 
@@ -77,25 +77,25 @@ function Compras1() {
           <h2>Método de pago</h2>
 
           <label htmlFor="metodoPago">Selección de método de pago</label>
-          <select>
+          <select className='select-carrito'>
             <option>Seleccionar</option>
            
           </select>
 
-          <label htmlFor="NombrePropietario">Nombre del propietario</label>
-          <input type="text" id="NombrePropietario" />
+          <label className='label-carrito' htmlFor="NombrePropietario">Nombre del propietario</label>
+          <input className='input-carrito' type="text" id="NombrePropietario" />
 
-          <label htmlFor="NumeroTarjeta">Número de la tarjeta</label>
-          <input type="text" id="NumeroTarjeta" />
+          <label className='label-carrito' htmlFor="NumeroTarjeta">Número de la tarjeta</label>
+          <input className='input-carrito' type="text" id="NumeroTarjeta" />
 
           <div className="row">
             <div>
-              <label htmlFor="FechaExpiracion">Fecha de Expiración</label>
-              <input type="text" id="FechaExpiracion" />
+              <label className='label-carrito' htmlFor="FechaExpiracion">Fecha de Expiración</label>
+              <input className='input-carrito' type="text" id="FechaExpiracion" />
             </div>
             <div>
-              <label htmlFor="CodigoSeguridad">Código de Seguridad</label>
-              <input type="text" id="CodigoSeguridad" />
+              <label className='label-carrito' htmlFor="CodigoSeguridad">Código de Seguridad</label>
+              <input className='input-carrito' type="text" id="CodigoSeguridad" />
             </div>
           </div>
 

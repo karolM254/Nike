@@ -17,10 +17,7 @@ function Footer() {
           <Link to="/marcas">
             <p>Top Brands</p>
           </Link>
-          <Link to="">
-            <p>Bags & Accessories</p>
-          </Link>
-          <Link to="">
+          <Link to="/galeria">
             <p>Lookbook</p>
           </Link>
         </div>
@@ -32,7 +29,7 @@ function Footer() {
           <Link to="/personalizado">
             <p>Customer Service</p>
           </Link>
-          <Link to="">
+          <Link to="/fabricantes">
             <p>Manufacturers</p>
           </Link>
           <Link to="/politicas">
@@ -68,10 +65,10 @@ function Footer() {
           <Link to="https://www.visa.com.co/pague-con-visa/tecnologias-presentadas/evoluciona-nuevas-formas-pago.html">
             <i className="ri-visa-fill"></i>
           </Link>
-          <Link to="">
+          <Link to="https://www.visa.com.co/">
             <i className="ri-bank-card-2-fill"></i>
           </Link>
-          <Link tp="https://www.mastercard.com.co/es-co/consumidores/formas-de-pago.html">
+          <Link to="https://www.mastercard.com.co/es-co.html">
             <i className="ri-mastercard-line"></i>
           </Link>
           <Link to="">

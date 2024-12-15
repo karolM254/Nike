@@ -51,13 +51,13 @@
 }
 
 
-label {
+.label-carrito {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-input, select {
+.input-carrito, .select-carrito {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;

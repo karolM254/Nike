@@ -27,8 +27,6 @@ function DropdownMenu({ categories }) {
 
 function Header() {
   const [visibleDropdown, setVisibleDropdown] = useState(null);
-  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false); // Control del menú de idiomas
-  const [selectedLanguage, setSelectedLanguage] = useState('es'); // Idioma por defecto
   const location = useLocation(); // Obtener la ruta actual
 
   const handleMouseEnter = (menu) => {
@@ -37,15 +35,6 @@ function Header() {
 
   const handleMouseLeave = () => {
     setVisibleDropdown(null); // Ocultar todos los menús
-  };
-
-  const toggleLanguageMenu = () => {
-    setIsLanguageMenuOpen(!isLanguageMenuOpen);
-  };
-
-  const changeLanguage = (language) => {
-    setSelectedLanguage(language);
-    setIsLanguageMenuOpen(false);
   };
 
   // Función para determinar si un enlace está activo
@@ -149,35 +138,10 @@ function Header() {
           <Link to="https://www.instagram.com/nike/">
             <span><i className="ri-instagram-line"></i></span>
           </Link>
-          <Link to="/carrito">
-          <span className={`link ${isActive('/carrito') ? 'active' : ''}`}><i className="ri-shopping-cart-line"></i></span>
+          <Link to="/carrito" className={`icon-link ${isActive('/carrito') ? 'active' : ''}`}>
+            <i className="ri-shopping-cart-line"></i>
           </Link>
-          <span className="language-selector">
-            <i className="ri-global-line" onClick={toggleLanguageMenu}></i>
-            {/* Implementación del menú para el cambio de idioma */}
-            {isLanguageMenuOpen && ( 
-              <div className="language-menu">
-                <div
-                  className={`language-option ${
-                    selectedLanguage === 'en' ? 'selected' : ''
-                  }`}
-                  onClick={() => changeLanguage('en')} //Cambia el idioma a Inglés
-                >
-                  Inglés {selectedLanguage === 'en' && <span><i class="ri-check-line"></i></span>}
-                </div>
-                <hr />
-                <div
-                  className={`language-option ${
-                    selectedLanguage === 'es' ? 'selected' : ''
-                  }`}
-                  onClick={() => changeLanguage('es')} //Cmabia el idioma a Español
-                >
-                  Español {selectedLanguage === 'es' && <span><i class="ri-check-line"></i></span>}
-                </div>
-              </div>
-            )}
-          </span>
-
+          <span><i className="ri-global-line"></i></span>
         </div>
       </nav>
     </header>
