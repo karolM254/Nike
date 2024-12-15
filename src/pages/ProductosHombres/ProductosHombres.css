@@ -33,7 +33,7 @@ html{
 
 .buscadorMen{
     border: 1px solid var(--primary-color-dark);
-    padding: 5px 5px;
+    padding: 10px;
     border-radius: 60px;
     font-size: 19px;
     width: 250px;

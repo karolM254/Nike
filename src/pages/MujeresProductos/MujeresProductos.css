@@ -29,7 +29,7 @@
 
 .buscador-mujeres {
   border: 1px solid var(--primary-color-dark);
-  padding: 5px 5px;
+  padding: 10px;
   border-radius: 60px;
   font-size: 19px;
 }
@@ -61,6 +61,8 @@
 .grid-contenido-mujeres img {
   border-radius: 11px;
   transition: transform 0.3s ease; 
+  height: 70%;
+  width: 90%;
 }
 
 .grid-contenido-mujeres img:hover{
@@ -69,18 +71,13 @@
 
 .grid-contenido-mujeres h4{
   color: var(--primary-color-dark);
-  font-size: 1.rem;
-  margin: 10px 0 0 5px;
-}
-
-.grid-contenido-mujeres h4{
-  color: var(--primary-color-dark);
-  font-size: 1.rem;
+  font-size: 19.2px;
   margin: 10px 0 0 5px;
 }
 
 .grid-contenido-mujeres p {
   justify-content: space-between;
+  font-size: 17px;
 }
 
 .precio-mujeres {
@@ -93,6 +90,7 @@
 
 .precio-mujeres h5 {
   font-weight: 500;
+  font-size: 17px;
 }
 
 .precio-mujeres p {
