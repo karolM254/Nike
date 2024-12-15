@@ -12,7 +12,7 @@
 }
 
 .product-detail__image img {
-  width: 100%; /* Ocupa todo el ancho del contenedor */
+  width: 90%; /* Ocupa todo el ancho del contenedor */
   max-width: 550px; /* Máximo tamaño para pantallas grandes */
   border-radius: 8px;
 }
@@ -73,14 +73,6 @@
   position: relative;
   top: -30px; /* Ajusta este valor según cuánto quieres moverlo hacia arriba */
 }
-@media (max-width: 768px) {
-  .product-detail__link {
-    position: relative; /* Asegúrate de no usar valores absolutos que interfieran */
-    margin-top: 0; /* Quita el espacio de arriba */
-    margin-right: 30px;
-    
-  }
-}
 
 /* Contenedor principal que agrupa ambos botones */
 /* Contenedor principal para ambos botones */
@@ -118,16 +110,41 @@
   font-weight: 500;
   text-align: center; /* Alineación central */
 }
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+  /* Estilos para móviles pequeños */
+}
 
-/* Responsive: pantallas grandes y medianas */
-@media (max-width: 1574px) {
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Estilos para móviles grandes y tabletas pequeñas */
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Estilos para tabletas */
   .button-container {
     grid-template-rows: auto auto; /* Mantener los botones en filas */
     grid-gap: 8px; /* Reducir el espaciado entre botones */
     top: 380px; /* Ajustar posición para pantallas medianas */
     left: 68%; /* Centrar un poco más en pantallas medianas */
   }
+}
 
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+  /* Estilos para laptops y escritorios */
+
+  .product-detail__button,
+  .ver_carrito {
+    font-size: 16px;
+    padding: 10px 40px;
+    
+  }
+
+  .ver_carrito {
+    text-align: center; /* Centrar texto */
+  }
   .product-detail__button,
   .ver_carrito {
     font-size: 18px;
@@ -135,21 +152,19 @@
   }
 }
 
-/* Responsive: pantallas medianas y pequeñas */
-@media (max-width: 1274px) {
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+  /* Estilos para monitores grandes */
   .button-container {
-    grid-template-rows: auto auto;
-   /* Dejar que el ancho se adapte automáticamente */
+    grid-template-rows: auto auto; /* Mantener los botones en filas */
+    grid-gap: 8px; /* Reducir el espaciado entre botones */
+    top: 380px; /* Ajustar posición para pantallas medianas */
+    left: 68%; /* Centrar un poco más en pantallas medianas */
   }
-
   .product-detail__button,
   .ver_carrito {
-    font-size: 16px;
-    padding: 10px 40px;
-  }
-
-  .ver_carrito {
-    text-align: center; /* Centrar texto */
+    font-size: 18px;
+    padding: 12px 50px; /* Ajustar tamaño del botón */
   }
 }
 
@@ -199,14 +214,14 @@
   width: 95%; /* Adaptable a cualquier pantalla */
   height: 4px;
   margin-bottom: 100px;
-  margin-left: 27rem;
+  margin-left: 2rem;
   background-color: #1e40af;
   grid-row: 2; /* Lo posicionas en la fila deseada */
-  transform: translateY(250px); /* Lo mueves verticalmente */
+  transform: translateY(50px); /* Lo mueves verticalmente */
 }
 @media only screen and (max-width: 1274px) {
   .divider{
-    transform: translateY(330px); /* Lo mueves verticalmente */
+    transform: translateY(50px); /* Lo mueves verticalmente */
   }
 }
 
@@ -250,7 +265,7 @@
   font-size: 18px;
   color: #2563eb;
   font-weight: 600;
-  transform: translateX(350px);
+  transform: translateX(150px);
 }
 
 .modal-overlay {
@@ -314,6 +329,29 @@
 
 
 /* ------------------ MEDIA QUERIES RESPONSIVE ------------------ */
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+
+  .product-detail{
+    margin-left: 80px;
+  }
+  .product-detail__button {
+    margin-left: 340px;
+    width: 40%;
+  }
+  .ver_carrito{
+    margin-left: 300px;
+  }
+  .product-detail__link{
+    top: -20%;
+  }
+  .divider{
+    margin-top: 0;
+    transform: translateY(-70px);
+    margin-bottom: 0;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   .product-detail {
       flex-direction: column; /* Apila los elementos */
@@ -345,12 +383,18 @@
       width: 90%; /* Se adapta al ancho de la pantalla */
       padding: 20px;
   }
+  .product-detail__link {
+    left: 30%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .product-detail__image img {
     max-width: 800%; /* Ajusta la imagen */
     margin-bottom: 50px;
+  }
+  .product-detail__link {
+    left: 16%;
   }
   .divider {
     display: none; /* No muestra el divisor en pantallas pequeñas */
@@ -429,8 +473,7 @@
   }
   .product-detail__link {
     top: 85%;
-    left: 50%;
-    transform: translate(-0%, 400%);
+    left: 10%;
   }
   .divider {
     width: 0;
@@ -491,11 +534,12 @@
   font-size: 30px;
   padding: 10px;
   border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
   cursor: pointer;
   z-index: 2;
   transition: background-color 0.3s ease;
 }
-
 .slider-button:hover {
   background-color: rgba(0, 21, 97, 0.7);
 }
@@ -512,15 +556,7 @@
 /* === Media Queries para ajustar los botones en dispositivos más pequeños === */
 
 /* Tablets (pantallas entre 768px y 1024px) */
-@media screen and (max-width: 1024px) {
-  .slider-button.prev {
-    left: -8%; /* Ajusta la posición en tablets */
-  }
 
-  .slider-button.next {
-    right: -8%; /* Ajusta la posición en tablets */
-  }
-}
 
 /* Móviles (pantallas menores a 768px) */
 @media screen and (max-width: 768px) {

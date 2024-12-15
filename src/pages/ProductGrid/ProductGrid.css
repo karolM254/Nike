@@ -114,7 +114,7 @@ span{
 }
 .search input {
     width: 280px;
-    padding: 0.7rem 1rem 0.7rem 3rem;
+    padding: 0.5rem 1rem 0.5rem 3rem;
     border-radius: 2rem;
     border: #1e40af solid 2px;
     font-size: 1.7rem;
@@ -128,21 +128,18 @@ span{
 }
 
 .lupa img {
-    position: absolute;
     top: 50%;
-    right: 240px;
-    transform: translateY(-50%);
+    transform: translateY(70%) translateX(-1100%);
     width: 24px;
     height: 24px;
     cursor: pointer;
 }
-@media (max-width: 390px) {
+@media (max-width: 480px) {
     .lupa img {
-        height: auto;
-        transform: translateY(-50%);
-        margin-right: -20px;
+      display: none;
     }
-}
+  }
+  
 
 .product-grid {
     display: grid;
@@ -265,7 +262,7 @@ span{
 
 @media (max-width: 480px) {
     .search input {
-        width: 90%;
+        width: 80%;
     }
 
     .product h2 {

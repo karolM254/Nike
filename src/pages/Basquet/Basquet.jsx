@@ -7,12 +7,12 @@ const Basquet = () => {
 
   // Lista de productos
   const products = [
-    { id: 1, name: "NIKE MASTER CLASS", category: "Calzado de básquetbol", price: "$299.000", image: "/assets/basquet1.png" },
-    { id: 2, name: "NIKE LEGEND RAIN", category: "Calzado de básquetbol", price: "$499.000", image: "/assets/basquet2.png" },
-    { id: 3, name: "NIKE NIKE MASTER", category: "Calzado de básquetbol", price: "$999.000", image: "/assets/basquet3.png" },
-    { id: 4, name: "NIKE SUPERFLY VER", category: "Calzado de básquetbol", price: "$750.000", image: "/assets/basquet4.png" },
-    { id: 5, name: "NIKE SUPER FLEW 2", category: "Calzado de básquetbol", price: "$1.199.000", image: "/assets/basquet5.png" },
-    { id: 6, name: "NIKE JORDAN RETRO", category: "Calzado de básquetbol", price: "$399.000", image: "/assets/basquet6.png" }
+    { id: 1, name: "NIKE MASTER CLASS", category: "Calzado básquetbol", price: "$299.000", image: "/assets/basquet1.png" },
+    { id: 2, name: "NIKE LEGEND RAIN", category: "Calzado básquetbol", price: "$499.000", image: "/assets/basquet2.png" },
+    { id: 3, name: "NIKE NIKE MASTER", category: "Calzado básquetbol", price: "$999.000", image: "/assets/basquet3.png" },
+    { id: 4, name: "NIKE SUPERFLY VER", category: "Calzado básquetbol", price: "$750.000", image: "/assets/basquet4.png" },
+    { id: 5, name: "NIKE SUPER FLEW 2", category: "Calzado básquetbol", price: "$1.199.000", image: "/assets/basquet5.png" },
+    { id: 6, name: "NIKE JORDAN RETRO", category: "Calzado básquetbol", price: "$399.000", image: "/assets/basquet6.png" }
   ];
 
   const [filteredProducts, setFilteredProducts] = useState(products);
