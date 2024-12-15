@@ -1,22 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
-
 :root {
-    --primary-color: #2563eb;
-    --primary-color-dark: #1e40af;
-    --text-dark: #1f1f1f;
-    --text-light: #4b5563;
-    --extra-light: #f3f4f6;
-    --white: #ffffff;
-    --max-width: 1200px;
-    --font-heading: "Roboto Condensed", sans-serif;
-}
-
-.contenido-Ninos {
-  font-family: var(--font-heading);
-}
-
-.contenido-Ninos p {
-  font-family: 'Montserrat', sans-serif;
+  --primary-color: #2563eb;
+  --primary-color-dark: #1e40af;
+  --text-dark: #1f1f1f;
+  --text-light: #4b5563;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --font-heading: "Roboto Condensed", sans-serif;
 }
 
 
@@ -30,35 +20,24 @@
 .ver-producto-Ninos img {
   border-radius: 11px;
   height: auto;
-  width: 75%;
-  margin-top: -30px;
 }
   
 .info-producto-Ninos {
   padding: 10px 20px;
-  margin-left: -115px;
-  margin-top: -20px;
 }
   
 .info-producto-Ninos h3 {
-  font-size: 30px;
   color: var(--primary-color-dark);
-  font-weight: bolder;
-  text-align: left; /* Centra el texto horizontalmente */
-  margin-bottom: 10px;
-  width: 100%; /* Ajusta el ancho del contenedor */
-  max-width: 600px; /* Limita el ancho máximo */
+  font-size: 2rem;
+  margin-top: 30px;
 }
   
 .info-producto-Ninos h4 {
-  font-size: 16px;
-  margin-bottom: 7px;
+  font-size: 1.3rem;
 }
   
 .material-producto-Ninos {
   font-weight: 300;
-  color: #646262;
-  margin-bottom: 7px;
 }
   
 .info-producto-Ninos p {
@@ -73,29 +52,19 @@
   gap: 15px;
 }
   
-.color-talla .select-kids {
-  width: 24%;
-  margin: 1px 0;
-  padding: 8px;
-  font-size: 14px;
-  border-radius: 50px;
-  background-color: #ececec;
+.color-talla select {
+  padding: 5px 8px;
+  width: 15%;
+  border-radius: 60px;
+  background-color: var(--extra-light);
+  font-size: 0.9rem;
   cursor: pointer;
-  border: none;
-  position: relative;
-  top: 15px;
 }
   
 .ver-mas-Ninos {
   text-decoration: underline;
-  margin-top: 29px;
-  font-size: 12px;
-}
-
-.boton-Ninos{
-  display: flex;
-  flex-direction: row;
-  margin-top: -100px;
+  position: relative;
+  top: 13px;
 }
   
 .carrito-Ninos {
@@ -105,20 +74,9 @@
   font-size: 1rem;
   border-radius: 60px;
   border: none;
-  cursor: pointer;
 }
 
 .ver-carrito {
-  top: 60px;
-  right: 120px;
-  border: none;
-  font-size: 1rem;
-  text-decoration: underline;
-  color: var(--text-dark);
-  margin-top: 2px;
-}
-  
-.ver-carrito-kids{
   position: relative;
   top: 60px;
   right: 120px;
@@ -126,8 +84,8 @@
   font-size: 1rem;
   text-decoration: underline;
   color: var(--text-dark);
-  margin-top: 2px;
 }
+  
   
 .ver-producto-Ninos .ri-shopping-cart-line {
   margin: 10px;
@@ -138,6 +96,8 @@
   justify-content: flex-end;
   height: 50px;
   cursor: pointer;
+  position: relative;
+  top: -33px;
 }
   
 .ver-mas-Ninos {
@@ -145,13 +105,13 @@
 }
   
 .division-productos-Ninos {
-  margin: 0 auto; /* Margen igual en ambos lados */
+  margin: 0 auto; 
   background-color: var(--primary-color-dark);
   height: 2px;
   border: none;
   position: relative;
-  top: 1px;
-  width: calc(90% - 30px); /* Hace que sea más largo al reducir el margen total */
+  top: -40px;
+  width: calc(90% - 30px); 
   left: 2px;
 }
   
@@ -251,12 +211,10 @@
 /*---------------------- Slider -------------------------*/
 .events-upcomingg {
   margin: 40px 0;
-  max-width: 1400px;
+  width: 100%;
   overflow: hidden;
   position: relative;
   top: -3rem;
-  margin-left: 71px;
-  margin-top: 120px;
 }
 
 
@@ -283,3 +241,24 @@
   color: var(--primary-color-dark) !important; 
 }
 
+
+.btn-volver {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.btn-volver:hover {
+  background-color: #1e40af; 
+  transition: transform 0.3s ease;
+}
