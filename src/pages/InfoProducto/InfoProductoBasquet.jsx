@@ -1,12 +1,12 @@
-import React, { useState } from "react"; // Asegúrate de importar useState
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "../InfoProducto/InfoProducto.css";
 
 const InfoProductoBasquet = () => {
   const { id } = useParams(); // Obtener el ID del producto desde la URL
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
+  const [currentIndex, setCurrentIndex] = useState(0); // Estado para el slider
 
-  // Lista de productos simulada
   const products = [
     { id: 1, name: "NIKE MASTER CLASS", category: "Calzado de básquetbol", price: "$299.000", material: "Sintético", image: "/assets/basquet1.png", description: "Diseño innovador con tecnología para saltos más altos." },
     { id: 2, name: "NIKE LEGEND RAIN", category: "Calzado de básquetbol", price: "$499.000", material: "Sintético", image: "/assets/basquet2.png", description: "Perfecto para entrenamientos y partidos intensos." },
@@ -14,23 +14,36 @@ const InfoProductoBasquet = () => {
     { id: 4, name: "NIKE SUPERFLY VER", category: "Calzado de básquetbol", price: "$750.000", material: "Sintético", image: "/assets/basquet4.png", description: "Diseño elegante para jugadores profesionales." },
     { id: 5, name: "AIR SUPER STAR VOL", category: "Calzado de básquetbol", price: "$1.199.000", material: "Sintético", image: "/assets/basquet5.png", description: "Tracción excepcional para movimientos rápidos." },
     { id: 6, name: "NIKE JORDAN RETRO", category: "Calzado de básquetbol", price: "$399.000", material: "Sintético", image: "/assets/basquet6.png", description: "Clásico reinventado con mayor durabilidad y estilo." },
+    
   ];
 
-  // Encontrar el producto actual según el ID
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {
     return <h2>Producto no encontrado</h2>;
   }
 
+  // Control del slider
+  const relatedProducts = products.filter((p) => p.id !== product.id);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? relatedProducts.length - 3 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === relatedProducts.length - 3 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <div className="product-page">
-      {/* Botón para regresar */}
       <button className="back-button" onClick={() => window.history.back()}>
         <i className="ri-arrow-left-line"></i> Volver
       </button>
 
-      {/* Detalle del producto */}
       <div className="product-detail">
         <div className="product-detail__image">
           <img src={product.image} alt={product.name} />
@@ -43,44 +56,56 @@ const InfoProductoBasquet = () => {
           <div className="product-detail__options">
             <select>
               <option>Color</option>
+              <option>White</option>
+              <option>Red</option>
             </select>
             <select>
               <option>Talla</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
             </select>
           </div>
-          <Link
-            to="#"
-            className="product-detail__link"
-            onClick={() => setIsModalOpen(true)} // Abrir modal
-          >
+          <div className="button-container">
+            <button className="product-detail__button">
+              <img src="/assets/carrito-de-compras.png" alt="Agregar al carrito" />
+              Agregar al carrito
+            </button>
+            <Link to="carrito" className="ver_carrito">
+              <p>Ver carrito</p>
+            </Link>
+          </div>
+          <Link to="#" className="product-detail__link" onClick={() => setIsModalOpen(true)}>
             Ver información del producto
           </Link>
-          <button className="product-detail__button">
-            <img src="/assets/carrito-de-compras.png" alt="Agregar al carrito" />
-            Agregar al carrito
-          </button>
         </div>
       </div>
 
-      {/* Línea divisoria */}
       <hr className="divider" />
 
-      {/* Productos relacionados */}
-      <div className="related-products">
-        {products
-          .filter((p) => p.id !== product.id) // Excluir el producto actual
-          .slice(0, 3) // Mostrar un máximo de tres productos
-          .map((relatedProduct) => (
-            <div key={relatedProduct.id} className="related-products__item">
-              <img src={relatedProduct.image} alt={relatedProduct.name} />
-              <h3>{relatedProduct.name}</h3>
-              <h4>{relatedProduct.category}</h4>
-              <p>{relatedProduct.price}</p>
+      {/* Slider de productos relacionados */}
+      <div className="related-products-slider">
+        <button className="slider-button prev" onClick={handlePrev}>
+        <i class="ri-arrow-left-fill"></i>
+        </button>
+
+        <div className="slider-container">
+          {relatedProducts.slice(currentIndex, currentIndex + 3).map((product) => (
+            <div className="related-products__item" key={product.id}>
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
+              <h4>{product.category}</h4>
+              <p>{product.price}</p>
             </div>
           ))}
+        </div>
+
+        <button className="slider-button next" onClick={handleNext}>
+        <i class="ri-arrow-right-fill"></i>
+        </button>
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
           <div
@@ -91,7 +116,8 @@ const InfoProductoBasquet = () => {
               &times;
             </span>
             <p><strong>Descripción:</strong></p>
-            <p>Estas zapatillas Nike para básquetbol combinan comodidad y estilo en un diseño pensado especialmente para destacar en la cancha. Fabricadas con material textil suave y sintético, ofrecen un ajuste cómodo que se adapta perfectamente a los pies, proporcionando soporte y estabilidad.</p>
+            <p>Estas zapatillas Nike para básquetbol combinan comodidad y estilo en un diseño pensado especialmente para destacar en la cancha. Fabricadas con material textil suave y sintético, ofrecen un ajuste cómodo que se adapta perfectamente a los pies, proporcionando soporte y estabilidad.
+            </p>
           </div>
         </div>
       )}
@@ -100,7 +126,6 @@ const InfoProductoBasquet = () => {
 };
 
 export default InfoProductoBasquet;
-
 
 
 

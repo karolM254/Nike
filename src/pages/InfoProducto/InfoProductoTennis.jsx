@@ -1,12 +1,12 @@
-import React, { useState } from "react"; // Asegúrate de importar useState
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "../InfoProducto/InfoProducto.css";
 
 const InfoProductoTennis = () => {
   const { id } = useParams(); // Obtener el ID del producto desde la URL
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
+  const [currentIndex, setCurrentIndex] = useState(0); // Estado para el slider
 
-  // Lista de productos simulada
   const products = [
     { id: 1, name: "NIKE FUTURE RELAX", category: "Calzado de tennis", price: "$1.999.000", material: "Sintético", image: "/assets/tennis1.jpg", description: "Diseño futurista para máximo confort en cada paso." },
     { id: 2, name: "NIKE LEGEND BLUE", category: "Calzado de tennis", price: "$850.000", material: "Sintético", image: "/assets/tennis2.jpg", description: "Estilo legendario con soporte avanzado." },
@@ -14,23 +14,35 @@ const InfoProductoTennis = () => {
     { id: 4, name: "AIR SUPER SMITH 1", category: "Calzado de tennis", price: "$399.000", material: "Sintético", image: "/assets/tennis4.jpg", description: "Elegancia y rendimiento para profesionales." },
     { id: 5, name: "NIKE AIR RATE WIN", category: "Calzado de tennis", price: "$499.000", material: "Sintético", image: "/assets/tennis5.jpg", description: "Comodidad y estilo en cada movimiento." },
     { id: 6, name: "NIKE AIM WHITE VER", category: "Calzado de tennis", price: "$599.000", material: "Sintético", image: "/assets/tennis6.jpg", description: "Diseño clásico con innovación moderna." },
-  ];
+    ];
 
-  // Encontrar el producto actual según el ID
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {
     return <h2>Producto no encontrado</h2>;
   }
 
+  // Control del slider
+  const relatedProducts = products.filter((p) => p.id !== product.id);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? relatedProducts.length - 3 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === relatedProducts.length - 3 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <div className="product-page">
-      {/* Botón para regresar */}
       <button className="back-button" onClick={() => window.history.back()}>
         <i className="ri-arrow-left-line"></i> Volver
       </button>
 
-      {/* Detalle del producto */}
       <div className="product-detail">
         <div className="product-detail__image">
           <img src={product.image} alt={product.name} />
@@ -43,44 +55,57 @@ const InfoProductoTennis = () => {
           <div className="product-detail__options">
             <select>
               <option>Color</option>
+              <option>White</option>
+              <option>Red</option>
             </select>
             <select>
               <option>Talla</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
             </select>
           </div>
-          <Link
-            to="#"
-            className="product-detail__link"
-            onClick={() => setIsModalOpen(true)} // Abrir modal
-          >
+
+          <div className="button-container">
+            <button className="product-detail__button">
+              <img src="/assets/carrito-de-compras.png" alt="Agregar al carrito" />
+              Agregar al carrito
+            </button>
+            <Link to="carrito" className="ver_carrito">
+              <p>Ver carrito</p>
+            </Link>
+          </div>
+          <Link to="#" className="product-detail__link" onClick={() => setIsModalOpen(true)}>
             Ver información del producto
           </Link>
-          <button className="product-detail__button">
-            <img src="/assets/carrito-de-compras.png" alt="Agregar al carrito" />
-            Agregar al carrito
-          </button>
         </div>
       </div>
 
-      {/* Línea divisoria */}
       <hr className="divider" />
 
-      {/* Productos relacionados */}
-      <div className="related-products">
-        {products
-          .filter((p) => p.id !== product.id) // Excluir el producto actual
-          .slice(0, 3) // Mostrar un máximo de tres productos
-          .map((relatedProduct) => (
-            <div key={relatedProduct.id} className="related-products__item">
-              <img src={relatedProduct.image} alt={relatedProduct.name} />
-              <h3>{relatedProduct.name}</h3>
-              <h4>{relatedProduct.category}</h4>
-              <p>{relatedProduct.price}</p>
+      {/* Slider de productos relacionados */}
+      <div className="related-products-slider">
+        <button className="slider-button prev" onClick={handlePrev}>
+        <i class="ri-arrow-left-fill"></i>
+        </button>
+
+        <div className="slider-container">
+          {relatedProducts.slice(currentIndex, currentIndex + 3).map((product) => (
+            <div className="related-products__item" key={product.id}>
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
+              <h4>{product.category}</h4>
+              <p>{product.price}</p>
             </div>
           ))}
+        </div>
+
+        <button className="slider-button next" onClick={handleNext}>
+        <i class="ri-arrow-right-fill"></i>
+        </button>
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
           <div
@@ -91,7 +116,8 @@ const InfoProductoTennis = () => {
               &times;
             </span>
             <p><strong>Descripción:</strong></p>
-            <p>Estas zapatillas Nike para tenis combinan comodidad y estilo en un diseño pensado especialmente para rendir al máximo en la cancha. Fabricadas con material textil suave y sintético, ofrecen un ajuste cómodo que se adapta perfectamente a los pies, proporcionando soporte y estabilidad. </p>
+            <p>Estas zapatillas Nike para tenis combinan comodidad y estilo en un diseño pensado especialmente para rendir al máximo en la cancha. Fabricadas con material textil suave y sintético, ofrecen un ajuste cómodo que se adapta perfectamente a los pies, proporcionando soporte y estabilidad.
+            </p>
           </div>
         </div>
       )}
@@ -100,4 +126,3 @@ const InfoProductoTennis = () => {
 };
 
 export default InfoProductoTennis;
-
