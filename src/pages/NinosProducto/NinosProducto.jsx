@@ -168,6 +168,8 @@ const NinosProducto = () => {
 
   const navigate = useNavigate(); // Hook para navegar
 
+  
+
   return (
     <div>
       
@@ -186,14 +188,14 @@ const NinosProducto = () => {
             </h4>
             <p>{producto.price}</p>
             <div className="color-talla">
-              <select name="color" id="color">
+              <select name="color" id="color" className="select-ninoss">
                 <option value="opcionColor">Color</option>
                 <option value="rosa">Rosa</option>
                 <option value="negro">Negro</option>
                 <option value="azul">Azul</option>
                 <option value="morado">Morado</option>
               </select>
-              <select name="talla" id="talla">
+              <select name="talla" id="talla" className="select-ninoss">
                 <option value="opcionTalla">Talla</option>
                 <option value="35">35</option>
                 <option value="36">36</option>
@@ -201,18 +203,14 @@ const NinosProducto = () => {
                 <option value="38">38</option>
               </select>
             </div>
-            <h4 className="ver-mas-Ninos" onClick={openModal}>
+            <h4 className="ver-mas-ninos" onClick={openModal}>
               Ver información del producto
             </h4>
-            <div className="boton-Ninos" onClick={addToCart}>
-              <button className="carrito-Ninos">
+            <div className="boton-ninos" onClick={addToCart}>
+              <button className="carrito-ninos">
                 <i className="ri-shopping-cart-line"></i> Agregar al carrito
               </button>
-              <div>
-                <button className="ver-carrito">
-                  <Link to="/carrito">Ver carrito</Link>
-                </button>
-            </div>
+              
             </div>
           </div>
         </div>
@@ -234,22 +232,24 @@ const NinosProducto = () => {
 
         {/* Slider */}
         <section class="events-upcomingg">
-          <Slider {...settings}>
-            {productosNino.map((producto) => (
-              <div key={producto.id}
-              className="event-cardd"
-              onClick={() => setProductoSeleccionado(producto)}
-              style={{ cursor: "pointer" }}
-              >
-                <img src={producto.img} alt={producto.title} />
-                <h4>{producto.title}</h4>
-                <div className="precio-Ninoss">
-                  <h5>{producto.description}</h5>
-                  <p>{producto.price}</p>
-                </div>
-              </div>
-            ))}
-          </Slider>
+        <Slider {...settings}>
+  {productosNino.map((producto) => (
+    <div
+      key={producto.id}
+      className="event-cardd"
+      onClick={() => navigate(`/producto_nino/${producto.id}`)}  // Redirige al detalle del producto
+      style={{ cursor: "pointer" }}
+    >
+      <img src={producto.img} alt={producto.title} />
+      <h4>{producto.title}</h4>
+      <div className="precio-Ninoss">
+        <h5>{producto.description}</h5>
+        <p>{producto.price}</p>
+      </div>
+    </div>
+  ))}
+</Slider>
+
         </section>
       </main>
     </div>
