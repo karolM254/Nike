@@ -17,8 +17,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: calc(100vh - 80px);
-
 }
+
 .hero-text h1 {
     font-size:10em;
     text-align: left;
@@ -29,11 +29,11 @@
     font-size:em;
     font-family: var(--font-heading);
 }
+
 .hero-text p{
-    font-family: 'Montserrat', sans-serif;
+    font-family: "montserrat", sans-serif;
     text-align: left;
     margin-left: 19em;
     font-size: large;
     color: white !important;
-    
 }

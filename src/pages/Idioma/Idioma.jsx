@@ -18,5 +18,4 @@ function Idioma() {
     );
   }
   
-  export default Idioma;
-  
+export default Idioma;
