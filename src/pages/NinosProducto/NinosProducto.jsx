@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./NinosProducto.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -122,6 +122,7 @@ const NinosProducto = () => {
       });
     };
 
+  const navigate = useNavigate(); // Hook para navegar
   const settings = {
     dots: true,
     infinite: true,
@@ -167,6 +168,10 @@ const NinosProducto = () => {
   return (
     <div>
       <main className="contenido-Ninos">
+        {/* Botón para regresar */}
+        <button className="boton-regresar" onClick={() => navigate(-1)}>
+          <i className="ri-arrow-left-line"></i> Volver
+        </button>
         {/* Producto destacado */}
         <div className="ver-producto-Ninos">
           <img src={producto.img} alt={producto.title} />

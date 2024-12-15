@@ -23,6 +23,11 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
+    font-family: var(--font-heading);
+}
+
+.privacy-policy-container p {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .privacy-policy-title{

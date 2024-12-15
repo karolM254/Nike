@@ -1,6 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 
+:root {
+    --primary-color: #2563eb;
+    --primary-color-dark: #1e40af;
+    --text-dark: #1f1f1f;
+    --text-light: #4b5563;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --font-heading: "Roboto Condensed", sans-serif;
+}
+
 /* HombresProductos.css */
+.conatinerPrdocutosMen {
+    font-family: var(--font-heading);
+}
+
+.conatinerPrdocutosMen p {
+    font-family: 'Montserrat', sans-serif;
+}
 
 html{
     overflow-x: hidden;
@@ -64,7 +82,7 @@ html{
 }
 
 .TittleProcut {
-    font-size: 14px; /* Tamaño del texto del título */
+    font-size: 1rem; /* Tamaño del texto del título */
     font-weight: bold; /* Negrita para resaltar el título */
     color: var(--primary-color-dark); /* Color Azul para el texto */
     margin-bottom: 8px; /* Separación inferior */
@@ -73,8 +91,8 @@ html{
   
 .descriptionProductoMen {
     font-size: 12px; /* Texto pequeño para la descripción */
-    color: #6c757d; /* Gris como en la imagen */
     margin-bottom: 8px; /* Separación inferior */
+    font-weight: 500;
 }
   
 .priceProductMen {

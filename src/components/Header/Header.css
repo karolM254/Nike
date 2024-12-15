@@ -95,6 +95,7 @@ nav {
     text-transform: uppercase;
     margin-bottom: 5px;
     color: #bbb;
+    font-family: var(--font-heading);
 }
 
 .contenido-women ul {
@@ -151,4 +152,37 @@ nav {
 /*Para cuando de click se coloca azul*/
 .link.active {
     color: var(--primary-color-dark); /* Cambiar color a azul cuando esté activo */
+}
+
+/*-------------- Estilos para el cambio de idioma ------------------ */
+.language-selector {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.language-menu {
+    position: absolute;
+    top: 120%; /* Aparece justo debajo del ícono */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--text-dark);
+    border-radius: 11px;
+    padding: 10px;
+    min-width: 130px;
+    z-index: 10; /* Asegura que se posicione por encima de todo */
+}
+  
+.language-option {
+    padding: 8px 10px;
+    color: var(--extra-light);
+    cursor: pointer;
+}
+  
+.language-option.selected {
+    font-weight: bold;
+}
+
+.ri-check-line {
+    margin-left: 15px;
 }

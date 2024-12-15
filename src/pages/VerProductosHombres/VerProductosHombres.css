@@ -19,8 +19,13 @@
     max-width: 600px;
     margin: 0 auto;
     max-width: 600px;
+    font-family: var(--font-heading);
 }
-  
+
+.producto-detalle p, .producto-no-encontrado p {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .ImagenPrincipal {
     width: 60%;
     position: relative;

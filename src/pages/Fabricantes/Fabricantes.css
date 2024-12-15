@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
+
 :root {
     --primary-color: #2563eb;
     --primary-color-dark: #1e40af;
@@ -19,6 +21,15 @@
     font-size: 50px;
     color: var(--primary-color-dark);
     margin-bottom: 5px;
+    font-family: var(--font-heading);
+}
+
+.titulo-fabricantes p, .contenido-fabricantes p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenido-fabricantes h2 {
+    font-family: var(--font-heading);
 }
 
 .contenido-fabricantes {
