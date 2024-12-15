@@ -29,12 +29,12 @@ const Basquet = () => {
   return (
     <div className="layout">
       <aside className="sidebar">
-        <h3>DEPORTES</h3>
+        <h3>SPORTS</h3>
         <ul>
-          <li><Link to="/futbol">FÚTBOL</Link></li>
-          <li><span>BÁSQUETBOL</span></li>
+          <li><Link to="/futbol">SOCCER</Link></li>
+          <li><span>BASKETBALL</span></li>
           <li><Link to="/tennis">TENNIS</Link></li>
-          <li><Link to="/atletismo">ATLETISMO</Link></li>
+          <li><Link to="/atletismo">ATHLETICS</Link></li>
         </ul>
         <div className="linea"></div>
       </aside>

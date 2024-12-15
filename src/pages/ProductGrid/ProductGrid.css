@@ -1,23 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
-
-:root {
-    --primary-color: #2563eb;
-    --primary-color-dark: #1e40af;
-    --text-dark: #1f1f1f;
-    --text-light: #4b5563;
-    --extra-light: #f3f4f6;
-    --white: #ffffff;
-    --max-width: 1200px;
-    --font-heading: "Roboto Condensed", sans-serif;
-}
-
-.layout {
-    font-family: var(--font-heading);
-}
-
-.layout p {
-    font-family: 'Montserrat', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&family=Poppins:wght@100..900&display=swap');
 
 body {
     margin: 0;
@@ -129,28 +110,38 @@ span{
     justify-content: flex-end;
     margin-bottom: 1rem;
     position: relative;
+    margin-right: 3rem;
 }
 .search input {
-    width: 300px;
-    padding: 0.5rem 1rem 1rem 3rem;
+    width: 280px;
+    padding: 0.7rem 1rem 0.7rem 3rem;
     border-radius: 2rem;
     border: #1e40af solid 2px;
-    font-size: 1rem;
+    font-size: 1.7rem;
 }
 
 .search ::placeholder {
     color: #8f8f8f;
+    font-size: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
 
 }
 
 .lupa img {
     position: absolute;
     top: 50%;
-    right: 260px;
+    right: 240px;
     transform: translateY(-50%);
     width: 24px;
     height: 24px;
     cursor: pointer;
+}
+@media (max-width: 390px) {
+    .lupa img {
+        height: auto;
+        transform: translateY(-50%);
+        margin-right: -20px;
+    }
 }
 
 .product-grid {
@@ -159,21 +150,38 @@ span{
     gap: 1rem; /* Ajustar espacio entre productos */
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1377px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1008px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        grid-template-columns: 1fr; /* 1 columnas en tablets */
+        margin-bottom: 20px;
+        margin-left: 50px; /* Ajusta el margen izquierdo */
+        width: 100%;
+        padding: 0; /* Elimina los márgenes */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 490px) {
     .product-grid {
-        grid-template-columns: 1fr; /* 1 columna en móviles */
+        grid-template-columns: 1fr; /* 1 columna en pantallas móviles */
+        margin-left: -45px; /* Elimina el margen izquierdo */
+        width: 100%;
+        padding: 0; /* Elimina los márgenes */
+        padding: 1rem; /* Añade un margen superior */
+        padding-bottom: 1rem; /* Añade un margen inferior */
+        padding-top: 1rem; /* Añade un margen superior */
+        padding-bottom: 1rem; /* Añade un margen inferior */
+        padding-left: 0; /* Elimina el margen izquierdo */
+        padding-right: 0; /* Elimina el margen derecho */
+        padding-bottom: 0; /* Elimina el margen inferior */
+        padding-right: 0; /* Elimina el margen derecho */
+        padding-top: 0; /* Elimina el margen superior */
+        padding-bottom: 0; /* Elimina el margen inferior */
     }
 }
 
@@ -188,12 +196,12 @@ span{
 }
 .product img {
     width: 110%;
-    height: 300px; /* Altura fija para uniformidad */
+    height: 280px; /* Altura fija para uniformidad */
     object-fit: cover; /* Asegura que la imagen se recorte proporcionalmente */
     border-radius: 0.5rem;
 
 }
-@media (max-width: 1200px) {
+@media (max-width: 1377px) {
     .product {
         max-width: 400px; /* Reduce el tamaño en pantallas medianas */
     }
