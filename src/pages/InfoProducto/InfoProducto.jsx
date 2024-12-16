@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useCart } from "../../components/Carrito/CartContext"; // Importa el contexto del carrito.
 import "../InfoProducto/InfoProducto.css";
 
 const InfoProducto = () => {
-  const { id } = useParams(); // Obtener el ID del producto desde la URL
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
-  const [currentIndex, setCurrentIndex] = useState(0); // Estado para el slider
+  const { id } = useParams();
+  const { carrito, setCarrito } = useCart(); // Accede al carrito y a la función para actualizarlo.
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const products = [
     { id: 1, name: "NIKE MASTER LEGEND", category: "Guayos para fútbol", price: "$599.950", material: "Sintético", image: "/assets/guayo1.jpg", description: "Comodidad y estilo con materiales sintéticos de alta calidad." },
@@ -22,7 +24,6 @@ const InfoProducto = () => {
     return <h2>Producto no encontrado</h2>;
   }
 
-  // Control del slider
   const relatedProducts = products.filter((p) => p.id !== product.id);
 
   const handlePrev = () => {
@@ -35,6 +36,20 @@ const InfoProducto = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === relatedProducts.length - 3 ? 0 : prevIndex + 1
     );
+  };
+
+  // Función para agregar el producto al carrito
+  const agregarAlCarrito = () => {
+    const productoEnCarrito = carrito.find((item) => item.id === product.id);
+
+    if (productoEnCarrito) {
+      // Si ya está en el carrito, solo incrementa la cantidad.
+      alert("Este producto ya está en el carrito.");
+    } else {
+      // Si no está, agrégalo con la cantidad inicial de 1.
+      setCarrito([...carrito, { ...product, cantidad: 1 }]);
+      alert("Producto agregado al carrito.");
+    }
   };
 
   return (
@@ -67,12 +82,12 @@ const InfoProducto = () => {
             </select>
           </div>
           <div className="button-container">
-            <button className="product-detail__button">
+            <button className="product-detail__button" onClick={agregarAlCarrito}>
               <img src="/assets/carrito-de-compras.png" alt="Agregar al carrito" />
               Agregar al carrito
             </button>
             <Link to="/carrito" className="ver_carrito">
-              <p></p>
+              <p>Ver carrito</p>
             </Link>
           </div>
           <Link to="#" className="product-detail__link" onClick={() => setIsModalOpen(true)}>
@@ -83,12 +98,10 @@ const InfoProducto = () => {
 
       <hr className="divider" />
 
-      {/* Slider de productos relacionados */}
       <div className="related-products-slider">
         <button className="slider-button prev" onClick={handlePrev}>
-        <i class="ri-arrow-left-fill"></i>
+          <i className="ri-arrow-left-fill"></i>
         </button>
-
         <div className="slider-container">
           {relatedProducts.slice(currentIndex, currentIndex + 3).map((product) => (
             <div className="related-products__item" key={product.id}>
@@ -99,24 +112,19 @@ const InfoProducto = () => {
             </div>
           ))}
         </div>
-
         <button className="slider-button next" onClick={handleNext}>
-        <i class="ri-arrow-right-fill"></i>
+          <i className="ri-arrow-right-fill"></i>
         </button>
       </div>
 
       {isModalOpen && (
         <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
-          <div
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()} // Evitar cerrar al hacer clic dentro del modal
-          >
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={() => setIsModalOpen(false)}>
               &times;
             </span>
             <p><strong>Descripción:</strong></p>
-            <p>Estos guayos Nike para fútbol combinan comodidad y estilo en un diseño pensado especialmente para resaltar elegancia y clase. Fabricado con material textil suave y sintético, proporciona un ajuste cómodo que se adapta perfectamente a los pies. Suela flexible y antideslizante para mayor seguridad.
-            </p>
+            <p>Estos guayos Nike para fútbol combinan comodidad y estilo en un diseño pensado especialmente para resaltar elegancia y clase. Fabricado con material textil suave y sintético, proporciona un ajuste cómodo que se adapta perfectamente a los pies. Suela flexible y antideslizante para mayor seguridad.</p>
           </div>
         </div>
       )}
@@ -125,3 +133,4 @@ const InfoProducto = () => {
 };
 
 export default InfoProducto;
+

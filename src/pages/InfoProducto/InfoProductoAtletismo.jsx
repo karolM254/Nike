@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useCart } from "../../components/Carrito/CartContext"; // Importa el contexto del carrito
 import "../InfoProducto/InfoProducto.css";
 
 const InfoProductoAtletismo = () => {
   const { id } = useParams();
+  const { carrito, setCarrito } = useCart(); // Accede al carrito y a la función para actualizarlo
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0); // Estado para el slider
 
@@ -37,6 +39,18 @@ const InfoProductoAtletismo = () => {
     );
   };
 
+  // Función para agregar el producto al carrito
+  const agregarAlCarrito = () => {
+    const productoEnCarrito = carrito.find((item) => item.id === product.id);
+
+    if (productoEnCarrito) {
+      alert("Este producto ya está en el carrito.");
+    } else {
+      setCarrito([...carrito, { ...product, cantidad: 1 }]);
+      alert("Producto agregado al carrito.");
+    }
+  };
+
   return (
     <div className="product-page">
       <button className="back-button" onClick={() => window.history.back()}>
@@ -67,11 +81,11 @@ const InfoProductoAtletismo = () => {
             </select>
           </div>
           <div className="button-container">
-            <button className="product-detail__button">
+            <button className="product-detail__button" onClick={agregarAlCarrito}>
               <img src="/assets/carrito-de-compras.png" alt="Agregar al carrito" />
               Agregar al carrito
             </button>
-            <Link to="carrito" className="ver_carrito">
+            <Link to="/carrito" className="ver_carrito">
               <p>Ver carrito</p>
             </Link>
           </div>
@@ -86,7 +100,7 @@ const InfoProductoAtletismo = () => {
       {/* Slider de productos relacionados */}
       <div className="related-products-slider">
         <button className="slider-button prev" onClick={handlePrev}>
-        <i class="ri-arrow-left-fill"></i>
+          <i className="ri-arrow-left-fill"></i>
         </button>
 
         <div className="slider-container">
@@ -101,7 +115,7 @@ const InfoProductoAtletismo = () => {
         </div>
 
         <button className="slider-button next" onClick={handleNext}>
-        <i class="ri-arrow-right-fill"></i>
+          <i className="ri-arrow-right-fill"></i>
         </button>
       </div>
 
@@ -121,3 +135,4 @@ const InfoProductoAtletismo = () => {
 };
 
 export default InfoProductoAtletismo;
+
