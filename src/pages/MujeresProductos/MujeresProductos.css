@@ -97,5 +97,133 @@
   color: var(--primary-color);
 }
 
+/* ------------------ Responsive -------------------- */
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .grid-contenido-mujeres {
+    grid-template-columns: 1fr !important;
+    margin: 50px !important;
+  }
+
+  .grid-contenido-mujeres h5 {
+    font-size: 0.9rem;
+  }
+
+  .buscador-mujeres {
+    width: 150px;
+    font-size: 0.9rem;
+  }
+
+  .buscador-mujeres input {
+    width: 80px;
+    padding: 2px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Celulares grandes y tablets pequeñas */
+@media (min-width: 481px) and (max-width: 768px) {
+  .grid-contenido-mujeres {
+    grid-template-columns: 1fr !important;
+    margin: 40px !important;
+  }
+
+  .buscador-mujeres-productos {
+    align-items: flex-end;
+  }
+
+  .buscador-mujeres {
+    width: 150px;
+  }
+
+  .buscador-mujeres input {
+    width: 100px;
+    padding: 5px;
+
+  }
+}
+
+/*Tablets medianas y grandes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-contenido-mujeres {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin: 50px !important;
+    gap: 80px !important;
+  }
+
+  .buscador-mujeres-productos {
+    align-items: flex-end;
+  }
+
+  .buscador-mujeres {
+    width: 150px;
+  }
+
+  .buscador-mujeres input {
+    width: 100px;
+    padding: 5px;
+
+  }
+}
+
+/* Laptops y computadores estándar */
+@media (min-width: 1025px) and (max-width: 1920px) {
+  .grid-contenido-mujeres {
+    grid-template-columns: repeat(3, 1fr) !important;
+    margin: 50px !important;
+    gap: 80px !important;
+  }
+
+  .buscador-mujeres-productos {
+    align-items: flex-end;
+  }
+
+  .buscador-mujeres {
+    width: 200px;
+  }
+
+  .buscador-mujeres input {
+    width: 100px;
+    padding: 5px;
+
+  }
+}
+
+/* Monitores grandes */
+@media (min-width: 1921px) {
+  .grid-contenido-mujeres {
+    grid-template-columns: repeat(3, 1fr) !important;
+    margin: 80px !important;
+    gap: 150px !important;
+    font-size: 2.1rem;
+  }
+
+  .grid-contenido-mujeres p {
+    font-size: 1.4rem;
+  }
+
+  .grid-contenido-mujeres h5 {
+    font-size: 1.27rem;
+  }
+
+  .buscador-mujeres-productos {
+    align-items: flex-end;
+  }
+
+  .buscador-mujeres {
+    width: 400px;
+  }
+
+  .buscador-mujeres input {
+    width: 200px;
+    padding: 20px;
+    font-size: 2rem;
+
+  }
+}
+
+
+
 
 

@@ -219,11 +219,6 @@ const MujeresProducto = () => {
               <button className="carrito-mujeres">
                 <i className="ri-shopping-cart-line"></i> Agregar al carrito
               </button>
-              <div>
-                  <button className="ver-carrito">
-                    <Link to="/carrito">Ver carrito</Link>
-                  </button>
-              </div>
             </div>
             
           </div>
