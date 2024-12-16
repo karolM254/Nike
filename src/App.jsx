@@ -28,8 +28,8 @@ import WooCommerceAPI from "./components/WoocomerceApi";
 import Compras1 from "./pages/Compras1/Compras1";
 import Carrito from "./pages/Carrito/Carrito";
 import { CartProvider } from "./components/Carrito/CartContext";
-import Reseñas from "./pages/reseñas/Reseñas";
-import Reseñas1 from "./pages/reseñas_2/Reseñas1";
+import AtencionCliente from "./pages/AtencionCliente/AtencionCliente";
+
 
 
 function App() { 
@@ -87,10 +87,9 @@ function App() {
             <Route path="/Compras1" element={<Compras1 />} />
             {/* Ruta para la sección del carrito */}
             <Route path="/carrito" element={<Carrito />} />
-            {/* Ruta para la reseñas */}
-            <Route path="/resenas" element={<Reseñas />}/>
-            {/* Ruta para mostrar la reseña */}
-            <Route path="/mostrar_resena" element={<Reseñas1 />}/>
+            {/* Ruta para la atención al cliente */}
+            <Route path="/atencion" element={<AtencionCliente />} />
+         
           </Routes>
           <Footer />
         </div>
