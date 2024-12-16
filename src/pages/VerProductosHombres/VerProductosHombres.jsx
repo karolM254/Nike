@@ -230,7 +230,7 @@ function VerProductosHombres() {
                                     <span className="close-icon">✖</span>
                                 </button>
                                 <h2 className='descripcion-modal-hombre'>Descripción:</h2>
-                                <p>{producto.descripcion2}</p>
+                                <p className='descripcion-producto-hombree'>{producto.descripcion2}</p>
                             </div>
                         </div>
                     )}
