@@ -282,12 +282,13 @@
 
 .modal-content {
   background: white;
-  padding: 30px;
+  padding: 40px;
   border-radius: 18px;
-  max-width: 90%;
-  width: 600px;
+  max-width: 600px; /* Aseguramos que el modal tenga un ancho máximo definido */
+  width: 100%;
   text-align: center;
-  border: #8e8e8e solid 0.1px;
+  border: 0.1px solid #8e8e8e;
+  position: relative; /* Necesario para posicionar el close */
 }
 
 .modal-content .close {
@@ -297,12 +298,26 @@
   font-size: 20px;
   cursor: pointer;
 }
+
 .modal-content p {
-  margin-bottom: 20px;
+  margin-top: -10px; /* Añadimos un poco de espacio por encima del párrafo */
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
   color: #333;
   text-align: justify;
+  z-index: 1; /* Asegura que el párrafo quede debajo del strong */
+}
+
+.modal-content strong {
+  position: absolute; /* Posicionamos el strong de manera absoluta */
+  top: 0; /* Lo ponemos arriba */
+  left: 25%;
+  transform: translateX(-50%); /* Centrado horizontal */
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 21px; /* Ajustamos el tamaño del texto según sea necesario */
+  z-index: 2; /* Asegura que el strong quede por encima del párrafo */
+  transition: text-decoration 0.3s ease-in-out;
 }
 
 .back-button {
