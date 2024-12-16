@@ -97,20 +97,56 @@ footer {
 
 /* Móviles grandes y tabletas pequeñas (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__socials {
+    justify-content: center;
+  }
+  .footer__bar {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /* Tabletas medianas y grandes (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  /* Estilos para tabletas */
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer__socials {
+    justify-content: flex-start;
+  }
+  .footer__bar {
+    flex-direction: row;
+    text-align: left;
+  }
 }
 
 /* Laptops y escritorios estándar (1025px - 1920px) */
 @media (min-width: 1025px) and (max-width: 1920px) {
-  /* Estilos para laptops y escritorios */
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer__socials {
+    justify-content: flex-start;
+  }
+  .footer__bar {
+    flex-direction: row;
+    text-align: left;
+  }
 }
 
 /* Monitores grandes (1921px o más) */
 @media (min-width: 1921px) {
-  /* Estilos para monitores grandes */
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer__socials {
+    justify-content: flex-start;
+  }
+  .footer__bar {
+    flex-direction: row;
+    text-align: left;
+  }
 }

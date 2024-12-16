@@ -20,21 +20,21 @@
 }
 
 /* ------------------- Buscador -------------------- */
-.buscador-Ninos-productos {
+.buscador-Ninos-productoss {
   display: flex;
   justify-content: flex-end;
   margin: 40px 0 20px;
   padding-right: 50px;
 }
 
-.buscador-Ninos {
+.buscador-Ninoss {
   border: 1px solid var(--primary-color-dark);
   padding: 10px;
   border-radius: 60px;
   font-size: 19px;
 }
 
-.buscador-Ninos input {
+.buscador-Ninoss input {
   border: none;
   font-size: 19px;
   width: 220px;
@@ -42,41 +42,41 @@
   margin-bottom: 0;
 }
 
-.buscar-producto {
+.buscar-productoo {
   outline: none;
 }
 
 /* ------------------ Productos -------------------- */
-.grid-contenido-Ninos {
+.grid-contenido-Ninoss {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 70px;
   margin: 100px 80px;
 }
 
-.grid-contenido-Ninos img {
+.grid-contenido-Ninoss img {
   border-radius: 11px;
   transition: transform 0.3s ease; 
   height: 70%;
   width: 90%;
 }
 
-.grid-contenido-Ninos img:hover{
+.grid-contenido-Ninoss img:hover{
   transform: scale(1.1);
 }
 
-.grid-contenido-Ninos h4{
+.grid-contenido-Ninoss h4{
   color: var(--primary-color-dark);
   font-size: 19.2px;
   margin: 10px 0 0 5px;
 }
 
-.grid-contenido-Ninos p {
+.grid-contenido-Ninoss p {
   justify-content: space-between;
   font-size: 17px;
 }
 
-.precio-Ninos {
+.precio-Ninoss {
   display: flex;
   justify-content: space-between;
   margin: 8px 30px 0 5px;
@@ -84,12 +84,218 @@
   font-weight: 600;
 }
 
-.precio-Ninos h5 {
+.precio-Ninoss h5 {
   font-weight: 500;
   font-size: 17px;
 }
 
-.precio-Ninos p {
+.precio-Ninoss p {
   color: var(--primary-color);
 }
 
+
+/* ------------------- Responsive -------------------- */
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+  .buscador-Ninos-productoss {
+    position: absolute; 
+    top: 60px; 
+    right: 10px; 
+    margin: 0; 
+    padding: 0;
+    z-index: 10; 
+  }
+
+  .buscador-Ninoss {
+    padding: 5px; 
+    border-radius: 30px; 
+    font-size: 14px; 
+  }
+
+  .buscador-Ninoss input {
+    font-size: 12px; 
+    width: 100px; 
+  }
+
+  .grid-contenido-Ninoss {
+    grid-template-columns: 1fr;
+    margin: 50px 20px;
+  }
+
+  .grid-contenido-Ninoss img {
+    width: 100%;
+    height: auto;
+  }
+
+  .grid-contenido-Ninoss h4 {
+    font-size: 16px;
+  }
+
+  .grid-contenido-Ninoss p {
+    font-size: 14px;
+  }
+
+  .precio-Ninoss {
+    margin: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .precio-Ninoss h5 {
+    font-size: 14px;
+  }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .buscador-Ninos-productoss {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .buscador-Ninoss {
+    padding: 8px;
+    border-radius: 40px;
+    font-size: 16px;
+  }
+
+  .buscador-Ninoss input {
+    font-size: 14px; 
+    width: 110px; 
+  }
+
+
+  .grid-contenido-Ninoss {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 60px 30px;
+  }
+
+  .grid-contenido-Ninoss img {
+    width: 100%;
+    height: auto;
+  }
+
+  .grid-contenido-Ninoss h4 {
+    font-size: 18px;
+  }
+
+  .grid-contenido-Ninoss p {
+    font-size: 15px;
+  }
+
+  .precio-Ninoss {
+    margin: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .precio-Ninoss h5 {
+    font-size: 16px;
+  }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .buscador-Ninos-productoss {
+    padding-right: 40px;
+    justify-content: flex-start;
+  }
+
+  .buscador-Ninoss input {
+    width: 200px;
+  }
+
+  .grid-contenido-Ninoss {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 80px 40px;
+  }
+
+  .grid-contenido-Ninoss img {
+    width: 100%;
+    height: auto;
+  }
+
+  .grid-contenido-Ninoss h4 {
+    font-size: 18px;
+  }
+
+  .grid-contenido-Ninoss p {
+    font-size: 16px;
+  }
+
+  .precio-Ninoss {
+    margin: 8px 30px;
+    font-size: 1rem;
+  }
+
+  .precio-Ninoss h5 {
+    font-size: 17px;
+  }
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+  .buscador-Ninos-productoss {
+    padding-right: 50px;
+    justify-content: flex-end;
+  }
+
+  .grid-contenido-Ninoss {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 100px 80px;
+  }
+
+  .grid-contenido-Ninoss img {
+    width: 90%;
+    height: auto;
+  }
+
+  .grid-contenido-Ninoss h4 {
+    font-size: 19.2px;
+  }
+
+  .grid-contenido-Ninoss p {
+    font-size: 17px;
+  }
+
+  .precio-Ninoss {
+    margin: 8px 30px;
+    font-size: 0.9rem;
+  }
+
+  .precio-Ninoss h5 {
+    font-size: 17px;
+  }
+}
+
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+  .grid-contenido-Ninoss {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 120px 100px;
+  }
+
+  .grid-contenido-Ninoss img {
+    width: 80%;
+    height: auto;
+  }
+
+  .grid-contenido-Ninoss h4 {
+    font-size: 22px;
+  }
+
+  .grid-contenido-Ninoss p {
+    font-size: 19px;
+  }
+
+  .precio-Ninoss {
+    margin: 10px 40px;
+    font-size: 1rem;
+  }
+
+  .precio-Ninoss h5 {
+    font-size: 18px;
+  }
+}
