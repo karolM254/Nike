@@ -12,7 +12,6 @@ import { PoliticaPrivacidad } from "./pages/PoliticaPrivacidad/PoliticaPrivacida
 import NinosProductos from "./pages/NinosProductos/NinosProductos";
 import NinosProducto from "./pages/NinosProducto/NinosProducto";
 import HombresProductos from "./pages/ProductosHombres/ProductosHombres";
-import Customize from "./pages/Customize/Customize";
 import Idioma from "./pages/Idioma/Idioma";
 import VerProductosHombres from "./pages/VerProductosHombres/VerProductosHombres";
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -61,8 +60,6 @@ function App() {
             {/* Rutas para la seccion de hombres */}
             <Route path="/hombre" element={<HombresProductos />} />
             <Route path="/productosHombre/:idMen" element={<VerProductosHombres />} />
-            {/* Rutas para la seccion de personalizado*/}
-            <Route path="/personalizado" element={<Customize />} />
             {/* Rutas para la seccion de idioma */}
             <Route path="/idioma" element={<Idioma />} />
             {/* Ruta para la landing page */}

@@ -1,39 +1,105 @@
+/* Importa las fuentes desde Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 
+/* Define variables de CSS que pueden ser reutilizadas en todo el archivo */
 :root {
-    --primary-color: #2563eb;
-    --primary-color-dark: #1e40af;
-    --text-dark: #1f1f1f;
-    --text-light: #4b5563;
-    --extra-light: #f3f4f6;
-    --white: #ffffff;
-    --max-width: 1200px;
-    --font-heading: "Roboto Condensed", sans-serif;
+    --extra-light: #f3f4f6; /* Un color muy claro */
+    --white: #ffffff; /* Color blanco */
+    --max-width: 1200px; /* Ancho máximo de 1200px */
+    --font-heading: "Roboto Condensed", sans-serif; /* Fuente principal para los encabezados */
 }
 
-.hero{
-    background-image: url(/public/assets/header.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: calc(100vh - 80px);
-}
-
-.hero-text h1 {
-    font-size:10em;
-    text-align: left;
-    margin-left: 1em;
-    padding-top: 100px;
-    color: white !important;
-    text-align: center;
-    font-size:em;
+/* Aplica la fuente principal a las clases banner_container e intro__container */
+.banner_container, .intro__container {
     font-family: var(--font-heading);
 }
 
-.hero-text p{
-    font-family: "montserrat", sans-serif;
-    text-align: left;
-    margin-left: 19em;
-    font-size: large;
-    color: white !important;
+/* Aplica la fuente 'Montserrat' a todos los párrafos dentro de banner_container e intro__container */
+.banner_container p, .intro__container p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos para el contenedor de introducción */
+.intro__container {
+    padding: 1rem; /* Espaciado interno de 1rem */
+    display: grid; /* Usa un grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    min-height: calc(700px - 60px); /* Altura mínima del contenedor */
+}
+
+/* Estilos para el contenido dentro del contenedor de introducción */
+.intro__content {
+    text-align: center; /* Alinea el texto al centro */
+    color: var(--white); /* Aplica el color blanco al texto */
+    display: grid; /* Usa un grid layout */
+    place-content: center; /* Centra el contenido del grid */
+    gap: 1rem; /* Espaciado entre los elementos */
+}
+
+/* Estilos para el encabezado dentro del contenido de introducción */
+.intro__content h1 {
+    font-size: 11rem; /* Tamaño de fuente muy grande */
+    line-height: 9rem; /* Altura de línea */
+}
+
+/* Estilos para los párrafos dentro del contenido de introducción */
+.intro__content p {
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Estilos para móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .intro__content h1 {
+        font-size: 3rem; /* Reduce el tamaño de la fuente */
+        line-height: 2.5rem; /* Reduce la altura de la línea */
+    }
+    .intro__container {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+}
+
+/* Estilos para móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .intro__content h1 {
+        font-size: 4rem; /* Tamaño de fuente mediano */
+        line-height: 3.5rem; /* Altura de línea mediana */
+    }
+    .intro__container {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+}
+
+/* Estilos para tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .intro__content h1 {
+        font-size: 6rem; /* Tamaño de fuente grande */
+        line-height: 5.5rem; /* Altura de línea grande */
+    }
+    .intro__container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    }
+}
+
+/* Estilos para laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+    .intro__content h1 {
+        font-size: 11rem; /* Tamaño de fuente muy grande */
+        line-height: 7.rem; /* Altura de línea muy grande */
+    }
+    .intro__container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    }
+}
+
+/* Estilos para monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+    .intro__content h1 {
+        font-size: 11rem; /* Tamaño de fuente extra grande */
+        line-height: 9rem; /* Altura de línea extra grande */
+    }
+    .intro__container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    }
 }
