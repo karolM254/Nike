@@ -29,36 +29,23 @@
 .ver-producto-mujer img {
   border-radius: 11px;
   height: auto;
-  width: 75%;
-  margin-top: -30px;
 }
   
 .info-producto-mujer {
   padding: 10px 20px;
-  margin-left: -115px;
-  margin-top: -20px;
 }
   
 .info-producto-mujer h3 {
   color: var(--primary-color-dark);
-  font-size: 30px;
-  color: var(--primary-color-dark);
-  font-weight: bolder;
-  text-align: left; /* Centra el texto horizontalmente */
-  margin-bottom: 10px;
-  width: 100%; /* Ajusta el ancho del contenedor */
-  max-width: 600px; /* Limita el ancho máximo */
+  font-size: 2rem;
 }
   
-.info-producto-mujer .info-producto-mujer-parrafo2 {
+.info-producto-mujer h4 {
   font-size: 1.3rem;
-  margin-bottom: 7px;
 }
   
 .material-producto-mujer {
   font-weight: 300;
-  color: #646262;
-  margin-bottom: 7px;
 }
   
 .info-producto-mujer p {
@@ -73,29 +60,23 @@
   gap: 15px;
 }
   
-.color-talla .select-mujeres {
-  width: 24%;
-  margin: 1px 0;
-  padding: 8px;
-  font-size: 14px;
-  border-radius: 50px;
-  background-color: #ececec;
+.color-talla select {
+  padding: 5px 8px;
+  width: 15%;
+  border-radius: 60px;
+  background-color: var(--extra-light);
+  font-size: 0.9rem;
   cursor: pointer;
-  border: none;
-  position: relative;
-  top: 15px;
 }
   
 .ver-mas-mujeres {
   text-decoration: underline;
-  margin-top: 29px;
-  font-size: 18px;
 }
 
 .boton-mujeres{
   display: flex;
   flex-direction: row;
-  margin-top: -100px;
+  margin-bottom: 30px;
 }
   
 .carrito-mujeres {
@@ -116,7 +97,6 @@
   font-size: 1rem;
   text-decoration: underline;
   color: var(--text-dark);
-  margin-top: 2px;
 }
   
 .ver-producto-mujer .ri-shopping-cart-line {
@@ -140,9 +120,10 @@
   height: 2px;
   border: none;
   position: relative;
-  top: -14px;
+  top: -35px;
   width: calc(90% - 30px); /* Hace que sea más largo al reducir el margen total */
   left: 2px;
+
 }
   
 /* ------------------ Productos -------------------- */
@@ -182,6 +163,10 @@
     
 .precio-mujeres p {
   color: var(--primary-color);
+}
+
+.precio-slider-m {
+  margin-top: 3px !important;
 }
 
 /* -------------------- Modal ---------------------------- */
@@ -234,11 +219,10 @@
 /*---------------------- Slider -------------------------*/
 .events-upcoming {
   margin: 40px 0;
-  max-width: 1300px;
+  width: 100%;
   overflow: hidden;
   position: relative;
   top: -3rem;
-  margin-left: 100px;
 }
 
 .event-card {
@@ -263,6 +247,10 @@
   color: var(--primary-color-dark) !important; 
 }
 
+.precio-slider-m {
+  top: 20px !important;
+}
+
 /* ------------------ estilos boton devolver -------------------- */
 .boton-regresar {
   display: flex;
@@ -283,4 +271,284 @@
   background-color: #1e40af; /* Color más oscuro en hover /
   transform: scale(1.05); / Efecto de agrandamiento */
   transition: transform 0.3s ease;
+}
+
+/* ------------------ Responsive -------------------- */
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .ver-producto-mujer {
+    grid-template-columns: 1fr !important;
+    margin: 5px 30px !important;
+  }
+
+  .ver-producto-mujer img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .info-producto-mujer {
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-producto-mujer h3 {
+    font-size: 1.7rem;
+  }
+
+  .color-talla {
+    margin-top: 10px;
+    align-items: center;
+    gap: 8px !important;
+  }
+
+  #color, #talla {
+    width: 50%;
+  }
+
+  .boton-regresar {
+    margin: 10px 15px !important;
+  }
+
+  .ver-mas-mujeres {
+    margin-bottom: 30px;
+  }
+
+  .boton-mujeres {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .event-card img {
+    width: 80% !important;
+    height: auto !important;
+    margin: 0 auto;
+  }  
+
+  .event-card h4, .event-card h5 {
+    font-size: 0.9rem;
+  }
+
+  .event-card p {
+    top: 0 !important;
+  }
+
+  .event-card {
+    padding: 10px 50px !important;
+  }
+}
+
+/* Celulares grandes y tablets pequeñas */
+@media (min-width: 481px) and (max-width: 768px) {
+  .ver-producto-mujer {
+    grid-template-columns: 1fr !important;
+    margin: 5px 30px !important;
+  }
+
+  .ver-producto-mujer img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .info-producto-mujer {
+    align-items: center;
+    text-align: center;
+  }
+
+  .color-talla {
+    margin-top: 10px;
+    align-items: center;
+    gap: 8px !important;
+  }
+
+  #color, #talla {
+    width: 40%;
+  }
+
+  .boton-regresar {
+    margin: 10px 15px !important;
+  }
+
+  .ver-mas-mujeres {
+    margin-bottom: 30px;
+  }
+
+  .boton-mujeres {
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  .event-card img {
+    width: 60% !important;
+    height: auto !important;
+    margin: 0 auto;
+  }  
+
+  .event-card p {
+    top: 0 !important;
+    font-size: 1rem !important;
+    margin-right: 100px !important;
+  }
+
+  .event-card h5, .event-card h4 {
+    margin-left: 130px;
+    font-size: 1.2rem;
+  }
+
+  .event-card {
+    padding: 10px 50px !important;
+    font-size: 1.6rem;
+  } 
+}
+
+/* Tablets medianas y grandes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ver-producto-mujer {
+    grid-template-columns: 1fr !important;
+    margin: 5px 100px !important;
+  }
+
+  .ver-producto-mujer img {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .info-producto-mujer {
+    align-items: center;
+    text-align: center;
+  }
+
+  .color-talla {
+    margin-top: 10px;
+    align-items: center;
+    gap: 8px !important;
+  }
+
+  #color, #talla {
+    width: 30%;
+  }
+
+  .boton-regresar {
+    margin: 10px 15px !important;
+  }
+
+  .ver-mas-mujeres {
+    margin-bottom: 30px;
+  }
+
+  .boton-mujeres {
+    justify-content: center;
+    margin-bottom: 90px;
+  }
+
+  .event-card img {
+    width: 80% !important;
+    height: auto !important;
+    margin: 0 auto;
+  }  
+
+  .event-card p {
+    top: 0 !important;
+    margin-right: 20px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .event-card h5, .event-card h4 {
+    margin-left: 50px;
+    font-size: 1rem;
+
+  }
+
+  .event-card {
+    padding: 10px !important;
+    font-size: 1.6rem;
+  } 
+}
+
+/* Laptos y escritorios estándar */
+@media (min-width: 1025px) and (max-width: 1920px) {
+  .event-card img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 10px;
+  }  
+
+  .event-card p {
+    top: 0 !important;
+    font-size: 0.8rem !important;
+  }
+
+  .event-card h5, .event-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .event-card {
+    padding: 30px 50px !important;
+  }
+}
+
+/* Monitores grandes */
+@media (min-width: 1921px) {
+  .ver-producto-mujer {
+    grid-template-columns: 1fr 2fr !important;
+    margin: 50px 100px !important;
+  }
+
+  .info-producto-mujer h3 {
+    font-size: 2.2rem;
+  }
+
+  .info-producto-mujer h4 {
+    font-size: 1.4rem;
+  }
+
+  .ver-producto-mujer img {
+    width: 100%;
+    height: auto;
+  }
+
+  .color-talla {
+    margin-top: 10px;
+  }
+
+  #color, #talla {
+    width: 20%;
+  }
+
+  .boton-regresar {
+    margin: 30px 50px !important;
+  }
+
+  .ver-mas-mujeres {
+    margin-bottom: 150px;
+  }
+
+  .boton-mujeres {
+    justify-content: center;
+    margin-bottom: 90px;
+  }
+ 
+  .event-card p {
+    top: 0 !important;
+  }
+
+  .event-card img {
+    width: 90% !important;
+    height: auto !important;
+    border-radius: 10px;
+  }  
+
+  .event-card p {
+    top: 0 !important;
+    font-size: 1.2rem !important;
+  }
+
+  .event-card h5, .event-card h4 {
+    font-size: 1.4rem;
+  }
+
+  .event-card {
+    padding: 30px 70px !important;
+  }
 }
