@@ -1,107 +1,314 @@
+/* Importación de fuentes desde Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 
+/* Declaración de variables CSS en :root para colores y fuentes */
 :root {
-    --primary-color: #2563eb;
-    --primary-color-dark: #1e40af;
-    --text-dark: #1f1f1f;
-    --text-light: #4b5563;
-    --extra-light: #f3f4f6;
-    --white: #ffffff;
-    --max-width: 1200px;
-    --font-heading: "Roboto Condensed", sans-serif;
+    --primary-color: #2563eb; /* Color primario */
+    --primary-color-dark: #1e40af; /* Color primario oscuro */
+    --text-dark: #1f1f1f; /* Color de texto oscuro */
+    --text-light: #4b5563; /* Color de texto claro */
+    --extra-light: #f3f4f6; /* Color de fondo claro adicional */
+    --white: #ffffff; /* Color blanco */
+    --max-width: 1200px; /* Ancho máximo para diseño */
+    --font-heading: "Roboto Condensed", sans-serif; /* Fuente principal para encabezados */
 }
 
-/* HombresProductos.css */
+/* Estilos específicos para el contenedor de productos */
 .conatinerPrdocutosMen {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading); /* Aplicar la fuente para encabezados */
 }
 
+/* Estilos para todos los párrafos dentro del contenedor */
 .conatinerPrdocutosMen p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Aplicar la fuente Montserrat */
 }
 
-html{
-    overflow-x: hidden;
+/* Configuración para evitar desbordamiento horizontal */
+html {
+    overflow-x: hidden; /* Evitar que la página se desplace horizontalmente */
 }
 
-.buscarMen{
-    display: flex;
-    justify-content: flex-end;
-    margin: 40px 0 20px;
-    padding-right: 50px;
+/* Estilos para el contenedor de búsqueda */
+.buscarMen {
+    display: flex; /* Diseño flexbox para alinear elementos */
+    justify-content: flex-end; /* Alinear contenido a la derecha */
+    margin: 40px 0 20px; /* Márgenes superiores e inferiores */
+    padding-right: 50px; /* Espaciado interno a la derecha */
 }
 
-.buscadorMen{
-    border: 1px solid var(--primary-color-dark);
-    padding: 4px;
-    border-radius: 60px;
-    font-size: 19px;
-    width: 250px;
+/* Estilos para el buscador */
+.buscadorMen {
+    border: 1px solid var(--primary-color-dark); /* Borde con el color primario oscuro */
+    padding: 5px 5px; /* Espaciado interno */
+    border-radius: 60px; /* Bordes redondeados */
+    font-size: 19px; /* Tamaño de fuente */
+    width: 250px; /* Ancho del buscador */
 }
 
-#buscadorMen input{
-    border: none;
-    
+/* Estilos generales para los inputs dentro del buscador */
+#buscadorMen input {
+    border: none; /* Sin bordes */
 }
 
-#buscarProductosMen{
-    outline: none;
-    border: none;
-    background-color: transparent;
-    position: relative;
-    width: 100px;
-    font-size: 19px;
-    margin-bottom: 0;
+/* Estilos específicos para el input de búsqueda */
+#buscarProductosMen {
+    outline: none; /* Sin contorno al hacer foco */
+    border: none; /* Sin borde */
+    background-color: transparent; /* Fondo transparente */
+    position: relative; /* Posición relativa */
+    width: 100px; /* Ancho del input */
+    font-size: 19px; /* Tamaño de fuente */
+    margin-bottom: 0; /* Sin margen inferior */
 }
 
-
+/* Configuración del contenedor de productos con diseño de cuadrícula */
 .conatinerPrdocutosMen {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas exactas */
-    gap: 16px; /* Espaciado entre tarjetas */
-    position: relative;
-    right: -3rem;
+    display: grid; /* Activar diseño de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 16px; /* Espaciado entre elementos */
+    position: relative; /* Posicionamiento relativo */
+    right: -3rem; /* Ajuste de posición */
 }
- 
+
+/* Estilos para las tarjetas de productos */
 .imgProductoMen {
     border-radius: 8px; /* Bordes redondeados */
-    text-align: left; /* Alineación del contenido hacia la izquierda */
-    padding: 15px; /* Espaciado interno en la tarjeta */
+    text-align: left; /* Alinear texto a la izquierda */
+    padding: 15px; /* Espaciado interno */
 }
-  
+
+/* Configuración para las imágenes dentro de las tarjetas */
 .imgProductoMen img {
-    width: 80%; /* Imagen al 100% del ancho del contenedor */
-    height: 70%; /* Mantener proporción */
-    border-radius: 6px; /* Bordes ligeramente redondeados */
-    margin-bottom: 10px; /* Separación inferior de la imagen */
-    transition: transform 0.3s ease; 
+    width: 80%; /* Ancho de la imagen relativo al contenedor */
+    height: 70%; /* Altura de la imagen proporcional */
+    border-radius: 6px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Separación inferior */
+    transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
 }
 
-.imgProductoMen img:hover{
- transform: scale(1.1); /* Ampliar la imagen al pasar el mouse */
+/* Efecto de ampliación al pasar el mouse sobre las imágenes */
+.imgProductoMen img:hover {
+    transform: scale(1.1); /* Ampliar imagen ligeramente */
 }
 
+/* Estilos para el título del producto */
 .TittleProcut {
-    font-size: 1rem; /* Tamaño del texto del título */
-    font-weight: bold; /* Negrita para resaltar el título */
-    color: var(--primary-color-dark); /* Color Azul para el texto */
-    margin-bottom: 8px; /* Separación inferior */
-    font-family: "Roboto Condensed", sans-serif;
+    font-size: 19.2px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    color: var(--primary-color-dark); /* Color azul oscuro */
+    margin-bottom: 8px; /* Espaciado inferior */
+    font-family: "Roboto Condensed", sans-serif; /* Fuente específica */
 }
-  
+
+/* Estilos para la descripción del producto */
 .descriptionProductoMen {
-    font-size: 12px; /* Texto pequeño para la descripción */
-    margin-bottom: 8px; /* Separación inferior */
-    font-weight: 500;
+    font-size: 17px; /* Tamaño de fuente más pequeño */
+    font-weight: 500; /* Peso medio de la fuente */
 }
-  
+
+/* Estilos para el precio del producto */
 .priceProductMen {
-    font-size: 12px; /* Tamaño destacado para el precio */
+    font-size: 17px; /* Tamaño de fuente para el precio */
+    font-weight: bold; /* Negrita */
+    color: #0044cc; /* Color azul fuerte */
+    right: -250px; /* Ajuste de posición horizontal */
+    top: -21px; /* Ajuste de posición vertical */
+}
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+
+  .buscarMen{
+    width: 60%;
+    position: relative;
+    right: -180px;
+  }
+
+  .conatinerPrdocutosMen {
+    grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
+    gap: 8px;
+    right: 0; /* Ajuste de posición */
+    padding: 0 10px; /* Espaciado lateral */
+  }
+
+  .imgProductoMen img {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: auto; /* Altura automática */
+  }
+
+  .TittleProcut{
+    font-size: 17px;
+    justify-content: left;
+  }
+
+  .descriptionProductoMen{
+    font-size: 14px;
+  }
+
+  .priceProductMen {
+    font-size: 13px;
+    position: relative;
+    top: -18px;
+  }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .buscarMen{
+     width: 50%;
+     position: relative;
+     right: -250px;
+   }
+
+  .conatinerPrdocutosMen {
+    grid-template-columns: repeat(1, 1fr); /* 2 tarjetas por fila */
+    gap: 12px;
+    padding: 0 20px;
+    right: 0;
+  }
+
+  .imgProductoMen img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; 
+  }
+
+  .imgProductoMen img:hover{
+    transform: scale(1.05);
+  }
+
+  .TittleProcut{
+    font-size: 20px;
+    justify-content: left;
+  }
+
+  .descriptionProductoMen{
+    font-size: 17px;
+  }
+
+  .priceProductMen {
+    font-size: 16px;
+    position: relative;
+    top: -1.3rem;
+    right: -310px;
+  }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .buscarMen{
+     width: 100%;
+     position: relative;
+     right: -24px;
+  }
+
+  .conatinerPrdocutosMen {
+    grid-template-columns: repeat(2, 1fr); /* 3 tarjetas por fila */
+    gap: 16px;
+    padding: 0 30px;
+    right: 0;
+  }
+
+  .imgProductoMen img {
+    width: 100%; 
+    height: auto;
+  }
+
+  .TittleProcut{
+    font-size: 20px;
+    justify-content: left;
+  }
+
+  .descriptionProductoMen{
+    font-size: 17px;
+  }
+
+  .priceProductMen {
+    font-size: 17px;
+    position: relative;
+    top: -18px;
+    right: -200px;
+  }
+  
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+
+  .buscarMen{
+     width: 100%;
+     position: relative;
+     right: 48px;
+  }
+
+  .conatinerPrdocutosMen {
+    grid-template-columns: repeat(3, 1fr); /* 4 tarjetas por fila */ 
+    gap: 20px;
+    padding: 0 50px;
+  }
+
+  .imgProductoMen img {
+    width: 80%;
+    height: auto;
+  }
+
+  .priceProductMen {
+    font-size: 17px; /* Tamaño destacado para el precio */
     font-weight: bold; /* Resaltar el precio */
     color: #0044cc; /* Azul fuerte */
     position: relative;
-    right: -16rem;
+    right: -220px;
     top: -21px;
+  }
+
+}
+
+/* Monitores grandes (1921px o más)*/
+@media (min-width: 1921px) {
+
+  .conatinerPrdocutosMen {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 54px;
+    padding: 0 80px;
+    right: 0;
+    left: 0;
+  }
+
+  .imgProductoMen img {
+    width: 110%;
+    height: auto;
+    border-radius: 11px;
+  }
+  
+  .TittleProcut{
+    font-size: 29px;
+    justify-content: left;
+    margin: 0;
+  }
+
+  .infoProductoMen {
+    display: flex; /* Activa flexbox */
+    justify-content: space-between; /* Distribuye los elementos a los extremos */
+    align-items: center; /* Alinea verticalmente */
+  }
+  
+  .TittleProcut {
+    font-size: 29px;
+    margin: 0;
+  }
+  
+  .descriptionProductoMen {
+    font-size: 27px;
+    margin: 0;
+    margin-right: 20px; /* Espacio entre descripción y precio */
+  }
+  
+  .priceProductMen {
+    font-size: 27px;
+    margin: 0;
+    white-space: nowrap; /* Evita que el precio se rompa en varias líneas */
+  }
 }
 
   

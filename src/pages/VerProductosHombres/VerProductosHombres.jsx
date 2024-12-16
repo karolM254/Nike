@@ -37,6 +37,7 @@ function VerProductosHombres() {
     const { style, onClick } = props;
     return (
       <div
+        className="custom-prev-arrow"
         style={{ ...style, display: "block", position: "absolute", left: "-30px", top: "45%", cursor: "pointer", zIndex: 2 }}
         onClick={onClick}
       >
@@ -55,6 +56,7 @@ function VerProductosHombres() {
     const { style, onClick } = props;
     return (
       <div
+        className='custom-next-arrow'
         style={{ ...style, display: "block", position: "absolute", right: "-20px", top: "45%", cursor: "pointer", zIndex: 2 }}
         onClick={onClick}
       >
@@ -90,7 +92,7 @@ function VerProductosHombres() {
       };
 
       return (
-          <div className='events-container'>
+          <div className='events-container-men'>
 
               <section className='events-upcoming'>
                   <Slider {...settings}>
@@ -126,7 +128,7 @@ function VerProductosHombres() {
         {
             idMen: '1',
             nombre: 'Air Jordan 11 Retro "Legend Blue"',
-            descriMepcion: 'Calzado Para hombre',
+            descripcion: 'Calzado Para hombre',
             descripcion2: 'La suela de goma ofrece una tracción excepcional, ideal para cambios rápidos de dirección. Su lengüeta y cuello acolchados garantizan un ajuste cómodo y seguro durante los juegos más intensos, mientras que las agujetas redondas aseguran un ajuste firme y uniforme. Perfectos para jugadores que buscan combinar rendimiento y estilo en cada jugada',
             material: 'Material Principal: Cuero',
             precio: '$ 1.294.950',
@@ -180,12 +182,14 @@ function VerProductosHombres() {
       ];
     const producto = productosHombre.find((producto) => producto.idMen === idMen);
 
+
     return (
       <>
         <button className="boton-regresar" onClick={() => navigate(-1)}>
-        <i className="ri-arrow-left-line"></i> Volver
+        <i className="ri-arrow-left-line"></i> 
+        <span className="text-men">Volver</span> 
         </button>
-        <div>
+        <div className='.verProductosHombres'>
             {producto ? (
                 <div className="producto-detalle">
                     <h1 className='tittle-productos-men'>{producto.nombre}</h1>
@@ -195,7 +199,7 @@ function VerProductosHombres() {
                     </p>
                     <p className="materialHombre">{producto.material}</p>
                     <p className="PriceMen">{producto.precio}</p>
-
+                    
                     <select>
                         <option>Color</option>
                         <option value="Azul">Azul</option>

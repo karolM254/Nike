@@ -4,73 +4,66 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductosHombres.css';
 
-
+// Componente principal para mostrar los productos de hombres
 function HombresProductos() {
+  // Estado para manejar la búsqueda y los productos
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // Lista de productos (información estática)
+  const productos = [
+    { id: 1, nombre: 'Air Jordan 11 Retro "Legend Blue"', descripcion: 'Calzado para hombre', precio: 1294950, imagen: '/assets/fototennis.jpg' },
+    { id: 2, nombre: 'W Nike Zoom Bella 6 PRm', descripcion: 'Calzado para hombre', precio: 845950, imagen: '/assets/678275-500-500.jpg' },
+    { id: 3, nombre: 'Nike Full Force Low', descripcion: 'Calzado para hombre', precio: 560950, imagen: '/assets/677182-500-500.jpg' },
+    { id: 4, nombre: 'Nike Cortez', descripcion: 'Calzado para hombre', precio: 380950, imagen: '/assets/702841-500-500.jpg' },
+    { id: 5, nombre: 'Nike C1TY', descripcion: 'Calzado para hombre', precio: 695950, imagen: '/assets/713556-500-500.jpg' },
+    { id: 6, nombre: 'Nike Killshot 2 Leather', descripcion: 'Calzado para hombre', precio: 922950, imagen: '/assets/678515-500-500.jpg' }
+  ];
+
+  // Filtrar productos según el término de búsqueda ingresado por el usuario
+  const productosFiltrados = productos.filter(producto =>
+    producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) // Se realiza la búsqueda ignorando mayúsculas/minúsculas
+  );
+
   return (
     <>  
-        <div className="buscarMen">
-            <div className="buscadorMen">
-                <i className="ri-search-line"></i>
-                <input type="text" name="search" id="buscarProductosMen" placeholder='Buscar' />
-            </div>    
-        </div>
-
-        <div className="conatinerPrdocutosMen">
-        <div className="imgProductoMen">
-            <Link to={`/productosHombre/1`}>
-                <img src="/assets/fototennis.jpg" alt="Nike Full Force Low"/>
-            </Link>
-            <p className='TittleProcut'>Air Jordan 11 Retro &#34;Legend Blue&#34;</p>
-            <p className="descriptionProductoMen">Calzado para hombre</p>
-            <p className="priceProductMen">$ 1.294.950</p>
-        </div>
-        <div className="imgProductoMen">
-            <Link to="/productosHombre/2">
-                <img src="/assets/678275-500-500.jpg" alt="" />
-            </Link>
-            <p className='TittleProcut'>W Nike Zoom Bella 6 PRm</p>
-            <p className="descriptionProductoMen">Calzado para hombre</p>
-            <p className="priceProductMen">$ 845.950</p>
-        </div>
-        <div className="imgProductoMen">
-            <Link to="/productosHombre/3">
-                <img src="/assets/677182-500-500.jpg" alt="" />
-            </Link>
-            <p className='TittleProcut'>Nike Full Force Low</p>
-            <p className="descriptionProductoMen">Calzado para hombre</p>
-            <p className="priceProductMen">$ 560.950</p>
-          
-        </div>
-        <div className="imgProductoMen">
-            <Link to="/productosHombre/4">
-                <img src="/assets/702841-500-500.jpg" alt="" />
-            </Link>
-            <p className='TittleProcut'>Nike Cortez</p>
-            <p className="descriptionProductoMen">Calzado para hombre</p>
-            <p className="priceProductMen">$ 380.950</p>
-        </div>
-        <div className="imgProductoMen">
-        <Link to="/productosHombre/5">
-                <img src="/assets/713556-500-500.jpg" alt="" />
-            </Link>
-            <p className='TittleProcut'>Nike C1TY</p>
-            <p className="descriptionProductoMen">Calzado para hombre</p>
-            <p className="priceProductMen">$ 695.950</p>
-        </div>
-        <div className="imgProductoMen">
-            <Link to="/productosHombre/6">
-                <img src="/assets/678515-500-500.jpg" alt="" />
-            </Link>
-            <p className='TittleProcut'>Nike Killshot 2 Leather</p>
-            <p className="descriptionProductoMen">Calzado para hombre</p>
-            <p className="priceProductMen">$ 922.950</p>
-        </div>
-    </div>
-    <div className="mas-productos-hombres">
+      {/* Contenedor para el buscador */}
+      <div className="buscarMen">
+        <div className="buscadorMen">
+          {/* Ícono de búsqueda */}
+          <i className="ri-search-line"></i>
+          {/* Campo de texto para buscar productos */}
+          <input 
+            type="text" 
+            name="search" 
+            id="buscarProductosMen" 
+            placeholder="Buscar"
+            value={searchTerm} // Valor del campo sincronizado con el estado
+            onChange={(e) => setSearchTerm(e.target.value)} // Actualización del estado cuando cambia el valor del campo
+          />
+        </div>    
       </div>
-    </>
-    )};
-   
 
+      {/* Contenedor principal de los productos */}
+      <div className="conatinerPrdocutosMen">
+        {/* Mapeo de los productos filtrados para mostrarlos */}
+        {productosFiltrados.map(producto => (
+          <div className="imgProductoMen" key={producto.id}>
+            {/* Enlace para cada producto que redirige a su detalle */}
+            <Link to={`/productosHombre/${producto.id}`}>
+              <img src={producto.imagen} alt={producto.nombre} /> {/* Imagen del producto */}
+            </Link>
+            {/* Información del producto: nombre, descripción y precio */}
+            <p className="TittleProcut">{producto.nombre}</p>
+            <p className="descriptionProductoMen">{producto.descripcion}</p>
+            <p className="priceProductMen">$ {producto.precio.toLocaleString('es-CO')}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Contenedor para una posible sección adicional (aún no implementada) */}
+      <div className="mas-productos-hombres"></div>
+    </>
+  );
+}
 
 export default HombresProductos;
