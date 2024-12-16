@@ -7,12 +7,12 @@ const Atletismo = () => {
 
   // Lista de productos
   const products = [
-    { id: 1, name: "NIKE PEGASO INDOL", category: "Calzado para atletismo", price: "$650.000", image: "/assets/atletismo1.jpg" },
-    { id: 2, name: "NIKE LEGEND REVOL", category: "Calzado para atletismo", price: "$750.000", image: "/assets/atletismo2.jpg" },
-    { id: 3, name: "NIKE MASTERED V.22", category: "Calzado para atletismo", price: "$420.000", image: "/assets/atletismo3.jpg" },
-    { id: 4, name: "NIKE AIR ZOOM VER 1", category: "Calzado para atletismo", price: "$520.000", image: "/assets/atletismo4.jpg" },
-    { id: 5, name: "NIKE BLOOD SPEED 4", category: "Calzado para atletismo", price: "$1.199.000", image: "/assets/atletismo5.jpg" },
-    { id: 6, name: "NIKE PREDATOR ORA", category: "Calzado para atletismo", price: "$299.000", image: "/assets/atletismo6.jpg" }
+    { id: 1, name: "NIKE PEGASO INDOL", category: "Calzado atletismo", price: "$650.000", image: "/assets/atletismo1.jpg" },
+    { id: 2, name: "NIKE LEGEND REVOL", category: "Calzado atletismo", price: "$750.000", image: "/assets/atletismo2.jpg" },
+    { id: 3, name: "NIKE MASTERED V.22", category: "Calzado atletismo", price: "$420.000", image: "/assets/atletismo3.jpg" },
+    { id: 4, name: "NIKE AIR ZOOM VER 1", category: "Calzado atletismo", price: "$520.000", image: "/assets/atletismo4.jpg" },
+    { id: 5, name: "NIKE BLOOD SPEED 4", category: "Calzado atletismo", price: "$1.199.000", image: "/assets/atletismo5.jpg" },
+    { id: 6, name: "NIKE PREDATOR ORA", category: "Calzado atletismo", price: "$299.000", image: "/assets/atletismo6.jpg" }
   ];
 
   const [filteredProducts, setFilteredProducts] = useState(products);
