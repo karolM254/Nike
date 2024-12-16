@@ -3,12 +3,15 @@ import './Eventos.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from "react-router-dom";
 
 // Componente principal Eventos
 export const Eventos = () => {
   // Estados para manejar el evento seleccionado y la apertura del modal
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const navigate = useNavigate(); // Hook para navegar
 
   // Componente Modal para mostrar detalles de un evento
   const EventModal = ({ event, isOpen, onClose }) => {
@@ -140,6 +143,9 @@ export const Eventos = () => {
   // Renderizado del componente principal
   return (
     <>
+    <button className="boton-regresar-eventes responsive" onClick={() => navigate(-1)}>
+      <i className="ri-arrow-left-line"></i> Volver
+    </button>
       {/* Contenedor principal */}
       <div className='container-event'>
         <h1 className='title-event'>Sé el primero en enterarte de nuestros eventos</h1>

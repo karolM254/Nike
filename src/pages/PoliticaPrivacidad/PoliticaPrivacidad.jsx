@@ -1,9 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import './PoliticaPrivacidad.css';
 
 // Definimos el componente PoliticaPrivacidad
 export const PoliticaPrivacidad = () => {
+    const navigate = useNavigate(); // Hook para navegar
     return (
         <>
+            <button className="boton-regresar-polity responsive" onClick={() => navigate(-1)}>
+                <i className="ri-arrow-left-line"></i> Volver
+            </button>
             {/* Contenedor principal de las políticas de privacidad */}
             <div className='privacy-policy-container'>
                 {/* Título principal de las políticas de privacidad */}

@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../components/Carrito/CartContext";
 import { Link } from "react-router-dom";
-import "./Carrito.css";
+import "../Carrito/Carrito.css";
 
 function Carrito() {
+  const navigate = useNavigate();
   const { carrito, setCarrito } = useCart();
 
-  // Estado para las cantidades de productos
   const [cantidades, setCantidades] = useState(() => {
-    // Intentar cargar las cantidades desde localStorage
     const storedCantidades = localStorage.getItem("cantidades");
-    return storedCantidades ? JSON.parse(storedCantidades) : carrito.reduce((acc, producto) => {
-      acc[producto.id] = 1;
-      return acc;
-    }, {});
+    return storedCantidades
+      ? JSON.parse(storedCantidades)
+      : carrito.reduce((acc, producto) => {
+          acc[producto.id] = 1;
+          return acc;
+        }, {});
   });
 
-  // Guardar las cantidades en localStorage cuando cambian
   useEffect(() => {
     localStorage.setItem("cantidades", JSON.stringify(cantidades));
   }, [cantidades]);
 
-  // Funciones de actualización de cantidad
   const incrementarCantidad = (id) => {
     setCantidades((prev) => ({
       ...prev,
@@ -36,7 +36,6 @@ function Carrito() {
     }));
   };
 
-  // Funciones de cálculo de precios
   const calcularSubtotal = (id, price) => {
     const precioNumerico = parseFloat(price.replace(/[^0-9.-]+/g, ""));
     return (cantidades[id] * precioNumerico).toLocaleString("es-CO", {
@@ -46,26 +45,22 @@ function Carrito() {
   };
 
   const calcularTotal = () => {
-    // Calcular el total del carrito
     const total = carrito
       .reduce((total, producto) => {
-        const precioNumerico = parseFloat(producto.price.replace(/[^0-9.-]+/g, ""));
+        const precioNumerico = parseFloat(
+          producto.price.replace(/[^0-9.-]+/g, "")
+        );
         return total + cantidades[producto.id] * precioNumerico;
       }, 0)
       .toLocaleString("es-CO", {
         style: "currency",
         currency: "COP",
       });
-  
-    // Guardar el total en el localStorage
+
     localStorage.setItem("totalPedido", total);
-  
-    // Devolver el total
     return total;
   };
-  
 
-  // Función para eliminar producto del carrito
   const eliminarProducto = (id) => {
     setCarrito(carrito.filter((producto) => producto.id !== id));
     const nuevasCantidades = { ...cantidades };
@@ -75,18 +70,14 @@ function Carrito() {
 
   return (
     <div className="carrito-compras">
-      <EntregaCarrito 
-        calcularTotal={calcularTotal} 
-        carrito={carrito} 
-      />
-      
-      <GridCarrito 
-        carrito={carrito} 
-        cantidades={cantidades} 
-        incrementarCantidad={incrementarCantidad} 
-        disminuirCantidad={disminuirCantidad} 
-        calcularSubtotal={calcularSubtotal} 
-        eliminarProducto={eliminarProducto} 
+      <EntregaCarrito calcularTotal={calcularTotal} carrito={carrito} />
+      <GridCarrito
+        carrito={carrito}
+        cantidades={cantidades}
+        incrementarCantidad={incrementarCantidad}
+        disminuirCantidad={disminuirCantidad}
+        calcularSubtotal={calcularSubtotal}
+        eliminarProducto={eliminarProducto}
       />
     </div>
   );
@@ -94,8 +85,14 @@ function Carrito() {
 
 // Componente para la sección de entrega y total
 function EntregaCarrito({ calcularTotal, carrito }) {
+  const navigate = useNavigate();
+
   return (
     <div className="entrega-carrito">
+      <button className="boton-regresar" onClick={() => navigate(-1)}>
+        <i className="ri-arrow-left-line"></i> Volver
+      </button>
+
       <h3 className="entregar-titulo">Entrega</h3>
       <div className="contenedor-total-entrega">
         <h4 className="total-entrega">Total:</h4>
@@ -105,15 +102,36 @@ function EntregaCarrito({ calcularTotal, carrito }) {
         <h4 className="subtotal-entrega">Subtotal:</h4>
         <h4 className="subtotal-valor">{calcularTotal()}</h4>
       </div>
-      <button className="realizar-compra" disabled={carrito.length === 0}>
-        <Link to="/Compras1">Realizar Compra</Link>
-      </button>
+
+      {/* Botón de realizar compra corregido */}
+      <Link
+        to="/Compras1"
+        className={`realizar-compra ${carrito.length === 0 ? "disabled" : ""}`}
+        style={{
+          pointerEvents: carrito.length === 0 ? "none" : "auto",
+          backgroundColor: carrito.length === 0 ? "#ccc" : "#2563eb",
+          color: "white",
+          textAlign: "center",
+          padding: "10px",
+          borderRadius: "5px",
+          display: "block",
+          textDecoration: "none",
+        }}
+      >
+        Realizar Compra
+      </Link>
     </div>
   );
 }
 
-// Componente para la tabla de productos en el carrito
-function GridCarrito({ carrito, cantidades, incrementarCantidad, disminuirCantidad, calcularSubtotal, eliminarProducto }) {
+function GridCarrito({
+  carrito,
+  cantidades,
+  incrementarCantidad,
+  disminuirCantidad,
+  calcularSubtotal,
+  eliminarProducto,
+}) {
   return (
     <div className="grid-carrito">
       <div className="header-grid">
@@ -126,23 +144,27 @@ function GridCarrito({ carrito, cantidades, incrementarCantidad, disminuirCantid
       {carrito.map((producto) => (
         <div className="fila-producto" key={producto.id}>
           <div className="producto-detalle">
-            <img src={producto.img} alt={producto.title} className="producto-img" />
+            <img
+              src={producto.img}
+              alt={producto.title}
+              className="producto-img"
+            />
             <h3>{producto.title}</h3>
           </div>
 
           <p className="precio-producto">{producto.price}</p>
 
-          <CantidadProducto 
-            producto={producto} 
-            cantidades={cantidades} 
-            incrementarCantidad={incrementarCantidad} 
-            disminuirCantidad={disminuirCantidad} 
+          <CantidadProducto
+            producto={producto}
+            cantidades={cantidades}
+            incrementarCantidad={incrementarCantidad}
+            disminuirCantidad={disminuirCantidad}
           />
 
-          <SubtotalEliminar 
-            producto={producto} 
-            calcularSubtotal={calcularSubtotal} 
-            eliminarProducto={eliminarProducto} 
+          <SubtotalEliminar
+            producto={producto}
+            calcularSubtotal={calcularSubtotal}
+            eliminarProducto={eliminarProducto}
           />
         </div>
       ))}
@@ -150,8 +172,12 @@ function GridCarrito({ carrito, cantidades, incrementarCantidad, disminuirCantid
   );
 }
 
-// Componente para los controles de cantidad de un producto
-function CantidadProducto({ producto, cantidades, incrementarCantidad, disminuirCantidad }) {
+function CantidadProducto({
+  producto,
+  cantidades,
+  incrementarCantidad,
+  disminuirCantidad,
+}) {
   return (
     <div className="cantidad-controles">
       <button
@@ -171,7 +197,6 @@ function CantidadProducto({ producto, cantidades, incrementarCantidad, disminuir
   );
 }
 
-// Componente para mostrar el subtotal y el botón de eliminar
 function SubtotalEliminar({ producto, calcularSubtotal, eliminarProducto }) {
   return (
     <div className="subtotal-eliminar">
