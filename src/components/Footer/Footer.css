@@ -76,3 +76,41 @@ footer {
 .payment__cards i{
   color: var(--white);
 }
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+  .footer__socials{
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    justify-items: center;
+}
+  .footer__col h4{
+    margin: 6px;
+  }
+  .footer__container {
+    grid-template-columns: repeat(1, 1fr);
+}
+  footer{
+    text-align: center;
+  }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Estilos para tabletas */
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+  /* Estilos para laptops y escritorios */
+}
+
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+  /* Estilos para monitores grandes */
+}
