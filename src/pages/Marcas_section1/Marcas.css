@@ -41,107 +41,179 @@
 }
 
 
-/* Responsive */
+/* Responsive section 1*/
 
 /* Móviles pequeños (320px - 480px) */
-@media (max-width: 480px) {
-    
+@media (min-width: 320px) and (max-width: 480px) {
+
     .container-principal-BRANDS {
         grid-template-columns: 1fr;
-        /* Una sola columna */
-        margin: 10px 40px;
+        padding: 0 10px;
+        /* Agrega espaciado para evitar el desbordamiento */
+        box-sizing: border-box;
     }
+
     .container-principal-BRANDS .contenido-BRANDS {
-        margin: 20px 0;
+        margin: 15px;
+        /* Márgenes más pequeños para adaptarse mejor */
     }
 
     .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
-        font-size: 25px;
+        font-size: 5vw;
+        /* Escala el tamaño del texto */
         text-align: left;
     }
+
     .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
-        font-size: 15px;
-        text-align: left;
-        margin: 30px 0;
-        width: 310px;
+        font-size: 3vw;
+        /* Escala el tamaño del texto */
+        margin: 20px 0;
+        /* Márgenes más pequeños */
+        width: 90%;
+        /* Ajuste dinámico al ancho del contenedor */
     }
 
     .container-principal-BRANDS .imagen-BRANDS img {
-        width: 300px;
+        width: 90%;
+        /* La imagen se ajusta al 90% del ancho del contenedor */
         height: auto;
-        margin: 0;
+        margin: 0 auto;
+        /* Centrado de la imagen */
+        display: block;
     }
 
     .section-BRANDS .linea-BRANDS {
-        width: 60%;
-        margin: 60px 70px;
+        width: 80%;
+        /* Ajuste al 80% del contenedor */
+        margin: 15% auto;
+        /* Centrado automático */
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
+        /* Bloque para asegurar que ocupe el 100% de su espacio */
     }
 }
+
+
 
 /* Móviles grandes y tabletas pequeñas (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
     .container-principal-BRANDS {
         grid-template-columns: 1fr;
         /* Una sola columna */
-        margin: 10px 30px;
+        margin: 10% 10%;
+        /* Márgenes más pequeños y porcentuales */
+        box-sizing: border-box;
     }
+
     .container-principal-BRANDS .contenido-BRANDS {
         margin: 20px 0;
     }
 
     .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
-        font-size: 25px;
+        font-size: 5vw;
+        /* Escala el tamaño del texto */
         text-align: left;
-    }
-    .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
-        font-size: 15px;
-        text-align: left;
-        margin: 30px 0;
-        width: 300px;
-    }
-
-    .container-principal-BRANDS .imagen-BRANDS img {
-        width: 350px;
-        height: auto;
-        margin: 0;
-        width: 300px;
-    }
-
-    .section-BRANDS .linea-BRANDS {
-        width: 31%;
-        margin: 60px 60px;
-    }
-}
-
-/* Tabletas medianas y grandes (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container-principal-BRANDS {
-        grid-template-columns: 1fr 1fr;
-        margin: 10px 12%;
-    }
-
-    .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
-        font-size: 36px;
     }
 
     .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
-        font-size: 18px;
+        font-size: 4vw;
+        /* Escala el tamaño del texto */
+        text-align: left;
+        margin: 20px 0;
+        /* Márgenes más pequeños */
+        width: 80%;
+        /* Ajuste dinámico al ancho del contenedor */
     }
 
     .container-principal-BRANDS .imagen-BRANDS img {
-        width: 100%;
+        width: 90%;
+        /* La imagen se ajusta al 80% del ancho del contenedor */
         height: auto;
-        margin: 150px 20px;
+        margin: 10% 5%;
+        /* Centrado de la imagen */
+        display: block;
     }
 
     .section-BRANDS .linea-BRANDS {
         width: 70%;
-        margin: 0 150px;
+        /* Ajuste al 70% del contenedor */
+        margin: 15% auto;
+        /* Centrado automático */
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
+        /* Bloque para asegurar que ocupe el 100% de su espacio */
     }
 }
 
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-principal-BRANDS {
+        display: flex;
+        /* Usamos flexbox para alinear los elementos */
+        justify-content: space-between;
+        /* Espacio entre el texto y la imagen */
+        align-items: center;
+        /* Centra verticalmente los elementos */
+        margin: 10px 5%;
+        box-sizing: border-box;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS {
+        width: 50%;
+        /* El texto ocupa la mitad del contenedor */
+        margin: 20px 0;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
+        font-size: 4vw;
+        /* Ajuste dinámico del tamaño del texto */
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
+        font-size: 2.5vw;
+        /* Ajuste dinámico del tamaño del texto */
+        margin: 20px 0;
+        /* Márgenes más pequeños */
+        width: 100%;
+        /* El texto ocupa el 100% del ancho disponible */
+    }
+
+    .container-principal-BRANDS .imagen-BRANDS {
+        width: 45%;
+        /* La imagen ocupa el 45% del contenedor */
+        display: flex;
+        justify-content: center;
+        /* Centra la imagen horizontalmente dentro de su contenedor */
+    }
+
+    .container-principal-BRANDS .imagen-BRANDS img {
+        width: 100%;
+        /* La imagen ocupa el 100% del contenedor */
+        height: auto;
+    }
+
+    .section-BRANDS .linea-BRANDS {
+        width: 60%;
+        /* Ajuste al 60% del contenedor */
+        margin: 15% auto;
+        /* Centrado automático */
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
+        /* Bloque para asegurar que ocupe el 100% de su espacio */
+    }
+}
+
+
+
 /* Laptops y escritorios estándar (1025px - 1920px) */
-@media (min-width: 1025px) and (max-width: 1281px) {
+@media (min-width: 1025px) {
     .container-principal-BRANDS {
         grid-template-columns: 1fr 1fr;
         margin: 10px 50px;
@@ -162,38 +234,17 @@
     }
 
     .section-BRANDS .linea-BRANDS {
-        width: 800px;
-        margin: 0 270px;
+        width: 50%;
+        /* Ajuste al 50% del contenedor */
+        margin: 0 auto;
+        /* Centrado automático */
+        border-top: 2px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
+        /* Bloque para asegurar que ocupe el 100% de su espacio */
     }
 }
-
-/* Monitores grandes (1921px o más) */
-@media (min-width: 1921px) {
-    .container-principal-BRANDS {
-        grid-template-columns: 1fr 1fr;
-        margin: 10px 15%;
-    }
-
-    .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
-        font-size: 48px;
-    }
-
-    .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
-        font-size: 22px;
-    }
-
-    .container-principal-BRANDS .imagen-BRANDS img {
-        width: 100%;
-        height: auto;
-    }
-
-    .section-BRANDS .linea-BRANDS {
-        width: 1000px;
-        margin: 0 300px;
-    }
-}
-
-
 
 /*estilos secction2*/
 .section-marcas-BRANDS {
@@ -260,45 +311,91 @@
 
 /*responsive secction2*/
 /* Móviles pequeños (320px - 480px) */
-@media (max-width: 480px) {
-    .titulo-marcas{
-        font-size: 35px;
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .titulo-marcas {
+        font-size: 30px;
+        /* Ajuste para que el texto sea más pequeño en pantallas pequeñas */
+        text-align: center;
+        /* Asegura que el título esté centrado */
     }
+
     .container-principal-marcas-BRANDS {
         grid-template-columns: 1fr;
-        margin: 10px;
-    }   
+        /* Una sola columna */
+        margin: 10px 20px;
+        /* Márgenes más pequeños */
+    }
 
     .container-principal-marcas-BRANDS .nike-BRANDS,
     .container-principal-marcas-BRANDS .converse-BRANDS,
     .container-principal-marcas-BRANDS .Jordan-BRANDS {
         text-align: center;
+        /* Asegura que los elementos estén centrados */
         margin: 20px 0;
     }
 
     .container-principal-marcas-BRANDS .nike-BRANDS h2,
     .container-principal-marcas-BRANDS .converse-BRANDS h2,
     .container-principal-marcas-BRANDS .Jordan-BRANDS h2 {
-    
         text-align: center;
+        /* Centra los títulos de las marcas */
+    }
+
+    .container-principal-marcas-BRANDS .nike-BRANDS img {
+        width: 40%;
+        /* Ajuste de la imagen a un 75% del contenedor */
+        height: auto;
+        margin: 7% auto;
+    }
+
+    .container-principal-marcas-BRANDS .converse-BRANDS img {
+        width: 40%;
+        /* Ajuste de la imagen a un 75% del contenedor */
+        height: auto;
+        margin: 15% auto;
+    }
+
+    .container-principal-marcas-BRANDS .Jordan-BRANDS img {
+        width: 30%;
+        /* Ajuste de la imagen a un 75% del contenedor */
+        height: auto;
+        margin: 10% auto;
     }
 
     .container-principal-marcas-BRANDS img {
-        width: 300px;
+        width: 80%;
+        /* Ajusta la imagen al 80% del contenedor */
         height: auto;
-    
+        margin: 10px auto;
+        /* Centrado de las imágenes con márgenes pequeños */
+        display: block;
     }
 
     .section-marcas-BRANDS .linea-BRANDS {
-        width: 60%;
-        margin: 60px 70px;
+        width: 80%;
+        /* Ajuste al 80% del contenedor */
+        margin: 15% auto;
+        /* Centrado automático */
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
+        /* Bloque para asegurar que ocupe el 100% de su espacio */
     }
 }
 
 
-
 /* Móviles grandes y tabletas pequeñas (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
+
+    .titulo-marcas {
+        font-size: 40px;
+        /* Ajuste para pantallas medianas */
+        text-align: center;
+        /* Centrado del título */
+    }
+
     .container-principal-marcas-BRANDS {
         grid-template-columns: 1fr;
         /* Una sola columna */
@@ -315,27 +412,57 @@
     .container-principal-marcas-BRANDS .nike-BRANDS h2,
     .container-principal-marcas-BRANDS .converse-BRANDS h2,
     .container-principal-marcas-BRANDS .Jordan-BRANDS h2 {
-        font-size: 22px;
-        text-align: left;
+        text-align: center;
+        /* Centrado de los títulos */
     }
 
-    .container-principal-marcas-BRANDS img {
-        width: 350px;
+    .container-principal-marcas-BRANDS .nike-BRANDS img {
+        width: 40%;
+        /* Ajuste de la imagen a un 75% del contenedor */
         height: auto;
-        margin: 0;
+        margin: 7% auto;
+    }
+
+    .container-principal-marcas-BRANDS .converse-BRANDS img {
+        width: 40%;
+        /* Ajuste de la imagen a un 75% del contenedor */
+        height: auto;
+        margin: 15% auto;
+    }
+
+    .container-principal-marcas-BRANDS .Jordan-BRANDS img {
+        width: 30%;
+        /* Ajuste de la imagen a un 75% del contenedor */
+        height: auto;
+        margin: 10% auto;
     }
 
     .section-marcas-BRANDS .linea-BRANDS {
-        width: 31%;
-        margin: 60px 60px;
+        width: 70%;
+        /* Ajuste al 80% del contenedor */
+        margin: 15% auto;
+        /* Centrado automático */
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
 /* Tabletas medianas y grandes (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
+
+    .titulo-marcas {
+        font-size: 36px;
+        /* Ajuste para pantallas más grandes */
+        text-align: center;
+        /* Centrado del título */
+    }
+
     .container-principal-marcas-BRANDS {
         grid-template-columns: 1fr 1fr;
-        margin: 10px 12%;
+        /* Dos columnas */
+        margin: 10px 15%;
     }
 
     .container-principal-marcas-BRANDS .nike-BRANDS,
@@ -348,25 +475,44 @@
     .container-principal-marcas-BRANDS .nike-BRANDS h2,
     .container-principal-marcas-BRANDS .converse-BRANDS h2,
     .container-principal-marcas-BRANDS .Jordan-BRANDS h2 {
-        font-size: 28px;
+        text-align: center;
+        /* Centrado de los títulos */
     }
 
     .container-principal-marcas-BRANDS img {
         width: 100%;
+        /* La imagen ocupa todo el espacio disponible */
         height: auto;
+        margin: 10px auto;
+        display: block;
     }
 
     .section-marcas-BRANDS .linea-BRANDS {
-        width: 70%;
-        margin: 0 150px;
+        width: 60%;
+        /* Ajuste al 80% del contenedor */
+        margin: 15% auto;
+        /* Centrado automático */
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
-/* Laptops y escritorios estándar (1025px - 1281px) */
-@media (min-width: 1025px) and (max-width: 1281px) {
+/* Pantallas grandes (1025px en adelante) */
+@media (min-width: 1025px) {
+
+    .titulo-marcas {
+        font-size: 40px;
+        /* Título más grande en pantallas grandes */
+        text-align: center;
+        /* Centrado del título */
+    }
+
     .container-principal-marcas-BRANDS {
-        grid-template-columns: 1fr 1fr;
-        margin: 10px 50px;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* Tres columnas en pantallas grandes */
+        margin: 10px 5%;
     }
 
     .container-principal-marcas-BRANDS .nike-BRANDS,
@@ -376,22 +522,32 @@
         margin: 20px 0;
     }
 
+    .container-principal-marcas-BRANDS .nike-BRANDS h2,
+    .container-principal-marcas-BRANDS .converse-BRANDS h2,
+    .container-principal-marcas-BRANDS .Jordan-BRANDS h2 {
+        text-align: center;
+        /* Centrado de los títulos */
+    }
 
     .container-principal-marcas-BRANDS img {
-        width: 500px;
+        width: 90%;
+        /* Imagen ajustada al 90% en pantallas grandes */
         height: auto;
-    
+        margin: 10px auto;
+        display: block;
     }
 
     .section-marcas-BRANDS .linea-BRANDS {
-        width: 800px;
-        margin: 0 270px;
+        width: 50%;
+        /* Ajuste al 80% del contenedor */
+        margin: 15% auto;
+        /* Centrado automático */
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
-
-
-
-
 
 /*estilos secction3*/
 .section-BRANDS2 {
@@ -430,19 +586,24 @@
 }
 
 .section-BRANDS2 .linea-BRANDS {
-    position: absolute;
-    border: 2px solid black;
-    width: 800px;
-    margin: 0 270px;
+    width: 80%;
+    /* Ajuste al 80% del contenedor */
+    margin: 15% auto;
+    /* Centrado automático */
+    border-top: 1px solid #000;
+    /* Estilo de la línea */
+    position: relative;
+    display: block;
 }
 
-/* Responsivo */
-
+/* Responsive section 3 */
 /* Móviles pequeños (320px - 480px) */
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .container-principal-BRANDS2 {
         grid-template-columns: 1fr;
-        margin: 10px 40px;
+        /* Una sola columna */
+        margin: 5% 15%;
+        /* Ajuste del margen */
     }
 
     .container-principal-BRANDS2 .contenido-BRANDS2 {
@@ -450,30 +611,46 @@
     }
 
     .container-principal-BRANDS2 .contenido-BRANDS2 .imagen-section-BRANDS img {
-        width: 60%;
-
+        width: 55%;
+        /* Ajuste de la imagen al 75% */
+        margin: 0 auto;
+        /* Centrado automático */
+        display: block;
     }
 
     .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
-        font-size: 25px;
-        text-align: left;
+        font-size: 22px;
+        /* Ajuste del tamaño de la fuente */
+        text-align: center;
+        /* Centrado del título */
     }
 
     .container-principal-BRANDS2 .contenido-BRANDS2 p {
-        font-size: 15px;
+        font-size: 14px;
+        /* Ajuste de tamaño de fuente */
         text-align: left;
-        margin: 30px 0;
+        margin: 20px 0;
+        width: 260px;
+        /* Ajuste del ancho para el párrafo */
     }
 
     .container-principal-BRANDS2 .imagen-BRANDS2 img {
         width: 250px;
+        /* Tamaño ajustado de la imagen */
         height: auto;
-        margin: 0 40px;
+        margin: 0 auto;
+        /* Centrado automático */
+        display: block;
     }
 
     .section-BRANDS2 .linea-BRANDS {
-        width: 60%;
-        margin: 60px 70px;
+        width: 80%;
+        /* Ajuste al 80% del contenedor */
+        margin: 15% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
@@ -481,7 +658,7 @@
 @media (min-width: 481px) and (max-width: 768px) {
     .container-principal-BRANDS2 {
         grid-template-columns: 1fr;
-        margin: 10px 30px;
+        margin: 10px 20%;
     }
 
     .container-principal-BRANDS2 .contenido-BRANDS2 .imagen-section-BRANDS img {
@@ -494,9 +671,9 @@
     }
 
     .container-principal-BRANDS2 .contenido-BRANDS2 p {
-        font-size: 15px;
+        font-size: 25px;
         margin: 30px 0;
-        width: 300px;
+
     }
 
     .container-principal-BRANDS2 .imagen-BRANDS2 img {
@@ -505,8 +682,13 @@
     }
 
     .section-BRANDS2 .linea-BRANDS {
-        width: 31%;
-        margin: 60px 60px;
+        width: 70%;
+        /* Ajuste al 80% del contenedor */
+        margin: 10% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
@@ -514,11 +696,11 @@
 @media (min-width: 769px) and (max-width: 1024px) {
     .container-principal-BRANDS2 {
         grid-template-columns: 1fr 1fr;
-        margin: 90px 12%;
+        margin: 10px 20%;
     }
 
     .container-principal-BRANDS2 .contenido-BRANDS2 .imagen-section-BRANDS img {
-        width: 40%;
+        width: 80%;
     }
 
     .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
@@ -532,17 +714,22 @@
     .container-principal-BRANDS2 .imagen-BRANDS2 img {
         width: 250px;
         height: auto;
-        margin: 90px 50px;
+        margin: 60% 25%;
     }
 
     .section-BRANDS2 .linea-BRANDS {
-        width: 70%;
-        margin: 0 150px;
+        width: 60%;
+        /* Ajuste al 80% del contenedor */
+        margin: 10% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
 /* Laptops y escritorios estándar (1025px - 1920px) */
-@media (min-width: 1025px) and (max-width: 1281px) {
+@media (min-width: 1025px) {
     .container-principal-BRANDS2 {
         grid-template-columns: 1fr 1fr;
         margin: 70px 50px;
@@ -562,34 +749,13 @@
     }
 
     .section-BRANDS2 .linea-BRANDS {
-        width: 800px;
-        margin: 0 270px;
-    }
-}
-
-/* Monitores grandes (1921px o más) */
-@media (min-width: 1921px) {
-    .container-principal-BRANDS2 {
-        grid-template-columns: 1fr 1fr;
-        margin: 10px 15%;
-    }
-
-    .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
-        font-size: 48px;
-    }
-
-    .container-principal-BRANDS2 .contenido-BRANDS2 p {
-        font-size: 22px;
-    }
-
-    .container-principal-BRANDS2 .imagen-BRANDS2 img {
-        width: 100%;
-        height: auto;
-    }
-
-    .section-BRANDS2 .linea-BRANDS {
-        width: 1000px;
-        margin: 0 300px;
+        width: 50%;
+        /* Ajuste al 80% del contenedor */
+        margin: 10% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
@@ -643,11 +809,12 @@
 }
 
 /* Móviles pequeños (320px - 480px) */
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .container-principal-BRANDS3 {
         grid-template-columns: 1fr;
-        margin-top: 120px;
+
     }
+
     .container-principal-BRANDS3 .imagen-section-BRANDS3 img {
         width: 60%;
         margin: 30px 40px;
@@ -667,12 +834,17 @@
     .container-principal-BRANDS3 .imagen-BRANDS3 img {
         width: 250px;
         height: auto;
-        margin: 0 40px;
+        margin: 0 9%;
     }
 
     .section-BRANDS3 .linea-BRANDS {
-        width: 60%;
-        margin: 0 70px;
+        width: 80%;
+        /* Ajuste al 80% del contenedor */
+        margin: 10% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
@@ -680,12 +852,12 @@
 @media (min-width: 481px) and (max-width: 768px) {
     .container-principal-BRANDS3 {
         grid-template-columns: 1fr;
-        margin: 10px 30px;
+        margin: 10px 20%;
     }
 
     .container-principal-BRANDS3 .imagen-section-BRANDS3 img {
-        width: 50%;
-        margin: 0 auto;
+        width: 60%;
+        margin: 10% auto;
     }
 
     .container-principal-BRANDS3 .contenido-BRANDS3 h1 {
@@ -693,9 +865,8 @@
     }
 
     .container-principal-BRANDS3 .contenido-BRANDS3 p {
-        font-size: 15px;
-        margin: 30px 0;
-        width: 300px;
+        font-size: 25px;
+        margin-top: 20px;
     }
 
     .container-principal-BRANDS3 .imagen-BRANDS3 img {
@@ -704,8 +875,13 @@
     }
 
     .section-BRANDS3 .linea-BRANDS {
-        width: 31%;
-        margin: 60px 60px;
+        width: 70%;
+        /* Ajuste al 80% del contenedor */
+        margin: 5% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
@@ -735,13 +911,18 @@
     }
 
     .section-BRANDS3 .linea-BRANDS {
-        width: 70%;
-        margin: 0 150px;
+        width: 60%;
+        /* Ajuste al 80% del contenedor */
+        margin: 10% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
 /* Laptops y escritorios estándar (1025px - 1920px) */
-@media (min-width: 1025px) and (max-width: 1281px) {
+@media (min-width: 1025px) {
     .container-principal-BRANDS3 {
         grid-template-columns: 1fr 1fr;
         margin: 70px 50px;
@@ -760,37 +941,15 @@
     }
 
     .section-BRANDS3 .linea-BRANDS {
-        width: 800px;
-        margin: 0 270px;
+        width: 50%;
+        /* Ajuste al 80% del contenedor */
+        margin: 10% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
-
-/* Monitores grandes (1921px o más) */
-@media (min-width: 1921px) {
-    .container-principal-BRANDS3 {
-        grid-template-columns: 1fr 1fr;
-        margin: 10px 15%;
-    }
-
-    .container-principal-BRANDS3 .contenido-BRANDS3 h1 {
-        font-size: 48px;
-    }
-
-    .container-principal-BRANDS3 .contenido-BRANDS3 p {
-        font-size: 22px;
-    }
-
-    .container-principal-BRANDS3 .imagen-BRANDS3 img {
-        width: 100%;
-        height: auto;
-    }
-
-    .section-BRANDS3 .linea-BRANDS {
-        width: 1000px;
-        margin: 0 300px;
-    }
-}
-
 
 
 /*estilos secction5*/
@@ -842,10 +1001,10 @@
 }
 
 /* Móviles pequeños (320px - 480px) */
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .container-principal-BRANDS4 {
         grid-template-columns: 1fr;
-        margin: 10px 40px;
+        margin: 10% 10%;
     }
 
     .container-principal-BRANDS4 .contenido-BRANDS4 {
@@ -859,24 +1018,29 @@
     .container-principal-BRANDS4 .contenido-BRANDS4 h1 {
         font-size: 25px;
         text-align: left;
-        margin: 0 20px;
+        margin: 0 10%;
     }
 
     .container-principal-BRANDS4 .contenido-BRANDS4 p {
         font-size: 15px;
         text-align: left;
-        margin: 30px 20px;
+        margin: 10% 10%;
     }
 
     .container-principal-BRANDS4 .imagen-BRANDS4 img {
         width: 250px;
         height: auto;
-        margin: 20px 40px;
+        margin: 5% 10%;
     }
 
     .section-BRANDS4 .linea-BRANDS {
-        width: 60%;
-        margin: 60px 70px;
+        width: 80%;
+        /* Ajuste al 80% del contenedor */
+        margin: 10% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
@@ -884,11 +1048,11 @@
 @media (min-width: 481px) and (max-width: 768px) {
     .container-principal-BRANDS4 {
         grid-template-columns: 1fr;
-        margin: 10px 30px;
+        margin: 0 20%;
     }
 
     .container-principal-BRANDS4 .contenido-BRANDS4 .imagen-section-BRANDS4 img {
-        width: 50%;
+        width: 40%;
         margin: 0 auto;
     }
 
@@ -897,19 +1061,23 @@
     }
 
     .container-principal-BRANDS4 .contenido-BRANDS4 p {
-        font-size: 15px;
-        margin: 30px 0;
-        width: 300px;
+        font-size: 25px;
+        margin-top: 20px;
     }
 
     .container-principal-BRANDS4 .imagen-BRANDS4 img {
-        width: 100%;
-        margin: 0;
+        width: 80%;
+        margin: 30px 0;
     }
 
     .section-BRANDS4 .linea-BRANDS {
-        width: 31%;
-        margin: 60px 60px;
+        width: 70%;
+        /* Ajuste al 80% del contenedor */
+        margin: 8% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
@@ -939,13 +1107,18 @@
     }
 
     .section-BRANDS4 .linea-BRANDS {
-        width: 70%;
-        margin: 0 150px;
+        width: 60%;
+        /* Ajuste al 80% del contenedor */
+        margin: 8% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
 
 /* Laptops y escritorios estándar (1025px - 1920px) */
-@media (min-width: 1025px) and (max-width: 1281px) {
+@media (min-width: 1025px) {
     .container-principal-BRANDS4 {
         grid-template-columns: 1fr 1fr;
         margin: 70px 50px;
@@ -964,33 +1137,12 @@
     }
 
     .section-BRANDS4 .linea-BRANDS {
-        width: 800px;
-        margin: 0 270px;
-    }
-}
-
-/* Monitores grandes (1921px o más) */
-@media (min-width: 1921px) {
-    .container-principal-BRANDS4 {
-        grid-template-columns: 1fr 1fr;
-        margin: 10px 15%;
-    }
-
-    .container-principal-BRANDS4 .contenido-BRANDS4 h1 {
-        font-size: 48px;
-    }
-
-    .container-principal-BRANDS4 .contenido-BRANDS4 p {
-        font-size: 22px;
-    }
-
-    .container-principal-BRANDS4 .imagen-BRANDS4 img {
-        width: 100%;
-        height: auto;
-    }
-
-    .section-BRANDS4 .linea-BRANDS {
-        width: 1000px;
-        margin: 0 300px;
+        width: 50%;
+        /* Ajuste al 80% del contenedor */
+        margin: 8% auto;
+        border-top: 1px solid #000;
+        /* Estilo de la línea */
+        position: relative;
+        display: block;
     }
 }
