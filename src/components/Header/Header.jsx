@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Header.css';
 import { Link, useLocation } from 'react-router-dom';
+import { Menu, ChevronDown, ShoppingCart } from 'lucide-react';
 
 // Componente reutilizable para crear el submenú de categorías.
 function DropdownMenu({ categories }) {
@@ -33,42 +34,32 @@ function DropdownMenu({ categories }) {
 
 // Componente principal del header.
 function Header() {
-  // Estado que guarda el submenú actualmente visible.
   const [visibleDropdown, setVisibleDropdown] = useState(null);
-  // Hook para obtener la ruta actual de la aplicación.
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  // Hook para crear una referencia al elemento <header>.
   const headerRef = useRef(null);
 
-  // Función para alternar la visibilidad del submenú al hacer clic.
   const handleMenuClick = (menu) => {
     setVisibleDropdown((prev) => (prev === menu ? null : menu));
   };
 
-  // Función para cerrar el submenú si se hace clic fuera del header.
   const handleClickOutside = (event) => {
     if (headerRef.current && !headerRef.current.contains(event.target)) {
-      setVisibleDropdown(null); // Oculta el submenú.
+      setVisibleDropdown(null);
     }
   };
 
-  // Hook que agrega y elimina un event listener para detectar clics fuera del header.
   useEffect(() => {
-    // Escucha los clics fuera del header.
     document.addEventListener('mousedown', handleClickOutside);
-  
-    // Oculta el submenú al cambiar de ruta.
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
   
   useEffect(() => {
-    // Oculta cualquier submenú cuando la ruta cambia.
     setVisibleDropdown(null);
   }, [location.pathname]);
 
-  // Función para verificar si una ruta específica está activa (coincide con la URL actual).
   const isActive = (path) => location.pathname === path;
 
   // Datos de las categorías, organizados por tipo (mujeres, hombres, niños, deportes).
@@ -108,16 +99,12 @@ function Header() {
   };
 
   return (
-    // Componente principal <header>.
-    <header ref={headerRef}>
-      <nav>
-        {/* Lista de enlaces principales de navegación. */}
+    <header ref={headerRef} className="responsive-header">
+      <nav className="desktop-nav">
         <ul className="nav__links">
-          {/* Logo de la página */}
           <Link to="/">
             <li className={`link logo ${isActive('/') ? 'active' : ''}`}>NIKE</li>
           </Link>
-          {/* Sección Hombres */}
           <Link to="/hombre">
             <li
               className={`link ${visibleDropdown === 'men' ? 'active' : ''}`}
@@ -127,7 +114,6 @@ function Header() {
               {visibleDropdown === 'men' && <DropdownMenu categories={categories.men} />}
             </li>
           </Link>
-          {/* Sección Mujeres */}
           <Link to="/productosmujeres">
             <li
               className={`link ${visibleDropdown === 'women' ? 'active' : ''}`}
@@ -137,7 +123,6 @@ function Header() {
               {visibleDropdown === 'women' && <DropdownMenu categories={categories.women} />}
             </li>
           </Link>
-          {/* Sección Niños */}
           <Link to="/productoNino">
             <li
               className={`link ${visibleDropdown === 'kids' ? 'active' : ''}`}
@@ -147,7 +132,6 @@ function Header() {
               {visibleDropdown === 'kids' && <DropdownMenu categories={categories.kids} />}
             </li>
           </Link>
-          {/* Sección Deportes */}
           <Link to="/futbol">
             <li
               className={`link ${visibleDropdown === 'sports' ? 'active' : ''}`}
@@ -157,35 +141,120 @@ function Header() {
               {visibleDropdown === 'sports' && <DropdownMenu categories={categories.sports} />}
             </li>
           </Link>
-          {/* Sección Marcas */}
           <Link to="/marcas">
             <li className={`link ${isActive('/marcas') ? 'active' : ''}`}>BRANDS</li>
           </Link>
-          {/* Sección Personalización */}
           <Link to="/personalizado">
             <li className={`link ${isActive('/personalizado') ? 'active' : ''}`}>CUSTOMIZE</li>
           </Link>
         </ul>
-        {/* Íconos de redes sociales y carrito de compras */}
         <div className="social__icons">
-          <Link to="https://www.facebook.com/nike/">
-            <span><i className="ri-facebook-fill"></i></span>
-          </Link>
-          <Link to="https://x.com/Nike">
-            <span><i className="ri-twitter-fill"></i></span>
-          </Link>
-          <Link to="https://www.nike.com.co/">
-            <span><i className="ri-google-fill"></i></span>
-          </Link>
-          <Link to="https://www.instagram.com/nike/">
-            <span><i className="ri-instagram-line"></i></span>
-          </Link>
-          {/* Carrito de compras */}
-          <Link to="/carrito" className={`link ${isActive('/carrito') ? 'active' : ''}`}>
-            <i className="ri-shopping-cart-line"></i>
-          </Link>
-          <span><i className="ri-global-line"></i></span>
         </div>
+      </nav>
+
+      <nav className="mobile-nav">
+        <div className="mobile-nav-container">
+          
+          <Link to="/" className="mobile-logo">NIKE</Link>
+
+          <button 
+            className="hamburger-menu" 
+            // !!!Este es el estado que me permite mostrar el responsive
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+          >
+            <Menu size={26} color="white" />
+          </button>
+          
+          {/* Carrito */}
+          <Link to="/carrito" className="mobile-cart">
+            <ShoppingCart size={24} color="white" />
+          </Link>
+        </div>
+
+        {isMobileMenuOpen && (
+          <div className="mobile-menu-overlay">
+            <div className="mobile-menu-content">
+              <div>
+                <Link 
+                  to="/hombre" 
+                  className="mobile-menu-item"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  MEN
+                </Link>
+                <button>
+                  <ChevronDown size={26} color="white"/>
+                </button>
+              </div>
+              
+              <div>
+                <Link
+                  to="/productosmujeres"
+                  className="mobile-menu-item"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  WOMEN
+                </Link>
+                <button>
+                  <ChevronDown size={26} color="white"/>
+                </button>
+              </div>
+
+              <div>
+                <Link
+                  to="/productoNino"
+                  className="mobile-menu-item"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  KIDS
+                </Link>
+                <button>
+                  <ChevronDown size={26} color="white"/>
+                </button>
+              </div>
+
+              <div>
+                <Link
+                  to="/futbol"
+                  className="mobile-menu-item"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  SPORTS
+                </Link>
+                <button>
+                  <ChevronDown size={26} color="white"/>
+                </button>
+              </div>
+
+              <div>
+                <Link
+                  to="/marcas"
+                  className="mobile-menu-item"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  BRANDS
+                </Link>
+                <button>
+                  <ChevronDown size={26} color="white"/>
+                </button>
+              </div>
+
+              <div>
+                <Link
+                  to="/personalizado"
+                  className="mobile-menu-item"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  CUSTOMIZE
+                </Link>
+                <button>
+                  <ChevronDown size={26} color="white"/>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
