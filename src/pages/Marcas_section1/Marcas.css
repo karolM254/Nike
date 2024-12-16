@@ -1,28 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 
-:root {
-    --primary-color: #2563eb;
-    --primary-color-dark: #1e40af;
-    --text-dark: #1f1f1f;
-    --text-light: #4b5563;
-    --extra-light: #f3f4f6;
-    --white: #ffffff;
-    --max-width: 1200px;
-    --font-heading: "Roboto Condensed", sans-serif;
-}
-
 /*estilos secction1*/
 .section-BRANDS {
     width: 100%;
-    font-family: var(--font-heading);
-}
-
-.section-BRANDS p, .section-marcas-BRANDS p, .section-BRANDS2 p, .section-BRANDS3 p, .section-BRANDS4 p {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.section-marcas-BRANDS, .section-BRANDS2, .section-BRANDS3, .section-BRANDS4 {
-    font-family: var(--font-heading);
 }
 
 .container-principal-BRANDS {
@@ -60,6 +40,161 @@
     margin: 0 270px;
 }
 
+
+/* Responsive */
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    
+    .container-principal-BRANDS {
+        grid-template-columns: 1fr;
+        /* Una sola columna */
+        margin: 10px 40px;
+    }
+    .container-principal-BRANDS .contenido-BRANDS {
+        margin: 20px 0;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
+        font-size: 25px;
+        text-align: left;
+    }
+    .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
+        font-size: 15px;
+        text-align: left;
+        margin: 30px 0;
+        width: 310px;
+    }
+
+    .container-principal-BRANDS .imagen-BRANDS img {
+        width: 300px;
+        height: auto;
+        margin: 0;
+    }
+
+    .section-BRANDS .linea-BRANDS {
+        width: 60%;
+        margin: 60px 70px;
+    }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container-principal-BRANDS {
+        grid-template-columns: 1fr;
+        /* Una sola columna */
+        margin: 10px 30px;
+    }
+    .container-principal-BRANDS .contenido-BRANDS {
+        margin: 20px 0;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
+        font-size: 25px;
+        text-align: left;
+    }
+    .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
+        font-size: 15px;
+        text-align: left;
+        margin: 30px 0;
+        width: 300px;
+    }
+
+    .container-principal-BRANDS .imagen-BRANDS img {
+        width: 350px;
+        height: auto;
+        margin: 0;
+        width: 300px;
+    }
+
+    .section-BRANDS .linea-BRANDS {
+        width: 31%;
+        margin: 60px 60px;
+    }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-principal-BRANDS {
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 12%;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
+        font-size: 36px;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
+        font-size: 18px;
+    }
+
+    .container-principal-BRANDS .imagen-BRANDS img {
+        width: 100%;
+        height: auto;
+        margin: 150px 20px;
+    }
+
+    .section-BRANDS .linea-BRANDS {
+        width: 70%;
+        margin: 0 150px;
+    }
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1281px) {
+    .container-principal-BRANDS {
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 50px;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
+        font-size: 40px;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
+        font-size: 25px;
+    }
+
+    .container-principal-BRANDS .imagen-BRANDS img {
+        width: 500px;
+        height: auto;
+        margin: 160px 20px;
+    }
+
+    .section-BRANDS .linea-BRANDS {
+        width: 800px;
+        margin: 0 270px;
+    }
+}
+
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+    .container-principal-BRANDS {
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 15%;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
+        font-size: 48px;
+    }
+
+    .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
+        font-size: 22px;
+    }
+
+    .container-principal-BRANDS .imagen-BRANDS img {
+        width: 100%;
+        height: auto;
+    }
+
+    .section-BRANDS .linea-BRANDS {
+        width: 1000px;
+        margin: 0 300px;
+    }
+}
+
+
+
 /*estilos secction2*/
 .section-marcas-BRANDS {
     width: 100%;
@@ -80,17 +215,17 @@
 
 .container-principal-marcas-BRANDS .nike-BRANDS img {
     width: 50%;
-    margin: 0 100px;
+    margin: 0 80px;
 }
 
 .container-principal-marcas-BRANDS .converse-BRANDS img {
     width: 50%;
-    margin: 40px 90px;
+    margin: 40px 80px;
 }
 
 .container-principal-marcas-BRANDS .Jordan-BRANDS img {
     width: 40%;
-    margin: 70px 110px;
+    margin: 70px 100px;
 }
 
 .container-principal-marcas-BRANDS .nike-BRANDS .titulo-nike-BRANDS {
@@ -122,6 +257,141 @@
     width: 800px;
     margin: 0 270px;
 }
+
+/*responsive secction2*/
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .titulo-marcas{
+        font-size: 35px;
+    }
+    .container-principal-marcas-BRANDS {
+        grid-template-columns: 1fr;
+        margin: 10px;
+    }   
+
+    .container-principal-marcas-BRANDS .nike-BRANDS,
+    .container-principal-marcas-BRANDS .converse-BRANDS,
+    .container-principal-marcas-BRANDS .Jordan-BRANDS {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .container-principal-marcas-BRANDS .nike-BRANDS h2,
+    .container-principal-marcas-BRANDS .converse-BRANDS h2,
+    .container-principal-marcas-BRANDS .Jordan-BRANDS h2 {
+    
+        text-align: center;
+    }
+
+    .container-principal-marcas-BRANDS img {
+        width: 300px;
+        height: auto;
+    
+    }
+
+    .section-marcas-BRANDS .linea-BRANDS {
+        width: 60%;
+        margin: 60px 70px;
+    }
+}
+
+
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container-principal-marcas-BRANDS {
+        grid-template-columns: 1fr;
+        /* Una sola columna */
+        margin: 10px 30px;
+    }
+
+    .container-principal-marcas-BRANDS .nike-BRANDS,
+    .container-principal-marcas-BRANDS .converse-BRANDS,
+    .container-principal-marcas-BRANDS .Jordan-BRANDS {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .container-principal-marcas-BRANDS .nike-BRANDS h2,
+    .container-principal-marcas-BRANDS .converse-BRANDS h2,
+    .container-principal-marcas-BRANDS .Jordan-BRANDS h2 {
+        font-size: 22px;
+        text-align: left;
+    }
+
+    .container-principal-marcas-BRANDS img {
+        width: 350px;
+        height: auto;
+        margin: 0;
+    }
+
+    .section-marcas-BRANDS .linea-BRANDS {
+        width: 31%;
+        margin: 60px 60px;
+    }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-principal-marcas-BRANDS {
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 12%;
+    }
+
+    .container-principal-marcas-BRANDS .nike-BRANDS,
+    .container-principal-marcas-BRANDS .converse-BRANDS,
+    .container-principal-marcas-BRANDS .Jordan-BRANDS {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .container-principal-marcas-BRANDS .nike-BRANDS h2,
+    .container-principal-marcas-BRANDS .converse-BRANDS h2,
+    .container-principal-marcas-BRANDS .Jordan-BRANDS h2 {
+        font-size: 28px;
+    }
+
+    .container-principal-marcas-BRANDS img {
+        width: 100%;
+        height: auto;
+    }
+
+    .section-marcas-BRANDS .linea-BRANDS {
+        width: 70%;
+        margin: 0 150px;
+    }
+}
+
+/* Laptops y escritorios estándar (1025px - 1281px) */
+@media (min-width: 1025px) and (max-width: 1281px) {
+    .container-principal-marcas-BRANDS {
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 50px;
+    }
+
+    .container-principal-marcas-BRANDS .nike-BRANDS,
+    .container-principal-marcas-BRANDS .converse-BRANDS,
+    .container-principal-marcas-BRANDS .Jordan-BRANDS {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+
+    .container-principal-marcas-BRANDS img {
+        width: 500px;
+        height: auto;
+    
+    }
+
+    .section-marcas-BRANDS .linea-BRANDS {
+        width: 800px;
+        margin: 0 270px;
+    }
+}
+
+
+
+
 
 /*estilos secction3*/
 .section-BRANDS2 {
@@ -157,7 +427,6 @@
     margin: 50px 130px;
     border-radius: 10px;
     width: 60%
-    
 }
 
 .section-BRANDS2 .linea-BRANDS {
@@ -165,6 +434,163 @@
     border: 2px solid black;
     width: 800px;
     margin: 0 270px;
+}
+
+/* Responsivo */
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .container-principal-BRANDS2 {
+        grid-template-columns: 1fr;
+        margin: 10px 40px;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 {
+        margin: 20px 0;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 .imagen-section-BRANDS img {
+        width: 60%;
+
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
+        font-size: 25px;
+        text-align: left;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 p {
+        font-size: 15px;
+        text-align: left;
+        margin: 30px 0;
+    }
+
+    .container-principal-BRANDS2 .imagen-BRANDS2 img {
+        width: 250px;
+        height: auto;
+        margin: 0 40px;
+    }
+
+    .section-BRANDS2 .linea-BRANDS {
+        width: 60%;
+        margin: 60px 70px;
+    }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container-principal-BRANDS2 {
+        grid-template-columns: 1fr;
+        margin: 10px 30px;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 .imagen-section-BRANDS img {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
+        font-size: 25px;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 p {
+        font-size: 15px;
+        margin: 30px 0;
+        width: 300px;
+    }
+
+    .container-principal-BRANDS2 .imagen-BRANDS2 img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .section-BRANDS2 .linea-BRANDS {
+        width: 31%;
+        margin: 60px 60px;
+    }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-principal-BRANDS2 {
+        grid-template-columns: 1fr 1fr;
+        margin: 90px 12%;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 .imagen-section-BRANDS img {
+        width: 40%;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
+        font-size: 36px;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 p {
+        font-size: 18px;
+    }
+
+    .container-principal-BRANDS2 .imagen-BRANDS2 img {
+        width: 250px;
+        height: auto;
+        margin: 90px 50px;
+    }
+
+    .section-BRANDS2 .linea-BRANDS {
+        width: 70%;
+        margin: 0 150px;
+    }
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1281px) {
+    .container-principal-BRANDS2 {
+        grid-template-columns: 1fr 1fr;
+        margin: 70px 50px;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
+        font-size: 40px;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 p {
+        font-size: 25px;
+    }
+
+    .container-principal-BRANDS2 .imagen-BRANDS2 img {
+        height: auto;
+        margin: 40px 50px;
+    }
+
+    .section-BRANDS2 .linea-BRANDS {
+        width: 800px;
+        margin: 0 270px;
+    }
+}
+
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+    .container-principal-BRANDS2 {
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 15%;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
+        font-size: 48px;
+    }
+
+    .container-principal-BRANDS2 .contenido-BRANDS2 p {
+        font-size: 22px;
+    }
+
+    .container-principal-BRANDS2 .imagen-BRANDS2 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .section-BRANDS2 .linea-BRANDS {
+        width: 1000px;
+        margin: 0 300px;
+    }
 }
 
 
@@ -207,7 +633,6 @@
     margin: 90px 200px;
     border-radius: 10px;
     width: 50%
-    
 }
 
 .section-BRANDS3 .linea-BRANDS {
@@ -216,6 +641,156 @@
     width: 800px;
     margin: 0 270px;
 }
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .container-principal-BRANDS3 {
+        grid-template-columns: 1fr;
+        margin-top: 120px;
+    }
+    .container-principal-BRANDS3 .imagen-section-BRANDS3 img {
+        width: 60%;
+        margin: 30px 40px;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 h1 {
+        font-size: 25px;
+        text-align: left;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 p {
+        font-size: 15px;
+        text-align: left;
+        margin: 30px 0;
+    }
+
+    .container-principal-BRANDS3 .imagen-BRANDS3 img {
+        width: 250px;
+        height: auto;
+        margin: 0 40px;
+    }
+
+    .section-BRANDS3 .linea-BRANDS {
+        width: 60%;
+        margin: 0 70px;
+    }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container-principal-BRANDS3 {
+        grid-template-columns: 1fr;
+        margin: 10px 30px;
+    }
+
+    .container-principal-BRANDS3 .imagen-section-BRANDS3 img {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 h1 {
+        font-size: 25px;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 p {
+        font-size: 15px;
+        margin: 30px 0;
+        width: 300px;
+    }
+
+    .container-principal-BRANDS3 .imagen-BRANDS3 img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .section-BRANDS3 .linea-BRANDS {
+        width: 31%;
+        margin: 60px 60px;
+    }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-principal-BRANDS3 {
+        grid-template-columns: 1fr 1fr;
+        margin: 90px 12%;
+    }
+
+    .container-principal-BRANDS3 .imagen-section-BRANDS3 img {
+        width: 140px;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 h1 {
+        font-size: 36px;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 p {
+        font-size: 18px;
+    }
+
+    .container-principal-BRANDS3 .imagen-BRANDS3 img {
+        width: 250px;
+        height: auto;
+        margin: 180px 50px;
+    }
+
+    .section-BRANDS3 .linea-BRANDS {
+        width: 70%;
+        margin: 0 150px;
+    }
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1281px) {
+    .container-principal-BRANDS3 {
+        grid-template-columns: 1fr 1fr;
+        margin: 70px 50px;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 h1 {
+        font-size: 40px;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 p {
+        font-size: 25px;
+    }
+
+    .container-principal-BRANDS3 .imagen-BRANDS3 img {
+        height: auto;
+    }
+
+    .section-BRANDS3 .linea-BRANDS {
+        width: 800px;
+        margin: 0 270px;
+    }
+}
+
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+    .container-principal-BRANDS3 {
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 15%;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 h1 {
+        font-size: 48px;
+    }
+
+    .container-principal-BRANDS3 .contenido-BRANDS3 p {
+        font-size: 22px;
+    }
+
+    .container-principal-BRANDS3 .imagen-BRANDS3 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .section-BRANDS3 .linea-BRANDS {
+        width: 1000px;
+        margin: 0 300px;
+    }
+}
+
 
 
 /*estilos secction5*/
@@ -257,7 +832,6 @@
     margin: 90px 100px;
     border-radius: 10px;
     width: 60%
-    
 }
 
 .section-BRANDS4 .linea-BRANDS {
@@ -265,4 +839,158 @@
     border: 2px solid black;
     width: 800px;
     margin: 0 270px;
+}
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .container-principal-BRANDS4 {
+        grid-template-columns: 1fr;
+        margin: 10px 40px;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 {
+        margin: 20px 0;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 .imagen-section-BRANDS4 img {
+        width: 120px;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 h1 {
+        font-size: 25px;
+        text-align: left;
+        margin: 0 20px;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 p {
+        font-size: 15px;
+        text-align: left;
+        margin: 30px 20px;
+    }
+
+    .container-principal-BRANDS4 .imagen-BRANDS4 img {
+        width: 250px;
+        height: auto;
+        margin: 20px 40px;
+    }
+
+    .section-BRANDS4 .linea-BRANDS {
+        width: 60%;
+        margin: 60px 70px;
+    }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container-principal-BRANDS4 {
+        grid-template-columns: 1fr;
+        margin: 10px 30px;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 .imagen-section-BRANDS4 img {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 h1 {
+        font-size: 25px;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 p {
+        font-size: 15px;
+        margin: 30px 0;
+        width: 300px;
+    }
+
+    .container-principal-BRANDS4 .imagen-BRANDS4 img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .section-BRANDS4 .linea-BRANDS {
+        width: 31%;
+        margin: 60px 60px;
+    }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-principal-BRANDS4 {
+        grid-template-columns: 1fr 1fr;
+        margin: 90px 12%;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 .imagen-section-BRANDS4 img {
+        width: 40%;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 h1 {
+        font-size: 36px;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 p {
+        font-size: 18px;
+    }
+
+    .container-principal-BRANDS4 .imagen-BRANDS4 img {
+        width: 250px;
+        height: auto;
+        margin: 140px 40px;
+    }
+
+    .section-BRANDS4 .linea-BRANDS {
+        width: 70%;
+        margin: 0 150px;
+    }
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1281px) {
+    .container-principal-BRANDS4 {
+        grid-template-columns: 1fr 1fr;
+        margin: 70px 50px;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 h1 {
+        font-size: 40px;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 p {
+        font-size: 25px;
+    }
+
+    .container-principal-BRANDS4 .imagen-BRANDS4 img {
+        height: auto;
+    }
+
+    .section-BRANDS4 .linea-BRANDS {
+        width: 800px;
+        margin: 0 270px;
+    }
+}
+
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+    .container-principal-BRANDS4 {
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 15%;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 h1 {
+        font-size: 48px;
+    }
+
+    .container-principal-BRANDS4 .contenido-BRANDS4 p {
+        font-size: 22px;
+    }
+
+    .container-principal-BRANDS4 .imagen-BRANDS4 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .section-BRANDS4 .linea-BRANDS {
+        width: 1000px;
+        margin: 0 300px;
+    }
 }
