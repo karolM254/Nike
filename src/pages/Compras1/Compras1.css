@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 :root {
   --primary-color: #2563eb;
   --primary-color-dark: #1e40af;
@@ -15,9 +14,8 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 15px;
-  height: 160hv;
-
-
+  height: 150hv;
+  background: none;
   
 }
 
@@ -26,21 +24,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 120hv;
- 
+  height: 100hv;
 
 }
 
 
-.formm-container {
-  width: 93%;
-  padding: 45px;
-  border-radius: 35px;
-  margin-left: -5%; 
-  background: #d9d9d9;
-  margin-top: 70px;
- position: relative;
-  
+.form-container {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 0.5%; 
   
 }
 
@@ -49,20 +42,11 @@
   flex-direction: column;
 }
 
-.titulo-datos h2{
-font-family: "Monserrat";
-
-}
-.formm-container h2{
-  color: var(--primary-color-dark);
-}
-
 
 label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  font-family: "montserrat";
 }
 
 input, select {
@@ -72,7 +56,6 @@ input, select {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  font-family: "montserrat";
 }
 
 .row {
@@ -118,25 +101,49 @@ input, select {
 }
 
 .summary-container p{
-  font-size: 15px;
-  font-family: "montserrat";
-  font-weight: bold;
+  font-size: 20px;
 }
 
 .summary-container h2 {
   margin-bottom: 20px;
   color: var(--primary-color-dark);
   text-align: center;
-  font-family: "Roboto condensed";
 }
 
-.summary-container h3{
+.summary-items {
   margin-bottom: 20px;
-  color: #000;
-  text-align: right;
-  font-family: "Roboto condensed";
 }
 
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mini-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
 
 /* Estilos del modal */
 .modal-principal, .modal-confirmar, .modal-omitir {
@@ -150,60 +157,45 @@ input, select {
   justify-content: center;  
   align-items: center;      
   z-index: 1000;    
-
        
 }
 /* Estilo para el botón de cierre (X) */
 .close-btn {
-  position: absolute; 
-  top: 5px; 
-  right: 10px; 
-  background: transparent; 
-  border: none; 
-  font-size: 20px; 
-  color: var(--text-light); 
-  cursor: pointer; 
-  padding: 5px; 
+  position: absolute;
+  top: 38%;
+  right: 39%;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
 }
-
-.close-btn:hover {
-
-  transform: scale(1.1); /* Efecto de agrandar ligeramente */
-}
-
 .modal-content {
   background-color: #fff;
-  padding: 55px;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 450px;  
   justify-content: center;   
-  align-items: center;     
-  width: 30%; 
-  height: 40%;
-  position: relative;
-  
-
+  align-items: center;      
 
 }
 .modal-content h2{
   color: #000;
   text-align: center;
-  font-family: "montserrat";
-  font-size: 20px;
 }
 
 /* Botones del modal */
-.modal-buttonss {
+.modal-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
 
-.modal-buttonss .btn1,
-.modal-buttonss .btn2 {
+.modal-buttons .btn1,
+.modal-buttons .btn2 {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -211,47 +203,21 @@ input, select {
   cursor: pointer;
 }
 
-.modal-buttonss .btn1 {
+.modal-buttons .btn1 {
   background-color: var(--text-light);
   color: white;
 }
 
-.modal-buttonss .btn2 {
+.modal-buttons .btn2 {
   background-color: var(--primary-color);
   color: white;
 }
 
-.modal-buttonss .btn1:hover {
+.modal-buttons .btn1:hover {
   background-color: #1f1f1f;
 }
 
-.modal-buttonss .btn2:hover {
+.modal-buttons .btn2:hover {
   background-color: var(--primary-color-dark);
 }
 
-
-
-
-
-.volver-container {
-  margin-bottom: 20px; /* Espaciado entre el botón y el formulario */
-}
-
-
-.btn-volver {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.btn-volver:hover {
-  background-color: #1e40af;
-  transition: transform 0.3s ease;
-}
