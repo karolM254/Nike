@@ -188,14 +188,14 @@ const MujeresProducto = () => {
         </button>
         {/* Producto destacado */}
         <div className="ver-producto-mujer">
-          <img src={productoSeleccionado.img} alt={productoSeleccionado.title} />
+          <img src={producto.img} alt={producto.title} />
           <div className="info-producto-mujer">
-            <h3>{productoSeleccionado.title}</h3>
-            <h4 className="info-producto-mujer-parrafo2">{productoSeleccionado.description}</h4>
+            <h3>{producto.title}</h3>
+            <h4 className="info-producto-mujer-parrafo2">{producto.description}</h4>
             <h4 className="material-producto-mujer">
-              Material principal: {productoSeleccionado.material}
+              Material principal: {producto.material}
             </h4>
-            <p>{productoSeleccionado.price}</p>
+            <p>{producto.price}</p>
             <div className="color-talla">
               <select name="color" id="color" className="select-mujeres">
                 <option value="opcionColor">Color</option>
@@ -232,7 +232,7 @@ const MujeresProducto = () => {
                 &times; {/* Representación de la "x" */}
               </button>
               <h3>Descripción:</h3>
-              <p>{productoSeleccionado.moreDescription}</p>
+              <p>{producto.moreDescription}</p>
             </div>
           </div>
         )}
