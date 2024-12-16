@@ -104,23 +104,27 @@
     right: 10px; 
     margin: 0; 
     padding: 0;
-    z-index: 10; 
+
   }
 
   .buscador-Ninoss {
     padding: 5px; 
     border-radius: 30px; 
     font-size: 14px; 
+    margin-top: 15px;
   }
 
   .buscador-Ninoss input {
     font-size: 12px; 
     width: 100px; 
+    height: 10px;
+    
   }
 
   .grid-contenido-Ninoss {
     grid-template-columns: 1fr;
     margin: 50px 20px;
+    margin-top: 70px;
   }
 
   .grid-contenido-Ninoss img {
@@ -160,11 +164,13 @@
     padding: 8px;
     border-radius: 40px;
     font-size: 16px;
+    height: 10%;
   }
 
   .buscador-Ninoss input {
     font-size: 14px; 
-    width: 110px; 
+    width: 110px;
+    
   }
 
 
