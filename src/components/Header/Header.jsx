@@ -159,7 +159,7 @@ function Header() {
 
           <button 
             className="hamburger-menu" 
-            // !!!Este es el estado que me permite mostrar el responsive
+            // !!!Este es el boton de estado que me permite mostrar el responsive
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
           >
             <Menu size={26} color="white" />
@@ -169,7 +169,7 @@ function Header() {
           <Link to="/carrito" className="mobile-cart">
             <ShoppingCart size={24} color="white" />
           </Link>
-        </div>
+        </div> 
 
         {isMobileMenuOpen && (
           <div className="mobile-menu-overlay">
