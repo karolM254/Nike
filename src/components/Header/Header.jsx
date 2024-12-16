@@ -199,17 +199,6 @@ function Header() {
                   BRANDS
                 </Link>
               </div>
-
-              <div>
-                <Link
-                  to="/personalizado"
-                  className="mobile-menu-item"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  CUSTOMIZE
-                </Link>
-              </div>
-
             </div>
           </div>
         )}

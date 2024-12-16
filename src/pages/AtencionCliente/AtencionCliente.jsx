@@ -1,35 +1,61 @@
 // Reseñas.jsx
-import React from 'react';
-import './Reseñas.css'; // Si tienes estilos específicos para este componente
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import './AtencionCliente.css';
 
 function Reseñas() {
+  const formRef = useRef();
+  const [buttonText, setButtonText] = useState('Enviar');
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setButtonText('Enviando...');
+
+    const serviceID = 'default_service';
+    const templateID = 'template_wv3lm19';
+
+    emailjs.sendForm(serviceID, templateID, formRef.current, '5FGNbmgYtzMrB5bNa')
+      .then(() => {
+        setButtonText('Enviar');
+        alert('¡Correo enviado con éxito!');
+        formRef.current.reset();
+      })
+      .catch((err) => {
+        setButtonText('Enviar');
+        alert(`Error al enviar el correo: ${JSON.stringify(err)}`);
+      });
+  };
+
   return (
     <div className="reseñas-container">
-      <h2 className="title" >ATENCIÓN AL CLIENTE</h2>
+      <h2 className="title">ATENCIÓN AL CLIENTE</h2>
       <div className="linea-resenas"></div>
       <div>
-        <form className='form-client-atention' action="#" method="post">
-          <div className="form-labels ">
-              <label htmlFor="nombre">Nombre Completo</label>
-              <input type="text" id="nombre" name="nombre" className="input-text" required />
-              <label htmlFor="apellido">Teléfono</label>
-              <input type="text" id="apellido" name="apellido" className="input-text" required />
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" className="input-text" required />
+        <form ref={formRef} className="form-client-atention" onSubmit={sendEmail} id="form">
+          <div className="form-labels">
+            <label htmlFor="from_name">Nombre Completo</label>
+            <input type="text" id="from_name" name="from_name" className="input-text" required />
+
+            <label htmlFor="number">Teléfono</label>
+            <input type="number" id="number" name="number" className="input-text" required />
+
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" className="input-text" required />
           </div>
-          <label htmlFor="comentario">
+
+          <label htmlFor="message">
             <strong>Comentario / Descripción del problema</strong>
           </label>
           <div className="coment-and-send-section">
-              <textarea className='coment-area' id="comentario" name="comentario" rows="4" required></textarea>
-              <button type="submit" className="btn-submit">
-                <strong>ENVIAR</strong>
-              </button>
+            <textarea className="coment-area" id="message" name="message" rows="4" required></textarea>
+            <button type="submit" className="btn-submit">
+              <strong>{buttonText}</strong>
+            </button>
           </div>
         </form>
-    </div>
+      </div>
     </div>
   );
 }
 
-export default Reseñas; // Exportar el componente
+export default Reseñas;

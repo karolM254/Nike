@@ -211,7 +211,9 @@ nav {
         background: none;
         border: none;
         cursor: pointer;
-        margin-left: 10px;
+        position: relative;
+        top: 4px;
+        margin-left: 20px;
     }
 
     .mobile-cart {
@@ -271,7 +273,7 @@ nav {
 
     .mobile-category h4 {
         font-size: 1rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.9rem;
         color: var(--primary-color);
     }
 
@@ -320,7 +322,18 @@ nav {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-/* Falta */
+    .desktop-nav {
+        padding: 16px 30px;
+    } 
+
+    .mobile-nav,
+    .mobile-dropdown-menu {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+    }
 }
 
 @media screen and (min-width: 1025px) {
