@@ -2,11 +2,11 @@
 import React from 'react';
 import './AtencionCliente.css'; // Si tienes estilos específicos para este componente
 
-function AtencionCliente() {
+function Reseñas() {
   return (
     <div className="reseñas-container">
       <h2 className="title" >ATENCIÓN AL CLIENTE</h2>
-      <div className="line"></div>
+      <div className="linea-resenas"></div>
       <div>
         <form className='form-client-atention' action="#" method="post">
           <div className="form-labels ">
@@ -32,4 +32,4 @@ function AtencionCliente() {
   );
 }
 
-export default AtencionCliente; // Exportar el componente
+export default Reseñas; // Exportar el componente
