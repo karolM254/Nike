@@ -60,13 +60,13 @@ const NinosProductos = () => {
     <div>
       <main className="contenido-Ninos">
         {/* Buscador */}
-        <div className="buscador-Ninos-productos">
-          <div className="buscador-Ninos">
+        <div className="buscador-Ninos-productoss">
+          <div className="buscador-Ninoss">
             <i className="ri-search-line"></i>
             <input
               type="text"
               placeholder="Buscar"
-              className="buscar-producto"
+              className="buscar-productoo"
               value={searchTerm} // Valor del input
               onChange={(e) => setSearchTerm(e.target.value)} // Actualizar estado
             />
@@ -74,14 +74,14 @@ const NinosProductos = () => {
         </div>
 
         {/* Grid de contenido */}
-        <div className="grid-contenido-Ninos">
+        <div className="grid-contenido-Ninoss">
           {productosFiltrados.map((producto) => (
             <div className="col" key={producto.id}>
               <Link to={`/producto_nino/${producto.id}`}>
                 <img src={producto.img} alt={producto.nombre} />
               </Link>
               <h4>{producto.nombre}</h4>
-              <div className="precio-Ninos">
+              <div className="precio-Ninoss">
                 <h5>{producto.descripcion}</h5>
                 <p>{producto.precio}</p>
               </div>

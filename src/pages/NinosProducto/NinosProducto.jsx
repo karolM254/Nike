@@ -30,7 +30,7 @@ const productosNino = [
     id: 3,
     img: "/assets/zapato3.jpg",
     title: "NIKE AIR MAX SC",
-    description: "Calzado para Ninos",
+    description: "Calzado para niños",
     price: "$564.950",
     material: "Tela y goma",
     moreDescription: "¡Comodidad y estilo para los más grandes! Los zapatos Nike para niños son la combinación perfecta de comodidad, durabilidad y estilo. Diseñados pensando en la energía y el movimiento de los más pequeños, estos zapatos ofrecen un ajuste cómodo y seguro, ideal para el día a día. La tecnología de amortiguación de Nike asegura que cada paso sea suave, brindando soporte durante todo el día, ya sea en la escuela, jugando o en actividades deportivas.",

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 :root {
   --primary-color: #2563eb;
   --primary-color-dark: #1e40af;
@@ -14,8 +15,9 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 15px;
-  height: 150hv;
-  background: none;
+  height: 160hv;
+
+
   
 }
 
@@ -24,16 +26,21 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 100hv;
+  height: 120hv;
+ 
 
 }
 
 
-.form-container {
-  width: 100%;
-  padding: 20px;
-  border-radius: 10px;
-  margin-left: 0.5%; 
+.formm-container {
+  width: 93%;
+  padding: 45px;
+  border-radius: 35px;
+  margin-left: -5%; 
+  background: #d9d9d9;
+  margin-top: 70px;
+ position: relative;
+  
   
 }
 
@@ -42,11 +49,20 @@
   flex-direction: column;
 }
 
+.titulo-datos h2{
+font-family: "Monserrat";
+
+}
+.formm-container h2{
+  color: var(--primary-color-dark);
+}
+
 
 label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  font-family: "montserrat";
 }
 
 input, select {
@@ -56,6 +72,7 @@ input, select {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+  font-family: "montserrat";
 }
 
 .row {
@@ -101,49 +118,25 @@ input, select {
 }
 
 .summary-container p{
-  font-size: 20px;
+  font-size: 15px;
+  font-family: "montserrat";
+  font-weight: bold;
 }
 
 .summary-container h2 {
   margin-bottom: 20px;
   color: var(--primary-color-dark);
   text-align: center;
+  font-family: "Roboto condensed";
 }
 
-.summary-items {
+.summary-container h3{
   margin-bottom: 20px;
+  color: #000;
+  text-align: right;
+  font-family: "Roboto condensed";
 }
 
-.item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.item-content {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.mini-image {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-}
-
-.total {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-}
-
-.subtotal {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-}
 
 /* Estilos del modal */
 .modal-principal, .modal-confirmar, .modal-omitir {
@@ -157,45 +150,60 @@ input, select {
   justify-content: center;  
   align-items: center;      
   z-index: 1000;    
+
        
 }
 /* Estilo para el botón de cierre (X) */
 .close-btn {
-  position: absolute;
-  top: 38%;
-  right: 39%;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: black;
+  position: absolute; 
+  top: 5px; 
+  right: 10px; 
+  background: transparent; 
+  border: none; 
+  font-size: 20px; 
+  color: var(--text-light); 
+  cursor: pointer; 
+  padding: 5px; 
 }
+
+.close-btn:hover {
+
+  transform: scale(1.1); /* Efecto de agrandar ligeramente */
+}
+
 .modal-content {
   background-color: #fff;
-  padding: 30px;
+  padding: 55px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 450px;  
   justify-content: center;   
-  align-items: center;      
+  align-items: center;     
+  width: 30%; 
+  height: 40%;
+  position: relative;
+  
+
 
 }
 .modal-content h2{
   color: #000;
   text-align: center;
+  font-family: "montserrat";
+  font-size: 20px;
 }
 
 /* Botones del modal */
-.modal-buttons {
+.modal-buttonss {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
 
-.modal-buttons .btn1,
-.modal-buttons .btn2 {
+.modal-buttonss .btn1,
+.modal-buttonss .btn2 {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -203,21 +211,222 @@ input, select {
   cursor: pointer;
 }
 
-.modal-buttons .btn1 {
+.modal-buttonss .btn1 {
   background-color: var(--text-light);
   color: white;
 }
 
-.modal-buttons .btn2 {
+.modal-buttonss .btn2 {
   background-color: var(--primary-color);
   color: white;
 }
 
-.modal-buttons .btn1:hover {
+.modal-buttonss .btn1:hover {
   background-color: #1f1f1f;
 }
 
-.modal-buttons .btn2:hover {
+.modal-buttonss .btn2:hover {
   background-color: var(--primary-color-dark);
 }
 
+.volver-container {
+  margin-bottom: 20px; /* Espacio entre el botón y el formulario */
+}
+
+
+.btn-volverr {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.btn-volverr:hover {
+  background-color: #1e40af; 
+  transition: transform 0.3s ease;
+}
+
+/*---------------------responsive----------------------*/
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+  .comprass-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .formm-container {
+    width: 100%;
+    padding: 20px;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .summary-container {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .btn {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+  }
+
+  .btn-volverr {
+    margin: 10px auto;
+    width: 100%;       
+    font-size: 12px;
+    padding: 10px 8px;
+    
+    
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 30px;
+    height: auto;
+  }
+}
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .comprass-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .formm-container {
+    width: 90%;
+    padding: 30px;
+    margin-left: 0;
+    margin-top: 7px;
+  }
+
+  .summary-container {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .btn-volverr {
+    margin: 10px auto; 
+    width: 90%;       
+    font-size: 14px;   
+    padding: 12px 10px;
+    gap: 5px;      
+    margin-left: 5px;    
+  }
+
+  .btn {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+  }
+
+  .modal-content {
+    width: 80%;
+    padding: 40px;
+  }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .comprass-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .formm-container {
+    width: 65%;
+    padding: 40px;
+  }
+
+  .summary-container {
+    width: 30%;
+    padding: 20px;
+  }
+
+  .btn {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 30px;
+  }
+
+  .modal-content {
+    width: 50%;
+    padding: 50px;
+  }
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+  .comprass-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  .formm-container {
+    width: 55%;
+    padding: 40px;
+  }
+
+  .summary-container {
+    width: 35%;
+    padding: 25px;
+  }
+
+  .btn {
+    width: 25%;
+    margin-left: 37.5%;
+    margin-top: 30px;
+  }
+
+  .modal-content {
+    width: 40%;
+    padding: 50px;
+  }
+}
+
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+  .comprass-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+  }
+
+  .formm-container {
+    width: 45%;
+    padding: 50px;
+  }
+
+  .summary-container {
+    width: 25%;
+    padding: 30px;
+  }
+
+  .btn {
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 30px;
+  }
+
+  .modal-content {
+    width: 35%;
+    padding: 60px;
+  }
+}
