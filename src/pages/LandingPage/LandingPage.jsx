@@ -35,7 +35,7 @@ function LandingPage() {
               <h4>ON TIME DELIVERY</h4>
               <p>
                 E-commerce companies handle the logistics of delivering products
-                to customers' doorsteps.
+                to customers &#38; doorsteps.
               </p>
               <a href="#" className="enlace">
                 Click Here
@@ -124,7 +124,7 @@ function LandingPage() {
               <p>$100.00 <del>$200</del> </p>
             </div>
             <div className="collection__card">
-              <h4>MEN'S RUNNING SHOES</h4>
+              <h4>MEN&#39;S RUNNING SHOES</h4>
               <p>SIGN UP NOW AND GET 50% OFF</p>
             </div>
             <div className="collection__image">

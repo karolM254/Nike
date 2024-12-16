@@ -33,7 +33,7 @@
     width: 60%;
     position: relative;
     left: -29rem;
-    top: -5rem;
+    top: -3rem;
     border-radius: 11px;
 }
 
@@ -46,18 +46,21 @@
     margin-bottom: 10px;
     width: 100%;
     max-width: 600px;
+    position: relative;
+    right: -28px;
+    bottom: -16px;
+  
 }
 
 /* Descripción del producto */
 .descripcionMen {
     font-size: 20px;
     color: #000;
-    margin-top: 10px;
     margin-bottom: 20px;
     font-weight: bold;
     position: relative;
-    left: -170px;
-    top: -24rem;
+    left: -159px;
+    top: -360px;
 }
 
 /* Información de los materiales */
@@ -65,8 +68,8 @@
     font-size: 18px;
     color: #646262;
     position: relative;
-    left: -170px;
-    top: -410px;
+    left: -160px;
+    top: -380px;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -75,35 +78,36 @@
     font-size: 17px;
     color: var(--primary-color);
     font-weight: bolder;
+    margin-top: 10px;
     position: relative;
-    left: -230px;
-    top: -415px;
+    left: -220px;
+    top: -390px;
     font-family: "Roboto Condensed", sans-serif;
 }
 
 /* Selectores de opciones como talla o color */
 .producto-detalle select {
     width: 35%;
-    margin: 1px 0;
     padding: 8px;
     font-size: 14px;
     background-color: #ececec;
     border: none;
     border-radius: 50px;
     position: relative;
-    left: -185px;
-    top: -415px;
+    left: -170px;
+    top: -380px;
 }
 
 /* Enlace para más información */
 .moreInformationMen {
+    font-size: 17px;
     color: #000;
     text-decoration: underline;
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    left: -132px;
-    top: -25rem;
+    left: -110px;
+    top: -24rem;
 }
 
 /* Botón para agregar al carrito */
@@ -121,7 +125,7 @@
     margin-top: 10px;
     position: relative;
     right: -29rem;
-    top: -27rem;
+    top: -18rem;
     padding-right: 50px;
 }
 
@@ -140,7 +144,7 @@
     width: 80rem;
     border: 1px solid var(--primary-color-dark);
     position: relative;
-    top: -26rem;
+    top: -17rem;
     left: -10px;
 }
 
@@ -174,8 +178,12 @@
 /* Descripción dentro de la modal */
 .descripcion-modal-hombre {
     margin-bottom: 30px;
+    text-align: left;
 }
 
+.descripcion-producto-hombree{
+  text-align: left;
+}
 /* Botón de cierre de la modal */
 .modal-close {
     position: absolute;
@@ -201,11 +209,11 @@
     margin: 0 auto;
     padding: 30px;
     max-width: 1300px;
-    height: 10px;
+    height: 200px;
     text-align: center;
     position: relative;
-    top: -26rem;
-    left: -420px;
+    top: -15rem;
+    left: -350px;
 }
 
 /* Estilos para la lista de eventos */
@@ -235,7 +243,7 @@
 .event-card h3 {
     color: var(--primary-color-dark);
     font-weight: bold;
-    font-size: 14px;
+    font-size: 17px;
     margin: 10px 0;
 }
 
@@ -272,8 +280,16 @@
     font-weight: bolder;
     position: relative;
     color: var(--primary-color-dark) !important;
-    top: -24px;
+    top: -15px !important;
     right: -220px;
+}
+
+.event-card .priceMen-slider-2 {
+  font-weight: bolder;
+  position: relative;
+  color: var(--primary-color-dark) !important;
+  top: -15px !important;
+  right: -220px;
 }
 
 /* Botón para regresar */
@@ -331,105 +347,129 @@
 }
 
 @media (max-width: 480px) {
-    .producto-detalle {
-      padding: 10px;
-      max-width: 100%;
+  .producto-detalle {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .ImagenPrincipal {
+    width: 70%;
+    left: 0;
+    top: -40px;
+  }
+
+  .tittle-productos-men {
+    font-size: 20px;
+    position: relative;
+    left: 0;
+    bottom: -270px;
+    text-align: center;
+
+  }
+
+  .descripcionMen{
+    position: static;
+    font-size: 15px;
+    text-align: left;
+  } 
+
+  .materialHombre{
+    position: static;
+    font-size: 15px;
+    text-align: left;
+    margin-top: -22px;
+  }
+
+  .producto-detalle select {
+    width: 50%;
+    position: relative;
+    top: -30px;
+    left: 5px;
+    font-size: 16px;
+  }
+
+  .PriceMen{
+    font-size: 18px;
+    position: relative;
+    top: 90px;
+    left: 5px;
+  }
+
+  .moreInformationMen{
+    position: static;
+    right: 0;
+    left: 0;
+    text-align: center;
+    transform: translateY(60px);
+    
+    
+  }
+
+  .btn-aggCarrito {
+    margin-top: -20px;
+    margin-left: -32px;
+    position: static;
+    width: 140%;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;    /* Centrar verticalmente */
+    text-align: center;     /* Asegura el centrado del texto */
+  }
+
+  .text-men{
+    display: none;
+  }
+
+  .verhombre-hr{
+    width: 95%;
+    position: relative;
+    top: 50px;
+    left: 0px;
+  }
+
+  .events-container-men{
+    width: 110%;
+    height: 400px;
+    position: relative;
+    left: -2rem;
+    top: 0;
     }
-  
-    .ImagenPrincipal {
-      width: 100%;
-      left: 0;
-      margin-top: 10px;
-    }
-  
-    .tittle-productos-men {
-      font-size: 20px;
+
+    .event-card{
       position: relative;
-      bottom: -355px;
-      text-align: center;
+      bottom: -45px;
+    }
+
+    .event-card p{
+      transform: translateY(-4px);
     }
   
-    .descripcionMen{
-        position: static;
-        font-size: 15px;
-        text-align: left;
-        margin-top: -50px;
-    }
-
-    .materialHombre{
-        position: static;
-        font-size: 15px;
-        text-align: left;
-        margin-top: -30px;
-    }
-
-    .producto-detalle select {
-        width: 50%;
-        position: relative;
-        top: -40px;
-        left: 0px;
-        font-size: 16px;
-        
-    }
-
-    .PriceMen {
-        font-size: 17px;
-        position: relative;
-        top: 100px;
-        left: 0;
-    }
-
-    .moreInformationMen {
-        position: static;
-        text-align: center;
-        margin-top: -10px;
-    }
-  
-    .btn-aggCarrito {
-      position: static;
-      width: 100%;
-      display: flex;
-      justify-content: center; /* Centrar horizontalmente */
-      align-items: center;    /* Centrar verticalmente */
-      text-align: center;     /* Asegura el centrado del texto */
-    }
-
-    .verhombre-hr{
-        width: 90%;
-        position: relative;
-        top: 10px;
-        left: 0px;
-    }
-
-    .text-men{
-        display: none;
-    }
-  
-    .events-container-men {
-        width: 140% !important;
-        height: 350px;
-        position: relative;
-        left: -140px;
-        top: -30px;
-    }
-
     .events-container-men img{
-        width: 100% !important; /* Ajustar el ancho al 100% */
-        height: 250px !important; /* Ajustar la altura a algo más adecuado */
-        left: 0; /* Centrar el contenedor a la izquierda */
-        top: 0; /* Ajustar la posición vertical */
+      width: 100% !important; /* Ajustar el ancho al 100% */
+      height: 250px !important; /* Ajustar la altura a algo más adecuado */
+      left: 0; /* Centrar el contenedor a la izquierda */
+      top: 0; /* Ajustar la posición vertical */
+    }
+
+    .priceMen-slider, .priceMen-slider-2{
+      position: relative;
+      transform: translateY(-4px);
+
+    }
+
+    .custom-next-arrow{
+      margin-right: 16px;
     }
 
     .custom-prev-arrow{
-        margin-left: 40px;
+      margin-left: 3rem;
     }
 }
 
 
-  
 
 /* Móviles grandes y tabletas pequeñas (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 500px) and (max-width: 768px) {
   .producto-detalle {
     padding: 15px;
     max-width: 100%;
@@ -444,7 +484,8 @@
   .tittle-productos-men {
     font-size: 25px;
     position: relative;
-    bottom: -12rem;
+    left: 0;
+    bottom: -340px;
     text-align: center;
 
   }
@@ -453,7 +494,6 @@
     position: static;
     font-size: 18px;
     text-align: left;
-    margin-top: -48px;
   } 
 
   .materialHombre{
@@ -474,18 +514,22 @@
   .PriceMen{
     font-size: 18px;
     position: relative;
-    top: 120px;
+    top: 90px;
     left: 5px;
   }
 
   .moreInformationMen{
-    position: relative;
-    top: 80px;
-    left: 5px;
+    position: static;
+    right: 0;
+    left: 0;
+    text-align: center;
+    transform: translateY(60px);
+    
+    
   }
 
   .btn-aggCarrito {
-    margin-top: -16px;
+    margin-top: -20px;
     margin-left: -32px;
     position: static;
     width: 140%;
@@ -502,135 +546,171 @@
   .verhombre-hr{
     width: 95%;
     position: relative;
-    top: 30px;
+    top: 50px;
     left: 0px;
-    display: none;
   }
 
   .events-container-men{
-    width: 100%;
+    width: 150%;
     height: 400px;
     position: relative;
     left: 0;
     top: 0;
-    display: none;
-  }
+    overflow: visible;
+    }
 
-  .events-container-men img{
-    width: 100% !important; /* Ajustar el ancho al 100% */
-    height: 250px !important; /* Ajustar la altura a algo más adecuado */
-    left: 0; /* Centrar el contenedor a la izquierda */
-    top: 0; /* Ajustar la posición vertical */
-  }
+    .event-card{
+      position: relative;
+      bottom: -45px;
+    }
+  
 
+    .events-container-men img{
+      width: 25%;
+      height: 250px !important; /* Ajustar la altura a algo más adecuado */
+      position: relative;
+      left: -7rem;/* Centrar el contenedor a la izquierda */
+      right: 0;
+      top: 0; /* Ajustar la posición vertical */
+    }
+
+    .priceMen-slider, .priceMen-slider-2{
+      position: relative;
+      transform: translateY(-4px);
+    }
+
+    .custom-next-arrow{
+      margin-right: 240px;
+    }
+
+    .custom-prev-arrow{
+      margin-left: 2rem;
+    }
 }
+
 
 
 /* Tabletas medianas y grandes (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .producto-detalle {
-        padding: 15px;
-        max-width: 100%;
-      }
-    
-      .ImagenPrincipal {
-        width: 80%;
-        left: 0;
-        
-        
-      }
-    
-      .tittle-productos-men {
-        font-size: 30px;
-        position: relative;
-        bottom: -700px;
-        text-align: center;
-    
-      }
-    
-      .descripcionMen{
-        position: static;
-        font-size: 25px;
-        text-align: left;
-        margin-top: -40px;
-      } 
-    
-      .materialHombre{
-        position: static;
-        font-size: 25px;
-        text-align: left;
-        margin-top: -22px;
-      }
-    
-      .producto-detalle select {
-        width: 50%;
-        position: relative;
-        top: -30px;
-        left: 5px;
-        font-size: 16px;
-      }
-    
-      .PriceMen{
-        font-size: 25px;
-        position: relative;
-        top: 135px;
-        left: 5px;
-      }
-    
-      .moreInformationMen{
-        font-size: 23px;
-        position: relative;
-        top: 80px;
-        left: 5px;
-      }
-    
-      .btn-aggCarrito {
-        margin-top: -16px;
-        margin-left: -36px;
-        position: static;
-        width: 150%;
-        display: flex;
-        justify-content: center; /* Centrar horizontalmente */
-        align-items: center;    /* Centrar verticalmente */
-        text-align: center;     /* Asegura el centrado del texto */
-      }
-    
-      .text-men{
-        display: none;
-      }
-    
-      .verhombre-hr{
-        width: 95%;
-        position: relative;
-        top: 30px;
-        left: 0px;
-      }
+  .producto-detalle {
+    padding: 15px;
+    max-width: 100%;
+  }
 
-      .events-container-men{
-        width: 120%;
-        height: 400px;
-        display: flex;
-        flex-wrap: wrap; /* Permite que las imágenes se ajusten a la siguiente fila si es necesario */
-        justify-content: space-between; /* Separa las imágenes con espacio entre ellas */
-        position: relative;
-        left: -7rem;
-        top: -25px;
-      }
+  .ImagenPrincipal {
+    width: 70%;
+    left: 0;
+    top: -40px;
+  }
 
-      .events-container-men img{
-        width: 100% !important;
-        height: 200% !important;
-      }
+  .tittle-productos-men {
+    font-size: 25px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    transform: translateY(725px);
+  }
 
-      .custom-next-arrow{
-        margin-right: 450px;
-     }
+  .descripcionMen{
+    position: static;
+    font-size: 18px;
+    text-align: left;
+  } 
 
-     .custom-prev-arrow{
-         margin-left: 20px;
-     }
+  .materialHombre{
+    position: static;
+    font-size: 18px;
+    text-align: left;
+    margin-top: -22px;
+  }
+
+  .producto-detalle select {
+    width: 50%;
+    position: relative;
+    top: -30px;
+    left: 5px;
+    font-size: 16px;
+    
+  }
+
+  .PriceMen{
+    font-size: 18px;
+    position: relative;
+    top: 90px;
+    left: 5px;
+  }
+
+  .moreInformationMen{
+    position: static;
+    right: 0;
+    left: 0;
+    text-align: center;
+    transform: translateY(60px);
+    
+    
+  }
+
+  .btn-aggCarrito {
+    margin-top: -20px;
+    margin-left: -32px;
+    position: static;
+    width: 140%;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;    /* Centrar verticalmente */
+    text-align: center;     /* Asegura el centrado del texto */
+  }
+
+  .text-men{
+    display: none;
+  }
+
+  .verhombre-hr{
+    width: 95%;
+    position: relative;
+    top: 50px;
+    left: 0px;
+  }
+
+  .events-container-men{
+    width: 150%;
+    height: 400px;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    }
+
+    .event-card{
+      position: relative;
+      bottom: -45px;
+    }
+  
+
+    .events-container-men img{
+      width: 70% !important;
+      height: 50% !important; /* Ajustar la altura a algo más adecuado */
+      position: relative;
+     
+      right: 0;
+      top: 0; /* Ajustar la posición vertical */
+    }
 
     
+
+    .priceMen-slider, .priceMen-slider-2{
+      position: relative;
+      transform: translateY(-4px);
+    }
+
+    .custom-next-arrow{
+      margin-right: 240px;
+    }
+
+    .custom-prev-arrow{
+      margin-left: 2rem;
+    }
 }
 
 @media (min-width: 1921px) {
