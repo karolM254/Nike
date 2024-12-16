@@ -32,4 +32,4 @@ function Reseñas() {
   );
 }
 
-export default Reseñas; // Exportar el componente
+export default Reseñas; // Exportar el componente

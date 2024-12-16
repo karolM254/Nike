@@ -7,12 +7,12 @@ const ProductGrid = () => {
 
   // Lista de productos
   const products = [
-    { id: 1, name: "NIKE MASTER LEGEND", category: "Guayos Profesionales", price: "$599.000", image: "/assets/guayo1.jpg" },
-    { id: 2, name: "NIKE LEGEND GREEN", category: "Guayos Profesionales", price: "$450.000", image: "/assets/guayo2.jpg" },
-    { id: 3, name: "AIR NIKE MASTER 1", category: "Guayos Profesionales", price: "$620.000", image: "/assets/guayo3.jpg" },
-    { id: 4, name: "AIR SUPERFLY NEED", category: "Guayos Profesionales", price: "$850.000", image: "/assets/guayo4.jpg" },
-    { id: 5, name: "AIR SUPER STAR VOL", category: "Guayos Profesionales", price: "$499.000", image: "/assets/guayo5.jpg" },
-    { id: 6, name: "CLASSIC NIKE BLACK", category: "Guayos Profesionales", price: "$750.000", image: "/assets/guayo6.jpg" }
+    { id: 1, name: "NIKE MASTER LEGEND", category: "Guayos of soccer", price: "$599.000", image: "/assets/guayo1.jpg" },
+    { id: 2, name: "NIKE LEGEND GREEN", category: "Guayos of soccer", price: "$450.000", image: "/assets/guayo2.jpg" },
+    { id: 3, name: "AIR NIKE MASTER 1", category: "Guayos of soccer", price: "$620.000", image: "/assets/guayo3.jpg" },
+    { id: 4, name: "AIR SUPERFLY NEED", category: "Guayos of soccer", price: "$850.000", image: "/assets/guayo4.jpg" },
+    { id: 5, name: "AIR SUPER STAR VOL", category: "Guayos of soccer", price: "$499.000", image: "/assets/guayo5.jpg" },
+    { id: 6, name: "CLASSIC NIKE BLACK", category: "Guayos of soccer", price: "$750.000", image: "/assets/guayo6.jpg" }
   ];
 
   const [filteredProducts, setFilteredProducts] = useState(products);

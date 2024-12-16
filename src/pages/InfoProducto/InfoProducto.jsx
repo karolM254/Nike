@@ -71,8 +71,8 @@ const InfoProducto = () => {
               <img src="/assets/carrito-de-compras.png" alt="Agregar al carrito" />
               Agregar al carrito
             </button>
-            <Link to="carrito" className="ver_carrito">
-              <p>Ver carrito</p>
+            <Link to="/carrito" className="ver_carrito">
+              <p></p>
             </Link>
           </div>
           <Link to="#" className="product-detail__link" onClick={() => setIsModalOpen(true)}>
