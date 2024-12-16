@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react"; // Importación de React y hooks para manejar estado y referencias.
-import "../ProductGrid/ProductGrid.css"; // Importación del mismo archivo CSS usado en otras secciones.
-import { Link } from "react-router-dom"; // Importación de Link para navegación entre rutas.
+import React, { useState, useRef } from "react";
+import "../ProductGrid/ProductGrid.css"; // Usamos el mismo archivo CSS
+import { Link } from "react-router-dom";
 
 const Basquet = () => {
-  const searchInput = useRef(null); // Referencia para el campo de búsqueda.
+  const searchInput = useRef(null);
 
   // Lista de productos
   const products = [
@@ -15,56 +15,55 @@ const Basquet = () => {
     { id: 6, name: "NIKE JORDAN RETRO", category: "Calzado básquetbol", price: "$399.000", image: "/assets/basquet6.png" }
   ];
 
-  const [filteredProducts, setFilteredProducts] = useState(products); // Estado para manejar productos filtrados.
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
-  // Función que maneja la búsqueda en tiempo real
   const handleSearch = () => {
-    const query = searchInput.current.value.toLowerCase(); // Obtiene el texto ingresado en el campo de búsqueda.
+    const query = searchInput.current.value.toLowerCase();
     const filtered = products.filter((product) =>
-      product.name.toLowerCase().includes(query) || // Filtra por coincidencias en el nombre del producto.
-      product.category.toLowerCase().includes(query) // Filtra por coincidencias en la categoría del producto.
+      product.name.toLowerCase().includes(query) ||
+      product.category.toLowerCase().includes(query)
     );
-    setFilteredProducts(filtered); // Actualiza el estado con los productos filtrados.
+    setFilteredProducts(filtered);
   };
 
   return (
-    <div className="layout"> {/* Contenedor principal con estructura general */}
-      <aside className="sidebar"> {/* Barra lateral con navegación */}
+    <div className="layout">
+      <aside className="sidebar">
         <h3>SPORTS</h3>
         <ul>
-          <li><Link to="/futbol">SOCCER</Link></li> {/* Enlace a la sección de fútbol */}
-          <li><span>BASKETBALL</span></li> {/* Sección actual resaltada sin enlace */}
-          <li><Link to="/tennis">TENNIS</Link></li> {/* Enlace a la sección de tenis */}
-          <li><Link to="/atletismo">ATHLETICS</Link></li> {/* Enlace a la sección de atletismo */}
+          <li><Link to="/futbol">SOCCER</Link></li>
+          <li><span>BASKETBALL</span></li>
+          <li><Link to="/tennis">TENNIS</Link></li>
+          <li><Link to="/atletismo">ATHLETICS</Link></li>
         </ul>
-        <div className="linea"></div> {/* Línea divisoria */}
+        <div className="linea"></div>
       </aside>
-      <main className="main-content"> {/* Contenedor principal de contenido */}
-        <div className="search"> {/* Barra de búsqueda */}
+      <main className="main-content">
+        <div className="search">
           <input
-            ref={searchInput} // Campo de búsqueda con referencia.
+            ref={searchInput}
             type="search"
-            placeholder="Buscar" // Texto de marcador en el campo.
-            onChange={handleSearch} // Llama a la función handleSearch al cambiar el texto.
+            placeholder="Buscar"
+            onChange={handleSearch}
           />
-          <div className="lupa"> {/* Icono de lupa para búsqueda */}
+          <div className="lupa">
             <img
               src="/assets/simbolo-de-la-interfaz-de-busqueda.png"
               alt="lupa"
-              onClick={handleSearch} // También permite buscar al hacer clic en la lupa.
+              onClick={handleSearch}
             />
           </div>
         </div>
-        <div className="product-grid"> {/* Contenedor de cuadrícula para mostrar productos */}
-          {filteredProducts.map((product) => ( // Itera sobre los productos filtrados para renderizarlos.
-            <div className="product" key={product.id}> {/* Cada producto tiene una clave única */}
-              <Link to={`/basquet/infoproducto/${product.id}`}> {/* Enlace a la página de detalles del producto */}
-                <div className="product-image"> {/* Imagen del producto */}
+        <div className="product-grid">
+          {filteredProducts.map((product) => (
+            <div className="product" key={product.id}>
+              <Link to={`/basquet/infoproducto/${product.id}`}>
+                <div className="product-image">
                   <img src={product.image} alt={product.name} />
                 </div>
-                <h2>{product.name}</h2> {/* Nombre del producto */}
-                <p className="info">{product.category}</p> {/* Categoría del producto */}
-                <p className="price">{product.price}</p> {/* Precio del producto */}
+                <h2>{product.name}</h2>
+                <p className="info">{product.category}</p>
+                <p className="price">{product.price}</p>
               </Link>
             </div>
           ))}
@@ -74,4 +73,4 @@ const Basquet = () => {
   );
 };
 
-export default Basquet; // Exporta el componente para que pueda usarse en otras partes de la aplicación.
+export default Basquet;

@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useCart } from "../../components/Carrito/CartContext"; // Importa el contexto del carrito
 import "../InfoProducto/InfoProducto.css";
 
 const InfoProductoTennis = () => {
-  const { id } = useParams();
-  const { carrito, setCarrito } = useCart(); // Accede al carrito y a la función para actualizarlo
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { id } = useParams(); // Obtener el ID del producto desde la URL
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
   const [currentIndex, setCurrentIndex] = useState(0); // Estado para el slider
 
   const products = [
-
     { id: 1, name: "NIKE FUTURE RELAX", category: "Calzado de tennis", price: "$1.999.000", material: "Sintético", image: "/assets/tennis1.jpg", description: "Diseño futurista para máximo confort en cada paso." },
     { id: 2, name: "NIKE LEGEND BLUE", category: "Calzado de tennis", price: "$850.000", material: "Sintético", image: "/assets/tennis2.jpg", description: "Estilo legendario con soporte avanzado." },
     { id: 3, name: "NIKE AIR VER VOL", category: "Calzado de tennis", price: "$999.000", material: "Sintético", image: "/assets/tennis3.jpg", description: "Diseño ligero para mayor movilidad." },
@@ -38,18 +35,6 @@ const InfoProductoTennis = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === relatedProducts.length - 3 ? 0 : prevIndex + 1
     );
-  };
-
-  // Función para agregar el producto al carrito
-  const agregarAlCarrito = () => {
-    const productoEnCarrito = carrito.find((item) => item.id === product.id);
-
-    if (productoEnCarrito) {
-      alert("Este producto ya está en el carrito.");
-    } else {
-      setCarrito([...carrito, { ...product, cantidad: 1 }]);
-      alert("Producto agregado al carrito.");
-    }
   };
 
   return (
@@ -81,12 +66,13 @@ const InfoProductoTennis = () => {
               <option>16</option>
             </select>
           </div>
+
           <div className="button-container">
-            <button className="product-detail__button" onClick={agregarAlCarrito}>
+            <button className="product-detail__button">
               <img src="/assets/carrito-de-compras.png" alt="Agregar al carrito" />
               Agregar al carrito
             </button>
-            <Link to="/carrito" className="ver_carrito">
+            <Link to="carrito" className="ver_carrito">
               <p>Ver carrito</p>
             </Link>
           </div>
@@ -101,7 +87,7 @@ const InfoProductoTennis = () => {
       {/* Slider de productos relacionados */}
       <div className="related-products-slider">
         <button className="slider-button prev" onClick={handlePrev}>
-          <i className="ri-arrow-left-fill"></i>
+        <i class="ri-arrow-left-fill"></i>
         </button>
 
         <div className="slider-container">
@@ -116,18 +102,22 @@ const InfoProductoTennis = () => {
         </div>
 
         <button className="slider-button next" onClick={handleNext}>
-          <i className="ri-arrow-right-fill"></i>
+        <i class="ri-arrow-right-fill"></i>
         </button>
       </div>
 
       {isModalOpen && (
         <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()} // Evitar cerrar al hacer clic dentro del modal
+          >
             <span className="close" onClick={() => setIsModalOpen(false)}>
               &times;
             </span>
             <p><strong>Descripción:</strong></p>
-            <p>Estas zapatillas Nike para tenis combinan comodidad y estilo en un diseño pensado especialmente para rendir al máximo en la cancha. Fabricadas con material textil suave y sintético, ofrecen un ajuste cómodo que se adapta perfectamente a los pies, proporcionando soporte y estabilidad.</p>
+            <p>Estas zapatillas Nike para tenis combinan comodidad y estilo en un diseño pensado especialmente para rendir al máximo en la cancha. Fabricadas con material textil suave y sintético, ofrecen un ajuste cómodo que se adapta perfectamente a los pies, proporcionando soporte y estabilidad.
+            </p>
           </div>
         </div>
       )}
