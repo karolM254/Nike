@@ -52,3 +52,148 @@
 .privacy-policy-span{
     color: #333333;
 }
+
+/*Responsive para direfentes tamaños de pantallas*/
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .privacy-policy-container {
+      padding: 10px;
+    }
+  
+    .privacy-policy-title {
+      font-size: 32px;
+    }
+  
+    .privacy-policy-subtitle {
+      font-size: 18px;
+      text-align: center;
+    }
+  
+    .privacy-policy-text {
+      font-size: 16px;
+      line-height: 1.4;
+      text-align: center;
+      text-align: justify;
+    }
+  
+    .privacy-policy-span {
+      font-size: 14px;
+      text-align: center;
+      display: block;
+      margin-top: 15px;
+    }
+}
+
+
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .privacy-policy-container {
+      padding: 15px;
+    }
+  
+    .privacy-policy-title {
+      font-size: 36px;
+    }
+  
+    .privacy-policy-subtitle {
+      font-size: 20px;
+    }
+  
+    .privacy-policy-text {
+      font-size: 17px;
+      line-height: 1.5;
+    }
+  
+    .privacy-policy-span {
+      font-size: 15px;
+      text-align: center;
+      display: block;
+      margin-top: 20px;
+    }
+}
+
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .privacy-policy-container {
+      padding: 20px;
+    }
+  
+    .privacy-policy-title {
+      font-size: 42px;
+    }
+  
+    .privacy-policy-subtitle {
+      font-size: 22px;
+    }
+  
+    .privacy-policy-text {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  
+    .privacy-policy-span {
+      font-size: 16px;
+      text-align: center;
+      display: block;
+      margin-top: 25px;
+    }
+}
+
+/* Laptops y escritorios estándar (1025px - 1920px) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+    .privacy-policy-container {
+      max-width: 900px;
+      padding: 30px;
+    }
+  
+    .privacy-policy-title {
+      font-size: 48px;
+    }
+  
+    .privacy-policy-subtitle {
+      font-size: 24px;
+    }
+  
+    .privacy-policy-text {
+      font-size: 19px;
+      line-height: 1.8;
+    }
+  
+    .privacy-policy-span {
+      font-size: 17px;
+      text-align: center;
+      display: block;
+      margin-top: 30px;
+    }
+}
+
+/* Monitores grandes (1921px o más) */
+@media (min-width: 1921px) {
+    .privacy-policy-container {
+      max-width: 1200px;
+      padding: 40px;
+    }
+  
+    .privacy-policy-title {
+      font-size: 56px;
+    }
+  
+    .privacy-policy-subtitle {
+      font-size: 26px;
+    }
+  
+    .privacy-policy-text {
+      font-size: 20px;
+      line-height: 2;
+    }
+  
+    .privacy-policy-span {
+      font-size: 18px;
+      text-align: center;
+      display: block;
+      margin-top: 35px;
+    }
+}
+  

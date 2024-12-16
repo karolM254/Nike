@@ -26,7 +26,7 @@ function Footer() {
           <Link to="/sobrenosotros">
             <p>About Us</p>
           </Link>
-          <Link to="/personalizado">
+          <Link to="/atencion">
             <p>Customer Service</p>
           </Link>
           <Link to="/fabricantes">

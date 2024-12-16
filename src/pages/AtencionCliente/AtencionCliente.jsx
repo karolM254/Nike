@@ -1,12 +1,12 @@
 // Reseñas.jsx
 import React from 'react';
-import './Reseñas.css'; // Si tienes estilos específicos para este componente
+import './AtencionCliente.css'; // Si tienes estilos específicos para este componente
 
-function Reseñas() {
+function AtencionCliente() {
   return (
     <div className="reseñas-container">
       <h2 className="title" >ATENCIÓN AL CLIENTE</h2>
-      <div className="linea-resenas"></div>
+      <div className="line"></div>
       <div>
         <form className='form-client-atention' action="#" method="post">
           <div className="form-labels ">
@@ -32,4 +32,4 @@ function Reseñas() {
   );
 }
 
-export default Reseñas; // Exportar el componente
+export default AtencionCliente; // Exportar el componente

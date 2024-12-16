@@ -32,7 +32,7 @@
 
 .event-image .img-event{
     width: 100%;
-    height: 75vh;
+    height: 610px;
 }
 
 .events-carrucel{
@@ -184,5 +184,353 @@
     color: #000;
     line-height: 1.5;
 }
+
+/*Responsive para diferentes tamaños de pantallas*/
+  
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container-event{
+        padding: 30px;
+    }
+  
+    .event-image .img-event {
+      width: 100%;
+      height: 250px;
+    }
+    
+    .event-card-carrucel{
+        position: relative;
+        right: 10px;
+    }
+
+    .button {
+      width: 90%;
+      padding: 10px;
+    }
+
+    /* Estilos del modal */
+    .modal-overlay-events {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .modal-content-events {
+        background: white;
+        border-radius: 10px;
+        width: 90%; 
+        max-width: 350px; 
+        padding: 15px; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        font-family: var(--font-heading);
+        position: relative;
+    }
+
+    .close-button-events {
+        position: absolute;
+        top: 10px;
+        right: 10px; 
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #000;
+    }
+
+    .modal-header-events {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        margin-bottom: 10px;
+    }
+
+    .modal-image-events {
+        width: 96%;
+        height: auto; 
+        max-height: 150px; 
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px; 
+    }
+
+    .modal-details-events {
+        flex: 1;
+        text-align: center; 
+    }
+
+    .modal-title-events {
+        font-size: 1.3rem; 
+        color: var(--primary-color-dark);
+        margin: 0;
+        position: relative;
+        top: 1px;
+    }
+
+    .modal-date-events,
+    .modal-location-events {
+        color: #646262;
+        font-size: 0.9rem; 
+        margin: 10px 0;
+        position: relative;
+        top: 1px;
+    }
+
+    .modal-body-events {
+        margin-top: 10px; 
+    }
+
+    .modal-body-events .modal-body-events-title {
+        font-size: 1rem;
+        margin-bottom: 8px;
+        color: #000;
+    }
+
+    .modal-body-events .modal-body-events-subtitle {
+        font-size: 0.9rem;
+        color: #000;
+        line-height: 1.4;
+    }
+}
   
 
+/* Móviles grandes y tabletas pequeñas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .container-event{
+        padding: 30px;
+    }
+  
+    .event-image .img-event {
+      width: 97%;
+      margin: 0 auto;
+      height: 420px;
+    }
+  
+    .button {
+      width: 70%;
+      padding: 12px;
+    }
+
+    .event-card-carrucel-img{
+        width: 100%;
+        height: 240px;
+    }
+
+    .modal-overlay-events {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .modal-content-events {
+        background: white;
+        border-radius: 10px;
+        width: 73%; 
+        max-width: 560px; 
+        padding: 25px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        font-family: var(--font-heading);
+        position: relative;
+    }
+
+    .close-button-events {
+        position: absolute;
+        top: 15px;
+        right: 20px; 
+        background: none;
+        border: none;
+        font-size: 2.3rem;
+        cursor: pointer;
+        color: #000;
+    }
+
+    .modal-header-events {
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        margin-bottom: 20px; 
+    }
+
+    .modal-image-events {
+        width: 51%; 
+        height: auto; 
+        object-fit: cover;
+        border-radius: 5px;
+        margin-right: 20px; 
+    }
+
+    .modal-details-events {
+        flex: 1;
+        text-align: left; 
+    }
+
+    .modal-title-events {
+        font-size: 2.2rem; 
+        color: var(--primary-color-dark);
+        margin: 0;
+    }
+
+    .modal-date-events,
+    .modal-location-events {
+        color: #646262;
+        font-size: 1.3rem; 
+        margin: 8px 0;
+    }
+
+    .modal-body-events {
+        margin-top: 20px; 
+    }
+
+    .modal-body-events .modal-body-events-title {
+        font-size: 1.9rem; 
+        margin-bottom: 10px;
+        color: #000;
+    }
+
+    .modal-body-events .modal-body-events-subtitle {
+        font-size: 1.3rem; 
+        color: #000;
+        line-height: 1.6; 
+    }
+}
+
+/* Tabletas medianas y grandes (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  
+    .container-event{
+        padding: 30px;
+    }
+
+    .event-image .img-event  {
+      width: 100%;
+      height: auto;
+    }
+  
+    .button {
+      width: 60%;
+      padding: 15px;
+    }
+
+    .event-card-carrucel-img{
+        width: 100%;
+        height: 240px;
+    }
+
+    /*Estilos del Modal*/
+    .modal-overlay-events {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .modal-content-events {
+        background: white;
+        border-radius: 10px;
+        width: 75%; 
+        max-width: 970px; 
+        padding: 30px; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        font-family: var(--font-heading);
+        position: relative;
+    }
+
+    .close-button-events {
+        position: absolute;
+        top: 15px;
+        right: 20px; 
+        background: none;
+        border: none;
+        font-size: 1.7rem;
+        cursor: pointer;
+        color: #000;
+    }
+
+    .modal-header-events {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px; 
+    }
+  
+    .modal-image-events {
+        width: 59%; 
+        height: auto; 
+        object-fit: cover;
+        border-radius: 5px;
+        margin-right: 20px; 
+    }
+  
+    .modal-details-events {
+        flex: 1;
+        text-align: left;
+    }
+  
+    .modal-title-events {
+        font-size: 1.9rem; 
+        color: var(--primary-color-dark);
+        margin: 0;
+        position: relative;
+        top: -10px; 
+    }
+  
+    .modal-date-events,
+    .modal-location-events {
+        color: #646262;
+        font-size: 1.2rem; 
+        margin: 10px 0;
+        position: relative;
+        top: -10px; 
+    }
+  
+    .modal-body-events {
+        margin-top: 25px;
+    }
+  
+    .modal-body-events .modal-body-events-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #000;
+    }
+  
+    .modal-body-events .modal-body-events-subtitle {
+        font-size: 1.1rem;
+        color: #000;
+        line-height: 1.7; 
+    }
+}
