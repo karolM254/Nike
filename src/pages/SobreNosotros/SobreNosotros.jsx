@@ -4,7 +4,7 @@ export const SobreNosotros = () => {
     return (
         <>
             <div className='titulo-nosotros'>
-                <h1>Sobre Nosotros</h1>
+                <h1>About us</h1>
                 <hr className='nosotros-hr'/>
             </div>
             <div className='contenido'>
@@ -13,9 +13,9 @@ export const SobreNosotros = () => {
                     <img src="../../public/assets/image-2.jpg" alt="" />
                 </div>
                 <div className='misionVision'>
-                    <p>En Nike, nos apasiona inspirar y motivar a personas a alcanzar su máximo potencial. Desde nuestra fundación, nos hemos dedicado a crear productos innovadores que combinan rendimiento, comodidad y estilo, impulsando a atletas de todos los niveles a superar sus límites. </p>
-                    <p>Nuesta misión es transformar el deporte en una experiencia accesible e inclusiva, ofreciendo soluciones que se adaptan a las necesidades de cada individuo. Nos enorgullece ser líderes en sostenibilidad, diseño y tecnología, trabajando constantemente para marcar una diferencia positiva en el mundo.</p>
-                    <p>Únete a nuestra visión y descubre cómo podemos seguir moviéndonos juntos hacia un futuro lleno de posibilidades.</p>
+                    <p>At Nike, we're passionate about inspiring and motivating people to reach their full potential. Since our founding, we've been dedicated to creating innovative products that combine performance, comfort and style, pushing athletes of all levels to push their limits.</p>
+                    <p>Our mission is to transform sport into an accessible and inclusive experience, offering solutions that adapt to the needs of each individual. We are proud to be leaders in sustainability, design and technology, constantly working to make a positive difference in the world.</p>
+                    <p>Our mission is to transform sport into an accessible and inclusive experience, offering solutions that adapt to the needs of each individual. We are proud to be leaders in sustainability, design and technology, constantly working to make a positive difference in the world.</p>
                 </div>
             </div>
         </>
