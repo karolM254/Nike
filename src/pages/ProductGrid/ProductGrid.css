@@ -1,292 +1,316 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&family=Poppins:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+:root {
+    --primary-color: #2563eb;
+    --primary-color-dark: #1e40af;
+    --text-dark: #1f1f1f;
+    --text-light: #4b5563;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --font-heading: "Roboto Condensed", sans-serif;
 }
-span{
-    font-weight: bold;
+/* Contenedor principal */
+.product-container {
+  display: flex;
+  flex-direction: row;
 }
 
-.layout {
-    display: flex;
-    align-items: flex-start;
-}
-
+/* Sidebar */
 .sidebar {
-    padding: 4rem;
-    height: auto; /* Ajustar al contenido */
-    position: relative; /* Para flujo natural */
-    margin-top: 2rem;
-    width: 300px;
-    box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
+    min-width: 300px;
+    background: #fff;
+    border-right: 3px solid #1e6bfd;
+    padding: 20px;
+    height: 800px;
+    margin-top: 90px;
+    margin-left: 20px;
+    font-size: 25px;
+    transition: all 0.3s ease-in-out; /* Transición suave */
+  }
+  
+  /* Tablets */
+  @media (max-width: 1924px) {
     .sidebar {
-        width: 100%;
-        margin: 0;
+      min-width: 250px;
+      font-size: 20px;
+      height: 800px;
+      margin-top: 60px;
     }
-}
-
-/* Ajuste para pantallas más pequeñas (por debajo de 1200px) */
-@media (max-width: 1200px) {
+  }
+  @media (max-width: 1400px) {
     .sidebar {
-        width: 250px;  /* Reduce el tamaño en pantallas más pequeñas */
-        margin-left: 1rem;
+      min-width: 250px;
+      font-size: 20px;
+      height: 600px;
+      margin-top: 60px;
     }
-}
-
-/* Para pantallas más pequeñas, como tablets */
-@media (max-width: 768px) {
+  }
+  /* Móviles grandes */
+  @media (max-width: 768px) {
     .sidebar {
-        width: 100%; /* Hace que la sidebar ocupe todo el ancho disponible en pantallas de tablet */
-        position: relative; /* Cambia la posición a relative para que fluya con el contenido */
-        margin-top: 1rem; /* Ajusta el margen superior */
-        height: auto; /* Permite que la altura se ajuste al contenido */
+      min-width: 200px;
+      font-size: 18px;
+      height: auto;
+      margin-top: 40px;
+      margin-left: 10px;
     }
-}
-
-/* Para móviles, ajusta la sidebar para que quede en la parte superior o en el centro */
-@media (max-width: 480px) {
+  }
+  
+  /* Móviles pequeños */
+  @media (max-width: 480px) {
     .sidebar {
-        width: 100%; /* Toma todo el ancho de la pantalla */
-        height: auto; /* Elimina la altura fija para adaptarse al contenido */
-        margin-left: 0; /* Elimina el margen izquierdo */
-    }
-}
-
-
-.sidebar h3 {
-    margin-bottom: 1rem;
-    color: #1e40af;
-    font-size: 2.1rem;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 1rem;
-}
-
-.sidebar ul li a, .sidebar ul li span {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.5rem;
-    transition: color 0.3s ease, font-weight 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-    font-weight: bold;
-    color: #1e40af;
-}
-.linea {
-    width: 1%;
-    height: 80vh; /* Ocupa toda la altura de la ventana */
-    background-color: #1e40af;
-    margin-left: 14rem;
-    margin-top: -14rem;
-}
-
-
-@media (max-width: 780px) {
-    .linea {
-        width: 100%;
-        margin-left: -15px;
-        height: 2px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-}
-
-.main-content {
-    flex: 1;
-    padding: 2rem;
-}
-
-.search {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-    position: relative;
-    margin-right: 3rem;
-}
-.search input {
-    width: 280px;
-    padding: 0.5rem 1rem 0.5rem 3rem;
-    border-radius: 2rem;
-    border: #1e40af solid 2px;
-    font-size: 1.7rem;
-}
-
-.search ::placeholder {
-    color: #8f8f8f;
-    font-size: 1.5rem;
-    font-family: 'Open Sans', sans-serif;
-
-}
-
-.lupa img {
-    top: 50%;
-    transform: translateY(70%) translateX(-1100%);
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
-@media (max-width: 480px) {
-    .lupa img {
-      display: none;
+      min-width: 80%;
+      font-size: 16px;
+      height: auto;
+      margin: 0;
+      padding: 15px;
+      border-right: none; /* Eliminar el borde derecho en móviles */
+      border-bottom: 3px solid #1e6bfd;
     }
   }
   
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
-    gap: 1rem; /* Ajustar espacio entre productos */
+.sidebar h3 {
+  color: #1e6bfd;
+  font-size: 29px;
+  margin-bottom: 15px;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
-@media (max-width: 1377px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
-    }
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
-@media (max-width: 1008px) {
-    .product-grid {
-        grid-template-columns: 1fr; /* 1 columnas en tablets */
-        margin-bottom: 20px;
-        margin-left: 20px; /* Ajusta el margen izquierdo */
-        width: 100%;
-        padding: 0; /* Elimina los márgenes */
-    }
-}
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 1 columnas en tablets */
-        margin-bottom: 20px;
-        margin-right: 234px; /* Ajusta el margen izquierdo */
-        width: 110%;
-        padding: 0; /* Elimina los márgenes */
-        margin-left: -20px;
+.sidebar li {
+  margin-bottom: 10px;
 
-    }
-}
-@media (max-width: 695px) {
-    .product-grid {
-        grid-template-columns: 1fr; /* 1 columna en pantallas móviles */
-        margin-left: -45px; /* Elimina el margen izquierdo */
-        width: 100%;
-        padding: 0; /* Elimina los márgenes */
-        padding: 1rem; /* Añade un margen superior */
-        padding-bottom: 1rem; /* Añade un margen inferior */
-        padding-top: 1rem; /* Añade un margen superior */
-        padding-bottom: 1rem; /* Añade un margen inferior */
-        padding-left: 0; /* Elimina el margen izquierdo */
-        padding-right: 0; /* Elimina el margen derecho */
-        padding-bottom: 0; /* Elimina el margen inferior */
-        padding-right: 0; /* Elimina el margen derecho */
-        padding-top: 0; /* Elimina el margen superior */
-        padding-bottom: 0; /* Elimina el margen inferior */
-    }
 }
 
+.sidebar a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.3s ease-in-out; /* Transición suave */
+  
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  font-weight: bold;
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
+
+:root {
+    --primary-color: #2563eb;
+    --primary-color-dark: #1e40af;
+    --text-dark: #1f1f1f;
+    --text-light: #4b5563;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --font-heading: "Roboto Condensed", sans-serif;
+}
+
+.contenido-mujeres {
+  font-family: var(--font-heading);
+}
+
+.contenido-mujeres p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ------------------- Buscador -------------------- */
+.buscador-mujeres-productos {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 0 20px;
+  padding-right: 50px;
+}
+
+.buscador-mujeres {
+  border: 1px solid var(--primary-color-dark);
+  padding: 4px;
+  border-radius: 60px;
+  font-size: 19px;
+}
+
+.ri-search-line{
+  margin-left: 10px;
+}
+
+.buscador-mujeres input {
+  border: none;
+  font-size: 19px;
+  width: 220px;
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+.buscar-producto-mujer {
+  outline: none;
+}
+
+/* ------------------ Productos -------------------- */
+.grid-contenido-mujeres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 80px !important;
+}
+
+.grid-contenido-mujeres img {
+  border-radius: 11px;
+  transition: transform 0.3s ease; 
+  height: 80%;
+  width: 100%;
+}
+
+.grid-contenido-mujeres img:hover{
+  transform: scale(1.1);
+}
+
+.grid-contenido-mujeres h4{
+  color: var(--primary-color-dark);
+  font-size: 19.2px;
+  margin: 10px 0 0 5px;
+}
+
+.grid-contenido-mujeres p {
+  justify-content: space-between;
+  font-size: 17px;
+}
+
+.precio-mujeres {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 30px 0 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.precio-mujeres h5 {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.precio-mujeres p {
+  color: var(--primary-color);
+}
 
 
-.product {
-    display: flex;
+/* ------------------ Responsive -------------------- */
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .grid-contenido-mujeres {
+    grid-template-columns: 1fr !important;
+    margin: 50px !important;
+  }
+  .product-container{
     flex-direction: column;
-    align-items: flex-start; /* Alinea los elementos al inicio */
-    text-align: left; /* Texto alineado a la izquierda */
-    margin-left: 50px; /* Elimina márgenes adicionales */
-}
-.product img {
-    width: 110%;
-    height: 280px; /* Altura fija para uniformidad */
-    object-fit: cover; /* Asegura que la imagen se recorte proporcionalmente */
-    border-radius: 0.5rem;
+    align-items: center;
+    
+  }
 
-}
-@media (max-width: 1377px) {
-    .product {
-        max-width: 400px; /* Reduce el tamaño en pantallas medianas */
-    }
-}
 
-@media (max-width: 768px) {
-    .product {
-        max-width: 300px; /* Aún más pequeño en tablets */
-        width: 90%; /* Espaciado interno */
-        
+  .grid-contenido-mujeres h5 {
+    font-size: 0.9rem;
+  }
 
-    }
+  .buscador-mujeres-productos {
+    align-items: flex-end;
+  }
+
+  .buscador-mujeres {
+    width: 130px;
+  }
+
+  .buscador-mujeres input {
+    width: 80px;
+    padding: 3px;
+
+  }
 }
 
-@media (max-width: 480px) {
-    .product {
-        max-width: 100%; /* Ocupa todo el ancho en móviles */
-        width: 90%; /* Espaciado interno */
-    }
+/* Celulares grandes y tablets pequeñas */
+@media (min-width: 481px) and (max-width: 768px) {
+  .grid-contenido-mujeres {
+    grid-template-columns: 1fr !important;
+    margin: 40px !important;
+  }
+
+  .buscador-mujeres-productos {
+    align-items: flex-end;
+  }
+
+  .buscador-mujeres {
+    width: 150px;
+  }
+
+  .buscador-mujeres input {
+    width: 100px;
+    padding: 5px;
+
+  }
 }
-.product h2 {
+
+/*Tablets medianas y grandes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-contenido-mujeres {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin: 50px !important;
+    gap: 80px !important;
+  }
+
+  .buscador-mujeres-productos {
+    align-items: flex-end;
+  }
+
+  .buscador-mujeres {
+    width: 150px;
+  }
+
+  .buscador-mujeres input {
+    width: 100px;
+    padding: 5px;
+
+  }
+}
+
+
+/* Monitores grandes */
+@media (min-width: 1921px) {
+  .grid-contenido-mujeres {
+    grid-template-columns: repeat(3, 1fr) !important;
+    margin: 80px !important;
+    gap: 150px !important;
+    font-size: 2.1rem;
+  }
+
+  .grid-contenido-mujeres p {
     font-size: 1.4rem;
-    color: #2563eb;
-    margin: 0.5rem 0;
-    font-family: 'Open Sans', sans-serif;
-}
-.product .info-price-container {
-    display: flex;
-    justify-content: space-between; /* Distribuye la info y el precio */
-    width: 100%; /* Asegura que ocupen todo el ancho del contenedor */
-    align-items: center; /* Centra verticalmente */
-}
+  }
 
-.product .info {
-    font-size: 1.2rem;
-    color: #737373;
-    margin-right: auto; /* Empuja el precio hacia la derecha */
-    font-family: 'Montserrat', sans-serif;
-}
+  .grid-contenido-mujeres h5 {
+    font-size: 1.27rem;
+  }
 
-.product .price {
-    color: #2563eb;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-align: right;
-    font-family: 'Open Sans', sans-serif;
-    margin-top: -1.5rem;
-}
+  .buscador-mujeres-productos {
+    align-items: flex-end;
+  }
 
-@media (max-width: 768px) {
-    .layout {
-        flex-direction: column;
-    }
+  .buscador-mujeres {
+    width: 400px;
+  }
 
-    .sidebar {
-        width: 100%;
-        height: auto;
-    }
+  .buscador-mujeres input {
+    width: 200px;
+    padding: 20px;
+    font-size: 2rem;
 
-    .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .search input {
-        width: 80%;
-    }
-
-    .product h2 {
-        font-size: 1rem;
-    }
-
-    .product .info,
-    .product .price {
-        font-size: 0.9rem;
-    }
+  }
 }
