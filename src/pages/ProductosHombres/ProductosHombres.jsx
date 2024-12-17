@@ -11,7 +11,7 @@ function HombresProductos() {
 
   // Lista de productos (información estática)
   const productos = [
-    { id: 1, nombre: 'Air Jordan 11 Retro "Legend Blue"', descripcion:  "Men's footwear", precio: 1294950, imagen: '/assets/fototennis.jpg' },
+    { id: 1, nombre: 'Air Jordan 11 Retro "Legend Blue"', descripcion:  "Men's footwear", precio:25560567, imagen: '/assets/fototennis.jpg' },
     { id: 2, nombre: 'W Nike Zoom Bella 6 PRm', descripcion:  "Men's footwear", precio: 845950, imagen: '/assets/678275-500-500.jpg' },
     { id: 3, nombre: 'Nike Full Force Low', descripcion:  "Men's footwear", precio: 560950, imagen: '/assets/677182-500-500.jpg' },
     { id: 4, nombre: 'Nike Cortez', descripcion:  "Men's footwear", precio: 380950, imagen: '/assets/702841-500-500.jpg' },
@@ -55,7 +55,7 @@ function HombresProductos() {
             {/* Información del producto: nombre, descripción y precio */}
             <p className="TittleProcut">{producto.nombre}</p>
             <p className="descriptionProductoMen">{producto.descripcion}</p>
-            <p className="priceProductMen">$ {producto.precio.toLocaleString('es-CO')}</p>
+            <p className="priceProductMen">$ {producto.precio}</p>
           </div>
         ))}
       </div>
