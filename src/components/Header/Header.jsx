@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Header.css';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, ChevronDown, ShoppingCart } from 'lucide-react';
+import { Menu, Globe, ShoppingCart } from 'lucide-react';
 
 // Componente reutilizable para crear el submenú de categorías.
 function DropdownMenu({ categories }) {
@@ -141,10 +141,16 @@ function Header() {
             <Menu size={26} color="white" />
           </button>
           
+          {/* Internazionalisacion */}
+          <Link to="/" className="mobile-cart">
+            <Globe size={24} color="white" />
+          </Link>
+
           {/* Carrito */}
           <Link to="/carrito" className="mobile-cart">
             <ShoppingCart size={24} color="white" />
           </Link>
+          
         </div> 
 
         {isMobileMenuOpen && (
