@@ -60,7 +60,7 @@ export const Eventos = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", left: "-30px", zIndex: 2 }}
+        style={{ ...style, display: "block", left: "-20px", zIndex: 2 }}
         onClick={onClick}
       >
         &#8249; {/* Símbolo de flecha izquierda */}
@@ -75,7 +75,7 @@ export const Eventos = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", right: "-35px", zIndex: 2 }}
+        style={{ ...style, display: "block", right: "-20px", zIndex: 2 }}
         onClick={onClick}
       >
         &#8250; {/* Símbolo de flecha derecha */}
@@ -143,9 +143,6 @@ export const Eventos = () => {
   // Renderizado del componente principal
   return (
     <>
-    <button className="boton-regresar-eventes responsive" onClick={() => navigate(-1)}>
-      <i className="ri-arrow-left-line"></i> Volver
-    </button>
       {/* Contenedor principal */}
       <div className='container-event'>
         <h1 className='title-event'>Sé el primero en enterarte de nuestros eventos</h1>
