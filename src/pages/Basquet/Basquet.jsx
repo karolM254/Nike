@@ -1,70 +1,102 @@
-import React, { useState, useRef } from "react";
-import "../ProductGrid/ProductGrid.css"; // Usamos el mismo archivo CSS
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../ProductGrid/ProductGrid.css"; // Archivo de estilos
 
 const Basquet = () => {
-  const searchInput = useRef(null);
+  const [searchTerm, setSearchTerm] = useState(""); // Estado del buscador
 
   // Lista de productos
-  const products = [
-    { id: 1, name: "NIKE MASTER CLASS", category: "Calzado básquetbol", price: "$299.000", image: "/assets/basquet1.png" },
-    { id: 2, name: "NIKE LEGEND RAIN", category: "Calzado básquetbol", price: "$499.000", image: "/assets/basquet2.png" },
-    { id: 3, name: "NIKE NIKE MASTER", category: "Calzado básquetbol", price: "$999.000", image: "/assets/basquet3.png" },
-    { id: 4, name: "NIKE SUPERFLY VER", category: "Calzado básquetbol", price: "$750.000", image: "/assets/basquet4.png" },
-    { id: 5, name: "NIKE SUPER FLEW 2", category: "Calzado básquetbol", price: "$1.199.000", image: "/assets/basquet5.png" },
-    { id: 6, name: "NIKE JORDAN RETRO", category: "Calzado básquetbol", price: "$399.000", image: "/assets/basquet6.png" }
-  ];
+  const productos = [
+    {
+      id: 1,
+      nombre: "NIKE PR INC", 
+      descripcion: "Tennis of basketball",
+      precio: "$500.000",
+      img: "/assets/basquet1.png",
+    },
+    {
+      id: 2,
+      nombre: "NIKE MASTER CART",
+      descripcion: "Tennis of basketball",
+      precio: "$199.950",
+      img: "/assets/basquet2.png",
+    },
+    {
+      id: 3,
+      nombre: "NIKE AIR MORE",
+      descripcion: "Tennis of basketball",
+      precio: "$564.950",
+      img: "/assets/basquet3.png",
+    },
+    {
+      id: 4,
+      nombre: "NIKE AIR SUPERSTAR",
+      descripcion: "Tennis of basketball",
+      precio: "$524.950",
+      img: "/assets/basquet4.png",
+    },
+    {
+      id: 5,
+      nombre: "NIKE YOUNG WORLD",
+      descripcion: "Tennis of basketball",
+      precio: "$834.950",
+      img: "/assets/basquet5.png",
+    },
+    {
+      id: 6,
+      nombre: "NIKE MARRON ONE",
+      descripcion: "Tennis of basketball",
+      precio: "$254.950",
+      img: "/assets/basquet6.png",
+    },
+    ];
 
-  const [filteredProducts, setFilteredProducts] = useState(products);
-
-  const handleSearch = () => {
-    const query = searchInput.current.value.toLowerCase();
-    const filtered = products.filter((product) =>
-      product.name.toLowerCase().includes(query) ||
-      product.category.toLowerCase().includes(query)
-    );
-    setFilteredProducts(filtered);
-  };
+  // Filtrar productos
+  const productosFiltrados = productos.filter((producto) =>
+    producto.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className="layout">
+    <div className="product-container">
+      {/* Sidebar */}
       <aside className="sidebar">
         <h3>SPORTS</h3>
         <ul>
-          <li><Link to="/futbol">SOCCER</Link></li>
-          <li><span>BASKETBALL</span></li>
+          <li><Link to="/futbol" >SOCCER</Link></li>
+          <li><Link to="/basquet" className="active">BASKETBALL</Link></li>
           <li><Link to="/tennis">TENNIS</Link></li>
           <li><Link to="/atletismo">ATHLETICS</Link></li>
         </ul>
-        <div className="linea"></div>
       </aside>
-      <main className="main-content">
-        <div className="search">
-          <input
-            ref={searchInput}
-            type="search"
-            placeholder="Buscar"
-            onChange={handleSearch}
-          />
-          <div className="lupa">
-            <img
-              src="/assets/simbolo-de-la-interfaz-de-busqueda.png"
-              alt="lupa"
-              onClick={handleSearch}
+
+      {/* Contenido principal */}
+      <main className="contenido-mujeres">
+        {/* Buscador */}
+        <div className="buscador-mujeres-productos">
+          <div className="buscador-mujeres">
+            <i className="ri-search-line"></i>
+            <input
+              type="text"
+              placeholder="Buscar"
+              className="buscar-producto-mujer"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
         </div>
-        <div className="product-grid">
-          {filteredProducts.map((product) => (
-            <div className="product" key={product.id}>
-              <Link to={`/basquet/infoproducto/${product.id}`}>
-                <div className="product-image">
-                  <img src={product.image} alt={product.name} />
-                </div>
-                <h2>{product.name}</h2>
-                <p className="info">{product.category}</p>
-                <p className="price">{product.price}</p>
+
+        {/* Grid de productos */}
+        <div className="grid-contenido-mujeres">
+          {productosFiltrados.map((producto) => (
+            <div className="col" key={producto.id}>
+              <Link to={`infoproducto/${producto.id}`}>
+                <img src={producto.img} alt={producto.nombre} />
               </Link>
+              <h4>{producto.nombre}</h4>
+              <div className="precio-mujeres">
+                <h5>{producto.descripcion}</h5>
+                <p>{producto.precio}</p>
+              </div>
             </div>
           ))}
         </div>

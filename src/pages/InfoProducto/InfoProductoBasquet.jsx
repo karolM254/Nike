@@ -1,126 +1,286 @@
-import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Slider from "react-slick";
 import "../InfoProducto/InfoProducto.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useCart } from "../../components/Carrito/CartContext";
 
 const InfoProductoBasquet = () => {
-  const { id } = useParams(); // Obtener el ID del producto desde la URL
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
-  const [currentIndex, setCurrentIndex] = useState(0); // Estado para el slider
+  const { carrito, setCarrito } = useCart();
+  const navigate = useNavigate();
+  const { id } = useParams(); // Obtiene el ID desde la URL
 
-  const products = [
-    { id: 1, name: "NIKE MASTER CLASS", category: "Calzado de básquetbol", price: "$299.000", material: "Sintético", image: "/assets/basquet1.png", description: "Diseño innovador con tecnología para saltos más altos." },
-    { id: 2, name: "NIKE LEGEND RAIN", category: "Calzado de básquetbol", price: "$499.000", material: "Sintético", image: "/assets/basquet2.png", description: "Perfecto para entrenamientos y partidos intensos." },
-    { id: 3, name: "NIKE MULTI MASTER", category: "Calzado de básquetbol", price: "$999.000", material: "Sintético", image: "/assets/basquet3.png", description: "Ligero y cómodo para largas sesiones de juego." },
-    { id: 4, name: "NIKE SUPERFLY VER", category: "Calzado de básquetbol", price: "$750.000", material: "Sintético", image: "/assets/basquet4.png", description: "Diseño elegante para jugadores profesionales." },
-    { id: 5, name: "AIR SUPER STAR VOL", category: "Calzado de básquetbol", price: "$1.199.000", material: "Sintético", image: "/assets/basquet5.png", description: "Tracción excepcional para movimientos rápidos." },
-    { id: 6, name: "NIKE JORDAN RETRO", category: "Calzado de básquetbol", price: "$399.000", material: "Sintético", image: "/assets/basquet6.png", description: "Clásico reinventado con mayor durabilidad y estilo." },
-    
+  // Lista de productos
+  const productos = [
+    {
+      id: 1,
+      img: "/assets/basquet1.png",
+      title: "NIKE PR INC",
+      description: "Tennis of basketball",
+      price: "$1,004,950",
+      material: "Sintetic, Fabric",
+      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
+    },
+    {
+      id: 2,
+      img: "/assets/basquet2.png",
+      title: "NIKE MASTER CART",
+      description: "Tennis of basketball",
+      price: "$199,950",
+      material: "Sintetic, Sint",
+      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
+    },
+    {
+      id: 3,
+      img: "/assets/basquet3.png",
+      title: "NIKE AIR MORE",
+      description: "Tennis of basketball",
+      price: "$564,950",
+      material: "Sintetic, Sint",
+      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
+    },
+    {
+      id: 4,
+      img: "/assets/basquet4.png",
+      title: "NIKE YOUNG WORLD",
+      description: "Tennis of basketball",
+      price: "$524,950",
+      material: "Sintetic, Sint",
+      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface."
+    },
+    {
+      id: 5,
+      img: "/assets/basquet5.png",
+      title: "NIKE MARRON ONE",
+      description: "Tennis of basketball",
+      price: "$834,950",
+      material: "Sintetic, Sint",
+      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
+    },
+    {
+      id: 6,
+      img: "/assets/basquet6.png",
+      title: "NIKE SUPER STREET",
+      description: "Tennis of basketball",
+      price: "$834,950",
+      material: "Sintetic, Fabric",
+      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
+    },
   ];
 
-  const product = products.find((p) => p.id === parseInt(id));
+  // Buscamos el producto desde la URL usando el id
+  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
-  if (!product) {
-    return <h2>Producto no encontrado</h2>;
-  }
+  useEffect(() => {
+    // Si hay un id en la URL, buscar el producto correspondiente
+    if (id) {
+      const producto = productos.find((prod) => prod.id === parseInt(id));
+      setProductoSeleccionado(producto);
+    } else {
+      // Si no hay id, seleccionamos el primer producto
+      setProductoSeleccionado(productos[0]);
+    }
+  }, [id]);
 
-  // Control del slider
-  const relatedProducts = products.filter((p) => p.id !== product.id);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? relatedProducts.length - 3 : prevIndex - 1
+  const addToCart = () => {
+    setCarrito((prevCarrito) => {
+      const productoEnCarrito = prevCarrito.find(
+        (item) => item.id === productoSeleccionado.id
+      );
+      if (!productoEnCarrito) {
+        console.log("Producto agregado:", productoSeleccionado);
+        return [...prevCarrito, productoSeleccionado];
+      } else {
+        console.log("El producto ya está dentro del carrito");
+        return prevCarrito;
+      }
+    });
+  };
+
+  // Configuración del carrusel
+  const CustomPrevArrow = (props) => {
+    const { style, onClick } = props;
+    return (
+      <div
+        style={{
+          ...style,
+          display: "block",
+          position: "absolute",
+          left: "8px",
+          top: "45%",
+          cursor: "pointer",
+          zIndex: 2,
+        }}
+        onClick={onClick}
+      >
+        <i
+          className="ri-arrow-left-circle-fill"
+          style={{ color: "#1e40af", fontSize: "30px" }}
+        ></i>
+      </div>
     );
   };
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === relatedProducts.length - 3 ? 0 : prevIndex + 1
+  const CustomNextArrow = (props) => {
+    const { style, onClick } = props;
+    return (
+      <div
+        style={{
+          ...style,
+          display: "block",
+          position: "absolute",
+          right: "8px",
+          top: "45%",
+          cursor: "pointer",
+          zIndex: 2,
+        }}
+        onClick={onClick}
+      >
+        <i
+          className="ri-arrow-right-circle-fill"
+          style={{ color: "#1e40af", fontSize: "30px" }}
+        ></i>
+      </div>
+    );
+  };
+
+  const SliderWomen = () => {
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: <CustomPrevArrow />,
+      nextArrow: <CustomNextArrow />,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    };
+
+    return (
+      <section className="events-upcoming">
+        <Slider {...settings}>
+          {productos.map((producto) => (
+            <div
+              key={producto.id}
+              className="event-card"
+              onClick={() => setProductoSeleccionado(producto)}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                src={producto.img}
+                alt={producto.title}
+                className="slider-image"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                }}
+              />
+              <h4>{producto.title}</h4>
+              <div className="precio-mujeres">
+                <h5>{producto.description}</h5>
+                <p>{producto.price}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </section>
     );
   };
 
   return (
-    <div className="product-page">
-      <button className="back-button" onClick={() => window.history.back()}>
-        <i className="ri-arrow-left-line"></i> Volver
-      </button>
-
-      <div className="product-detail">
-        <div className="product-detail__image">
-          <img src={product.image} alt={product.name} />
-        </div>
-        <div className="product-detail__info">
-          <h1>{product.name}</h1>
-          <h3>{product.category}</h3>
-          <p>Material principal: {product.material || "No especificado"}</p>
-          <h2>{product.price}</h2>
-          <div className="product-detail__options">
-            <select>
-              <option>Color</option>
-              <option>White</option>
-              <option>Red</option>
-            </select>
-            <select>
-              <option>Talla</option>
-              <option>13</option>
-              <option>14</option>
-              <option>15</option>
-              <option>16</option>
-            </select>
-          </div>
-          <div className="button-container">
-            <button className="product-detail__button">
-              <img src="/assets/carrito-de-compras.png" alt="Agregar al carrito" />
-              Agregar al carrito
-            </button>
-            <Link to="carrito" className="ver_carrito">
-              <p>Ver carrito</p>
-            </Link>
-          </div>
-          <Link to="#" className="product-detail__link" onClick={() => setIsModalOpen(true)}>
-            Ver información del producto
-          </Link>
-        </div>
-      </div>
-
-      <hr className="divider" />
-
-      {/* Slider de productos relacionados */}
-      <div className="related-products-slider">
-        <button className="slider-button prev" onClick={handlePrev}>
-        <i class="ri-arrow-left-fill"></i>
+    <div>
+      <main className="contenido-mujeres">
+        <button className="boton-regresar" onClick={() => navigate(-1)}>
+          <i className="ri-arrow-left-line"></i> Back
         </button>
 
-        <div className="slider-container">
-          {relatedProducts.slice(currentIndex, currentIndex + 3).map((product) => (
-            <div className="related-products__item" key={product.id}>
-              <img src={product.image} alt={product.name} />
-              <h3>{product.name}</h3>
-              <h4>{product.category}</h4>
-              <p>{product.price}</p>
+        {productoSeleccionado && (
+          <div className="ver-producto-mujer">
+            <img
+              src={productoSeleccionado.img}
+              alt={productoSeleccionado.title}
+            />
+            <div className="info-producto-mujer">
+              <h3>{productoSeleccionado.title}</h3>
+              <h4 className="info-producto-mujer-parrafo2">
+                {productoSeleccionado.description}
+              </h4>
+              <h4 className="material-producto-mujer">
+                Main Material: {productoSeleccionado.material}
+              </h4>
+              <p>{productoSeleccionado.price}</p>
+              <div className="color-talla">
+                <select name="color" className="select-mujeres">
+                  <option value="color">Color</option>
+                  <option value="rosa">Pink</option>
+                  <option value="negro">Black</option>
+                  <option value="azul">Blue</option>
+                  <option value="verde">Green</option>
+                  <option value="amarillo">Yellow</option>
+                </select>
+                <select name="talla" className="select-mujeres">
+                  <option value="talla">Size</option>
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                </select>
+              </div>
+              <h4 className="ver-mas-mujeres" onClick={openModal}>
+              View product information
+              </h4>
+              <div className="boton-mujeres" onClick={addToCart}>
+                <button className="carrito-mujeres">
+                  <i className="ri-shopping-cart-line"></i> Add to cart
+                </button>
+              </div>
             </div>
-          ))}
-        </div>
-
-        <button className="slider-button next" onClick={handleNext}>
-        <i class="ri-arrow-right-fill"></i>
-        </button>
-      </div>
-
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
-          <div
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()} // Evitar cerrar al hacer clic dentro del modal
-          >
-            <span className="close" onClick={() => setIsModalOpen(false)}>
-              &times;
-            </span>
-            <p><strong>Descripción:</strong></p>
-            <p>Estas zapatillas Nike para básquetbol combinan comodidad y estilo en un diseño pensado especialmente para destacar en la cancha. Fabricadas con material textil suave y sintético, ofrecen un ajuste cómodo que se adapta perfectamente a los pies, proporcionando soporte y estabilidad.
-            </p>
           </div>
-        </div>
-      )}
+        )}
+
+        {isModalOpen && (
+          <div className="modal-overlay">
+            <div className="modal-mujer">
+              <button className="close-modal" onClick={closeModal}>
+                &times;
+              </button>
+              <h3>Description:</h3>
+              <p>{productoSeleccionado.moreDescription}</p>
+            </div>
+          </div>
+        )}
+
+        <hr className="division-productos-mujeres" />
+      </main>
+
+      <SliderWomen />
     </div>
   );
 };
