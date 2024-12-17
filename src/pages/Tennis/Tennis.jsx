@@ -7,12 +7,12 @@ const Tennis = () => {
 
   // Lista de productos
   const products = [
-    { id: 1, name: "NIKE FUTURE RELAX", category: "Calzado de tennis", price: "$1.199.000", image: "/assets/tennis1.jpg" },
-    { id: 2, name: "NIKE LEGEND BLUE", category: "Calzado de tennis", price: "$850.000", image: "/assets/tennis2.jpg" },
-    { id: 3, name: "NIKE AIR NIKE VER", category: "Calzado de tennis", price: "$999.000", image: "/assets/tennis3.jpg" },
-    { id: 4, name: "AIR SUPER SMITH 1", category: "Calzado de tennis", price: "$399.000", image: "/assets/tennis4.jpg" },
-    { id: 5, name: "NIKE AIR WIN RATE", category: "Calzado de tennis", price: "$499.000", image: "/assets/tennis5.jpg" },
-    { id: 6, name: "NIKE AIM WHITE VER", category: "Calzado de tennis", price: "$599.000", image: "/assets/tennis6.jpg" }
+    { id: 1, name: "NIKE FUTURE RELAX", category: "Calzado de tennis", price: "$1,199,000", image: "/assets/tennis1.jpg" },
+    { id: 2, name: "NIKE LEGEND BLUE", category: "Calzado de tennis", price: "$850,000", image: "/assets/tennis2.jpg" },
+    { id: 3, name: "NIKE AIR NIKE VER", category: "Calzado de tennis", price: "$999,000", image: "/assets/tennis3.jpg" },
+    { id: 4, name: "AIR SUPER SMITH 1", category: "Calzado de tennis", price: "$399,000", image: "/assets/tennis4.jpg" },
+    { id: 5, name: "NIKE AIR WIN RATE", category: "Calzado de tennis", price: "$499,000", image: "/assets/tennis5.jpg" },
+    { id: 6, name: "NIKE AIM WHITE VER", category: "Calzado de tennis", price: "$599,000", image: "/assets/tennis6.jpg" }
   ];
 
   const [filteredProducts, setFilteredProducts] = useState(products);

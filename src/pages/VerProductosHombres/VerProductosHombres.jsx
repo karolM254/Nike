@@ -24,7 +24,7 @@ function VerProductosHombres() {
       descripcion: "Men's footwear",
       descripcion2: 'The rubber sole offers exceptional traction, ideal for quick changes of direction. Its padded tongue and collar ensure a comfortable and secure fit during the most intense games, while the round laces ensure a firm and uniform fit. Perfect for players looking to combine performance and style in every play',
       material: 'Main Material: Leather',
-      price: '$ 1.294.950',
+      price: "$25,560,567",
       img: "/assets/fototennis.jpg",
     },
     {
@@ -33,7 +33,7 @@ function VerProductosHombres() {
       descripcion: "Men's footwear",
       descripcion2: 'The Nike Zoom Bella 6 PRM are tennis shoes designed to offer a perfect balance between style, comfort and functionality, ideal for dynamic training and daily use. With a modern and sophisticated design, these sneakers combine advanced technology with a versatile look so you can stay active without sacrificing your personal style.',
       material: 'Main Material: Leather',
-      price: '$ 845.950',
+      price: "$ 845,950",
       img: "/assets/678275-500-500.jpg",
     },
     {
@@ -42,7 +42,7 @@ function VerProductosHombres() {
       descripcion: "Men's footwear",
       descripcion2: 'The Nike Full Force Low is a shoe that fuses urban style and functionality for everyday use. With a versatile and modern design, this model is ideal for those looking for a combination of comfort, durability and a casual look for everyday use. Its sole provides excellent cushioning and traction on different surfaces, while its resistant materials ensure a long useful life',
       material: 'Main Material: Leather',
-      price: '$ 560.950',
+      price: "$ 560,950",
       img: "/assets/677182-500-500.jpg",
     },
     {
@@ -51,7 +51,7 @@ function VerProductosHombres() {
       descripcion: "Men's footwear",
       descripcion2: 'The Nike Cortez is a sports fashion classic that combines style and functionality. With a minimalist and elegant design, this model is ideal for those looking for a casual and versatile look for everyday use. Its sole provides excellent traction and cushioning, while its resistant materials ensure a long useful life. The lace-up fit and classic design make it an essential option to complement any outfit.',
       material: 'Main Material: Leather',
-      price: '$ 380.950',
+      price: "$380,950",
       img: "/assets/702841-500-500.jpg",
     },
     {
@@ -60,7 +60,7 @@ function VerProductosHombres() {
       descripcion: "Men's footwear",
       descripcion2: 'The Nike C1TY is a model that reflects the urban spirit with a contemporary and versatile design. Inspired by street fashion, this sneaker offers an ideal combination of style and performance, with breathable materials that allow for all-day comfort. Its lightweight structure and flexible sole facilitate movement, while the minimalist aesthetic makes it ideal for both casual activities and more formal occasions.',
       material: 'Main Material: Leather',
-      price: '$ 695.950',
+      price: "$ 695,950",
       img: "/assets/713556-500-500.jpg",
     },
     {
@@ -69,7 +69,7 @@ function VerProductosHombres() {
       descripcion: "Men's footwear",
       descripcion2: 'The Nike Killshot 2 Leather is a tennis shoe that combines style and functionality with a classic and sophisticated design. Inspired by the sports fashion of the 70s, this model offers an ideal combination of comfort, durability and an elegant look. Its sole provides excellent traction and cushioning, while its leather materials ensure long life.',
       material: 'Main Material: Leather',
-      price: '$ 922.950',
+      price: "$ 922,950",
       img: "/assets/678515-500-500.jpg",
     }
   ];

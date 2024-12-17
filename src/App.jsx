@@ -59,7 +59,7 @@ function App() {
             <Route path="/producto_nino/:id" element={<NinosProducto />} />
             {/* Rutas para la seccion de hombres */}
             <Route path="/hombre" element={<HombresProductos />} />
-            <Route path="/productosHombre/:idMen" element={<VerProductosHombres />} />
+            <Route path="/productosHombre/:id" element={<VerProductosHombres />} />
             {/* Rutas para la seccion de idioma */}
             <Route path="/idioma" element={<Idioma />} />
             {/* Ruta para la landing page */}

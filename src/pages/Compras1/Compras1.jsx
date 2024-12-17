@@ -70,113 +70,120 @@ function Compras1() {
   const handleCloseSecondModal = () => setShowSecondModal(null);
 
   // Calcula el subtotal para un producto específico
-  const calcularSubtotal = (id) => {
-    const producto = carrito.find((prod) => prod.id === id);
-    if (!producto) return "$0.00";
+// Calcula el subtotal para un producto específico
+const calcularSubtotal = (id) => {
+  const producto = carrito.find((prod) => prod.id === id);
+  if (!producto) return "$0.00";
 
-    // Limpia el precio para que sea un valor numérico
-    const precioNumerico = parseFloat((producto.price || "0").replace(/[^0-9.-]+/g, ""));
-    if (isNaN(precioNumerico)) {
+  // Limpia el precio para convertirlo en un número
+  const precioNumerico = parseFloat((producto.price || "0").replace(/[^0-9.-]+/g, ""));
+  if (isNaN(precioNumerico)) {
       console.error("Precio no válido para el producto con ID:", id);
       return "$0.00";
-    }
+  }
 
-    // Calcula el subtotal multiplicando la cantidad por el precio
-    const subtotal = (cantidades[id] || 1) * precioNumerico;
-    return subtotal.toLocaleString("es-CO", { style: "currency", currency: "COP" });
-  };
+  // Obtiene la cantidad correspondiente del estado `cantidades`
+  const cantidad = cantidades[id] || 1;
 
-  // Calcula el total de la compra sumando los subtotales de todos los productos
-  const calcularTotal = () => {
-    const total = carrito.reduce((total, productos) => {
-      const precio = productos.price || "0"; // Valor predeterminado si el precio es inválido
-      const precioNumerico = parseFloat(precio.replace(/[^0-9.-]+/g, ""));
-      if (isNaN(precioNumerico)) {
-        console.error("Precio no válido para el producto con ID:", productos.id);
-        return total;
-      }
-      return total + (cantidades[productos.id] || 1) * precioNumerico;
-    }, 0);
-    return total.toLocaleString("es-CO", { style: "currency", currency: "COP" });
-  };
+  // Multiplica cantidad por precio para obtener el subtotal
+  const subtotal = cantidad * precioNumerico;
 
-  // Envia la solicitud para crear el pedido en la API de WooCommerce
-  const handleSubmit = () => {
-    const url = 'https://jsdq.tech/wp-json/wc/v3/orders';
-    const consumerKey = "ck_f63f22ee5e32cd9dd1306bc351b470bc74935cbc";
-    const consumerSecret = 'cs_5f311caba7b327e0395c17b6196297d9c813ed31';
+  // Formatea el subtotal como moneda
+  return subtotal.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+};
 
-    // Mapea los productos del carrito para incluirlos en el cuerpo de la solicitud
-    const items = carrito.map((producto) => {
+// Calcula el total de la compra sumando los subtotales de todos los productos
+const calcularTotal = () => {
+  const total = carrito.reduce((acumulado, producto) => {
       const precio = producto.price || "0";
       const precioNumerico = parseFloat(precio.replace(/[^0-9.-]+/g, ""));
-      const subtotal = (cantidades[producto.id] || 1) * precioNumerico;
+      if (isNaN(precioNumerico)) {
+          console.error("Precio no válido para el producto con ID:", producto.id);
+          return acumulado;
+      }
+
+      // Obtiene la cantidad correspondiente del estado `cantidades`
+      const cantidad = cantidades[producto.id] || 1;
+
+      // Suma al total el precio del producto multiplicado por la cantidad
+      return acumulado + cantidad * precioNumerico;
+  }, 0);
+
+  // Formatea el total como moneda
+  return total.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+};
+
+// Envia la solicitud para crear el pedido en la API de WooCommerce
+const handleSubmit = () => {
+  const url = 'https://jsdq.tech/wp-json/wc/v3/orders';
+  const consumerKey = "ck_f63f22ee5e32cd9dd1306bc351b470bc74935cbc";
+  const consumerSecret = 'cs_5f311caba7b327e0395c17b6196297d9c813ed31';
+
+  // Mapea los productos del carrito para incluirlos en el cuerpo de la solicitud
+  const lineItems = carrito.map((producto) => {
+      const precio = producto.price || "0";
+      const precioNumerico = parseFloat(precio.replace(/[^0-9.-]+/g, ""));
+      const subtotal = (cantidades[producto.id] || 0) * precioNumerico;
 
       return {
-        name: producto.title,
-        quantity: cantidades[producto.id] || 1,
-        unit_price: precioNumerico,
-        currency_id: 'COP',
-        subtotal: subtotal,
-        product_id: producto.id,
+          product_id: producto.id,
+          name: producto.title, // Agrega explícitamente el nombre del producto
+          quantity: cantidades[producto.id] || 1,
+          total: subtotal.toFixed(2), // WooCommerce espera el total como string con 2 decimales
       };
-    });
+  });
 
-    console.log('Items con subtotales:', items);
-
-    // Crea el cuerpo de la solicitud
-    const requestBody = JSON.stringify({
+  const requestBody = JSON.stringify({
       payment_method: 'bacs',
       payment_method_title: 'Mercado Pago',
       set_paid: false,
       status: 'pending',
       billing: {
-        first_name: formData.nombre,
-        last_name: formData.apellidos,
-        address_1: formData.direccion,
-        postcode: formData.codigoPostal,
-        email: formData.email,
-        phone: formData.telefono
+          first_name: formData.nombre,
+          last_name: formData.apellidos,
+          address_1: formData.direccion,
+          postcode: formData.codigoPostal,
+          email: formData.email,
+          phone: formData.telefono,
       },
       shipping: {
-        first_name: formData.nombre,
-        last_name: formData.apellidos,
-        address_1: formData.direccion,
-        postcode: formData.codigoPostal
+          first_name: formData.nombre,
+          last_name: formData.apellidos,
+          address_1: formData.direccion,
+          postcode: formData.codigoPostal,
       },
+      line_items: lineItems,
       shipping_lines: [
-        {
-          method_id: 'flat_rate',
-          method_title: 'Flat Rate',
-          total: calcularTotal()
-        }
+          {
+              method_id: 'flat_rate',
+              method_title: 'Flat Rate',
+              total: "0.00", // Envía 0 para el costo de envío
+          },
       ],
-      items: items,
-    });
+  });
 
-    console.log('Cuerpo de la solicitud:', requestBody);
+  console.log('Cuerpo de la solicitud:', requestBody);
 
-    // Realiza la solicitud POST a la API de WooCommerce
-    fetch(url, {
+  // Realiza la solicitud POST a la API de WooCommerce
+  fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa(consumerKey + ':' + consumerSecret),
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + btoa(consumerKey + ':' + consumerSecret),
       },
       body: requestBody,
-    })
+  })
       .then(response => response.json())
       .then(data => {
-        console.log('Datos enviados con éxito:', data);
-        if (data.status === 'pending' && data.payment_url) {
-          setPaymentUrl(data.payment_url);
-        } else {
-          console.error('Error al procesar el pedido', data);
-        }
+          console.log('Datos enviados con éxito:', data);
+          if (data.status === 'pending' && data.payment_url) {
+              setPaymentUrl(data.payment_url);
+          } else {
+              console.error('Error al procesar el pedido', data);
+          }
       })
       .catch(error => console.error('Error al enviar los datos:', error));
-  };
-
+};
   return (
     <div className="comprass-container">
       <button className="boton-regresar" onClick={() => navigate(-1)}>
