@@ -1,70 +1,102 @@
-import React, { useState, useRef } from "react";
-import "../ProductGrid/ProductGrid.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../ProductGrid/ProductGrid.css"; // Archivo de estilos
 
 const Atletismo = () => {
-  const searchInput = useRef(null);
+  const [searchTerm, setSearchTerm] = useState(""); // Estado del buscador
 
   // Lista de productos
-  const products = [
-    { id: 1, name: "NIKE PEGASO INDOL", category: "Calzado atletismo", price: "$650.000", image: "/assets/atletismo1.jpg" },
-    { id: 2, name: "NIKE LEGEND REVOL", category: "Calzado atletismo", price: "$750.000", image: "/assets/atletismo2.jpg" },
-    { id: 3, name: "NIKE MASTERED V.22", category: "Calzado atletismo", price: "$420.000", image: "/assets/atletismo3.jpg" },
-    { id: 4, name: "NIKE AIR ZOOM VER 1", category: "Calzado atletismo", price: "$520.000", image: "/assets/atletismo4.jpg" },
-    { id: 5, name: "NIKE BLOOD SPEED 4", category: "Calzado atletismo", price: "$1.199.000", image: "/assets/atletismo5.jpg" },
-    { id: 6, name: "NIKE PREDATOR ORA", category: "Calzado atletismo", price: "$299.000", image: "/assets/atletismo6.jpg" }
-  ];
+  const productos = [
+    {
+      id: 1,
+      nombre: "NIKE MASTER LEGEND AIR",
+      descripcion: "Athletic shoes",
+      precio: "$500.000",
+      img: "/assets/atletismo1.jpg",
+    },
+    {
+      id: 2,
+      nombre: "NIKE AIR MORE TOP",
+      descripcion: "Athletic shoes",
+      precio: "$199.950",
+      img: "/assets/atletismo2.jpg",
+    },
+    {
+      id: 3,
+      nombre: "NIKE AIR SUPERSTAR",
+      descripcion: "Athletic shoes",
+      precio: "$564.950",
+      img: "/assets/atletismo3.jpg",
+    },
+    {
+      id: 4,
+      nombre: "NIKE AIR WONDER RAIN",
+      descripcion: "Athletic shoes",
+      precio: "$524.950",
+      img: "/assets/atletismo4.jpg",
+    },
+    {
+      id: 5,
+      nombre: "NIKE SUPER STREET",
+      descripcion: "Athletic shoes",
+      precio: "$834.950",
+      img: "/assets/atletismo5.jpg",
+    },
+    {
+      id: 6,
+      nombre: "NIKE BLACK CLASSIC",
+      descripcion: "Athletic shoes",
+      precio: "$254.950",
+      img: "/assets/atletismo6.jpg",
+    },
+    ];
 
-  const [filteredProducts, setFilteredProducts] = useState(products);
-
-  const handleSearch = () => {
-    const query = searchInput.current.value.toLowerCase();
-    const filtered = products.filter((product) =>
-      product.name.toLowerCase().includes(query) || 
-      product.category.toLowerCase().includes(query)
-    );
-    setFilteredProducts(filtered);
-  };
+  // Filtrar productos
+  const productosFiltrados = productos.filter((producto) =>
+    producto.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className="layout">
+    <div className="product-container">
+      {/* Sidebar */}
       <aside className="sidebar">
         <h3>SPORTS</h3>
         <ul>
-          <li><Link to="/futbol">SOCCER</Link></li>
+          <li><Link to="/futbol" >SOCCER</Link></li>
           <li><Link to="/basquet">BASKETBALL</Link></li>
           <li><Link to="/tennis">TENNIS</Link></li>
-          <li><span>ATHLETICS</span></li>
+          <li><Link to="/atletismo" className="active">ATHLETICS</Link></li>
         </ul>
-        <div className="linea"></div>
       </aside>
-      <main className="main-content">
-        <div className="search">
-          <input
-            ref={searchInput}
-            type="search"
-            placeholder="Buscar"
-            onChange={handleSearch}
-          />
-          <div className="lupa">
-            <img
-              src="/assets/simbolo-de-la-interfaz-de-busqueda.png"
-              alt="lupa"
-              onClick={handleSearch}
+
+      {/* Contenido principal */}
+      <main className="contenido-mujeres">
+        {/* Buscador */}
+        <div className="buscador-mujeres-productos">
+          <div className="buscador-mujeres">
+            <i className="ri-search-line"></i>
+            <input
+              type="text"
+              placeholder="Buscar"
+              className="buscar-producto-mujer"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
         </div>
-        <div className="product-grid">
-          {filteredProducts.map((product) => (
-            <div className="product" key={product.id}>
-              <Link to={`/atletismo/infoproducto/${product.id}`}>
-                <div className="product-image">
-                  <img src={product.image} alt={product.name} />
-                </div>
-                <h2>{product.name}</h2>
-                <p className="info">{product.category}</p>
-                <p className="price">{product.price}</p>
+
+        {/* Grid de productos */}
+        <div className="grid-contenido-mujeres">
+          {productosFiltrados.map((producto) => (
+            <div className="col" key={producto.id}>
+              <Link to={`infoproducto/${producto.id}`}>
+                <img src={producto.img} alt={producto.nombre} />
               </Link>
+              <h4>{producto.nombre}</h4>
+              <div className="precio-mujeres">
+                <h5>{producto.descripcion}</h5>
+                <p>{producto.precio}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -74,3 +106,4 @@ const Atletismo = () => {
 };
 
 export default Atletismo;
+

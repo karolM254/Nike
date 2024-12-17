@@ -1,70 +1,66 @@
-import React, { useState, useRef } from "react";
-import "../ProductGrid/ProductGrid.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../ProductGrid/ProductGrid.css"; // Archivo de estilos
 
 const Tennis = () => {
-  const searchInput = useRef(null);
+  const [searchTerm, setSearchTerm] = useState(""); // Estado del buscador
 
   // Lista de productos
-  const products = [
-    { id: 1, name: "NIKE FUTURE RELAX", category: "Calzado de tennis", price: "$1,199,000", image: "/assets/tennis1.jpg" },
-    { id: 2, name: "NIKE LEGEND BLUE", category: "Calzado de tennis", price: "$850,000", image: "/assets/tennis2.jpg" },
-    { id: 3, name: "NIKE AIR NIKE VER", category: "Calzado de tennis", price: "$999,000", image: "/assets/tennis3.jpg" },
-    { id: 4, name: "AIR SUPER SMITH 1", category: "Calzado de tennis", price: "$399,000", image: "/assets/tennis4.jpg" },
-    { id: 5, name: "NIKE AIR WIN RATE", category: "Calzado de tennis", price: "$499,000", image: "/assets/tennis5.jpg" },
-    { id: 6, name: "NIKE AIM WHITE VER", category: "Calzado de tennis", price: "$599,000", image: "/assets/tennis6.jpg" }
+  const productos = [
+    { id: 1, nombre: "NIKE SUPER SPORT DOMINION", descripcion: "Tennis shoes", precio: "$500.000", img: "/assets/tennis1.jpg" },
+    { id: 2, nombre: "NIKE SUPER SPORT FLY", descripcion: "Tennis shoes", precio: "$199.950", img: "/assets/tennis2.jpg" },
+    { id: 3, nombre: "NIKE SUPER NIME PLUS", descripcion: "Tennis shoes", precio: "$564.950", img: "/assets/tennis3.jpg" },
+    { id: 4, nombre: "NIKE SUPERFLY VUL", descripcion: "Tennis shoes", precio: "$524.950", img: "/assets/tennis4.jpg" },
+    { id: 5, nombre: "NIKE NIRH BLUS", descripcion: "Tennis shoes", precio: "$834.950", img: "/assets/tennis5.jpg" },
+    { id: 6, nombre: "NIKE SUPER PLIL", descripcion: "Tennis shoes", precio: "$254.950", img: "/assets/tennis6.jpg" },
   ];
 
-  const [filteredProducts, setFilteredProducts] = useState(products);
-
-  const handleSearch = () => {
-    const query = searchInput.current.value.toLowerCase();
-    const filtered = products.filter((product) =>
-      product.name.toLowerCase().includes(query) || 
-      product.category.toLowerCase().includes(query)
-    );
-    setFilteredProducts(filtered);
-  };
+  // Filtrar productos
+  const productosFiltrados = productos.filter((producto) =>
+    producto.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className="layout">
+    <div className="product-container">
+      {/* Sidebar */}
       <aside className="sidebar">
         <h3>SPORTS</h3>
         <ul>
-          <li><Link to="/futbol">SOCCER</Link></li>
+          <li><Link to="/futbol" >SOCCER</Link></li>
           <li><Link to="/basquet">BASKETBALL</Link></li>
-          <li><span>TENNIS</span></li>
+          <li><Link to="/tennis" className="active">TENNIS</Link></li>
           <li><Link to="/atletismo">ATHLETICS</Link></li>
         </ul>
-        <div className="linea"></div>
       </aside>
-      <main className="main-content">
-        <div className="search">
-          <input
-            ref={searchInput}
-            type="search"
-            placeholder="Buscar"
-            onChange={handleSearch}
-          />
-          <div className="lupa">
-            <img
-              src="/assets/simbolo-de-la-interfaz-de-busqueda.png"
-              alt="lupa"
-              onClick={handleSearch}
+
+      {/* Contenido principal */}
+      <main className="contenido-mujeres">
+        {/* Buscador */}
+        <div className="buscador-mujeres-productos">
+          <div className="buscador-mujeres">
+            <i className="ri-search-line"></i>
+            <input
+              type="text"
+              placeholder="Buscar"
+              className="buscar-producto-mujer"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
         </div>
-        <div className="product-grid">
-          {filteredProducts.map((product) => (
-            <div className="product" key={product.id}>
-              <Link to={`/tennis/infoproducto/${product.id}`}>
-                <div className="product-image">
-                  <img src={product.image} alt={product.name} />
-                </div>
-                <h2>{product.name}</h2>
-                <p className="info">{product.category}</p>
-                <p className="price">{product.price}</p>
+
+        {/* Grid de productos */}
+        <div className="grid-contenido-mujeres">
+          {productosFiltrados.map((producto) => (
+            <div className="col" key={producto.id}>
+              <Link to={`infoproducto/${producto.id}`}>
+                <img src={producto.img} alt={producto.nombre} />
               </Link>
+              <h4>{producto.nombre}</h4>
+              <div className="precio-mujeres">
+                <h5>{producto.descripcion}</h5>
+                <p>{producto.precio}</p>
+              </div>
             </div>
           ))}
         </div>
