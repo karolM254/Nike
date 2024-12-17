@@ -59,7 +59,7 @@
     margin-bottom: 20px;
     font-weight: bold;
     position: relative;
-    left: -159px;
+    left: -190px;
     top: -360px;
 }
 
@@ -68,7 +68,7 @@
     font-size: 18px;
     color: #646262;
     position: relative;
-    left: -160px;
+    left: -170px;
     top: -380px;
     font-family: "Montserrat", sans-serif;
 }
@@ -106,7 +106,7 @@
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    left: -110px;
+    left: -130px;
     top: -24rem;
 }
 
@@ -281,7 +281,7 @@
     position: relative;
     color: var(--primary-color-dark) !important;
     top: -15px !important;
-    right: -220px;
+    right: -240px;
 }
 
 .event-card .priceMen-slider-2 {
@@ -289,7 +289,7 @@
   position: relative;
   color: var(--primary-color-dark) !important;
   top: -15px !important;
-  right: -220px;
+  right: -240px;
 }
 
 /* Botón para regresar */
@@ -353,7 +353,6 @@
   }
 
   .ImagenPrincipal {
-    width: 70%;
     left: 0;
     top: -40px;
   }
@@ -362,7 +361,7 @@
     font-size: 20px;
     position: relative;
     left: 0;
-    bottom: -270px;
+    bottom: -240px;
     text-align: center;
 
   }
@@ -401,6 +400,7 @@
     left: 0;
     text-align: center;
     transform: translateY(60px);
+    z-index: 999;
     
     
   }
@@ -524,7 +524,7 @@
     left: 0;
     text-align: center;
     transform: translateY(60px);
-    
+    z-index: 999;
     
   }
 
@@ -646,7 +646,9 @@
     right: 0;
     left: 0;
     text-align: center;
+    z-index: 2;
     transform: translateY(60px);
+    z-index: 999;
     
     
   }
@@ -782,6 +784,7 @@
         left: 0px;
         right: 0;
         top: -35rem;
+        z-index: 999;
     }
       
     .btn-aggCarrito {
