@@ -62,5 +62,4 @@ function Reseñas() {
     </>
   );
 }
-
 export default Reseñas;
