@@ -1,35 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 
 :root {
-    --primary-color: #2563eb;
-    --primary-color-dark: #1e40af;
-    --text-dark: #1f1f1f;
-    --text-light: #4b5563;
-    --extra-light: #f3f4f6;
-    --white: #ffffff;
-    --max-width: 1200px;
-    --font-heading: "Roboto Condensed", sans-serif;
+  --primary-color: #2563eb;
+  --primary-color-dark: #1e40af;
+  --text-dark: #1f1f1f;
+  --text-light: #4b5563;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --font-heading: "Roboto Condensed", sans-serif;
 }
 
 .reseñas-container {
   font-family: var(--font-heading);
-}
-
-.reseñas-container p {
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* styles.css */
-.reseñas-container{
-  font-family: Arial, sans-serif;
-  margin-bottom: 5rem;
-  padding: 34mm;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 8mm 2rem;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
+  width: 100%;
 }
-.form-client-atention{
+
+.form-client-atention {
   background-color: rgb(210, 210, 210);
   border-radius: 20px;
   text-align: left;
@@ -38,7 +30,6 @@
 
 .title {
   color: #0026a7;
-  font-size: 20px;
   margin-bottom: 10px;
   text-align: left;
 }
@@ -52,57 +43,151 @@
 
 .input-text {
   width: 100%;
-  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  border-radius: 6px;
   font-size: 14px;
   box-sizing: border-box;
 }
 
-.coment-area{
+.coment-area {
   width: 100%;
   height: 8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  box-sizing: border-box;
 }
-.input-text{
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+.boton-regresar-atencion {
+  display: flex;
+  gap: 8px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px 20px;
 }
 
 .btn-submit {
+  display: flex;
+  margin: auto 20px;
   background-color: #0026a7;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 50px;
   font-size: 14px;
   border-radius: 4px;
-  width: 100px;
-  margin-top: 7%;
+  cursor: pointer;
 }
 
 .btn-submit:hover {
   background-color: #0040e8;
-    cursor: pointer;
 }
 
-.form-labels{
-  width: auto;
+.form-labels {
+  width: 100%;
   margin: 0;
-  padding: 0;;
-  font-weight:800;
+  padding: 0;
 }
 
-.coment-and-send-section{
+.form-labels label {
+  font-weight: 800;
+  display: block;
+  margin-top: 10px;
+}
+
+.coment-and-send-section {
   display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.coment-and-send-section .btn-submit{
-  width: 10%;
-  height: 40px;
-  border-radius: 10px;
-  margin-left: 5%;
-  margin-right: 5%;
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .reseñas-container {
+    padding: 10mm 1rem;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .linea-resenas {
+    display: none;
+  }
+
+  .boton-regresar-atencion {
+    display: none;
+  }
+
+  .coment-and-send-section {
+    flex-direction: column;
+  }
+
+  .btn-submit {
+    width: 100%;
+    margin: 0;
+  }
+
+  .btn-submit strong {
+    margin: 0 auto;
+  }
 }
 
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .reseñas-container {
+    padding: 10mm 1.5rem;
+  }
 
+  .title {
+    text-align: center;
+  }
 
+  .coment-and-send-section {
+    flex-direction: column;
+  }
 
+  .btn-submit {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .reseñas-container {
+    padding: 10mm 2rem;
+  }
+
+  .coment-and-send-section {
+    flex-direction: column;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .reseñas-container {
+    padding: 2mm 3rem 10mm;
+  }
+
+  .coment-and-send-section {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .coment-area {
+    flex-grow: 1;
+    margin-right: 15px;
+  }
+
+  .btn-submit {
+    width: auto;
+    height: 40px;
+    align-self: flex-end;
+  }
+}

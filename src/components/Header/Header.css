@@ -318,7 +318,14 @@ nav {
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-/* Falta */
+    
+    .nav__links {
+        margin-right: 30px;
+    }
+
+    .social__icons {
+        gap: 1.1rem;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {

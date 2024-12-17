@@ -6,8 +6,8 @@ export const Fabricantes = () => {
         <>
             {/* Sección del título principal de la página de fabricantes */}
             <div className="titulo-fabricantes">
-                <h1>Fabricantes NIKE</h1>
-                <p>Innovacion y calidad en cada detalle, diseñando productos que marcan la diferencia</p>
+                <h1>Manufacturers NIKE</h1>
+                <p>Innovation and quality in every detail, designing products that make a difference.</p>
             </div>
 
             {/* Contenedor principal que agrupa las tarjetas de fabricantes */}
@@ -20,9 +20,9 @@ export const Fabricantes = () => {
                     </div>
                     <div className='tarjeta-contenido'>
                         {/* Título de la tarjeta */}
-                        <h2 className='tarjeta-contenido-h2'>Compromiso con la Innovación</h2>
+                        <h2 className='tarjeta-contenido-h2'>Commitment to Innovation</h2>
                         {/* Descripción detallada del compromiso con la innovación */}
-                        <p className='tarjeta-contenido-parrafo'>Trabajamos con tecnologías avanzadas y materiales de última generación, como Flyknit y Nike Air, diseñados para maximizar el rendimiento, reducir el peso y mejorar la durabilidad. Cada detalle está pensado para ofrecer un equilibrio perfecto entre funcionalidad, confort y estilo, brindando a los atletas y usuarios una experiencia inigualable en cada uso.</p>
+                        <p className='tarjeta-contenido-parrafo'>We work with advanced technologies and state-of-the-art materials, such as Flyknit and Nike Air, designed to maximize performance, reduce weight, and improve durability. Every detail is designed to offer a perfect balance between functionality, comfort and style, giving athletes and users an unparalleled experience with each use.</p>
                     </div>
                 </div>
 
@@ -34,9 +34,9 @@ export const Fabricantes = () => {
                     </div>
                     <div className='tarjeta-contenido'>
                         {/* Título de la tarjeta */}
-                        <h2 className='tarjeta-contenido-h2'>Colaboración Global</h2>
+                        <h2 className='tarjeta-contenido-h2'>Global Collaboration</h2>
                         {/* Descripción detallada de la colaboración global */}
-                        <p className='tarjeta-contenido-parrafo'>Trabajamos con tecnologías avanzadas y materiales de última generación, como Flyknit y Nike Air, diseñados para maximizar el rendimiento, reducir el peso y mejorar la durabilidad. Cada detalle está pensado para ofrecer un equilibrio perfecto entre funcionalidad, confort y estilo, brindando a los atletas y usuarios una experiencia inigualable en cada uso.</p>
+                        <p className='tarjeta-contenido-parrafo'>We work with advanced technologies and state-of-the-art materials, such as Flyknit and Nike Air, designed to maximize performance, reduce weight, and improve durability. Every detail is designed to offer a perfect balance between functionality, comfort and style, giving athletes and users an unparalleled experience with each use.</p>
                     </div>
                 </div>
 
@@ -48,9 +48,9 @@ export const Fabricantes = () => {
                     </div>
                     <div className='tarjeta-contenido'>
                         {/* Título de la tarjeta */}
-                        <h2 className='tarjeta-contenido-h2'>Sostenibilidad</h2>
+                        <h2 className='tarjeta-contenido-h2'>Sustainability</h2>
                         {/* Descripción detallada de los esfuerzos de sostenibilidad */}
-                        <p className='tarjeta-contenido-parrafo'>Utilizamos materiales reciclados, como plástico PET y fibras sostenibles, para reducir nuestra huella ambiental. Además, aplicamos procesos de producción responsables que optimizan el uso de recursos y energía, con el objetivo de minimizar el desperdicio y avanzar hacia un futuro más sostenible.</p>
+                        <p className='tarjeta-contenido-parrafo'>We use recycled materials, such as PET plastic and sustainable fibers, to reduce our environmental footprint. In addition, we apply responsible production processes that optimize the use of resources and energy, with the aim of minimizing waste and moving towards a more sustainable future.</p>
                     </div>
                 </div>
             </div>

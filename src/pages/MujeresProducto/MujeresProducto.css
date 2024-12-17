@@ -23,16 +23,17 @@
 .ver-producto-mujer {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin: 50px 100px;
+  margin: 20px 120px 50px 30px;
 }
 
 .ver-producto-mujer img {
   border-radius: 11px;
   height: auto;
+  width: 90%;
 }
   
 .info-producto-mujer {
-  padding: 10px 20px;
+  padding: 10px 0;
 }
   
 .info-producto-mujer h3 {
@@ -57,16 +58,18 @@
 .color-talla {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
+  margin: 10px 0;
 }
   
 .color-talla select {
-  padding: 5px 8px;
-  width: 15%;
-  border-radius: 60px;
-  background-color: var(--extra-light);
-  font-size: 0.9rem;
-  cursor: pointer;
+  width: 20%;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #ececec;
+  border: none;
+  border-radius: 50px;
+  position: relative;
 }
   
 .ver-mas-mujeres {
@@ -76,27 +79,16 @@
 .boton-mujeres{
   display: flex;
   flex-direction: row;
-  margin-bottom: 30px;
 }
   
 .carrito-mujeres {
   background-color: var(--primary-color-dark);
   color: var(--white);
-  padding: 8px 20px;
+  padding: 2px 30px !important;
   font-size: 1rem;
   border-radius: 60px;
   border: none;
   cursor: pointer;
-}
-
-.ver-carrito {
-  position: relative;
-  top: 60px;
-  right: 120px;
-  border: none;
-  font-size: 1rem;
-  text-decoration: underline;
-  color: var(--text-dark);
 }
   
 .ver-producto-mujer .ri-shopping-cart-line {
@@ -111,7 +103,7 @@
 }
   
 .ver-mas-mujeres {
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
   
 .division-productos-mujeres {
@@ -217,30 +209,43 @@
 }
 
 /*---------------------- Slider -------------------------*/
-.events-upcoming {
-  margin: 40px 0;
+.events-container-women {
+  margin: 20px 0;
+  margin-bottom: -70px !important;
   width: 100%;
   overflow: hidden;
   position: relative;
   top: -3rem;
 }
 
-.event-card {
+.events-container-women .event-card {
   overflow: hidden;
   text-align: left;
-  padding: 50px !important;
+  padding: 60px 50px !important;
 }
 
-.event-card img {
+.events-container-women .event-card img {
   width: 90% !important;
-  height: 45vh !important;
-  border-radius: 10px;
+  height: auto !important;
+  border-radius: 11px;
+  cursor: pointer;
 }
 
-.event-card h4 {
+.events-container-women .event-card h4 {
   color: var(--primary-color-dark);
   font-size: 1.rem;
   margin: 10px 0 0 5px;
+}
+
+.events-container-women .event-card h5 {
+  font-size: 1.rem;
+  margin: 0 0 0 5px;
+}
+
+.events-container-women .event-card p {
+  font-size: 1rem;
+  margin: 4px 0 0 0 !important;
+  left: 40px;
 }
 
 .slick-dots li button:before {

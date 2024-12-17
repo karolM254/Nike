@@ -39,13 +39,13 @@ export const Eventos = () => {
                 <span role="img" aria-label="location">
                   📍
                 </span>{" "}
-                Estadio Mega Olímpico Nike
+                {event.location}
               </p>
             </div>
           </div>
           <div className="modal-body-events">
             {/* Sección de descripción del evento */}
-            <h4 className="modal-body-events-title">Descripción</h4>
+            <h4 className="modal-body-events-title">Description</h4>
             <p className="modal-body-events-subtitle">{event.description}</p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export const Eventos = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", left: "-20px", zIndex: 2 }}
+        style={{ ...style, display: "block", left: "-26px", zIndex: 2 }}
         onClick={onClick}
       >
         &#8249; {/* Símbolo de flecha izquierda */}
@@ -75,7 +75,7 @@ export const Eventos = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", right: "-20px", zIndex: 2 }}
+        style={{ ...style, display: "block", right: "-27px", zIndex: 2, marginTop: "-3.8px"}}
         onClick={onClick}
       >
         &#8250; {/* Símbolo de flecha derecha */}
@@ -118,25 +118,28 @@ export const Eventos = () => {
   // Datos de los eventos
   const events = [
     {
-      image: "assets/gallery-2.jpg", // Imagen del evento
-      title: "Fútbol con Nike", // Título del evento
-      date: "10 de diciembre - 2024", // Fecha del evento
+      image: "assets/gallery-2.jpg", 
+      title: "Football with Nike", 
+      date: "December 10, 2024", 
+      location: "Estadio Mega Olímpico Nike, New York", 
       description:
-        "Vive la emoción del fútbol con Nike. Un evento único donde el rendimiento y la innovación se encuentran en el campo. Disfruta de una experiencia deportiva inigualable con la última tecnología en calzado y equipamiento, diseñada para llevar tu juego al siguiente nivel.",
+        "Experience the thrill of football with Nike. A unique event where performance and innovation meet in the field. Enjoy an unparalleled sports experience with the latest technology in footwear and equipment, designed to take your game to the next level.",
     },
     {
       image: "assets/image-1.jpg",
-      title: "Baloncesto con Nike",
-      date: "10 de diciembre - 2024",
+      title: "Basketball with Nike",
+      date: "January 15, 2025", 
+      location: "Nike Arena, Los Angeles", 
       description:
-        "Únete al mundo del baloncesto con Nike. Experimenta la energía y pasión por el deporte.",
+        "Join the world of basketball with Nike. Feel the energy and passion for the sport as you witness top players and cutting-edge innovations. Don’t miss this spectacular experience.",
     },
     {
       image: "assets/gallery-7.jpg",
-      title: "Día de playa con Nike",
-      date: "10 de diciembre - 2024",
+      title: "Beach Day with Nike",
+      date: "March 20, 2025", 
+      location: "Miami Beachfront, Miami", 
       description:
-        "Disfruta de un día de playa con Nike. Relax, diversión y actividades inolvidables.",
+        "Enjoy a day at the beach with Nike. Relax, have fun, and participate in unforgettable activities designed to bring the best in sports and recreation to the sunlit shores.",
     },
   ];
 
@@ -145,7 +148,7 @@ export const Eventos = () => {
     <>
       {/* Contenedor principal */}
       <div className='container-event'>
-        <h1 className='title-event'>Sé el primero en enterarte de nuestros eventos</h1>
+        <h1 className='title-event'>Be the first to know about our events</h1>
 
         {/* Imagen principal del evento */}
         <div className='event-image'>
@@ -158,7 +161,7 @@ export const Eventos = () => {
 
         {/* Sección del carrusel de eventos */}
         <section className='events-carrucel'>
-          <h2 className="events-carrucel-subtitle">Próximos Eventos</h2>
+          <h2 className="events-carrucel-subtitle">Upcoming Events</h2>
           <Slider {...settings}>
             {events.map((event, index) => (
               <div
