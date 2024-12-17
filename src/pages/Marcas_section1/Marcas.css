@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap");
 
 /*estilos secction1*/
-.section-BRANDS {
+.section-BRANDS{
     width: 100%;
+    
+}
+.section-BRANDS h1, p {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container-principal-BRANDS {
@@ -213,43 +218,15 @@
 
 
 /* Laptops y escritorios estándar (1025px - 1920px) */
-@media (min-width: 1025px) {
-    .container-principal-BRANDS {
-        grid-template-columns: 1fr 1fr;
-        margin: 10px 50px;
-    }
 
-    .container-principal-BRANDS .contenido-BRANDS .titulo-contenido-BRANDS {
-        font-size: 40px;
-    }
-
-    .container-principal-BRANDS .contenido-BRANDS .parrafo-contenido-BRANDS {
-        font-size: 25px;
-    }
-
-    .container-principal-BRANDS .imagen-BRANDS img {
-        width: 500px;
-        height: auto;
-        margin: 160px 20px;
-    }
-
-    .section-BRANDS .linea-BRANDS {
-        width: 50%;
-        /* Ajuste al 50% del contenedor */
-        margin: 0 auto;
-        /* Centrado automático */
-        border-top: 2px solid #000;
-        /* Estilo de la línea */
-        position: relative;
-        display: block;
-        /* Bloque para asegurar que ocupe el 100% de su espacio */
-    }
-}
 
 /*estilos secction2*/
 .section-marcas-BRANDS {
     width: 100%;
     margin: 100px 0;
+}
+.section-marcas-BRANDS h1, h2, p{
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container-principal-marcas-BRANDS {
@@ -500,59 +477,15 @@
 }
 
 /* Pantallas grandes (1025px en adelante) */
-@media (min-width: 1025px) {
 
-    .titulo-marcas {
-        font-size: 40px;
-        /* Título más grande en pantallas grandes */
-        text-align: center;
-        /* Centrado del título */
-    }
-
-    .container-principal-marcas-BRANDS {
-        grid-template-columns: 1fr 1fr 1fr;
-        /* Tres columnas en pantallas grandes */
-        margin: 10px 5%;
-    }
-
-    .container-principal-marcas-BRANDS .nike-BRANDS,
-    .container-principal-marcas-BRANDS .converse-BRANDS,
-    .container-principal-marcas-BRANDS .Jordan-BRANDS {
-        text-align: center;
-        margin: 20px 0;
-    }
-
-    .container-principal-marcas-BRANDS .nike-BRANDS h2,
-    .container-principal-marcas-BRANDS .converse-BRANDS h2,
-    .container-principal-marcas-BRANDS .Jordan-BRANDS h2 {
-        text-align: center;
-        /* Centrado de los títulos */
-    }
-
-    .container-principal-marcas-BRANDS img {
-        width: 90%;
-        /* Imagen ajustada al 90% en pantallas grandes */
-        height: auto;
-        margin: 10px auto;
-        display: block;
-    }
-
-    .section-marcas-BRANDS .linea-BRANDS {
-        width: 50%;
-        /* Ajuste al 80% del contenedor */
-        margin: 15% auto;
-        /* Centrado automático */
-        border-top: 1px solid #000;
-        /* Estilo de la línea */
-        position: relative;
-        display: block;
-    }
-}
 
 /*estilos secction3*/
 .section-BRANDS2 {
     width: 100%;
     margin: 0;
+}
+.section-BRANDS2 h1, p{
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container-principal-BRANDS2 .contenido-BRANDS2 .imagen-section-BRANDS img {
@@ -586,14 +519,10 @@
 }
 
 .section-BRANDS2 .linea-BRANDS {
-    width: 80%;
-    /* Ajuste al 80% del contenedor */
-    margin: 15% auto;
-    /* Centrado automático */
-    border-top: 1px solid #000;
-    /* Estilo de la línea */
-    position: relative;
-    display: block;
+    position: absolute;
+    border: 2px solid black;
+    width: 800px;
+    margin: 0 270px;
 }
 
 /* Responsive section 3 */
@@ -621,7 +550,7 @@
     .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
         font-size: 22px;
         /* Ajuste del tamaño de la fuente */
-        text-align: center;
+        text-align: left;
         /* Centrado del título */
     }
 
@@ -729,42 +658,15 @@
 }
 
 /* Laptops y escritorios estándar (1025px - 1920px) */
-@media (min-width: 1025px) {
-    .container-principal-BRANDS2 {
-        grid-template-columns: 1fr 1fr;
-        margin: 70px 50px;
-    }
-
-    .container-principal-BRANDS2 .contenido-BRANDS2 h1 {
-        font-size: 40px;
-    }
-
-    .container-principal-BRANDS2 .contenido-BRANDS2 p {
-        font-size: 25px;
-    }
-
-    .container-principal-BRANDS2 .imagen-BRANDS2 img {
-        height: auto;
-        margin: 40px 50px;
-    }
-
-    .section-BRANDS2 .linea-BRANDS {
-        width: 50%;
-        /* Ajuste al 80% del contenedor */
-        margin: 10% auto;
-        border-top: 1px solid #000;
-        /* Estilo de la línea */
-        position: relative;
-        display: block;
-    }
-}
-
 
 /*estilos secction4*/
 
 .section-BRANDS3 {
     width: 100%;
     margin: 0;
+}
+.section-BRANDS3 h1, p{
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container-principal-BRANDS3 .imagen-section-BRANDS3 img {
@@ -922,40 +824,17 @@
 }
 
 /* Laptops y escritorios estándar (1025px - 1920px) */
-@media (min-width: 1025px) {
-    .container-principal-BRANDS3 {
-        grid-template-columns: 1fr 1fr;
-        margin: 70px 50px;
-    }
 
-    .container-principal-BRANDS3 .contenido-BRANDS3 h1 {
-        font-size: 40px;
-    }
-
-    .container-principal-BRANDS3 .contenido-BRANDS3 p {
-        font-size: 25px;
-    }
-
-    .container-principal-BRANDS3 .imagen-BRANDS3 img {
-        height: auto;
-    }
-
-    .section-BRANDS3 .linea-BRANDS {
-        width: 50%;
-        /* Ajuste al 80% del contenedor */
-        margin: 10% auto;
-        border-top: 1px solid #000;
-        /* Estilo de la línea */
-        position: relative;
-        display: block;
-    }
-}
 
 
 /*estilos secction5*/
 .section-BRANDS4 {
     width: 100%;
     margin: 0;
+}
+.section-BRANDS4 h1,
+.section-BRANDS4 p {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container-principal-BRANDS4 .contenido-BRANDS4 .imagen-section-BRANDS4 img {
@@ -983,7 +862,7 @@
 
 .container-principal-BRANDS4 .contenido-BRANDS4 p {
     margin: 20px 0;
-    font-size: 30px;
+    font-size: 20px;
     text-align: left;
 }
 
@@ -1004,7 +883,7 @@
 @media (min-width: 320px) and (max-width: 480px) {
     .container-principal-BRANDS4 {
         grid-template-columns: 1fr;
-        margin: 10% 10%;
+        margin: 10% 15%;
     }
 
     .container-principal-BRANDS4 .contenido-BRANDS4 {
@@ -1018,19 +897,19 @@
     .container-principal-BRANDS4 .contenido-BRANDS4 h1 {
         font-size: 25px;
         text-align: left;
-        margin: 0 10%;
+        margin: 0 5%;
     }
 
     .container-principal-BRANDS4 .contenido-BRANDS4 p {
         font-size: 15px;
         text-align: left;
-        margin: 10% 10%;
+        margin: 10% 5%;
     }
 
     .container-principal-BRANDS4 .imagen-BRANDS4 img {
         width: 250px;
         height: auto;
-        margin: 5% 10%;
+        margin: 5% 3%;
     }
 
     .section-BRANDS4 .linea-BRANDS {
@@ -1117,32 +996,3 @@
     }
 }
 
-/* Laptops y escritorios estándar (1025px - 1920px) */
-@media (min-width: 1025px) {
-    .container-principal-BRANDS4 {
-        grid-template-columns: 1fr 1fr;
-        margin: 70px 50px;
-    }
-
-    .container-principal-BRANDS4 .contenido-BRANDS4 h1 {
-        font-size: 40px;
-    }
-
-    .container-principal-BRANDS4 .contenido-BRANDS4 p {
-        font-size: 25px;
-    }
-
-    .container-principal-BRANDS4 .imagen-BRANDS4 img {
-        height: auto;
-    }
-
-    .section-BRANDS4 .linea-BRANDS {
-        width: 50%;
-        /* Ajuste al 80% del contenedor */
-        margin: 8% auto;
-        border-top: 1px solid #000;
-        /* Estilo de la línea */
-        position: relative;
-        display: block;
-    }
-}
