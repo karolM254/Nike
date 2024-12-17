@@ -9,7 +9,7 @@ export const Galeria = () => {
             {/* Sección de título y descripción */}
             <div className='titulo-galeria'>
                 <h1>NIKE</h1>
-                <p>Innovacion, estilo y proyecto para acompañarte en cada paso</p>
+                <p>Innovation, style and project to accompany you in every step</p>
             </div>
 
             {/* Galería de imágenes */}

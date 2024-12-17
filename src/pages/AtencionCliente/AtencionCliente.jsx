@@ -29,18 +29,18 @@ function Reseñas() {
   return (
     <>
       <button className="boton-regresar-atencion" onClick={() => navigate(-1)}>
-        <i className="ri-arrow-left-line"></i> Volver
+        <i className="ri-arrow-left-line"></i> Return
       </button>
       <div className="reseñas-container">
-        <h1 className="title">ATENCIÓN AL CLIENTE</h1>
+        <h1 className="title">CUSTOMER SUPPORT</h1>
         <div className="linea-resenas"></div>
         <div>
           <form ref={formRef} className="form-client-atention" onSubmit={sendEmail} id="form">
             <div className="form-labels">
-              <label htmlFor="from_name">Nombre Completo</label>
+              <label htmlFor="from_name">Full name</label>
               <input type="text" id="from_name" name="from_name" className="input-text" required />
 
-              <label htmlFor="number">Teléfono</label>
+              <label htmlFor="number">Telephone</label>
               <input type="number" id="number" name="number" className="input-text" required />
 
               <label htmlFor="email">Email</label>
@@ -48,7 +48,7 @@ function Reseñas() {
             </div>
 
             <label htmlFor="message">
-              <strong>Comentario / Descripción del problema</strong>
+              <strong>Comment / Description of the problem</strong>
             </label>
             <div className="coment-and-send-section">
               <textarea className="coment-area" id="message" name="message" rows="4" required></textarea>
