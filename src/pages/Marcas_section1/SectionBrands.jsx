@@ -8,23 +8,21 @@ const SectionBrands = () => {
         <div className="container-principal-BRANDS">
           <div className="contenido-BRANDS">
             <h1 className="titulo-contenido-BRANDS">
-              PASIÓN. POTENCIAL. <br />
-              Y NUESTRA <br />
-              BÚSQUEDA
+              PASSION. POTENTIAL. <br />
+              AND OUR <br />
+              QUEST
             </h1>
             <p className="parrafo-contenido-BRANDS">
-              NIKE no es solo un producto. NIKE es una filosofía. Es una actitud
-              de vida: hacer más, llegar más lejos. Es sobre expandir los límites
-              y cruzar las fronteras. Es crear el futuro. Esta filosofía se
-              expresa en los campos de juego, en la playa o en las calles, porque
-              es el pilar de todas las marcas de nuestra familia: NIKE, Converse y
-              Jordan.
+              NIKE is not just a product. NIKE is a philosophy. It's a way of life: doing more, going further.
+              It's about pushing boundaries and crossing borders. It’s about creating the future.
+              This philosophy is expressed on the fields, on the beach, or in the streets, because
+              it is the foundation of all the brands in our family: NIKE, Converse, and Jordan.
             </p>
           </div>
           <div className="imagen-BRANDS">
             <img
               src="assets/pexels-wendelmoretti-1869646.jpg"
-              alt="Descripción de la imagen"
+              alt="Image description"
             />
           </div>
         </div>
@@ -32,34 +30,35 @@ const SectionBrands = () => {
       </section>
 
       <section className="section-marcas-BRANDS">
-        <h1 className="titulo-marcas">NUESTRAS MARCAS</h1>
+        <h1 className="titulo-marcas">OUR BRANDS</h1>
         <div className="container-principal-marcas-BRANDS">
           <div className="nike-BRANDS">
-            <h2 className="titulo-nike-BRANDS">SIEMPRE<br/>
-               ADELANTE<br/>
-               SIEMPRE<br/>
-               NIKE.</h2>
+            <h2 className="titulo-nike-BRANDS">
+              ALWAYS<br />
+              FORWARD<br />
+              ALWAYS<br />
+              NIKE.</h2>
             <img
               src="assets/nike2-removebg-preview.png"
-              alt="Logo de Nike"
+              alt="Nike Logo"
             />
           </div>
           <div className="converse-BRANDS">
-            <h2>SIGUE<br/> 
-                AMANDO<br/>
-                SIGUE<br/>
-                LUCHANDO.</h2>
+            <h2>KEEP<br />
+              LOVING<br />
+              KEEP<br />
+              FIGHTING.</h2>
             <img
               src="assets/Converse-Logo-PNG-HD-Image-removebg-preview.png"
-              alt="Logo de Converse"
+              alt="Converse Logo"
             />
           </div>
           <div className="Jordan-BRANDS">
-            <h2>NUESTRO<br/>
-                TURNO.</h2>
+            <h2>OUR<br />
+              TURN.</h2>
             <img
               src="assets/jordan2-removebg-preview.png"
-              alt="Logo de Jordan"
+              alt="Jordan Logo"
             />
           </div>
         </div>
@@ -72,16 +71,15 @@ const SectionBrands = () => {
             <div className="imagen-section-BRANDS">
               <img src="assets/nike2-removebg-preview.png" alt="Nike Logo" />
             </div>
-            <h1>CREAMOS EL FUTURO DEL DEPORTE</h1>
+            <h1>WE CREATE THE FUTURE OF SPORT</h1>
             <p>
-              En NIKE, Inc., creemos en un mundo en el que todos son atletas,
-              unidos por la alegría en movimiento. Guiados por nuestra pasión por
-              el deporte y por nuestro instinto innovador, nos esforzamos por
-              elevar el potencial humano.
+              At NIKE, Inc., we believe in a world where everyone is an athlete,
+              united by the joy of movement. Guided by our passion for sport
+              and our innovative instinct, we strive to elevate human potential.
             </p>
           </div>
           <div className="imagen-BRANDS2">
-            <img src="assets/pexels-mgblr-3287160.jpg" alt="Imagen de deporte" />
+            <img src="assets/pexels-mgblr-3287160.jpg" alt="Sports image" />
           </div>
         </div>
         <span className="linea-BRANDS"></span>
@@ -92,18 +90,18 @@ const SectionBrands = () => {
           <div className="imagen-BRANDS3">
             <img
               src="assets/pexels-nina-hill-76946523-11402832.jpg"
-              alt="Imagen relacionada con la marca"
+              alt="Image related to the brand"
             />
           </div>
           <div className="contenido-BRANDS3">
             <div className="imagen-section-BRANDS3">
-              <img src="assets/Converse-Logo-PNG-HD-Image-removebg-preview.png" alt="Logo de Converse" />
+              <img src="assets/Converse-Logo-PNG-HD-Image-removebg-preview.png" alt="Converse Logo" />
             </div>
-            <h1>CIEN AÑOS EN EL JUEGO</h1>
+            <h1>A HUNDRED YEARS IN THE GAME</h1>
             <p>
-              Converse viene definiendo la cultura desde lo urbano, lo deportivo
-              y lo creativo desde su fundación, hace ya más de cien años. Basta
-              con ver el Converse All-Star Chuck Taylor para comprobarlo.
+              Converse has been defining culture through urban, sports,
+              and creative expression for over a hundred years since its foundation.
+              Just take a look at the Converse All-Star Chuck Taylor to prove it.
             </p>
           </div>
         </div>
@@ -114,19 +112,18 @@ const SectionBrands = () => {
         <div className="container-principal-BRANDS4">
           <div className="contenido-BRANDS4">
             <div className="imagen-section-BRANDS4">
-              <img src="assets/jordan2-removebg-preview.png" alt="Logo de Jordan" />
+              <img src="assets/jordan2-removebg-preview.png" alt="Jordan Logo" />
             </div>
-            <h1>TRIBUTO A LA GRANDEZA</h1>
+            <h1>TRIBUTE TO GREATNESS</h1>
             <p>
-              Lo que comenzó como un homenaje a un jugador (Michael Jordan) se
-              ha vuelto sinónimo de rendimiento superior y de la búsqueda incesante
-              de la excelencia.
+              What began as a tribute to one player (Michael Jordan) has become synonymous
+              with superior performance and the relentless pursuit of excellence.
             </p>
           </div>
           <div className="imagen-BRANDS4">
             <img
               src="assets/pexels-hamza01nsr-6023104.jpg"
-              alt="Imagen de deporte o atleta"
+              alt="Image of sport or athlete"
             />
           </div>
         </div>
