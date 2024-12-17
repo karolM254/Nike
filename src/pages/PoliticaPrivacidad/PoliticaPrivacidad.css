@@ -18,9 +18,9 @@
     font-family: var(--font-heading);
 }
 
-.boton-regresar-polity{
-  display: none; /* Oculta el botón por defecto */
-}
+/* .boton-regresar-polity{
+  display: none; 
+} */
 
 .privacy-policy-container {
     max-width: 1000px;
@@ -87,7 +87,7 @@
       margin-top: 15px;
     }
 
-    .boton-regresar-polity {
+    /* .boton-regresar-polity {
         display: flex; 
         justify-content: center;
         align-items: center;
@@ -107,7 +107,7 @@
   
     .boton-regresar-polity i {
         margin-right: 5px;
-    }
+    } */
 }
 
 
