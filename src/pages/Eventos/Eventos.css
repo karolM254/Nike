@@ -11,6 +11,11 @@
     --font-heading: "Roboto Condensed", sans-serif;
 }
 
+/*estilos del boton*/
+.boton-regresar-eventes {
+    display: none; /* Oculta el botón por defecto */
+}
+
 .container-event{
     font-family: var(--font-heading);
     margin: 0 auto;
@@ -54,7 +59,7 @@
     padding: 10px;
     margin: 10px;
     position: relative;
-    right: 10px;
+    right: 5px;
 }
 
 .event-card-carrucel-img{
@@ -302,6 +307,27 @@
         font-size: 0.9rem;
         color: #000;
         line-height: 1.4;
+    }
+
+    .boton-regresar-eventes {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-color);
+        color: var(--white);
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+        position: relative;
+        top: 16px;
+        left: 10px;
+        z-index: 999;
+    }
+    
+    .boton-regresar-eventes i {
+        margin-right: 5px;
     }
 }
   

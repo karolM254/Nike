@@ -71,8 +71,7 @@ function Header() {
           </Link>
           <Link to="/hombre">
             <li
-              className={`link ${visibleDropdown === 'men' ? 'active' : ''}`}
-              onClick={() => handleMenuClick('men')}
+              className={`link ${isActive('/hombre') ? 'active' : ''}`}
             >
               MEN
               
@@ -80,24 +79,21 @@ function Header() {
           </Link>
           <Link to="/productosmujeres">
             <li
-              className={`link ${visibleDropdown === 'women' ? 'active' : ''}`}
-              onClick={() => handleMenuClick('women')}
+              className={`link ${isActive('/productosmujeres') ? 'active' : ''}`}
             >
               WOMEN
             </li>
           </Link>
           <Link to="/productoNino">
             <li
-              className={`link ${visibleDropdown === 'kids' ? 'active' : ''}`}
-              onClick={() => handleMenuClick('kids')}
+              className={`link ${isActive('/productoNino') ? 'active' : ''}`}
             >
               KIDS
             </li>
           </Link>
           <Link to="/futbol">
             <li
-              className={`link ${visibleDropdown === 'sports' ? 'active' : ''}`}
-              onClick={() => handleMenuClick('sports')}
+             className={`link ${isActive('/futbol') ? 'active' : ''}`}
             >
               SPORTS
             </li>
