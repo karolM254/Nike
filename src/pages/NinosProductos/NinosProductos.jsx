@@ -10,42 +10,42 @@ const NinosProductos = () => {
     {
       id: 1,
       nombre: "NIKE CORTEZ EASYON",
-      descripcion: "Calzado para niño",
+      descripcion: "Children's footwear",
       precio: "$269,950",
       img: "/assets/zapato1.jpg",
     },
     {
       id: 2,
       nombre: "NIKE COURT BOROUGH",
-      descripcion: "Calzado para bebé",
+      descripcion: "Baby shoes",
       precio: "$239,950",
       img: "/assets/zapato2.jpg",
     },
     {
       id: 3,
       nombre: "AIR JORDAN 3 RETRO",
-      descripcion: "Calzado para niño grande",
+      descripcion: "Big boy shoes",
       precio: "$934,950",
       img: "/assets/zapato3.jpg",
     },
     {
       id: 4,
       nombre: "NIKE FORCE 1 LOW SE EASYON",
-      descripcion: "Calzado para niño",
+      descripcion: "Children's footwear",
       precio: "$504,950",
       img: "/assets/zapato4.jpg",
     },
     {
       id: 5,
       nombre: "AIR JORDAN 1 LOW BG",
-      descripcion: "Calzado para niño",
+      descripcion: "Children's footwear",
       precio: "$654,950",
       img: "/assets/zapato5.jpg",
     },
     {
       id: 6,
       nombre: "AIR JORDAN 1 LOW SE",
-      descripcion: "Calzado para niño grande",
+      descripcion: "Big boy shoes",
       precio: "$734,950",
       img: "/assets/zapato6.jpg",
     },
@@ -65,7 +65,7 @@ const NinosProductos = () => {
             <i className="ri-search-line"></i>
             <input
               type="text"
-              placeholder="Buscar"
+              placeholder="Search"
               className="buscar-productoo"
               value={searchTerm} // Valor del input
               onChange={(e) => setSearchTerm(e.target.value)} // Actualizar estado

@@ -21,29 +21,32 @@
 
 /* ------------------- Buscador -------------------- */
 .buscador-Ninos-productoss {
-  display: flex;
-  justify-content: flex-end;
-  margin: 40px 0 20px;
-  padding-right: 50px;
+  display: flex; /* Diseño flexbox para alinear elementos */
+  justify-content: flex-end; /* Alinear contenido a la derecha */
+  margin: 40px 0 20px; /* Márgenes superiores e inferiores */
+  padding-right: 50px; /* Espaciado interno a la derecha */
 }
 
 .buscador-Ninoss {
-  border: 1px solid var(--primary-color-dark);
-  padding: 10px;
-  border-radius: 60px;
-  font-size: 19px;
+  border: 1px solid var(--primary-color-dark); /* Borde con el color primario oscuro */
+    padding: 5px 5px; /* Espaciado interno */
+    border-radius: 60px; /* Bordes redondeados */
+    font-size: 19px; /* Tamaño de fuente */
+    width: 250px; /* Ancho del buscador */
 }
 
 .buscador-Ninoss input {
-  border: none;
-  font-size: 19px;
-  width: 220px;
-  background-color: transparent;
-  margin-bottom: 0;
+  border: none; /* Sin bordes */
 }
 
 .buscar-productoo {
-  outline: none;
+  outline: none; /* Sin contorno al hacer foco */
+    border: none; /* Sin borde */
+    background-color: transparent; /* Fondo transparente */
+    position: relative; /* Posición relativa */
+    width: 100px; /* Ancho del input */
+    font-size: 19px; /* Tamaño de fuente */
+    margin-bottom: 0; /* Sin margen inferior */
 }
 
 /* ------------------ Productos -------------------- */
@@ -155,16 +158,24 @@
   .buscador-Ninos-productoss {
     position: absolute;
     top: 65px;
-    right: 20px;
-    margin: 0;
+    right: 0px;
+    margin-top: 5px;
     padding: 0;
+    justify-content: flex-start;
+    margin-left: 90%;
+   
+    
+    
   }
 
   .buscador-Ninoss {
     padding: 8px;
     border-radius: 40px;
     font-size: 16px;
-    height: 10%;
+    height: 5%;
+    max-width: 70%;
+   
+    
   }
 
   .buscador-Ninoss input {
@@ -177,6 +188,7 @@
   .grid-contenido-Ninoss {
     grid-template-columns: repeat(2, 1fr);
     margin: 60px 30px;
+    margin-top: 17%;
   }
 
   .grid-contenido-Ninoss img {
@@ -205,12 +217,13 @@
 /* Tabletas medianas y grandes (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .buscador-Ninos-productoss {
-    padding-right: 40px;
     justify-content: flex-start;
+    margin-left: 65%;
+    right: -10px;
   }
 
   .buscador-Ninoss input {
-    width: 200px;
+    width: 100px;
   }
 
   .grid-contenido-Ninoss {
@@ -242,10 +255,11 @@
 }
 
 /* Laptops y escritorios estándar (1025px - 1920px) */
-@media (min-width: 1025px) and (max-width: 1920px) {
+@media (min-width: 1024px) and (max-width: 1920px) {
   .buscador-Ninos-productoss {
-    padding-right: 50px;
-    justify-content: flex-end;
+    padding-right: 40px;
+    justify-content: flex-start;
+    margin-left: 70%;
   }
 
   .grid-contenido-Ninoss {
