@@ -187,54 +187,54 @@ const handleSubmit = () => {
   return (
     <div className="comprass-container">
       <button className="boton-regresar" onClick={() => navigate(-1)}>
-          <i className="ri-arrow-left-line"></i> Volver
+          <i className="ri-arrow-left-line"></i> Return
         </button>
       <div className="formm-container">
         <form>
-          <h2>Datos Personales</h2>
+          <h2>Personal Details</h2>
 
-          <label htmlFor="email">Correo electrónico</label>
+          <label htmlFor="email">Email</label>
           <input type="email" id="email" value={formData.email} onChange={handleInputChange} />
 
           <div className="row">
             <div>
-              <label htmlFor="nombre">Nombre</label>
+              <label htmlFor="nombre">Name</label>
               <input type="text" id="nombre" value={formData.nombre} onChange={handleInputChange} />
             </div>
             <div>
-              <label htmlFor="apellidos">Apellidos</label>
+              <label htmlFor="apellidos">Surnames</label>
               <input type="text" id="apellidos" value={formData.apellidos} onChange={handleInputChange} />
             </div>
           </div>
 
           <div className="row">
             <div>
-              <label htmlFor="codigoPostal">Código Postal</label>
+              <label htmlFor="codigoPostal">Postcode</label>
               <input type="text" id="codigoPostal" value={formData.codigoPostal} onChange={handleInputChange} />
             </div>
-            <div>
-              <label htmlFor="documento">Número de Documento</label>
+            <div className='documentoo'>
+              <label htmlFor="documento">Document Number</label>
               <input type="text" id="documento" value={formData.documento} onChange={handleInputChange} />
             </div>
           </div>
 
           <div className="row">
             <div>
-              <label htmlFor="telefono">Teléfono / Móvil</label>
+              <label htmlFor="telefono">Phone/mobile</label>
               <input type="text" id="telefono" value={formData.telefono} onChange={handleInputChange} />
             </div>
             <div>
-              <label htmlFor="direccion">Dirección</label>
+              <label htmlFor="direccion">Address</label>
               <input type="text" id="direccion" value={formData.direccion} onChange={handleInputChange} />
             </div>
           </div>
 
-          <button className="btn" type="button" onClick={handlePayment}>Continuar Compra</button>
+          <button className="btn" type="button" onClick={handlePayment}>Continue Shopping</button>
         </form>
       </div>
 
       <div className="summary-container">
-        <h2>RESUMEN DE COMPRA</h2>
+        <h2>PURCHASE SUMMARY</h2>
         <div className="summary-items">
           {carrito.length > 0 ? (
             carrito.map((productos) => (
@@ -246,7 +246,7 @@ const handleSubmit = () => {
               </div>
             ))
           ) : (
-            <p>No hay productos en el carrito</p>
+            <p>There are no products in the cart.</p>
           )}
         </div>
         <div className="total">
@@ -259,10 +259,10 @@ const handleSubmit = () => {
         <div className="modal-principal">
           <div className="modal-content">
             <button className="close-btn" onClick={handleCloseFirstModal}>×</button>
-            <h2>¿Desea que enviemos la factura electrónica a su email registrado?</h2>
+            <h2>¿You want us to send the electronic invoice to your registered email?</h2>
             <div className="modal-buttons">
-              <button className="btn1" type="button" onClick={handleSkip}>Omitir</button>
-              <button className="btn2" type="button" onClick={handleConfirm}>Confirmar</button>
+              <button className="btn1" type="button" onClick={handleSkip}>Skip</button>
+              <button className="btn2" type="button" onClick={handleConfirm}>Confirm</button>
             </div>
           </div>
         </div>
@@ -272,9 +272,9 @@ const handleSubmit = () => {
         <div className="modal-confirmar">
           <div className="modal-content">
             <button className="close-btn" onClick={handleCloseSecondModal}>×</button>
-            <h2>Su factura electrónica será enviada a la dirección de email registrada. ¡Gracias por su confianza!</h2>
-            <p>Haga clic en el siguiente enlace para completar el pago:</p>
-            <a href={paymentUrl} target="_blank" rel="noopener noreferrer">Ir a Mercado Pago</a>
+            <h2>Your electronic invoice will be sent to the registered email address. ¡Thank you for your trust!</h2>
+            <p>Click on the following link to complete the payment:</p>
+            <a href={paymentUrl} target="_blank" rel="noopener noreferrer">Go to Mercado Pago</a>
           </div>
         </div>
       )}
