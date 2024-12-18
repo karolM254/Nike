@@ -1,14 +1,17 @@
 import React from 'react';
 import './LandingPage.css';
+import { useTranslation } from 'react-i18next'; // Importa el hook useTranslation para cambiar el idioma.
 
 function LandingPage() {
+  const { t } = useTranslation(); // Utiliza el hook para obtener la función t de traducción.
+
   return (
     <>
       <header>
         <div className="section_container header__container">
           <div className="header__content">
-            <h1>NIKE<br />SHOES</h1>
-            <p>SIGN UP AND GET 50% OFF</p>
+            <h1>{t('header.title')}</h1> {/* Traducción de 'NIKE SHOES' */}
+            <p>{t('header.subtitle')}</p> {/* Traducción de 'SIGN UP AND GET 50% OFF' */}
           </div>
         </div>
       </header>
@@ -19,89 +22,70 @@ function LandingPage() {
               <span>
                 <i className="ri-flight-takeoff-fill" />
               </span>
-              <h4>FREE SHIPPING</h4>
-              <p>
-                Online shopping offers convenience, a vast selection of products,
-                and the ability to shop from anywhere, anytime.
-              </p>
+              <h4>{t('services.freeShipping')}</h4> {/* Traducción de 'FREE SHIPPING' */}
+              <p>{t('services.freeShippingDesc')}</p> {/* Traducción de la descripción */}
               <a href="#" className="enlace">
-                Click Here
+                {t('common.clickHere')} {/* Traducción de 'Click Here' */}
               </a>
             </div>
             <div className="service__card">
               <span>
                 <i className="ri-truck-line" />
               </span>
-              <h4>ON TIME DELIVERY</h4>
-              <p>
-                E-commerce companies handle the logistics of delivering products
-                to customers &#38; doorsteps.
-              </p>
+              <h4>{t('services.onTimeDelivery')}</h4> {/* Traducción de 'ON TIME DELIVERY' */}
+              <p>{t('services.onTimeDeliveryDesc')}</p> {/* Traducción de la descripción */}
               <a href="#" className="enlace">
-                Click Here
+                {t('common.clickHere')} {/* Traducción de 'Click Here' */}
               </a>
             </div>
             <div className="service__card">
               <span>
                 <i className="ri-time-line" />
               </span>
-              <h4>REVIEWS & RATINGS</h4>
-              <p>
-                E-commerce platforms often have a review and rating system where
-                customers can share their feedback.
-              </p>
+              <h4>{t('services.reviewsRatings')}</h4> {/* Traducción de 'REVIEWS & RATINGS' */}
+              <p>{t('services.reviewsRatingsDesc')}</p> {/* Traducción de la descripción */}
               <a href="#" className="enlace">
-                Click Here
+                {t('common.clickHere')} {/* Traducción de 'Click Here' */}
               </a>
             </div>
             <div className="service__card">
               <span>
                 <i className="ri-customer-service-2-line" />
               </span>
-              <h4>CUSTOMER SUPPORT</h4>
-              <p>
-                E-commerce companies offer customer support services to assist
-                customers with their queries, concerns, and issues.
-              </p>
+              <h4>{t('services.customerSupport')}</h4> {/* Traducción de 'CUSTOMER SUPPORT' */}
+              <p>{t('services.customerSupportDesc')}</p> {/* Traducción de la descripción */}
               <a href="#" className="enlace">
-                Click Here
+                {t('common.clickHere')} {/* Traducción de 'Click Here' */}
               </a>
             </div>
           </section>
 
           <section className="banner">
             <div className="banner__content">
-              <p className="subtitle">OFFER OF THE MONTH</p>
-              <h4 className="title">PHANTOM VISION ELITE DYNAMIC</h4>
-              <p className="description">
-                The Nike Phantom Vision Elite Dynamic shoes combine comfort,
-                performance, and style. Designed for football (soccer) players,
-                they feature a dynamic fit collar for agility and a precise touch.
-                With a lightweight design and excellent traction, these shoes
-                offer top-notch performance on the field.
-              </p>
+              <p className="subtitle">{t('banner.offerOfTheMonth')}</p> {/* Traducción de 'OFFER OF THE MONTH' */}
+              <h4 className="title">{t('banner.productName')}</h4> {/* Traducción del nombre del producto */}
+              <p className="description">{t('banner.productDescription')}</p> {/* Traducción de la descripción */}
               <div className="price">
-                <span>$500</span> <del>$1000</del>
+                <span>{t('banner.currentPrice')}</span> <del>{t('banner.originalPrice')}</del>
               </div>
               <div className="countdown">
                 <div className="square">
                   <p>09</p>
-                  <span>HOURS</span>
+                  <span>{t('banner.hours')}</span> {/* Traducción de 'HOURS' */}
                 </div>
                 <div className="square">
                   <p>56</p>
-                  <span>MINUTES</span>
+                  <span>{t('banner.minutes')}</span> {/* Traducción de 'MINUTES' */}
                 </div>
                 <div className="square">
                   <p>11</p>
-                  <span>SECONDS</span>
+                  <span>{t('banner.seconds')}</span> {/* Traducción de 'SECONDS' */}
                 </div>
               </div>
-              <button>SHOP NOW</button>
+              <button>{t('banner.shopNow')}</button> {/* Traducción de 'SHOP NOW' */}
             </div>
             <div className="banner__image"></div>
           </section>
-
           <section className="collection__container">
             <div className="collection__image">
               <img src="assets/collection-1.png" alt="collection" />
@@ -124,15 +108,16 @@ function LandingPage() {
               <p>$100.00 <del>$200</del> </p>
             </div>
             <div className="collection__card">
-              <h4>MEN&#39;S RUNNING SHOES</h4>
-              <p>SIGN UP NOW AND GET 50% OFF</p>
+              <h4>{t('text-banner-2.content1')}</h4>
+              <p>{t('text-banner-2.content2')}</p>
             </div>
             <div className="collection__image">
               <img src="assets/collection-5.png" alt="collection" />
             </div>
             <div className="collection__banner">
               <div className="collection__banner__content">
-                RUN,<br />EAT, SLEEP<br />AND<br />REPEAT
+                {t('text-banner.content1')}<br></br>
+                {t('text-banner.content2')}
               </div>
             </div>
             <div className="collection__image">
