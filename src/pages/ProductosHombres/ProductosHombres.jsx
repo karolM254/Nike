@@ -54,8 +54,10 @@ function HombresProductos() {
             </Link>
             {/* Información del producto: nombre, descripción y precio */}
             <p className="TittleProcut">{producto.nombre}</p>
-            <p className="descriptionProductoMen">{producto.descripcion}</p>
-            <p className="priceProductMen">$ {producto.precio}</p>
+            <div className="precio-descripcion-men">
+              <p className="descriptionProductoMen">{producto.descripcion}</p>
+              <p className="priceProductMen">$ {producto.precio}</p>
+            </div>
           </div>
         ))}
       </div>

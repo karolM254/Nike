@@ -9,100 +9,117 @@ import { useCart } from "../../components/Carrito/CartContext";
 const InfoProductoTennis = () => {
   const { carrito, setCarrito } = useCart();
   const navigate = useNavigate();
-  const { id } = useParams(); // Obtiene el ID desde la URL
+  const { slug } = useParams();
 
   // Lista de productos
   const productos = [
     {
-      id: 1,
+
+      slug: "nike-super-sport-dominion",
       img: "/assets/tennis1.jpg",
       title: "NIKE SUPER SPORT DOMINION",
       description: "Tennis shoes",
-      price: "$1,004,950",
+      price: "$500.00",
       material: "Sintetic, Fabric",
       moreDescription: "Featuring Zoom Air in the heel and forefoot, the Vapor Pro provides low-profile, responsive cushioning that helps with quick sprints and fast stops. The durable rubber outsole with a herringbone pattern ensures excellent grip on both hard and clay courts, allowing for smooth transitions during every point.",
-    },
-    {
-      id: 2,
+      },
+      {
+      slug: "nike-super-sport-fly",
       img: "/assets/tennis2.jpg",
       title: "NIKE SUPER SPORT FLY",
       description: "Tennis shoes",
-      price: "$199,950",
+      price: "$199.95",
       material: "Sintetic, Sint",
       moreDescription: "Featuring Zoom Air in the heel and forefoot, the Vapor Pro provides low-profile, responsive cushioning that helps with quick sprints and fast stops. The durable rubber outsole with a herringbone pattern ensures excellent grip on both hard and clay courts, allowing for smooth transitions during every point.",
-    },
-    {
-      id: 3,
+      },
+      {
+      slug: "nike-super-nime-plus",
       img: "/assets/tennis3.jpg",
       title: "NIKE SUPER NIME PLUS",
       description: "Tennis shoes",
-      price: "$564,950",
+      price: "$564.95",
       material: "Sintetic, Sint",
       moreDescription: "Featuring Zoom Air in the heel and forefoot, the Vapor Pro provides low-profile, responsive cushioning that helps with quick sprints and fast stops. The durable rubber outsole with a herringbone pattern ensures excellent grip on both hard and clay courts, allowing for smooth transitions during every point.",
-    },
-    {
-      id: 4,
+      },
+      {
+      slug: "nike-superfly-vul",
       img: "/assets/tennis4.jpg",
       title: "NIKE SUPERFLY VUL",
       description: "Tennis shoes",
-      price: "$524,950",
+      price: "$524.95",
       material: "Sintetic, Sint",
-      moreDescription: "Featuring Zoom Air in the heel and forefoot, the Vapor Pro provides low-profile, responsive cushioning that helps with quick sprints and fast stops. The durable rubber outsole with a herringbone pattern ensures excellent grip on both hard and clay courts, allowing for smooth transitions during every point."
-    },
-    {
-      id: 5,
+      moreDescription: "Featuring Zoom Air in the heel and forefoot, the Vapor Pro provides low-profile, responsive cushioning that helps with quick sprints and fast stops. The durable rubber outsole with a herringbone pattern ensures excellent grip on both hard and clay courts, allowing for smooth transitions during every point.",
+      },
+      {
+      slug: "nike-nirh-blus",
       img: "/assets/tennis5.jpg",
       title: "NIKE NIRH BLUS",
       description: "Tennis shoes",
-      price: "$834,950",
+      price: "$834.95",
       material: "Sintetic, Sint",
       moreDescription: "Featuring Zoom Air in the heel and forefoot, the Vapor Pro provides low-profile, responsive cushioning that helps with quick sprints and fast stops. The durable rubber outsole with a herringbone pattern ensures excellent grip on both hard and clay courts, allowing for smooth transitions during every point.",
-    },
-    {
-      id: 6,
+      },
+      {
+      slug: "nike-super-plil",
       img: "/assets/tennis6.jpg",
       title: "NIKE SUPER PLIL",
       description: "Tennis shoes",
-      price: "$834,950",
+      price: "$254.95",
       material: "Sintetic, Fabric",
       moreDescription: "Featuring Zoom Air in the heel and forefoot, the Vapor Pro provides low-profile, responsive cushioning that helps with quick sprints and fast stops. The durable rubber outsole with a herringbone pattern ensures excellent grip on both hard and clay courts, allowing for smooth transitions during every point.",
-    },
-  ];
+      }
+      ];
 
-  // Buscamos el producto desde la URL usando el id
+  // Estado para el producto seleccionado
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
+  // Estados para color y talla seleccionados
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
+
   useEffect(() => {
-    // Si hay un id en la URL, buscar el producto correspondiente
-    if (id) {
-      const producto = productos.find((prod) => prod.id === parseInt(id));
+    if (slug) {
+      const producto = productos.find((prod) => prod.slug === slug);
       setProductoSeleccionado(producto);
     } else {
-      // Si no hay id, seleccionamos el primer producto
       setProductoSeleccionado(productos[0]);
     }
-  }, [id]);
+  }, [slug]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   const addToCart = () => {
-    setCarrito((prevCarrito) => {
-      const productoEnCarrito = prevCarrito.find(
-        (item) => item.id === productoSeleccionado.id
-      );
-      if (!productoEnCarrito) {
-        console.log("Producto agregado:", productoSeleccionado);
-        return [...prevCarrito, productoSeleccionado];
-      } else {
-        console.log("El producto ya está dentro del carrito");
-        return prevCarrito;
+    if (productoSeleccionado) {
+      if (!selectedColor || !selectedSize) {
+        alert("Please select a color and size before adding to cart.");
+        return;
       }
-    });
+
+      setCarrito((prevCarrito) => {
+        const productoEnCarrito = prevCarrito.find(
+          (item) =>
+            item.slug === productoSeleccionado.slug &&
+            item.selectedColor === selectedColor &&
+            item.selectedSize === selectedSize
+        );
+
+        if (!productoEnCarrito) {
+          const updatedCart = [
+            ...prevCarrito,
+            { ...productoSeleccionado, selectedColor, selectedSize },
+          ];
+          console.log("Producto agregado:", updatedCart);
+          return updatedCart;
+        } else {
+          alert("This product with the selected color and size is already in the cart.");
+          return prevCarrito;
+        }
+      });
+    }
   };
 
-  // Configuración del carrusel
   const CustomPrevArrow = (props) => {
     const { style, onClick } = props;
     return (
@@ -120,7 +137,7 @@ const InfoProductoTennis = () => {
       >
         <i
           className="ri-arrow-left-circle-fill"
-          style={{ color: "#1e40af", fontSize: "30px" }}
+          style={{ color: "#1e40af", fontSize: "30px", marginLeft: "-10px"}}
         ></i>
       </div>
     );
@@ -143,7 +160,7 @@ const InfoProductoTennis = () => {
       >
         <i
           className="ri-arrow-right-circle-fill"
-          style={{ color: "#1e40af", fontSize: "30px" }}
+          style={{ color: "#1e40af", fontSize: "30px", marginRight: "-10px"}}
         ></i>
       </div>
     );
@@ -181,7 +198,7 @@ const InfoProductoTennis = () => {
         <Slider {...settings}>
           {productos.map((producto) => (
             <div
-              key={producto.id}
+              key={producto.slug}
               className="event-card"
               onClick={() => setProductoSeleccionado(producto)}
               style={{ cursor: "pointer" }}
@@ -214,7 +231,7 @@ const InfoProductoTennis = () => {
     <div>
       <main className="contenido-mujeres">
         <button className="boton-regresar" onClick={() => navigate(-1)}>
-          <i className="ri-arrow-left-line"></i> Back
+          <i className="ri-arrow-left-line"></i> Return
         </button>
 
         {productoSeleccionado && (
@@ -233,7 +250,12 @@ const InfoProductoTennis = () => {
               </h4>
               <p>{productoSeleccionado.price}</p>
               <div className="color-talla">
-                <select name="color" className="select-mujeres">
+                <select
+                  name="color"
+                  id="color"
+                  className="select-mujeres"
+                  onChange={(e) => setSelectedColor(e.target.value)}
+                >
                   <option value="color">Color</option>
                   <option value="rosa">Pink</option>
                   <option value="negro">Black</option>
@@ -241,7 +263,12 @@ const InfoProductoTennis = () => {
                   <option value="verde">Green</option>
                   <option value="amarillo">Yellow</option>
                 </select>
-                <select name="talla" className="select-mujeres">
+                <select
+                  name="size"
+                  id="size"
+                  className="select-mujeres"
+                  onChange={(e) => setSelectedSize(e.target.value)}
+                >
                   <option value="talla">Size</option>
                   <option value="35">35</option>
                   <option value="36">36</option>
@@ -254,10 +281,10 @@ const InfoProductoTennis = () => {
                 </select>
               </div>
               <h4 className="ver-mas-mujeres" onClick={openModal}>
-              View product information
+              See More Product Information
               </h4>
-              <div className="boton-mujeres" onClick={addToCart}>
-                <button className="carrito-mujeres">
+              <div className="acciones">
+                <button className="boton-mujer" onClick={addToCart}>
                   <i className="ri-shopping-cart-line"></i> Add to cart
                 </button>
               </div>
@@ -265,7 +292,7 @@ const InfoProductoTennis = () => {
           </div>
         )}
 
-        {isModalOpen && (
+{isModalOpen && (
           <div className="modal-overlay">
             <div className="modal-mujer">
               <button className="close-modal" onClick={closeModal}>
@@ -286,4 +313,3 @@ const InfoProductoTennis = () => {
 };
 
 export default InfoProductoTennis;
-

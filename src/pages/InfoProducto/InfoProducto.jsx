@@ -9,100 +9,122 @@ import { useCart } from "../../components/Carrito/CartContext";
 const InfoProducto = () => {
   const { carrito, setCarrito } = useCart();
   const navigate = useNavigate();
-  const { id } = useParams(); // Obtiene el ID desde la URL
+  const { slug } = useParams();
 
   // Lista de productos
   const productos = [
     {
-      id: 1,
-      img: "/assets/guayo1.jpg",
+      slug: "nike-master-legend-air",
       title: "NIKE MASTER LEGEND AIR",
       description: "Tennis of soccer",
-      price: "$1,004,950",
-      material: "Sintetic",
-      moreDescription: "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
+      price: "$399,00",
+      img: "/assets/guayo1.jpg",
+      material: "Synthetic",
+      moreDescription:
+        "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
     },
     {
-      id: 2,
-      img: "/assets/guayo2.jpg",
+      slug: "nike-air-more-top",
       title: "NIKE AIR MORE TOP",
       description: "Tennis of soccer",
-      price: "$199,950",
-      material: "Sintetic",
-      moreDescription: "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
+      price: "$349,99",
+      img: "/assets/guayo2.jpg",
+      material: "Leather",
+      moreDescription:
+        "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
     },
     {
-      id: 3,
-      img: "/assets/guayo3.jpg",
+      slug: "nike-air-superstar",
       title: "NIKE AIR SUPERSTAR",
       description: "Tennis of soccer",
-      price: "$564,950",
-      material: "Sintetic",
-      moreDescription: "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
+      price: "$264,95",
+      img: "/assets/guayo3.jpg",
+      material: "Mesh",
+      moreDescription:
+        "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
     },
     {
-      id: 4,
-      img: "/assets/guayo4.jpg",
+      slug: "nike-air-wonder-rain",
       title: "NIKE AIR WONDER RAIN",
       description: "Tennis of soccer",
-      price: "$524,950",
-      material: "Sintetic",
-      moreDescription: "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort."
+      price: "$124,95",
+      img: "/assets/guayo4.jpg",
+      material: "Synthetic",
+      moreDescription:
+        "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
     },
     {
-      id: 5,
+      slug: "nike-super-street",
+      title: "NIKE SUPER STREET",
+      description: "Tennis of soccer",
+      price: "$534,95",
       img: "/assets/guayo5.jpg",
-      title: "NIKE SUPER STREET",
-      description: "Tennis of soccer",
-      price: "$834,950",
-      material: "Sintetic",
-      moreDescription: "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
+      material: "Textile",
+      moreDescription:
+        "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
     },
     {
-      id: 6,
-      img: "/assets/guayo6.jpg",
-      title: "NIKE SUPER STREET",
+      slug: "nike-black-classic",
+      title: "NIKE BLACK CLASSIC",
       description: "Tennis of soccer",
-      price: "$834,950",
-      material: "Sintetic",
-      moreDescription: "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
+      price: "$654,95",
+      img: "/assets/guayo6.jpg",
+      material: "Synthetic Leather",
+      moreDescription:
+        "The upper, made with Flyknit technology, adapts perfectly to the foot, providing a glove-like fit and superior support during quick movements. In addition, its Dynamic Fit Collar design provides a smooth transition between the ankle and leg, improving stability and comfort.",
     },
   ];
 
-  // Buscamos el producto desde la URL usando el id
+  // Estado para el producto seleccionado
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
+  // Estados para color y talla seleccionados
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
+
   useEffect(() => {
-    // Si hay un id en la URL, buscar el producto correspondiente
-    if (id) {
-      const producto = productos.find((prod) => prod.id === parseInt(id));
+    if (slug) {
+      const producto = productos.find((prod) => prod.slug === slug);
       setProductoSeleccionado(producto);
     } else {
-      // Si no hay id, seleccionamos el primer producto
       setProductoSeleccionado(productos[0]);
     }
-  }, [id]);
+  }, [slug]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   const addToCart = () => {
-    setCarrito((prevCarrito) => {
-      const productoEnCarrito = prevCarrito.find(
-        (item) => item.id === productoSeleccionado.id
-      );
-      if (!productoEnCarrito) {
-        console.log("Producto agregado:", productoSeleccionado);
-        return [...prevCarrito, productoSeleccionado];
-      } else {
-        console.log("El producto ya está dentro del carrito");
-        return prevCarrito;
+    if (productoSeleccionado) {
+      if (!selectedColor || !selectedSize) {
+        alert("Please select a color and size before adding to cart.");
+        return;
       }
-    });
+
+      setCarrito((prevCarrito) => {
+        const productoEnCarrito = prevCarrito.find(
+          (item) =>
+            item.slug === productoSeleccionado.slug &&
+            item.selectedColor === selectedColor &&
+            item.selectedSize === selectedSize
+        );
+
+        if (!productoEnCarrito) {
+          const updatedCart = [
+            ...prevCarrito,
+            { ...productoSeleccionado, selectedColor, selectedSize },
+          ];
+          console.log("Producto agregado:", updatedCart);
+          return updatedCart;
+        } else {
+          alert("This product with the selected color and size is already in the cart.");
+          return prevCarrito;
+        }
+      });
+    }
   };
 
-  // Configuración del carrusel
   const CustomPrevArrow = (props) => {
     const { style, onClick } = props;
     return (
@@ -120,7 +142,7 @@ const InfoProducto = () => {
       >
         <i
           className="ri-arrow-left-circle-fill"
-          style={{ color: "#1e40af", fontSize: "30px" }}
+          style={{ color: "#1e40af", fontSize: "30px", marginLeft: "-10px"}}
         ></i>
       </div>
     );
@@ -143,7 +165,7 @@ const InfoProducto = () => {
       >
         <i
           className="ri-arrow-right-circle-fill"
-          style={{ color: "#1e40af", fontSize: "30px" }}
+          style={{ color: "#1e40af", fontSize: "30px", marginRight: "-10px"}}
         ></i>
       </div>
     );
@@ -181,7 +203,7 @@ const InfoProducto = () => {
         <Slider {...settings}>
           {productos.map((producto) => (
             <div
-              key={producto.id}
+              key={producto.slug}
               className="event-card"
               onClick={() => setProductoSeleccionado(producto)}
               style={{ cursor: "pointer" }}
@@ -214,7 +236,7 @@ const InfoProducto = () => {
     <div>
       <main className="contenido-mujeres">
         <button className="boton-regresar" onClick={() => navigate(-1)}>
-          <i className="ri-arrow-left-line"></i> Back
+          <i className="ri-arrow-left-line"></i> Return
         </button>
 
         {productoSeleccionado && (
@@ -233,7 +255,12 @@ const InfoProducto = () => {
               </h4>
               <p>{productoSeleccionado.price}</p>
               <div className="color-talla">
-                <select name="color" className="select-mujeres">
+                <select
+                  name="color"
+                  id="color"
+                  className="select-mujeres"
+                  onChange={(e) => setSelectedColor(e.target.value)}
+                >
                   <option value="color">Color</option>
                   <option value="rosa">Pink</option>
                   <option value="negro">Black</option>
@@ -241,7 +268,12 @@ const InfoProducto = () => {
                   <option value="verde">Green</option>
                   <option value="amarillo">Yellow</option>
                 </select>
-                <select name="talla" className="select-mujeres">
+                <select
+                  name="size"
+                  id="size"
+                  className="select-mujeres"
+                  onChange={(e) => setSelectedSize(e.target.value)}
+                >
                   <option value="talla">Size</option>
                   <option value="35">35</option>
                   <option value="36">36</option>
@@ -254,10 +286,10 @@ const InfoProducto = () => {
                 </select>
               </div>
               <h4 className="ver-mas-mujeres" onClick={openModal}>
-              View product information
+              See More Product Information
               </h4>
-              <div className="boton-mujeres" onClick={addToCart}>
-                <button className="carrito-mujeres">
+              <div className="acciones">
+                <button className="boton-mujer" onClick={addToCart}>
                   <i className="ri-shopping-cart-line"></i> Add to cart
                 </button>
               </div>
@@ -265,7 +297,7 @@ const InfoProducto = () => {
           </div>
         )}
 
-        {isModalOpen && (
+{isModalOpen && (
           <div className="modal-overlay">
             <div className="modal-mujer">
               <button className="close-modal" onClick={closeModal}>

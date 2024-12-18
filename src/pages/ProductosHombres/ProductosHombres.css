@@ -55,8 +55,7 @@ html {
     outline: none; /* Sin contorno al hacer foco */
     border: none; /* Sin borde */
     background-color: transparent; /* Fondo transparente */
-    position: relative; /* Posición relativa */
-    width: 100px; /* Ancho del input */
+    width: 80%; /* Ancho del input */
     font-size: 19px; /* Tamaño de fuente */
     margin-bottom: 0; /* Sin margen inferior */
 }
@@ -66,8 +65,7 @@ html {
     display: grid; /* Activar diseño de cuadrícula */
     grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
     gap: 16px; /* Espaciado entre elementos */
-    position: relative; /* Posicionamiento relativo */
-    right: -3rem; /* Ajuste de posición */
+    margin-left: 50px;
 }
 
 /* Estilos para las tarjetas de productos */
@@ -79,8 +77,8 @@ html {
 
 /* Configuración para las imágenes dentro de las tarjetas */
 .imgProductoMen img {
-    width: 80%; /* Ancho de la imagen relativo al contenedor */
-    height: 70%; /* Altura de la imagen proporcional */
+    width: 90% !important; /* Ancho de la imagen relativo al contenedor */
+    height: auto; /* Altura de la imagen proporcional */
     border-radius: 6px; /* Bordes redondeados */
     margin-bottom: 10px; /* Separación inferior */
     transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
@@ -100,35 +98,47 @@ html {
     font-family: "Roboto Condensed", sans-serif; /* Fuente específica */
 }
 
+
+.precio-descripcion-men {
+  display: flex; /* Coloca los elementos en línea */
+  justify-content: space-between; /* Espacia los elementos de manera uniforme */
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+
 /* Estilos para la descripción del producto */
 .descriptionProductoMen {
-    font-size: 17px; /* Tamaño de fuente más pequeño */
-    font-weight: 500; /* Peso medio de la fuente */
+  font-weight: 500; /* Peso medio de la fuente */
+  font-size: 17px; /* Tamaño de fuente más pequeño */
+  margin-right: 80px; /* Espacio entre los elementos */
 }
 
 /* Estilos para el precio del producto */
 .priceProductMen {
-    font-size: 17px; /* Tamaño de fuente para el precio */
-    font-weight: bold; /* Negrita */
-    color: #0044cc; /* Color azul fuerte */
-    right: -250px; /* Ajuste de posición horizontal */
-    top: -21px; /* Ajuste de posición vertical */
+  font-size: 17px; /* Tamaño de fuente para el precio */
+  font-weight: bold; /* Destaca el precio */
+  color: #0044cc; /* Color azul fuerte */
 }
+
 
 /* Móviles pequeños (320px - 480px) */
 @media (max-width: 480px) {
-
   .buscarMen{
+    width: 100%;
+    padding-left: 20% !important;
+  }
+
+  .buscadorMen {
     width: 60%;
-    position: relative;
-    right: -180px;
+    padding: 3px;
+  }
+
+  #buscarProductosMen {
+    width: 60%;
   }
 
   .conatinerPrdocutosMen {
     grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
     gap: 8px;
-    right: 0; /* Ajuste de posición */
-    padding: 0 10px; /* Espaciado lateral */
   }
 
   .imgProductoMen img {
@@ -147,19 +157,15 @@ html {
 
   .priceProductMen {
     font-size: 13px;
-    position: relative;
-    top: -18px;
+  }
+
+  .precio-descripcion-men {
+    white-space: nowrap;
   }
 }
 
 /* Móviles grandes y tabletas pequeñas (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-
-  .buscarMen{
-     width: 50%;
-     position: relative;
-     right: -250px;
-   }
 
   .conatinerPrdocutosMen {
     grid-template-columns: repeat(1, 1fr); /* 2 tarjetas por fila */
@@ -189,9 +195,11 @@ html {
 
   .priceProductMen {
     font-size: 16px;
-    position: relative;
     top: -1.3rem;
-    right: -310px;
+  }
+
+  .priceProductMen{
+    margin-left: 50px;
   }
 }
 
@@ -199,8 +207,6 @@ html {
 @media (min-width: 769px) and (max-width: 1024px) {
   .buscarMen{
      width: 100%;
-     position: relative;
-     right: -24px;
   }
 
   .conatinerPrdocutosMen {
@@ -226,21 +232,13 @@ html {
 
   .priceProductMen {
     font-size: 17px;
-    position: relative;
     top: -18px;
-    right: -200px;
   }
   
 }
 
 /* Laptops y escritorios estándar (1025px - 1920px) */
 @media (min-width: 1025px) and (max-width: 1920px) {
-
-  .buscarMen{
-     width: 100%;
-     position: relative;
-     right: 48px;
-  }
 
   .conatinerPrdocutosMen {
     grid-template-columns: repeat(3, 1fr); /* 4 tarjetas por fila */ 
@@ -257,8 +255,6 @@ html {
     font-size: 17px; /* Tamaño destacado para el precio */
     font-weight: bold; /* Resaltar el precio */
     color: #0044cc; /* Azul fuerte */
-    position: relative;
-    right: -220px;
     top: -21px;
   }
 
@@ -310,5 +306,3 @@ html {
     white-space: nowrap; /* Evita que el precio se rompa en varias líneas */
   }
 }
-
-  

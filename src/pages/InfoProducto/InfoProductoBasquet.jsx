@@ -9,100 +9,116 @@ import { useCart } from "../../components/Carrito/CartContext";
 const InfoProductoBasquet = () => {
   const { carrito, setCarrito } = useCart();
   const navigate = useNavigate();
-  const { id } = useParams(); // Obtiene el ID desde la URL
+  const { slug } = useParams();
 
   // Lista de productos
   const productos = [
     {
-      id: 1,
+      slug: "nike-pr-inc",
       img: "/assets/basquet1.png",
       title: "NIKE PR INC",
       description: "Tennis of basketball",
-      price: "$1,004,950",
+      price: "$190.00",
       material: "Sintetic, Fabric",
       moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
-    },
-    {
-      id: 2,
+      },
+      {
+      slug: "nike-master-cart",
       img: "/assets/basquet2.png",
       title: "NIKE MASTER CART",
       description: "Tennis of basketball",
-      price: "$199,950",
+      price: "$199.95",
       material: "Sintetic, Sint",
       moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
-    },
-    {
-      id: 3,
+      },
+      {
+      slug: "nike-air-more",
       img: "/assets/basquet3.png",
       title: "NIKE AIR MORE",
       description: "Tennis of basketball",
-      price: "$564,950",
+      price: "$564.95",
       material: "Sintetic, Sint",
       moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
-    },
-    {
-      id: 4,
+      },
+      {
+      slug: "nike-air-superstar",
       img: "/assets/basquet4.png",
+      title: "NIKE AIR SUPERSTAR",
+      description: "Tennis of basketball",
+      price: "$524.95",
+      material: "Sintetic, Sint",
+      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
+      },
+      {
+      slug: "nike-young-world",
+      img: "/assets/basquet5.png",
       title: "NIKE YOUNG WORLD",
       description: "Tennis of basketball",
-      price: "$524,950",
+      price: "$834.95",
       material: "Sintetic, Sint",
-      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface."
-    },
-    {
-      id: 5,
-      img: "/assets/basquet5.png",
+      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
+      },
+      {
+      slug: "nike-marron-one",
+      img: "/assets/basquet6.png",
       title: "NIKE MARRON ONE",
       description: "Tennis of basketball",
-      price: "$834,950",
-      material: "Sintetic, Sint",
-      moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
-    },
-    {
-      id: 6,
-      img: "/assets/basquet6.png",
-      title: "NIKE SUPER STREET",
-      description: "Tennis of basketball",
-      price: "$834,950",
+      price: "$254.95",
       material: "Sintetic, Fabric",
       moreDescription: "Equipped with Zoom Air cushioning in the forefoot, the Freak 5 delivers a springy, responsive feel, ensuring every jump and step is powered with energy. The durable rubber outsole features a multidirectional traction pattern, providing superior grip for quick cuts, pivots, and sudden stops on any surface.",
-    },
-  ];
+      }
+      ];
 
-  // Buscamos el producto desde la URL usando el id
+  // Estado para el producto seleccionado
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
+  // Estados para color y talla seleccionados
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
+
   useEffect(() => {
-    // Si hay un id en la URL, buscar el producto correspondiente
-    if (id) {
-      const producto = productos.find((prod) => prod.id === parseInt(id));
+    if (slug) {
+      const producto = productos.find((prod) => prod.slug === slug);
       setProductoSeleccionado(producto);
     } else {
-      // Si no hay id, seleccionamos el primer producto
       setProductoSeleccionado(productos[0]);
     }
-  }, [id]);
+  }, [slug]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   const addToCart = () => {
-    setCarrito((prevCarrito) => {
-      const productoEnCarrito = prevCarrito.find(
-        (item) => item.id === productoSeleccionado.id
-      );
-      if (!productoEnCarrito) {
-        console.log("Producto agregado:", productoSeleccionado);
-        return [...prevCarrito, productoSeleccionado];
-      } else {
-        console.log("El producto ya está dentro del carrito");
-        return prevCarrito;
+    if (productoSeleccionado) {
+      if (!selectedColor || !selectedSize) {
+        alert("Please select a color and size before adding to cart.");
+        return;
       }
-    });
+
+      setCarrito((prevCarrito) => {
+        const productoEnCarrito = prevCarrito.find(
+          (item) =>
+            item.slug === productoSeleccionado.slug &&
+            item.selectedColor === selectedColor &&
+            item.selectedSize === selectedSize
+        );
+
+        if (!productoEnCarrito) {
+          const updatedCart = [
+            ...prevCarrito,
+            { ...productoSeleccionado, selectedColor, selectedSize },
+          ];
+          console.log("Producto agregado:", updatedCart);
+          return updatedCart;
+        } else {
+          alert("This product with the selected color and size is already in the cart.");
+          return prevCarrito;
+        }
+      });
+    }
   };
 
-  // Configuración del carrusel
   const CustomPrevArrow = (props) => {
     const { style, onClick } = props;
     return (
@@ -120,7 +136,7 @@ const InfoProductoBasquet = () => {
       >
         <i
           className="ri-arrow-left-circle-fill"
-          style={{ color: "#1e40af", fontSize: "30px" }}
+          style={{ color: "#1e40af", fontSize: "30px", marginLeft: "-10px"}}
         ></i>
       </div>
     );
@@ -143,7 +159,7 @@ const InfoProductoBasquet = () => {
       >
         <i
           className="ri-arrow-right-circle-fill"
-          style={{ color: "#1e40af", fontSize: "30px" }}
+          style={{ color: "#1e40af", fontSize: "30px", marginRight: "-10px"}}
         ></i>
       </div>
     );
@@ -181,7 +197,7 @@ const InfoProductoBasquet = () => {
         <Slider {...settings}>
           {productos.map((producto) => (
             <div
-              key={producto.id}
+              key={producto.slug}
               className="event-card"
               onClick={() => setProductoSeleccionado(producto)}
               style={{ cursor: "pointer" }}
@@ -214,7 +230,7 @@ const InfoProductoBasquet = () => {
     <div>
       <main className="contenido-mujeres">
         <button className="boton-regresar" onClick={() => navigate(-1)}>
-          <i className="ri-arrow-left-line"></i> Back
+          <i className="ri-arrow-left-line"></i> Return
         </button>
 
         {productoSeleccionado && (
@@ -233,7 +249,12 @@ const InfoProductoBasquet = () => {
               </h4>
               <p>{productoSeleccionado.price}</p>
               <div className="color-talla">
-                <select name="color" className="select-mujeres">
+                <select
+                  name="color"
+                  id="color"
+                  className="select-mujeres"
+                  onChange={(e) => setSelectedColor(e.target.value)}
+                >
                   <option value="color">Color</option>
                   <option value="rosa">Pink</option>
                   <option value="negro">Black</option>
@@ -241,7 +262,12 @@ const InfoProductoBasquet = () => {
                   <option value="verde">Green</option>
                   <option value="amarillo">Yellow</option>
                 </select>
-                <select name="talla" className="select-mujeres">
+                <select
+                  name="size"
+                  id="size"
+                  className="select-mujeres"
+                  onChange={(e) => setSelectedSize(e.target.value)}
+                >
                   <option value="talla">Size</option>
                   <option value="35">35</option>
                   <option value="36">36</option>
@@ -254,10 +280,10 @@ const InfoProductoBasquet = () => {
                 </select>
               </div>
               <h4 className="ver-mas-mujeres" onClick={openModal}>
-              View product information
+              See More Product Information
               </h4>
-              <div className="boton-mujeres" onClick={addToCart}>
-                <button className="carrito-mujeres">
+              <div className="acciones">
+                <button className="boton-mujer" onClick={addToCart}>
                   <i className="ri-shopping-cart-line"></i> Add to cart
                 </button>
               </div>
@@ -265,7 +291,7 @@ const InfoProductoBasquet = () => {
           </div>
         )}
 
-        {isModalOpen && (
+{isModalOpen && (
           <div className="modal-overlay">
             <div className="modal-mujer">
               <button className="close-modal" onClick={closeModal}>
@@ -286,7 +312,3 @@ const InfoProductoBasquet = () => {
 };
 
 export default InfoProductoBasquet;
-
-
-
-

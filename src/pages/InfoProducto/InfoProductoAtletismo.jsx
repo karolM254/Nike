@@ -9,100 +9,116 @@ import { useCart } from "../../components/Carrito/CartContext";
 const InfoProductoAtletismo = () => {
   const { carrito, setCarrito } = useCart();
   const navigate = useNavigate();
-  const { id } = useParams(); // Obtiene el ID desde la URL
+  const { slug } = useParams();
 
   // Lista de productos
   const productos = [
     {
-      id: 1,
+      slug: "nike-predator-pr",
       img: "/assets/atletismo1.jpg",
       title: "NIKE PREDATOR PR",
       description: "Athletic shoes",
-      price: "$1,004,950",
+      price: "$199,95",
       material: "Sintetic, Fabric",
       moreDescription: "The breathable engineered mesh upper provides ventilation and a snug fit, ensuring your feet stay cool and comfortable throughout your workout. With a rubber outsole featuring a traction pattern for improved grip, the Nike Air Zoom Pegasus 40 delivers stability on both wet and dry surfaces, giving you the confidence to push your limits.",
-    },
-    {
-      id: 2,
+      },
+      {
+      slug: "nike-sirt-tool",
       img: "/assets/atletismo2.jpg",
       title: "NIKE SIRT TOOL",
       description: "Athletic shoes",
-      price: "$199,950",
+      price: "$780,00",
       material: "Sintetic, Sint",
       moreDescription: "The breathable engineered mesh upper provides ventilation and a snug fit, ensuring your feet stay cool and comfortable throughout your workout. With a rubber outsole featuring a traction pattern for improved grip, the Nike Air Zoom Pegasus 40 delivers stability on both wet and dry surfaces, giving you the confidence to push your limits.",
-    },
-    {
-      id: 3,
+      },
+      {
+      slug: "nike-gaplert-still",
       img: "/assets/atletismo3.jpg",
       title: "NIKE GAPLERT STILL",
       description: "Athletic shoes",
-      price: "$564,950",
+      price: "$259.99",
       material: "Sintetic, Sint",
       moreDescription: "The breathable engineered mesh upper provides ventilation and a snug fit, ensuring your feet stay cool and comfortable throughout your workout. With a rubber outsole featuring a traction pattern for improved grip, the Nike Air Zoom Pegasus 40 delivers stability on both wet and dry surfaces, giving you the confidence to push your limits.",
-    },
-    {
-      id: 4,
+      },
+      {
+      slug: "nike-rainbow",
       img: "/assets/atletismo4.jpg",
-      title: "NIKE RAINBOW ",
+      title: "NIKE RAINBOW",
       description: "Athletic shoes",
-      price: "$524,950",
+      price: "$499,99",
       material: "Sintetic, Sint",
-      moreDescription: "The breathable engineered mesh upper provides ventilation and a snug fit, ensuring your feet stay cool and comfortable throughout your workout. With a rubber outsole featuring a traction pattern for improved grip, the Nike Air Zoom Pegasus 40 delivers stability on both wet and dry surfaces, giving you the confidence to push your limits."
-    },
-    {
-      id: 5,
+      moreDescription: "The breathable engineered mesh upper provides ventilation and a snug fit, ensuring your feet stay cool and comfortable throughout your workout. With a rubber outsole featuring a traction pattern for improved grip, the Nike Air Zoom Pegasus 40 delivers stability on both wet and dry surfaces, giving you the confidence to push your limits.",
+      },
+      {
+      slug: "nike-moll-tin",
       img: "/assets/atletismo5.jpg",
       title: "NIKE MOLL TIN",
       description: "Athletic shoes",
-      price: "$834,950",
+      price: "$200,00",
       material: "Sintetic, Sint",
       moreDescription: "The breathable engineered mesh upper provides ventilation and a snug fit, ensuring your feet stay cool and comfortable throughout your workout. With a rubber outsole featuring a traction pattern for improved grip, the Nike Air Zoom Pegasus 40 delivers stability on both wet and dry surfaces, giving you the confidence to push your limits.",
-    },
-    {
-      id: 6,
+      },
+      {
+      slug: "nike-super-street",
       img: "/assets/atletismo6.jpg",
       title: "NIKE SUPER STREET",
       description: "Athletic shoes",
-      price: "$834,950",
+      price: "$254,95",
       material: "Sintetic, Fabric",
       moreDescription: "The breathable engineered mesh upper provides ventilation and a snug fit, ensuring your feet stay cool and comfortable throughout your workout. With a rubber outsole featuring a traction pattern for improved grip, the Nike Air Zoom Pegasus 40 delivers stability on both wet and dry surfaces, giving you the confidence to push your limits.",
-    },
-  ];
+      },
+      ];
 
-  // Buscamos el producto desde la URL usando el id
+  // Estado para el producto seleccionado
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
+  // Estados para color y talla seleccionados
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
+
   useEffect(() => {
-    // Si hay un id en la URL, buscar el producto correspondiente
-    if (id) {
-      const producto = productos.find((prod) => prod.id === parseInt(id));
+    if (slug) {
+      const producto = productos.find((prod) => prod.slug === slug);
       setProductoSeleccionado(producto);
     } else {
-      // Si no hay id, seleccionamos el primer producto
       setProductoSeleccionado(productos[0]);
     }
-  }, [id]);
+  }, [slug]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   const addToCart = () => {
-    setCarrito((prevCarrito) => {
-      const productoEnCarrito = prevCarrito.find(
-        (item) => item.id === productoSeleccionado.id
-      );
-      if (!productoEnCarrito) {
-        console.log("Producto agregado:", productoSeleccionado);
-        return [...prevCarrito, productoSeleccionado];
-      } else {
-        console.log("El producto ya está dentro del carrito");
-        return prevCarrito;
+    if (productoSeleccionado) {
+      if (!selectedColor || !selectedSize) {
+        alert("Please select a color and size before adding to cart.");
+        return;
       }
-    });
+
+      setCarrito((prevCarrito) => {
+        const productoEnCarrito = prevCarrito.find(
+          (item) =>
+            item.slug === productoSeleccionado.slug &&
+            item.selectedColor === selectedColor &&
+            item.selectedSize === selectedSize
+        );
+
+        if (!productoEnCarrito) {
+          const updatedCart = [
+            ...prevCarrito,
+            { ...productoSeleccionado, selectedColor, selectedSize },
+          ];
+          console.log("Producto agregado:", updatedCart);
+          return updatedCart;
+        } else {
+          alert("This product with the selected color and size is already in the cart.");
+          return prevCarrito;
+        }
+      });
+    }
   };
 
-  // Configuración del carrusel
   const CustomPrevArrow = (props) => {
     const { style, onClick } = props;
     return (
@@ -120,7 +136,7 @@ const InfoProductoAtletismo = () => {
       >
         <i
           className="ri-arrow-left-circle-fill"
-          style={{ color: "#1e40af", fontSize: "30px" }}
+          style={{ color: "#1e40af", fontSize: "30px", marginLeft: "-10px"}}
         ></i>
       </div>
     );
@@ -143,7 +159,7 @@ const InfoProductoAtletismo = () => {
       >
         <i
           className="ri-arrow-right-circle-fill"
-          style={{ color: "#1e40af", fontSize: "30px" }}
+          style={{ color: "#1e40af", fontSize: "30px", marginRight: "-10px"}}
         ></i>
       </div>
     );
@@ -181,7 +197,7 @@ const InfoProductoAtletismo = () => {
         <Slider {...settings}>
           {productos.map((producto) => (
             <div
-              key={producto.id}
+              key={producto.slug}
               className="event-card"
               onClick={() => setProductoSeleccionado(producto)}
               style={{ cursor: "pointer" }}
@@ -214,7 +230,7 @@ const InfoProductoAtletismo = () => {
     <div>
       <main className="contenido-mujeres">
         <button className="boton-regresar" onClick={() => navigate(-1)}>
-          <i className="ri-arrow-left-line"></i> Back
+          <i className="ri-arrow-left-line"></i> Return
         </button>
 
         {productoSeleccionado && (
@@ -233,7 +249,12 @@ const InfoProductoAtletismo = () => {
               </h4>
               <p>{productoSeleccionado.price}</p>
               <div className="color-talla">
-                <select name="color" className="select-mujeres">
+                <select
+                  name="color"
+                  id="color"
+                  className="select-mujeres"
+                  onChange={(e) => setSelectedColor(e.target.value)}
+                >
                   <option value="color">Color</option>
                   <option value="rosa">Pink</option>
                   <option value="negro">Black</option>
@@ -241,7 +262,12 @@ const InfoProductoAtletismo = () => {
                   <option value="verde">Green</option>
                   <option value="amarillo">Yellow</option>
                 </select>
-                <select name="talla" className="select-mujeres">
+                <select
+                  name="size"
+                  id="size"
+                  className="select-mujeres"
+                  onChange={(e) => setSelectedSize(e.target.value)}
+                >
                   <option value="talla">Size</option>
                   <option value="35">35</option>
                   <option value="36">36</option>
@@ -254,10 +280,10 @@ const InfoProductoAtletismo = () => {
                 </select>
               </div>
               <h4 className="ver-mas-mujeres" onClick={openModal}>
-              View product information
+              See More Product Information
               </h4>
-              <div className="boton-mujeres" onClick={addToCart}>
-                <button className="carrito-mujeres">
+              <div className="acciones">
+                <button className="boton-mujer" onClick={addToCart}>
                   <i className="ri-shopping-cart-line"></i> Add to cart
                 </button>
               </div>
@@ -265,7 +291,7 @@ const InfoProductoAtletismo = () => {
           </div>
         )}
 
-        {isModalOpen && (
+{isModalOpen && (
           <div className="modal-overlay">
             <div className="modal-mujer">
               <button className="close-modal" onClick={closeModal}>
@@ -286,3 +312,4 @@ const InfoProductoAtletismo = () => {
 };
 
 export default InfoProductoAtletismo;
+
