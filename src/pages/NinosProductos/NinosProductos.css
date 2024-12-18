@@ -90,10 +90,12 @@
 .precio-Ninoss h5 {
   font-weight: 500;
   font-size: 17px;
+  white-space: nowrap;
 }
 
 .precio-Ninoss p {
   color: var(--primary-color);
+  margin-left: 40%;
 }
 
 

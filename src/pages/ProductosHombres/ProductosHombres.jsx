@@ -11,12 +11,12 @@ function HombresProductos() {
 
   // Lista de productos (información estática)
   const productos = [
-    { id: 1, nombre: 'Air Jordan 11 Retro "Legend Blue"', descripcion:  "Men's footwear", precio:25560567, imagen: '/assets/fototennis.jpg' },
-    { id: 2, nombre: 'W Nike Zoom Bella 6 PRm', descripcion:  "Men's footwear", precio: 845950, imagen: '/assets/678275-500-500.jpg' },
-    { id: 3, nombre: 'Nike Full Force Low', descripcion:  "Men's footwear", precio: 560950, imagen: '/assets/677182-500-500.jpg' },
-    { id: 4, nombre: 'Nike Cortez', descripcion:  "Men's footwear", precio: 380950, imagen: '/assets/702841-500-500.jpg' },
-    { id: 5, nombre: 'Nike C1TY', descripcion:  "Men's footwear", precio: 695950, imagen: '/assets/713556-500-500.jpg' },
-    { id: 6, nombre: 'Nike Killshot 2 Leather', descripcion:  "Men's footwear", precio: 922950, imagen: '/assets/678515-500-500.jpg' }
+    { id: 1, nombre: 'Air Jordan 11 Retro "Legend Blue"', descripcion:  "Men's footwear", precio: "335,31", imagen: '/assets/fototennis.jpg' },
+    { id: 2, nombre: 'W Nike Zoom Bella 6 PRm', descripcion:  "Men's footwear", precio: "195,63", imagen: '/assets/678275-500-500.jpg' },
+    { id: 3, nombre: 'Nike Full Force Low', descripcion:  "Men's footwear", precio: "129,72", imagen: '/assets/677182-500-500.jpg' },
+    { id: 4, nombre: 'Nike Cortez', descripcion:  "Men's footwear", precio: "88,09", imagen: '/assets/702841-500-500.jpg' },
+    { id: 5, nombre: 'Nike C1TY', descripcion:  "Men's footwear", precio: "160,94", imagen: '/assets/713556-500-500.jpg' },
+    { id: 6, nombre: 'Nike Killshot 2 Leather', descripcion:  "Men's footwear", precio: "213,43", imagen: '/assets/678515-500-500.jpg' }
   ];
 
   // Filtrar productos según el término de búsqueda ingresado por el usuario

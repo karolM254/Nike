@@ -29,6 +29,7 @@ import Compras1 from "./pages/Compras1/Compras1";
 import Carrito from "./pages/Carrito/Carrito";
 import { CartProvider } from "./components/Carrito/CartContext";
 import AtencionCliente from "./pages/AtencionCliente/AtencionCliente";
+import './i18n';
 
 
 

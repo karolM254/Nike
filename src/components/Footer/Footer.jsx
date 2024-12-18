@@ -1,46 +1,49 @@
 import React from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'; // Importa el hook useTranslation para cambiar el idioma.
 
 function Footer() {
+  const { t } = useTranslation(); // Utiliza el hook para obtener la función t de traducción.
+
   return (
     <footer>
       <div className="section__container footer__container">
         <div className="footer__col">
-          <h4>SHOPS</h4>
+          <h4>{t('footer.shops.name')}</h4>
           <Link to="/hombre">
-            <p>Men</p>
+            <p>{t('footer.shops.name1')}</p>
           </Link>
           <Link to="/productosmujeres">
-            <p>Women</p>
+            <p>{t('footer.shops.name2')}</p>
           </Link>
           <Link to="/marcas">
-            <p>Top Brands</p>
+            <p>{t('footer.shops.name3')}</p>
           </Link>
           <Link to="/galeria">
-            <p>Lookbook</p>
+            <p>{t('footer.shops.name4')}</p>
           </Link>
         </div>
         <div className="footer__col">
-          <h4>INFORMATION</h4>
+          <h4>{t('footer.information.name')}</h4>
           <Link to="/sobrenosotros">
-            <p>About Us</p>
+            <p>{t('footer.information.name1')}</p>
           </Link>
           <Link to="/atencion">
-            <p>Customer Service</p>
+            <p>{t('footer.information.name2')}</p>
           </Link>
           <Link to="/fabricantes">
-            <p>Manufacturers</p>
+            <p>{t('footer.information.name3')}</p>
           </Link>
           <Link to="/politicas">
-            <p>Privacy Policy</p>
+            <p>{t('footer.information.name4')}</p>
           </Link>
           <Link to="/eventos">
-            <p>Blog</p>
+            <p>{t('footer.information.name5')}</p>
           </Link>
         </div>
         <div className="footer__col">
-          <h4>STAY CONNECTED</h4>
+          <h4>{t('footer.stayConnected.name1')}</h4>
           <div className="footer__socials">
             <Link to="https://www.facebook.com/nike/">
               <span><i className="ri-facebook-fill"></i></span>
@@ -59,19 +62,19 @@ function Footer() {
       </div>
       <div className="section__container footer__bar">
         <div className="copyright">
-          Copyright © 2024 Web Design Mastery. All rights reserved.
+          {t('footer.copyright')}
         </div>
         <div className="payment__cards">
-          <Link to="https://www.visa.com.co/pague-con-visa/tecnologias-presentadas/evoluciona-nuevas-formas-pago.html">
+          <Link to={t('footer.paymentCards.visa')}>
             <i className="ri-visa-fill"></i>
           </Link>
-          <Link to="https://www.davivienda.com/wps/portal/personas/nuevo">
+          <Link to={t('footer.paymentCards.davivienda')}>
             <i className="ri-bank-card-2-fill"></i>
           </Link>
-          <Link to="https://www.mastercard.com.co/es-co.html">
+          <Link to={t('footer.paymentCards.mastercard')}>
             <i className="ri-mastercard-line"></i>
           </Link>
-          <Link to="https://www.bancolombia.com/personas">
+          <Link to={t('footer.paymentCards.bancolombia')}>
             <i className="ri-bank-card-2-line"></i>
           </Link>
         </div>

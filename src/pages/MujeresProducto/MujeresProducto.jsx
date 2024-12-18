@@ -78,7 +78,7 @@ const MujeresProducto = () => {
           {productos.map((producto) => (
             <div
               key={producto.id}
-              className="event-card"
+              className="event-card-women"
               onClick={() => navigate(`/producto/${producto.id}`)}
               style={{ cursor: "pointer" }}
               >
@@ -109,7 +109,7 @@ const MujeresProducto = () => {
       img: "/assets/679005-500-500.webp",
       title: "AIR JORDAN 1 HIGH METHOD OF MAKE",
       description: "Women's footwear",
-      price: "$1,004,950",
+      price: "$232,39",
       material: "Leather and suede",
       moreDescription: "This model, inspired by elegance and functionality, goes further so that you stand out with confidence. Suede details and a wraparound design combine for a modern and versatile look. We play with soft finishes and daring proportions, highlighting every detail to achieve a unique design that fuses fashion and functionality, ideal for women looking for comfort without giving up style.",
     },
@@ -118,7 +118,7 @@ const MujeresProducto = () => {
       img: "/assets/677567-500-500.webp",
       title: "NIKE VICTORI ONE",
       description: "Women's flip flops",
-      price: "$199,950",
+      price: "$46,24",
       material: "Plastic and rubber",
       moreDescription: "Crafted for casual comfort and ease, this model blends practicality with lightweight design. The durable plastic and rubber materials ensure resilience, while its minimalist style is perfect for laid-back outings. Whether you're heading to the beach or relaxing by the pool, these flip flops are designed for women who value both functionality and carefree fashion.",
     },
@@ -127,7 +127,7 @@ const MujeresProducto = () => {
       img: "/assets/678301-500-500.webp",
       title: "NIKE AIR MAX SC",
       description: "Women's footwear",
-      price: "$564,950",
+      price: "$130,64",
       material: "Fabric and rubber",
       moreDescription: "This model combines breathable fabric with durable rubber soles for a perfect balance of comfort and performance. Designed to adapt to your daily needs, its lightweight construction and modern aesthetic make it an ideal choice for women on the go. With a focus on flexibility and style, this footwear is perfect for tackling everyday adventures with confidence.",
     },
@@ -136,7 +136,7 @@ const MujeresProducto = () => {
       img: "/assets/678274-500-500.webp",
       title: "W NIKE ZOOM BELLA 6 PRM",
       description: "Women's footwear",
-      price: "$524,950",
+      price: "$121,39",
       material: "Synthetic and rubber",
       moreDescription: "Engineered with high-quality synthetic materials and robust rubber soles, this model is designed for durability and support. Its sleek design offers a versatile option for any occasion, providing a modern look that doesn’t sacrifice comfort. Perfect for women seeking reliable and stylish footwear for their busy lifestyles.",
     },
@@ -145,7 +145,7 @@ const MujeresProducto = () => {
       img: "/assets/678936-500-500.webp",
       title: "AIR JORDAN 1 LOW SE",
       description: "Women's footwear",
-      price: "$834,950",
+      price: "$193,08",
       material: "Leather and fabric",
       moreDescription: "Combining premium leather with soft fabric elements, this model offers the perfect fusion of sophistication and comfort. Its durable construction and elegant design make it a versatile addition to any wardrobe. Ideal for women looking for stylish footwear that transitions effortlessly from casual to formal settings.",
     },
@@ -154,7 +154,7 @@ const MujeresProducto = () => {
       img: "/assets/677786-500-500.webp",
       title: "NIKE COURT VISION ALTA",
       description: "Women's footwear",
-      price: "$254,950",
+      price: "$58,96",
       material: "Leather and synthetic",
       moreDescription: "Crafted with a blend of genuine leather and high-performance synthetic materials, this model offers a unique combination of style and durability. Its ergonomic design ensures all-day comfort, while the modern aesthetic makes it a standout choice for women who prioritize both elegance and practicality.",
     },

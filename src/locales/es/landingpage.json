@@ -1,0 +1,38 @@
+{
+    "header": {
+    "title": "ZAPATOS NIKE",
+    "subtitle": "REGÍSTRATE Y OBTÉN UN 50% DE DESCUENTO"
+    },
+    "services": {
+    "freeShipping": "ENVÍO GRATIS",
+    "freeShippingDesc": "Las compras en línea ofrecen comodidad, una amplia selección de productos y la posibilidad de comprar desde cualquier lugar, en cualquier momento.",
+    "onTimeDelivery": "ENTREGA A TIEMPO",
+    "onTimeDeliveryDesc": "Las empresas de comercio electrónico gestionan la logística de entrega de productos a los clientes y a sus puertas.",
+    "reviewsRatings": "RESEÑAS Y CALIFICACIONES",
+    "reviewsRatingsDesc": "Las plataformas de comercio electrónico a menudo tienen un sistema de reseñas y calificaciones donde los clientes pueden compartir sus comentarios.",
+    "customerSupport": "SOPORTE AL CLIENTE",
+    "customerSupportDesc": "Las empresas de comercio electrónico ofrecen servicios de soporte al cliente para ayudar a los clientes con sus consultas, inquietudes y problemas."
+    },
+    "common": {
+    "clickHere": "Haz clic aquí"
+    },
+    "banner": {
+    "offerOfTheMonth": "OFERTA DEL MES",
+    "productName": "PHANTOM VISION ELITE DYNAMIC",
+    "productDescription": "Los zapatos Nike Phantom Vision Elite Dynamic combinan comodidad, rendimiento y estilo. Diseñados para futbolistas, cuentan con un collar dinámico para mayor agilidad y un toque preciso.",
+    "currentPrice": "$500",
+    "originalPrice": "$1000",
+    "hours": "HORAS",
+    "minutes": "MINUTOS",
+    "seconds": "SEGUNDOS",
+    "shopNow": "COMPRAR AHORA"
+    },
+    "text-banner":{
+        "content1": "CORRE,",
+        "content2": "COME,  DUERME Y REPITE"
+    },
+    "text-banner-2":{
+    "content1": "ZAPATILLAS DE CORRER PARA HOMBRE",
+    "content2": "REGÍSTRATE AHORA Y OBTÉN UN 50% DE DESCUENTO!"
+    }
+}

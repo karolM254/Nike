@@ -32,7 +32,6 @@
   padding: 5px;
   border-radius: 60px;
   font-size: 19px;
-  width: 250px;
 }
 
 .ri-search-line{
@@ -84,22 +83,25 @@
   font-size: 17px;
 }
 
-.precio-mujeres {
+.precio-mujeres-productos {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 8px 0 !important;
-  padding-right: 70px;
 }
 
-.precio-mujeres h5 {
+.precio-mujeres-productos h5 {
+  white-space: nowrap;
   font-weight: 500;
   font-size: 17px;
+  margin-left: 5px ;
 }
 
-.precio-mujeres p {
+.precio-mujeres-productos p {
   color: var(--primary-color);
   font-weight: bold;
   font-size: 17px;
+  margin-left: 80px;
+  margin-top: 1px;
 }
 
 

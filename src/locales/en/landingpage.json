@@ -1,0 +1,38 @@
+{
+    "header": {
+    "title": "NIKE SHOES",
+    "subtitle": "SIGN UP AND GET 50% OFF"
+    },
+    "services": {
+    "freeShipping": "FREE SHIPPING",
+    "freeShippingDesc": "Online shopping offers convenience, a vast selection of products, and the ability to shop from anywhere, anytime.",
+    "onTimeDelivery": "ON TIME DELIVERY",
+    "onTimeDeliveryDesc": "E-commerce companies handle the logistics of delivering products to customers & doorsteps.",
+    "reviewsRatings": "REVIEWS & RATINGS",
+    "reviewsRatingsDesc": "E-commerce platforms often have a review and rating system where customers can share their feedback.",
+    "customerSupport": "CUSTOMER SUPPORT",
+    "customerSupportDesc": "E-commerce companies offer customer support services to assist customers with their queries, concerns, and issues."
+    },
+    "common": {
+    "clickHere": "Click Here"
+    },
+    "banner": {
+    "offerOfTheMonth": "OFFER OF THE MONTH",
+    "productName": "PHANTOM VISION ELITE DYNAMIC",
+    "productDescription": "The Nike Phantom Vision Elite Dynamic shoes combine comfort, performance, and style. Designed for football (soccer) players, they feature a dynamic fit collar for agility and a precise touch.",
+    "currentPrice": "$500",
+    "originalPrice": "$1000",
+    "hours": "HOURS",
+    "minutes": "MINUTES",
+    "seconds": "SECONDS",
+    "shopNow": "SHOP NOW"
+    },
+    "text-banner": {
+    "content1": "RUN,",
+    "content2": "EAT,  SLEEP AND REPEAT"
+    },
+    "text-banner-2":{
+    "content1": "MEN'S RUNNING SHOES",
+    "content2": "SIGN UP NOW AND GET 50% OFF"
+    }
+}

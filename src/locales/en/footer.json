@@ -1,0 +1,29 @@
+{
+    "footer": {
+    "shops": {
+        "name": "SHOPS",
+        "name1": "Men",
+        "name2": "Women",
+        "name3": "Top Brands",
+        "name4": "Lookbook"
+    },
+    "information": {
+        "name": "INFORMATION",
+        "name1": "About Us",
+        "name2": "Customer Service",
+        "name3": "Manufacturers",
+        "name4": "Privacy Policy",
+        "name5": "Blog"
+    },
+    "stayConnected": {
+        "name1": "STAY CONNECTED"
+    },
+    "copyright": "Copyright © 2024 Web Design Mastery. All rights reserved.",
+    "paymentCards": {
+        "visa": "https://www.visa.com.co/pague-con-visa/tecnologias-presentadas/evoluciona-nuevas-formas-pago.html",
+        "davivienda": "https://www.davivienda.com/wps/portal/personas/nuevo",
+        "mastercard": "https://www.mastercard.com.co/es-co.html",
+        "bancolombia": "https://www.bancolombia.com/personas"
+    }
+    }
+}

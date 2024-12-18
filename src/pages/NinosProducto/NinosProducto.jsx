@@ -9,61 +9,61 @@ import { useCart } from "../../components/Carrito/CartContext";
 // Lista de productos
 const productosNino = [
   {
-    id: 1,
+    id: '1',
     img: "/assets/zapato1.jpg",
     title: "NIKE CORTEZ EASYON",
     description: "Children's footwear",
-    price: "$269,950",
+    price: "$62,47",
     material: "Leather and suede",
     moreDescription:
       "Perfect for the little ones! These Nike baby shoes are ideal for giving them comfort and style from their first steps. Made from soft, lightweight materials, they provide the necessary support for growing feet, while their modern design ensures your little one looks amazing. The non-slip sole offers stability, making them perfect for babies to explore with confidence.",
   },
   {
-    id: 2,
+    id: '2',
     img: "/assets/zapato2.jpg",
     title: "NIKE COURT BOROUGH",
     description: "Baby shoes",
-    price: "$239,950",
+    price: "$55,49",
     material: "Plastic and rubber",
     moreDescription:
       "Perfect for the little ones! These Nike baby shoes are ideal for giving them comfort and style from their first steps. Made from soft, lightweight materials, they provide the necessary support for growing feet, while their modern design ensures your little one looks amazing. The non-slip sole offers stability, making them perfect for babies to explore with confidence.",
   },
   {
-    id: 3,
+    id: '3',
     img: "/assets/zapato3.jpg",
     title: "AIR JORDAN 3 RETRO",
     description: "Big boy shoes",
-    price: "$564.950",
+    price: "$216,31",
     material: "Fabric and rubber",
     moreDescription:
       "Comfort and style for the biggest ones! Nike kids' shoes are the perfect combination of comfort, durability and style. Designed with the energy and movement of little ones in mind, these shoes offer a comfortable and secure fit, ideal for everyday use. Nike cushioning technology ensures that every step is soft, providing support all day long, whether at school, playing or sporting activities.",
   },
   {
-    id: 4,
+    id: '4',
     img: "/assets/zapato4.jpg",
     title: "NIKE FORCE 1 LOW SE EASYON",
     description: "Children's Footwear",
-    price: "$524.950",
+    price: "$115,77",
     material: "Synthetic and rubber",
     moreDescription:
       "Comfort and style for the biggest ones! Nike kids' shoes are the perfect combination of comfort, durability and style. Designed with the energy and movement of little ones in mind, these shoes offer a comfortable and secure fit, ideal for everyday use. Nike cushioning technology ensures that every step is soft, providing support all day long, whether at school, playing or sporting activities.",
   },
   {
-    id: 5,
+    id: '5',
     img: "/assets/zapato5.jpg",
     title: "AIR JORDAN 1 LOW BG",
     description: "Children's Footwear",
-    price: "$834.950",
+    price: "$151,46",
     material: "Leather and fabric",
     moreDescription:
       "Comfort and style for the biggest ones! Nike kids' shoes are the perfect combination of comfort, durability and style. Designed with the energy and movement of little ones in mind, these shoes offer a comfortable and secure fit, ideal for everyday wear. Nike cushioning technology ensures that every step is soft, providing support all day long, whether at school, playing or sporting activities.",
   },
   {
-    id: 6,
+    id: '6',
     img: "/assets/zapato6.jpg",
     title: "AIR JORDAN 1 LOW SE",
     description: "Big boy shoes",
-    price: "$254.950",
+    price: "$169,96",
     material: "Leather and synthetic",
     moreDescription:
       "Comfort and style for the biggest ones! Nike kids' shoes are the perfect combination of comfort, durability and style. Designed with the energy and movement of little ones in mind, these shoes offer a comfortable and secure fit, ideal for everyday use. Nike cushioning technology ensures that every step is soft, providing support all day long, whether at school, playing or sporting activities.",
@@ -75,6 +75,7 @@ const CustomPrevArrow = (props) => {
   const { style, onClick } = props;
   return (
     <div
+      className="CustomPrevArrowKids"
       style={{
         ...style,
         display: "block",
@@ -98,6 +99,7 @@ const CustomNextArrow = (props) => {
   const { style, onClick } = props;
   return (
     <div
+      className="CustomNextArrowKids"
       style={{
         ...style,
         display: "block",
@@ -199,7 +201,7 @@ const NinosProducto = () => {
               </select>
             </div>
             <h4 className="ver-mas-ninos" onClick={openModal}>
-              View product information
+              See More Product Information
             </h4>
             <div className="boton-ninos" onClick={addToCart}>
               <button className="carrito-ninos">
