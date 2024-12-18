@@ -81,7 +81,7 @@
 .boton-mujeres{
   display: flex;
   flex-direction: row;
-  width: 120%;
+  width: 100%;
   margin-left: 30px;
   margin-top: 12%;
 }
@@ -126,48 +126,6 @@
 
 }
   
-/* ------------------ Productos -------------------- */
-.grid-contenido-mujeres {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 70px;
-  margin: 100px 80px;
-}
-    
-.grid-contenido-mujeres img {
-  cursor: pointer;
-  border-radius: 11px;
-}
-    
-.grid-contenido-mujeres h4{
-  color: var(--primary-color-dark);
-  font-size: 1.rem;
-  margin: 10px 0 0 5px;
-}
-    
-.grid-contenido-mujeres p {
-  justify-content: space-between;
-}
-    
-.precio-mujeres {
-  display: flex;
-  justify-content: space-between;
-  margin: 8px 30px 0 5px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-    
-.precio-mujeres h5 {
-  font-weight: 500;
-}
-    
-.precio-mujeres p {
-  color: var(--primary-color);
-}
-
-.precio-slider-m {
-  margin-top: 3px !important;
-}
 
 /* -------------------- Modal ---------------------------- */
 .modal-overlay {
@@ -219,11 +177,10 @@
 /*---------------------- Slider -------------------------*/
 .events-container-women {
   margin: 20px 0;
-  margin-bottom: -70px !important;
+  margin-bottom: 70px !important;
   width: 100%;
   overflow: hidden;
-  position: relative;
-  top: -6rem;
+
 }
 
 .events-container-women .event-card-women {
@@ -254,16 +211,16 @@
 
 .events-container-women .event-card-women p {
   font-size: 12px;
-  margin-left: 50% !important;
+  margin-left: 150px;
+  margin-top: 1px;
+  
 }
 
 .slick-dots li button:before {
   color: var(--primary-color-dark) !important; 
 }
 
-.precio-slider-m {
-  top: 20px !important;
-}
+
 
 /* ------------------ estilos boton devolver -------------------- */
 .boton-regresar-women {
@@ -317,7 +274,7 @@
   }
 
   #color, #talla {
-    width: 50%;
+    width: 50% !important;
   }
 
   .boton-regresar-women {
@@ -331,8 +288,11 @@
   .boton-mujeres {
     justify-content: center;
     margin-bottom: 50px;
-    position: relative;
-    left: -60px;
+  }
+
+  .carrito-mujeres{
+    width: 50%;
+    margin-right: 60px;
   }
 
   .event-card-women img {
@@ -347,10 +307,15 @@
 
   .event-card-women p {
     top: 0 !important;
+
   }
 
   .event-card-women {
     padding: 10px 50px !important;
+  }
+
+  .text-women{
+    display: none;
   }
 }
 
@@ -391,8 +356,12 @@
 
   .boton-mujeres {
     justify-content: center;
-    margin-bottom: 60px;
-    margin-left: -35px;
+    margin-bottom: 50px;
+  }
+
+  .carrito-mujeres{
+    width: 50%;
+    margin-right: 60px;
   }
 
   .text-women{

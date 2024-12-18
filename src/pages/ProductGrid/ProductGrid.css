@@ -206,9 +206,15 @@
 
 /* Celulares pequeños */
 @media (max-width: 480px) {
+
   .grid-contenido-mujeres {
     grid-template-columns: 1fr !important;
     margin: 50px !important;
+    transform: translateX(-50px);
+  }
+  .precio-mujeres p{
+    transform: translateX(100px) translateY(10px);
+
   }
   .product-container{
     flex-direction: column;
@@ -239,10 +245,18 @@
 /* Celulares grandes y tablets pequeñas */
 @media (min-width: 481px) and (max-width: 768px) {
   .grid-contenido-mujeres {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin: 50px !important;
+    gap: 80px !important;
+  }
+  .grid-contenido-mujeres {
     grid-template-columns: 1fr !important;
     margin: 40px !important;
   }
-
+  .precio-mujeres h5{
+    font-size: 1rem;
+    width: 100%;
+  }
   .buscador-mujeres-productos {
     align-items: flex-end;
   }
@@ -262,7 +276,7 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid-contenido-mujeres {
     grid-template-columns: repeat(2, 1fr) !important;
-    margin: 50px !important;
+    margin: 40px !important;
     gap: 80px !important;
   }
 
@@ -279,9 +293,20 @@
     padding: 5px;
 
   }
+  .precio-mujeres h5{
+    font-size: 1rem;
+    width: 100%;
+  }
 }
-
-
+@media (min-width: 1025px) and (max-width: 1920px) {
+  .precio-mujeres p{
+    transform: translateX(40px);
+  }
+  .precio-mujeres h5{
+    font-size: 1.1rem;
+    width: 100%;
+  }
+}
 /* Monitores grandes */
 @media (min-width: 1921px) {
   .grid-contenido-mujeres {

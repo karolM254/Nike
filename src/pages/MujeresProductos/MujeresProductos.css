@@ -54,17 +54,15 @@
 .grid-contenido-mujeres {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px !important;
-  margin: 40px 60px !important;
-  position: relative;
-  right: -3rem; 
+  gap: 70px !important;
+  margin-left: 20px !important;
 }
 
 .grid-contenido-mujeres img {
   border-radius: 6px;
   transition: transform 0.3s ease; 
   height: auto !important;
-  width: 82% !important;
+  width: 90% !important;
 }
 
 .grid-contenido-mujeres img:hover{
@@ -111,7 +109,7 @@
 @media (max-width: 480px) {
   .grid-contenido-mujeres {
     grid-template-columns: 1fr !important;
-    margin: 50px !important;
+    padding-left: 70px;
   }
 
   .grid-contenido-mujeres h5 {
@@ -131,13 +129,17 @@
     padding: 3px;
 
   }
+
+  .precio-mujeres-productos{
+    justify-content: space-evenly;
+  }
 }
 
 /* Celulares grandes y tablets pequeñas */
 @media (min-width: 481px) and (max-width: 768px) {
   .grid-contenido-mujeres {
     grid-template-columns: 1fr !important;
-    margin: 40px !important;
+    padding-left: 50px;
   }
 
   .buscador-mujeres-productos {
@@ -151,7 +153,10 @@
   .buscador-mujeres input {
     width: 100px;
     padding: 5px;
+  }
 
+  .precio-mujeres-productos p{
+    margin-left: 150px;
   }
 }
 

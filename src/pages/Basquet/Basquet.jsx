@@ -5,53 +5,18 @@ import "../ProductGrid/ProductGrid.css"; // Archivo de estilos
 const Basquet = () => {
   const [searchTerm, setSearchTerm] = useState(""); // Estado del buscador
 
-  // Lista de productos
+  // Lista de productos con slugs únicos
   const productos = [
-    {
-      id: 1,
-      nombre: "NIKE PR INC", 
-      descripcion: "Tennis of basketball",
-      precio: "$500.000",
-      img: "/assets/basquet1.png",
-    },
-    {
-      id: 2,
-      nombre: "NIKE MASTER CART",
-      descripcion: "Tennis of basketball",
-      precio: "$199.950",
-      img: "/assets/basquet2.png",
-    },
-    {
-      id: 3,
-      nombre: "NIKE AIR MORE",
-      descripcion: "Tennis of basketball",
-      precio: "$564.950",
-      img: "/assets/basquet3.png",
-    },
-    {
-      id: 4,
-      nombre: "NIKE AIR SUPERSTAR",
-      descripcion: "Tennis of basketball",
-      precio: "$524.950",
-      img: "/assets/basquet4.png",
-    },
-    {
-      id: 5,
-      nombre: "NIKE YOUNG WORLD",
-      descripcion: "Tennis of basketball",
-      precio: "$834.950",
-      img: "/assets/basquet5.png",
-    },
-    {
-      id: 6,
-      nombre: "NIKE MARRON ONE",
-      descripcion: "Tennis of basketball",
-      precio: "$254.950",
-      img: "/assets/basquet6.png",
-    },
+    { slug: "nike-pr-inc", nombre: "NIKE PR INC", descripcion: "Tennis of basketball", precio: "$190,00", img: "/assets/basquet1.png" },
+    { slug: "nike-master-cart", nombre: "NIKE MASTER CART", descripcion: "Tennis of basketball", precio: "$199.95", img: "/assets/basquet2.png" },
+    { slug: "nike-air-more", nombre: "NIKE AIR MORE", descripcion: "Tennis of basketball", precio: "$564.95", img: "/assets/basquet3.png" },
+    { slug: "nike-air-superstar", nombre: "NIKE AIR SUPERSTAR", descripcion: "Tennis of basketball", precio: "$524.95", img: "/assets/basquet4.png" },
+    { slug: "nike-young-world", nombre: "NIKE YOUNG WORLD", descripcion: "Tennis of basketball", precio: "$834.95", img: "/assets/basquet5.png" },
+    { slug: "nike-marron-one", nombre: "NIKE MARRON ONE", descripcion: "Tennis of basketball", precio: "$254.95", img: "/assets/basquet6.png" },
     ];
+    
 
-  // Filtrar productos
+  // Filtrar productos según el término de búsqueda
   const productosFiltrados = productos.filter((producto) =>
     producto.nombre.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -77,7 +42,7 @@ const Basquet = () => {
             <i className="ri-search-line"></i>
             <input
               type="text"
-              placeholder="Buscar"
+              placeholder="Search"
               className="buscar-producto-mujer"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -88,8 +53,8 @@ const Basquet = () => {
         {/* Grid de productos */}
         <div className="grid-contenido-mujeres">
           {productosFiltrados.map((producto) => (
-            <div className="col" key={producto.id}>
-              <Link to={`infoproducto/${producto.id}`}>
+            <div className="col" key={producto.slug}>
+              <Link to={`infoproducto/${producto.slug}`}>
                 <img src={producto.img} alt={producto.nombre} />
               </Link>
               <h4>{producto.nombre}</h4>
