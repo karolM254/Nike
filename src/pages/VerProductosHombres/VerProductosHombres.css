@@ -80,7 +80,7 @@
     font-weight: bolder;
     margin-top: 10px;
     position: relative;
-    left: -220px;
+    left: -240px;
     top: -390px;
     font-family: "Roboto Condensed", sans-serif;
 }
@@ -212,19 +212,19 @@
     height: 200px;
     text-align: center;
     position: relative;
-    top: -15rem;
+    top: -18rem;
     left: -350px;
 }
 
 /* Estilos para la lista de eventos */
-.events-upcoming {
+.events-container-men .events-upcoming-men {
     position: relative;
     overflow: visible;
     margin-top: 14px;
 }
 
 /* Tarjeta de evento */
-.event-card {
+.events-container-men .event-card-men {
     border-radius: 10px;
     overflow: hidden;
     text-align: left;
@@ -233,14 +233,14 @@
 }
 
 /* Imagen dentro de la tarjeta de evento */
-.event-card img {
+.events-container-men .event-card-men img {
     width: 90%;
-    height: 45vh;
+    height: auto;
     border-radius: 10px;
 }
 
 /* Título de la tarjeta */
-.event-card h3 {
+.events-container-men .event-card-men h3 {
     color: var(--primary-color-dark);
     font-weight: bold;
     font-size: 17px;
@@ -248,11 +248,10 @@
 }
 
 /* Descripción de la tarjeta */
-.event-card p {
+.events-container-men .event-card-men p {
     font-size: 12px;
     margin: 0;
     position: relative;
-    top: -9px;
 }
 
 /* Estilos para las flechas del carrusel */
@@ -276,21 +275,15 @@
 }
 
 /* Precio del producto en el carrusel */
-.event-card .priceMen-slider {
+.event-card-men .priceMen-slider {
     font-weight: bolder;
     position: relative;
     color: var(--primary-color-dark) !important;
     top: -15px !important;
-    right: -240px;
+    right: -280px;
 }
 
-.event-card .priceMen-slider-2 {
-  font-weight: bolder;
-  position: relative;
-  color: var(--primary-color-dark) !important;
-  top: -15px !important;
-  right: -240px;
-}
+
 
 /* Botón para regresar */
 .boton-regresar {

@@ -23,7 +23,7 @@
 .ver-producto-mujer {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin: 20px 120px 50px 30px;
+  margin: 20px 50px 50px 30px !important;
 }
 
 .ver-producto-mujer img {
@@ -79,16 +79,20 @@
 .boton-mujeres{
   display: flex;
   flex-direction: row;
+  width: 120%;
+  margin-left: 30px;
+  margin-top: 12%;
 }
   
 .carrito-mujeres {
   background-color: var(--primary-color-dark);
   color: var(--white);
-  padding: 2px 30px !important;
+  /* padding: 2px 30px !important; */
   font-size: 1rem;
   border-radius: 60px;
   border: none;
   cursor: pointer;
+  
 }
   
 .ver-producto-mujer .ri-shopping-cart-line {
@@ -100,6 +104,8 @@
   justify-content: flex-end;
   height: 50px;
   cursor: pointer;
+ 
+
 }
   
 .ver-mas-mujeres {
@@ -215,37 +221,38 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  top: -3rem;
+  top: -6rem;
 }
 
-.events-container-women .event-card {
+.events-container-women .event-card-women {
   overflow: hidden;
   text-align: left;
   padding: 60px 50px !important;
 }
 
-.events-container-women .event-card img {
-  width: 90% !important;
+.events-container-women .event-card-women img {
+  width: 100% !important;
   height: auto !important;
   border-radius: 11px;
   cursor: pointer;
 }
 
-.events-container-women .event-card h4 {
+.events-container-women .event-card-women h4 {
   color: var(--primary-color-dark);
   font-size: 1.rem;
   margin: 10px 0 0 5px;
 }
 
-.events-container-women .event-card h5 {
-  font-size: 1.rem;
+
+.events-container-women .event-card-women h5 {
+  font-size: 12px;
   margin: 0 0 0 5px;
+  white-space: nowrap;
 }
 
-.events-container-women .event-card p {
-  font-size: 1rem;
-  margin: 4px 0 0 0 !important;
-  left: 40px;
+.events-container-women .event-card-women p {
+  font-size: 12px;
+  margin-left: 50% !important;
 }
 
 .slick-dots li button:before {

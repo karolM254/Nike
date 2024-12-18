@@ -8,45 +8,45 @@ const NinosProductos = () => {
   // Lista de productos
   const productos = [
     {
-      id: 1,
+      id: "1",
       nombre: "NIKE CORTEZ EASYON",
       descripcion: "Children's footwear",
-      precio: "$269,950",
+      precio: "$62,47",
       img: "/assets/zapato1.jpg",
     },
     {
       id: 2,
       nombre: "NIKE COURT BOROUGH",
       descripcion: "Baby shoes",
-      precio: "$239,950",
+      precio: "$55,49",
       img: "/assets/zapato2.jpg",
     },
     {
       id: 3,
       nombre: "AIR JORDAN 3 RETRO",
       descripcion: "Big boy shoes",
-      precio: "$934,950",
+      precio: "$216,31",
       img: "/assets/zapato3.jpg",
     },
     {
       id: 4,
       nombre: "NIKE FORCE 1 LOW SE EASYON",
       descripcion: "Children's footwear",
-      precio: "$504,950",
+      precio: "$115,77",
       img: "/assets/zapato4.jpg",
     },
     {
       id: 5,
       nombre: "AIR JORDAN 1 LOW BG",
       descripcion: "Children's footwear",
-      precio: "$654,950",
+      precio: "$151,46",
       img: "/assets/zapato5.jpg",
     },
     {
       id: 6,
       nombre: "AIR JORDAN 1 LOW SE",
       descripcion: "Big boy shoes",
-      precio: "$734,950",
+      precio: "$169,96",
       img: "/assets/zapato6.jpg",
     },
   ];
