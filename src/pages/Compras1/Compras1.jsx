@@ -202,7 +202,7 @@ const handleSubmit = () => {
               <input type="text" id="nombre" value={formData.nombre} onChange={handleInputChange} />
             </div>
             <div>
-              <label htmlFor="apellidos">Surnames</label>
+              <label htmlFor="apellidos">Last name</label>
               <input type="text" id="apellidos" value={formData.apellidos} onChange={handleInputChange} />
             </div>
           </div>
@@ -233,28 +233,7 @@ const handleSubmit = () => {
         </form>
       </div>
 
-      <div className="summary-container">
-        <h2>PURCHASE SUMMARY</h2>
-        <div className="summary-items">
-          {carrito.length > 0 ? (
-            carrito.map((productos) => (
-              <div className="item" key={productos.id}>
-                <div className="item-content">
-                  <p>{productos.title} x {cantidades[productos.id] || 1}</p>
-                  <p><strong>Subtotal:</strong> {calcularSubtotal(productos.id)}</p>
-                </div>
-              </div>
-            ))
-          ) : (
-            <p>There are no products in the cart.</p>
-          )}
-        </div>
-        <div className="total">
-          <p>Total: </p>
-          <p>{calcularTotal()}</p>
-        </div>
-      </div>
-
+      
       {showFirstModal && (
         <div className="modal-principal">
           <div className="modal-content">

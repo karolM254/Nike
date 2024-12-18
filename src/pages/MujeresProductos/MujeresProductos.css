@@ -63,8 +63,8 @@
 .grid-contenido-mujeres img {
   border-radius: 6px;
   transition: transform 0.3s ease; 
-  height: 80%;
-  width: 80%;
+  height: auto !important;
+  width: 82% !important;
 }
 
 .grid-contenido-mujeres img:hover{
