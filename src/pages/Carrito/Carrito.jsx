@@ -150,6 +150,8 @@ function GridCarrito({
               className="producto-img"
             />
             <h3>{producto.title}</h3>
+            <p>Color: {producto.selectedColor}</p>
+            <p>Size: {producto.selectedSize}</p>
           </div>
 
           <p className="precio-producto">{producto.price}</p>

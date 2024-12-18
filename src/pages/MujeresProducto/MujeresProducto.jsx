@@ -12,16 +12,33 @@ const MujeresProducto = () => {
   // Estado para el arreglo de productos en el carrito
 
   const addToCart = () => {
-    setCarrito((prevCarrito) => {
-      const productoEnCarrito = prevCarrito.find(item => item.id === producto.id);
-      if (!productoEnCarrito) {
-        console.log("Producto agregado:", producto);
-        return [...prevCarrito, producto];
-      } else {
-        console.log("El producto ya está dentro del carrito");
-        return prevCarrito;
+    if (producto) {
+      if (!selectedColor || !selectedSize) {
+        alert("Please select a color and size before adding to cart.");
+        return;
       }
-    });
+  
+      setCarrito((prevCarrito) => {
+        const productoEnCarrito = prevCarrito.find(
+          (item) =>
+            item.id === producto.id &&
+            item.selectedColor === selectedColor &&
+            item.selectedSize === selectedSize
+        );
+  
+        if (!productoEnCarrito) {
+          const updatedCart = [
+            ...prevCarrito,
+            { ...producto, selectedColor, selectedSize },
+          ];
+          console.log("Producto agregado:", updatedCart);
+          return updatedCart;
+        } else {
+          alert("This product with the selected color and size is already in the cart.");
+          return prevCarrito;
+        }
+      });
+    }
   };
 
   const navigate = useNavigate(); // Hook para navegar
@@ -178,13 +195,16 @@ const MujeresProducto = () => {
 
   const [productoSeleccionado, setProductoSeleccionado] = useState(productos[0]);
 
+  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
   
   return (
     <div>
       <main className="contenido-mujeres">
         {/* Botón para regresar */}
-        <button className="boton-regresar" onClick={() => navigate(-1)}>
-          <i className="ri-arrow-left-line"></i> Return
+        <button className="boton-regresar-women" onClick={() => navigate(-1)}>
+          <i className="ri-arrow-left-line"></i>
+          <span className="text-women">Return</span>
         </button>
         {/* Producto destacado */}
         <div className="ver-producto-mujer">
@@ -197,34 +217,34 @@ const MujeresProducto = () => {
             </h4>
             <p>{producto.price}</p>
             <div className="color-talla">
-              <select name="color" id="color" className="select-mujeres">
+              <select name="color" id="color" className="select-mujeres" onChange={(e) => setSelectedColor(e.target.value)}>
                 <option value="opcionColor">Color</option>
-                <option value="rosa">Pink</option>
-                <option value="negro">Black</option>
-                <option value="azul">Sky-Blue</option>
-                <option value="morado">Purple</option>
-                <option value="morado">White</option>
-                <option value="morado">Brown</option>
-                <option value="morado">Yellow</option>
-                <option value="morado">Red</option>
-                <option value="morado">Orange</option>
-                <option value="morado">Green</option>
+                <option value="Pink">Pink</option>
+                <option value="Black">Black</option>
+                <option value="Sky-Blue">Sky-Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="White">White</option>
+                <option value="Brown">Brown</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Red">Red</option>
+                <option value="Orange">Orange</option>
+                <option value="Green">Green</option>
               </select>
-              <select name="talla" id="talla" className="select-mujeres">
+              <select name="talla" id="talla" className="select-mujeres" onChange={(e) => setSelectedSize(e.target.value)}>
                 <option value="opcionTalla">Size</option>
-                <option value="35">Size 5 US</option>
-                <option value="35">Size 6 US</option>
-                <option value="35">Size 7 US</option>
-                <option value="35">Size 8 US</option>
-                <option value="35">Size 9 US</option>
-                <option value="35">Size 10 US</option>
-                <option value="35">Size 33 EU</option>
-                <option value="35">Size 34 EU</option>
-                <option value="35">Size 35 EU</option>
-                <option value="35">Size 36 EU</option>
-                <option value="36">Sieze 37 EU</option>
-                <option value="37">Size 38 EU</option>
-                <option value="38">Size 39 EU</option>
+                <option value="5 US">Size 5 US</option>
+                <option value="6 US">Size 6 US</option>
+                <option value="7 US">Size 7 US</option>
+                <option value="8 US">Size 8 US</option>
+                <option value="9 US">Size 9 US</option>
+                <option value="10 US">Size 10 US</option>
+                <option value="33 EU">Size 33 EU</option>
+                <option value="34 EU">Size 34 EU</option>
+                <option value="35 EU">Size 35 EU</option>
+                <option value="35 EU">Size 36 EU</option>
+                <option value="36 EU">Sieze 37 EU</option>
+                <option value="37 EU">Size 38 EU</option>
+                <option value="38 EU">Size 39 EU</option>
               </select>
             </div>
             <h4 className="ver-mas-mujeres" onClick={openModal}>

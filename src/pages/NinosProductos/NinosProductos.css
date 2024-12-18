@@ -105,7 +105,7 @@
 @media (max-width: 480px) {
   .buscador-Ninos-productoss {
     position: absolute; 
-    top: 60px; 
+    top: 0; 
     right: 10px; 
     margin: 0; 
     padding: 0;
@@ -116,7 +116,10 @@
     padding: 5px; 
     border-radius: 30px; 
     font-size: 14px; 
-    margin-top: 15px;
+    width: 100% !important;
+    position: relative;
+    left: -40px;
+    top: -3rem;
   }
 
   .buscador-Ninoss input {
@@ -126,10 +129,16 @@
     
   }
 
+  .contenido-Ninos{
+    position: relative;
+    right: -2rem;
+  }
+
   .grid-contenido-Ninoss {
     grid-template-columns: 1fr;
-    margin: 50px 20px;
     margin-top: 70px;
+    position: relative;
+    left: -23px;
   }
 
   .grid-contenido-Ninoss img {
@@ -150,6 +159,11 @@
     font-size: 0.8rem;
   }
 
+  .precio-Ninoss p{
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .precio-Ninoss h5 {
     font-size: 14px;
   }
@@ -165,10 +179,8 @@
     padding: 0;
     justify-content: flex-start;
     margin-left: 90%;
-   
-    
-    
   }
+
 
   .buscador-Ninoss {
     padding: 8px;
@@ -176,7 +188,6 @@
     font-size: 16px;
     height: 5%;
     max-width: 70%;
-   
     
   }
 
@@ -188,7 +199,8 @@
 
 
   .grid-contenido-Ninoss {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     margin: 60px 30px;
     margin-top: 17%;
   }
@@ -207,8 +219,12 @@
   }
 
   .precio-Ninoss {
-    margin: 8px 20px;
     font-size: 0.9rem;
+  }
+
+  .precio-Ninoss p{
+    display: flex;
+    justify-content: end;
   }
 
   .precio-Ninoss h5 {

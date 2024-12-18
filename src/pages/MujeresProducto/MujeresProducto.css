@@ -23,7 +23,7 @@
 .ver-producto-mujer {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin: 20px 50px 50px 30px !important;
+  margin: 0px 50px 50px 30px !important;
 }
 
 .ver-producto-mujer img {
@@ -47,6 +47,7 @@
   
 .material-producto-mujer {
   font-weight: 300;
+  color: #646262;
 }
   
 .info-producto-mujer p {
@@ -63,13 +64,14 @@
 }
   
 .color-talla select {
-  width: 20%;
-  padding: 8px;
+  width: 28% !important;
+  padding: 8px !important;
   font-size: 14px;
-  background-color: #ececec;
+  background-color:  #ececec !important;
   border: none;
   border-radius: 50px;
   position: relative;
+  margin-bottom: 5px;
 }
   
 .ver-mas-mujeres {
@@ -264,7 +266,7 @@
 }
 
 /* ------------------ estilos boton devolver -------------------- */
-.boton-regresar {
+.boton-regresar-women {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -279,7 +281,7 @@
   margin-top: 15px;
   margin-left: 15px;
 }
-.boton-regresar:hover {
+.boton-regresar-women:hover {
   background-color: #1e40af; /* Color más oscuro en hover /
   transform: scale(1.05); / Efecto de agrandamiento */
   transition: transform 0.3s ease;
@@ -318,7 +320,7 @@
     width: 50%;
   }
 
-  .boton-regresar {
+  .boton-regresar-women {
     margin: 10px 15px !important;
   }
 
@@ -329,23 +331,25 @@
   .boton-mujeres {
     justify-content: center;
     margin-bottom: 50px;
+    position: relative;
+    left: -60px;
   }
 
-  .event-card img {
+  .event-card-women img {
     width: 80% !important;
     height: auto !important;
     margin: 0 auto;
   }  
 
-  .event-card h4, .event-card h5 {
+  .event-card-women h4, .event-card-women h5 {
     font-size: 0.9rem;
   }
 
-  .event-card p {
+  .event-card-women p {
     top: 0 !important;
   }
 
-  .event-card {
+  .event-card-women {
     padding: 10px 50px !important;
   }
 }
@@ -377,7 +381,7 @@
     width: 40%;
   }
 
-  .boton-regresar {
+  .boton-regresar-women {
     margin: 10px 15px !important;
   }
 
@@ -388,26 +392,31 @@
   .boton-mujeres {
     justify-content: center;
     margin-bottom: 60px;
+    margin-left: -35px;
   }
 
-  .event-card img {
+  .text-women{
+    display: none;
+  }
+
+  .event-card-women img {
     width: 60% !important;
     height: auto !important;
     margin: 0 auto;
   }  
 
-  .event-card p {
+  .event-card-women p {
     top: 0 !important;
     font-size: 1rem !important;
-    margin-right: 100px !important;
+    transform: translateX(50px);
   }
 
-  .event-card h5, .event-card h4 {
+  .event-card-women h5, .event-card-women h4 {
     margin-left: 130px;
     font-size: 1.2rem;
   }
 
-  .event-card {
+  .event-card-women {
     padding: 10px 50px !important;
     font-size: 1.6rem;
   } 
@@ -454,25 +463,25 @@
     margin-bottom: 90px;
   }
 
-  .event-card img {
+  .event-card-women img {
     width: 80% !important;
     height: auto !important;
     margin: 0 auto;
   }  
 
-  .event-card p {
+  .event-card-women p {
     top: 0 !important;
     margin-right: 20px !important;
     font-size: 0.8rem !important;
   }
 
-  .event-card h5, .event-card h4 {
+  .event-card-women h5, .event-card-women h4 {
     margin-left: 50px;
     font-size: 1rem;
 
   }
 
-  .event-card {
+  .event-card-women {
     padding: 10px !important;
     font-size: 1.6rem;
   } 
@@ -480,22 +489,22 @@
 
 /* Laptos y escritorios estándar */
 @media (min-width: 1025px) and (max-width: 1920px) {
-  .event-card img {
+  .event-card-women img {
     width: 100% !important;
     height: auto !important;
     border-radius: 10px;
   }  
 
-  .event-card p {
+  .event-card-women p {
     top: 0 !important;
     font-size: 0.8rem !important;
   }
 
-  .event-card h5, .event-card h4 {
+  .event-card-women h5, .event-card-women h4 {
     font-size: 0.9rem;
   }
 
-  .event-card {
+  .event-card-women {
     padding: 30px 50px !important;
   }
 }
@@ -541,26 +550,26 @@
     margin-bottom: 90px;
   }
  
-  .event-card p {
+  .event-card-women p {
     top: 0 !important;
   }
 
-  .event-card img {
+  .event-card-women img {
     width: 90% !important;
     height: auto !important;
     border-radius: 10px;
   }  
 
-  .event-card p {
+  .event-card-women p {
     top: 0 !important;
     font-size: 1.2rem !important;
   }
 
-  .event-card h5, .event-card h4 {
+  .event-card-women h5, .event-card-women h4 {
     font-size: 1.4rem;
   }
 
-  .event-card {
+  .event-card-women {
     padding: 30px 70px !important;
   }
 }

@@ -77,24 +77,41 @@ function VerProductosHombres() {
   // Busca el producto específico a partir del ID obtenido de la URL
   const producto = productosHombre.find((producto) => producto.id === id);
 
+  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
+
+
   // Función para agregar el producto al carrito
   const addToCart = () => {
     if (producto) {
+      if (!selectedColor || !selectedSize) {
+        alert("Please select a color and size before adding to cart.");
+        return;
+      }
+  
       setCarrito((prevCarrito) => {
-        // Verifica si el producto ya está en el carrito
-        const productoEnCarrito = prevCarrito.find(item => item.id === producto.id);
+        const productoEnCarrito = prevCarrito.find(
+          (item) =>
+            item.id === producto.id &&
+            item.selectedColor === selectedColor &&
+            item.selectedSize === selectedSize
+        );
+  
         if (!productoEnCarrito) {
-          console.log("Producto agregado:", producto); // Imprime el producto agregado
-          const updatedCart = [...prevCarrito, producto]; // Agrega el producto al carrito
-          console.log("Carrito actualizado:", updatedCart); // Imprime el carrito actualizado
-          return updatedCart; // Devuelve el carrito actualizado
+          const updatedCart = [
+            ...prevCarrito,
+            { ...producto, selectedColor, selectedSize },
+          ];
+          alert("Your product has been added to the cart successfully");
+          return updatedCart;
         } else {
-          console.log("El producto ya está dentro del carrito"); // Imprime un mensaje si el producto ya está en el carrito
-          return prevCarrito; // Devuelve el carrito sin cambios
+          alert("This product with the selected color and size is already in the cart.");
+          return prevCarrito;
         }
       });
     }
   };
+  
   
 
   // Componentes para las flechas personalizadas del slider
@@ -171,7 +188,7 @@ function VerProductosHombres() {
 
   return (
     <>
-      <button className="boton-regresar" onClick={() => navigate(-1)}>
+      <button className="boton-regresar-men" onClick={() => navigate(-1)}>
         <i className="ri-arrow-left-line"></i> 
         <span className="text-men">return</span> 
       </button> {/* Botón para regresar a la página anterior */}
@@ -186,7 +203,7 @@ function VerProductosHombres() {
             <p className="materialHombre">{producto.material}</p> {/* Material del producto */}
             <p className="PriceMen">{producto.price}</p> {/* Precio del producto */}
             
-            <select>
+            <select onChange={(e) => setSelectedColor(e.target.value)}>
               <option>Color</option> {/* Selección de color */}
               <option value="Blue">Blue</option>
               <option value="Red">Red</option>
@@ -199,21 +216,21 @@ function VerProductosHombres() {
               <option value="Skyblue">Sky-Blue</option>
               <option value="Brown">Brown</option>
             </select>
-            <select>
-              <option>Size</option> {/* Selección de tamaño */}
-              <option value="6">US Size 6 </option>
-              <option value="7">US Size 7</option>
-              <option value="8">US Size 8</option>
-              <option value="9">US Size 9</option>
-              <option value="10">US Size 10</option>
-              <option value="11">US Size 11</option>
-              <option value="37">Size 37 EU </option>
-              <option value="38">Size 38 EU</option>
-              <option value="39">Size 39 EU</option>
-              <option value="40">Size 39 EU</option>
-              <option value="41">Size 41 EU</option>
-              <option value="42">Size 42 EU</option>
-              <option value="43">Size 43 EU</option>
+            <select onChange={(e) => setSelectedSize(e.target.value)}>
+              <option value="">Size</option> 
+              <option value="6 US">US Size 6 </option>
+              <option value="7 US">US Size 7</option>
+              <option value="8 US">US Size 8</option>
+              <option value="9 US">US Size 9</option>
+              <option value="10 US">US Size 10</option>
+              <option value="11 US">US Size 11</option>
+              <option value="37 EU">Size 37 EU </option>
+              <option value="38 EU">Size 38 EU</option>
+              <option value="39 EU">Size 39 EU</option>
+              <option value="40 EU">Size 39 EU</option>
+              <option value="41 EU">Size 41 EU</option>
+              <option value="42 EU">Size 42 EU</option>
+              <option value="43 EU">Size 43 EU</option>
             </select>
             <p className="moreInformationMen" onClick={() => setMostrarModal(true)} >
               See more product information  

@@ -123,19 +123,35 @@ const NinosProducto = () => {
   const { carrito, setCarrito } = useCart();
 
   const addToCart = () => {
-    setCarrito((prevCarrito) => {
-      const productoEnCarrito = prevCarrito.find(
-        (item) => item.id === producto.id
-      );
-      if (!productoEnCarrito) {
-        console.log("Product added:", producto);
-        return [...prevCarrito, producto];
-      } else {
-        console.log("The product is already in the cart.");
-        return prevCarrito;
+    if (producto) {
+      if (!selectedColor || !selectedSize) {
+        alert("Please select a color and size before adding to cart.");
+        return;
       }
-    });
+  
+      setCarrito((prevCarrito) => {
+        const productoEnCarrito = prevCarrito.find(
+          (item) =>
+            item.id === producto.id &&
+            item.selectedColor === selectedColor &&
+            item.selectedSize === selectedSize
+        );
+  
+        if (!productoEnCarrito) {
+          const updatedCart = [
+            ...prevCarrito,
+            { ...producto, selectedColor, selectedSize },
+          ];
+          console.log("Producto agregado:", updatedCart);
+          return updatedCart;
+        } else {
+          alert("This product with the selected color and size is already in the cart.");
+          return prevCarrito;
+        }
+      });
+    }
   };
+  
 
   const settings = {
     dots: true,
@@ -160,6 +176,8 @@ const NinosProducto = () => {
   const { id } = useParams();
   const producto = productosNino.find((producto) => producto.id.toString() === id);
 
+  
+
   if (!producto) {
     return <p>Producto no encontrado.</p>;
   }
@@ -169,11 +187,15 @@ const NinosProducto = () => {
 
   const navigate = useNavigate();
 
+  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
+
   return (
     <div>
       <main className="contenido-Ninos">
         <button className="btn-volver" onClick={() => navigate(-1)}>
-          <i className="ri-arrow-left-line"></i> Return
+          <i className="ri-arrow-left-line"></i>
+          <span className="text-kids">Return</span>
         </button>
         <div className="ver-producto-Ninos">
           <img src={producto.img} alt={producto.title} />
@@ -183,21 +205,29 @@ const NinosProducto = () => {
             <h4 className="material-producto-Ninos">
               Main material: {producto.material}
             </h4>
-            <p>{producto.price}</p>
+            <p className="precio-ninos">{producto.price}</p>
             <div className="colorr-tallaa">
-              <select name="color" id="color" className="select-ninoss">
+              <select name="color" id="color" className="select-ninoss"  onChange={(e) => setSelectedColor(e.target.value)}>
                 <option value="opcionColor">Color</option>
-                <option value="rosa">Pink</option>
-                <option value="negro">Black</option>
-                <option value="azul">Blue</option>
-                <option value="morado">Purple</option>
+                <option value="Pink">Pink</option>
+                <option value="Black">Black</option>
+                <option value="Blue">Blue</option>
+                <option value="Puple">Purple</option>
               </select>
-              <select name="talla" id="talla" className="select-ninoss">
+              <select name="talla" id="talla" className="select-ninoss" onChange={(e) => setSelectedSize(e.target.value)}>
                 <option value="opcionTalla">Size</option>
-                <option value="35">35</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
+                <option value="5 US">US Size 5 </option>
+                <option value="7 US">US Size 7</option>
+                <option value="8 US">US Size 8</option>
+                <option value="9 US">Us Size 9</option>
+                <option value="10 US">US Size 10</option>
+                <option value="11 US">US Size 11</option>
+                <option value="18 EU">Size 18 EU</option>
+                <option value="19 EU">Size 19 EU</option>
+                <option value="20 EU">Size 20 EU</option>
+                <option value="21 EU">Size 21 EU</option>
+                <option value="22 EU">Size 22 EU</option>
+                <option value="23 EU">Size 23 EU</option>
               </select>
             </div>
             <h4 className="ver-mas-ninos" onClick={openModal}>
@@ -205,7 +235,7 @@ const NinosProducto = () => {
             </h4>
             <div className="boton-ninos" onClick={addToCart}>
               <button className="carrito-ninos">
-                <i className="ri-shopping-cart-line"></i> Add to cart
+                <i className="ri-shopping-cart-line"></i> <span className="titulo-carrito-kids">Add to cart</span>
               </button>
             </div>
           </div>

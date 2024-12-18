@@ -350,9 +350,11 @@
   }
 
   .carrito-ninos{
-    width: 55%;
     margin-left: 50%;
-    margin-top: -10%;
+    position: relative;
+    left: -90px;
+    top: -80px;
+    
   }
 
   .select-ninoss {
@@ -365,12 +367,20 @@
   }
 
   .btn-volver {
-    margin: 10px auto;
-    width: 25%;      
+    margin: 10px auto;     
     font-size: 12px;
     padding: 10px 8px;
     margin-left: 5px;
     
+  }
+
+  .text-kids{
+    display: none;
+  }
+
+  .precio-ninos{
+    position: relative;
+    left: -16px;
   }
  
   .division-productos-Ninos{
@@ -386,7 +396,9 @@
 
   .events-upcomingg {
     margin: 20px 0;
-    top: 0;
+    top: -3rem;
+    position: relative;
+    left: -2rem;
   }
 
   .event-cardd img {
@@ -403,7 +415,15 @@
   }
 
   .event-cardd p {
-    margin-left: 10%;
+    margin-left: 15%;
+  }
+
+  .CustomNextArrowKids{
+    margin-right: -50px;
+  }
+
+  .CustomPrevArrowKids{
+    margin-left: 60px;
   }
 }
 
@@ -427,9 +447,10 @@
     margin-top: 25px;
   }
 
-  .color-talla {
+  .colorr-tallaa {
     flex-direction: column;
     align-items: center;
+   left: 0;
     
   }
   .division-productos-Ninos hr{
@@ -440,19 +461,41 @@
     width: 60%;
   }
 
-  .boton-Ninos {
+  .boton-ninos {
     justify-content: center;
-    margin-top: 20px;
+    width: 150%;
+    margin-left: -250px;
+    position: relative;
+    top: -80px;
   }
 
+  .carrito-ninos{
+    display: flex;
+    width: 200%;
+    white-space: nowrap;
+    
+  }
+
+  .titulo-carrito-kids{
+    margin-top: 10px;
+  }
+
+  .precio-ninos{
+    position: relative;
+    left: -18px;
+  }
+
+
   .btn-volver {
-    margin: 10px auto;
-    width: 25%;      
+    margin: 10px auto;   
     font-size: 12px;
     padding: 10px 8px;
     margin-left: 5px;       
   }
 
+  .text-kids{
+    display: none;
+  }
 
   .events-upcomingg {
     margin: 30px 0;
@@ -461,7 +504,14 @@
 
   .event-cardd {
     padding: 20px;
+    width: 80% !important;
   }
+
+  .CustomNextArrowKids{
+    margin-right: -1px !important;
+  }
+
+
 }
 
 /* Adicional (540px - 720px) */
